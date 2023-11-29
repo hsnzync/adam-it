@@ -4,13 +4,10 @@ import { Colors } from '@/constants'
 
 interface Props {
     label: string
-    bgColor?: string
-    hoverBgColor?: string
-    borderColor?: string
-    iconColor?: string
+    outlined?: boolean
 }
 
-export const NavigationButton = (props: Props) => {
+export const FlexButton = (props: Props) => {
     return (
         <Button
             sx={{
@@ -19,11 +16,14 @@ export const NavigationButton = (props: Props) => {
                 gap: 1.5,
                 py: 1,
                 px: 2,
+                width: 'fit-content',
                 textTransform: 'unset',
-                border: `1px solid ${props.borderColor}`,
-                backgroundColor: props.bgColor,
+                border: props.outlined
+                    ? `1px solid ${Colors.WHITE}`
+                    : undefined,
+                backgroundColor: props.outlined ? 'transparent' : Colors.ORANGE,
                 ':hover': {
-                    backgroundColor: props.hoverBgColor,
+                    backgroundColor: !props.outlined ? Colors.RED : undefined,
                 },
             }}
         >
@@ -40,11 +40,10 @@ export const NavigationButton = (props: Props) => {
             >
                 <Icon
                     iconName="chevronRight"
-                    color={props.iconColor}
+                    color={props.outlined ? Colors.ORANGE : Colors.WHITE}
                     sx={{
                         rotate: '-45deg',
                         position: 'relative',
-                        left: 3,
                         bottom: 2,
                     }}
                 />

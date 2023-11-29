@@ -1,2 +1,6 @@
 export { Navigation } from './Navigation'
-export { NavigationButton } from './NavigationButton'
+export { FlexButton } from './Button'
+export { Icon, IconShaped } from './Icon'
+export { FlexBox } from './FlexBox'
+export { FlexImage } from './FlexImage'
+export { TwoColumnSection } from './TwoColumnSection'

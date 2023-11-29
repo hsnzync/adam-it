@@ -1,7 +1,8 @@
 import { SxProps, Theme } from '@mui/system'
 import { Colors, IconsMapper } from '@/constants'
 import { IconName } from '@/types'
-import { Container } from '@mui/material'
+import { Box } from '@mui/material'
+import { FlexBox } from './FlexBox'
 
 interface IconProps {
     iconName: IconName
@@ -15,15 +16,45 @@ export function Icon(props: IconProps) {
     const Icon = IconsMapper[iconName]
 
     return (
-        <Container
+        <FlexBox
+            centered
             sx={{
                 color: props.color,
-                justifyContent: 'center',
-                p: '0 !important',
+                width: 'fit-content',
                 ...props.sx,
             }}
         >
             <Icon />
-        </Container>
+        </FlexBox>
+    )
+}
+
+export function IconShaped(props: IconProps) {
+    const iconName = props.iconName
+    const Icon = IconsMapper[iconName]
+
+    return (
+        <FlexBox
+            centered
+            sx={{
+                color: props.color,
+                backgroundColor: Colors.DARK_BLUE,
+                height: 60,
+                width: 90,
+                rotate: '45deg',
+                ...props.sx,
+            }}
+        >
+            <FlexBox
+                sx={{
+                    rotate: '-45deg',
+                    p: '0px !important',
+                    width: 'fit-content',
+                    position: 'relative',
+                }}
+            >
+                <Icon />
+            </FlexBox>
+        </FlexBox>
     )
 }

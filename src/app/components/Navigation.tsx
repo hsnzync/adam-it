@@ -7,13 +7,12 @@ import Typography from '@mui/material/Typography'
 import Menu from '@mui/material/Menu'
 import Container from '@mui/material/Container'
 import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
 import { Colors } from '@/constants/colors'
 import { Icon } from './Icon'
-import { NavigationButton } from '.'
+import { FlexButton } from '.'
 
 const pages = ['Werkgever', 'Kandidaten', 'Over ons', 'Contact']
 
@@ -49,17 +48,8 @@ export const Navigation = () => {
                                 <Typography>{page}</Typography>
                             </MenuItem>
                         ))}
-                        <NavigationButton
-                            label="Vacatures"
-                            bgColor={Colors.ORANGE}
-                            hoverBgColor={Colors.RED}
-                            iconColor={Colors.WHITE}
-                        />
-                        <NavigationButton
-                            label="Testnation"
-                            borderColor={Colors.WHITE}
-                            iconColor={Colors.ORANGE}
-                        />
+                        <FlexButton label="Vacatures" />
+                        <FlexButton label="Testnation" outlined />
                     </Container>
                     {/* <Box
                         sx={{
