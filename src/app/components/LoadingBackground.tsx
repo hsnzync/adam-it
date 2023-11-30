@@ -1,4 +1,3 @@
-'use client'
 import { Container } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'

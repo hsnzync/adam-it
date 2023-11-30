@@ -3,16 +3,26 @@ import { useEffect, useState } from 'react'
 import { LoadingScreen } from './components/LoadingPage'
 import { motion } from 'framer-motion'
 import {
-    Card,
+    CardContent,
+    Divider,
     List,
     ListItem,
     ListItemIcon,
     ListItemText,
     Typography,
 } from '@mui/material'
-import { FlexButton, Icon, Navigation, TwoColumnSection } from './components'
+import {
+    FlexButton,
+    Icon,
+    IconButton,
+    KpiBlock,
+    Navigation,
+    ImageTextSection,
+    ImageSlider,
+} from './components'
 import { Colors } from '@/constants'
-import { IconShaped, FlexBox } from './components'
+import { IconShaped, FlexBox, Card } from './components'
+import { screenMaxWidth } from '@/style'
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(false)
@@ -47,18 +57,17 @@ export default function Home() {
             initial={{ opacity: 0 }}
         >
             <FlexBox>
-                <Navigation />
                 {/* Header Section */}
                 <FlexBox
                     as="section"
-                    centered
+                    alignment="center"
+                    bgColor={Colors.DARK_BLUE}
                     sx={{
                         height: 600,
-                        backgroundColor: Colors.DARK_BLUE,
                     }}
                 >
                     <FlexBox
-                        centered
+                        alignment="center"
                         direction="vertical"
                         space={4}
                         sx={{
@@ -71,7 +80,11 @@ export default function Home() {
                         <Typography variant="h3" color={Colors.WHITE}>
                             Ik ben
                         </Typography>
-                        <FlexBox centered direction="horizontal" space={4}>
+                        <FlexBox
+                            alignment="center"
+                            direction="horizontal"
+                            space={4}
+                        >
                             <FlexButton label="Werkgevers" />
                             <FlexButton label="Kandidaten" />
                         </FlexBox>
@@ -79,70 +92,68 @@ export default function Home() {
                 </FlexBox>
                 {/* KPI Section */}
                 <FlexBox
-                    direction="horizontal"
+                    alignment="center"
                     as="section"
                     space={4}
+                    bgColor={Colors.WHITE}
                     sx={{
                         height: 500,
-                        backgroundColor: Colors.WHITE,
                         px: 5,
                     }}
                 >
-                    <FlexBox centered>
+                    <FlexBox
+                        direction="horizontal"
+                        alignment="start"
+                        space={10}
+                        sx={{ maxWidth: screenMaxWidth }}
+                    >
                         <Typography variant="h4">
                             Als IT’er organisaties verder helpen?
                         </Typography>
-                    </FlexBox>
-                    <FlexBox direction="horizontal" centered space={4}>
-                        <IconShaped color={Colors.WHITE} iconName="computer" />
-                        <FlexBox>
-                            <Typography variant="h6">
-                                Test Automation Engineering
-                            </Typography>
-                            <Typography variant="body2">
-                                Geautomatiseerde systeem opstellen om (complexe
-                                ) software te laten testen.
-                            </Typography>
-                        </FlexBox>
-                    </FlexBox>
-                    <FlexBox direction="horizontal" centered space={4}>
-                        <IconShaped color={Colors.WHITE} iconName="pin" />
-                        <FlexBox>
-                            <Typography variant="h6">
-                                Software testing op afstand
-                            </Typography>
-                            <Typography variant="body2">
-                                The quick, brown fox jumps over a lazy dog. DJs
-                                flock by when MTV ax quiz prog.
-                            </Typography>
-                        </FlexBox>
-                    </FlexBox>
-                    <FlexBox direction="horizontal" centered space={4}>
-                        <IconShaped color={Colors.WHITE} iconName="person" />
-                        <FlexBox>
-                            <Typography variant="h6">
-                                Interim een vaste tester inhuren
-                            </Typography>
-                            <Typography variant="body2">
-                                Een eigen vaste IT Professional inhuren als test
-                                automation engineer.{' '}
-                            </Typography>
-                        </FlexBox>
+                        <KpiBlock
+                            title="Test Automation Engineering"
+                            description="Geautomatiseerde systeem opstellen om (complexe )
+                            software te laten testen."
+                            icon="computer"
+                        />
+                        <KpiBlock
+                            title="Software testing op afstand"
+                            description="The quick, brown fox jumps over a lazy dog.
+                            DJs flock by when MTV ax quiz prog."
+                            icon="pin"
+                        />
+                        <KpiBlock
+                            title="Interim een vaste tester inhuren"
+                            description="Een eigen vaste IT Professional inhuren als
+                            test automation engineer."
+                            icon="person"
+                        />
                     </FlexBox>
                 </FlexBox>
                 {/* Voordelen Section */}
-                <TwoColumnSection />
+                <ImageTextSection
+                    bgColor={Colors.LIGHT_BLUE}
+                    title="De voordelen van werken via Adam IT?"
+                    description="The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs."
+                    perks={[
+                        'Goed salaris, markt conform',
+                        'Altijd opdrachten genoeg',
+                        'Bawds jog, flick quartz, vex nymphs.',
+                    ]}
+                    buttonText="Meer over kandidaten"
+                    buttonUrl=""
+                />
                 {/* Quote section */}
                 <FlexBox
                     as="section"
-                    centered
+                    alignment="center"
                     direction="vertical"
+                    bgColor={Colors.WHITE}
                     sx={{
                         height: 500,
-                        backgroundColor: Colors.WHITE,
                     }}
                 >
-                    <FlexBox sx={{ maxWidth: 600 }}>
+                    <FlexBox sx={{ maxWidth: screenMaxWidth.md }}>
                         <Typography
                             variant="h5"
                             marginBottom={3}
@@ -157,90 +168,123 @@ export default function Home() {
                         <Typography>- Jan Verstegen</Typography>
                     </FlexBox>
                 </FlexBox>
+                {/* Vacatures */}
                 <FlexBox
                     as="section"
-                    centered
-                    direction="horizontal"
-                    space={8}
+                    alignment="center"
+                    bgColor={Colors.LIGHT_BLUE}
                     sx={{
-                        height: 600,
-                        backgroundColor: Colors.LIGHT_BLUE,
-                        px: 5,
+                        p: 10,
                     }}
                 >
-                    <FlexBox>
-                        <FlexBox sx={{ mb: 3 }}>
-                            <Typography textTransform="capitalize">
-                                Wij verbinden IT’ers met opdrachtgevers
-                            </Typography>
-                            <Typography>
-                                IT Professionals voor elkaar
-                            </Typography>
-                            <Typography>
-                                The quick, brown fox jumps over a lazy dog. DJs
-                                flock by when MTV ax quiz prog. Junk MTV quiz
-                                graced by fox whelps. Bawds jog, flick quartz,
-                                vex nymphs. Waltz, bad nymph, for quick jigs
-                                vex! Fox nymphs grab quick-jived waltz. Brick
-                                quiz whangs jumpy veldt fox. Bright vixens jump;
-                                dozy fowl quack. Quick wafting zephyrs vex bold
-                                Jim. Quick zephyrs blow, vexing daft Jim.
-                            </Typography>
-                        </FlexBox>
-                        <FlexBox>
-                            <Typography>
-                                Op zoek naar een Test engineer?
-                            </Typography>
-                            <Typography>
-                                The quick, brown fox jumps over a lazy dog. DJs
-                                flock by when MTV ax quiz prog. Junk MTV quiz
-                                graced by fox whelps. Bawds jog, flick quartz,
-                                vex nymphs. Waltz, bad nymph, for quick jigs
-                                vex! Fox nymphs grab quick-jived waltz. Brick
-                                quiz whangs jumpy veldt fox. Bright vixens jump;
-                                dozy fowl quack. Quick wafting zephyrs vex bold
-                                Jim. Quick zephyrs blow, vexing daft Jim.
-                            </Typography>
+                    <FlexBox
+                        direction="horizontal"
+                        alignment="start"
+                        space={8}
+                        sx={{ maxWidth: screenMaxWidth }}
+                    >
+                        <FlexBox direction="vertical">
+                            <FlexBox space={1} sx={{ mb: 3 }}>
+                                <Typography
+                                    textTransform="uppercase"
+                                    color={Colors.BLUE}
+                                >
+                                    Wij verbinden IT’ers met opdrachtgevers
+                                </Typography>
+                                <Typography variant="h4">
+                                    IT Professionals voor elkaar
+                                </Typography>
+                                <Typography>
+                                    The quick, brown fox jumps over a lazy dog.
+                                    DJs flock by when MTV ax quiz prog. Junk MTV
+                                    quiz graced by fox whelps. Bawds jog, flick
+                                    quartz, vex nymphs. Waltz, bad nymph, for
+                                    quick jigs vex! Fox nymphs grab quick-jived
+                                    waltz. Brick quiz whangs jumpy veldt fox.
+                                    Bright vixens jump; dozy fowl quack. Quick
+                                    wafting zephyrs vex bold Jim. Quick zephyrs
+                                    blow, vexing daft Jim.
+                                </Typography>
+                            </FlexBox>
+                            <FlexBox sx={{ mb: 3 }}>
+                                <Typography variant="h4">
+                                    Op zoek naar een Test engineer?
+                                </Typography>
+                                <Typography>
+                                    The quick, brown fox jumps over a lazy dog.
+                                    DJs flock by when MTV ax quiz prog. Junk MTV
+                                    quiz graced by fox whelps. Bawds jog, flick
+                                    quartz, vex nymphs. Waltz, bad nymph, for
+                                    quick jigs vex! Fox nymphs grab quick-jived
+                                    waltz. Brick quiz whangs jumpy veldt fox.
+                                    Bright vixens jump; dozy fowl quack. Quick
+                                    wafting zephyrs vex bold Jim. Quick zephyrs
+                                    blow, vexing daft Jim.
+                                </Typography>
+                            </FlexBox>
                             <FlexButton label="Plaats een opdracht" />
                         </FlexBox>
-                    </FlexBox>
-                    <FlexBox>
-                        <FlexBox sx={{ mb: 3 }}>
-                            <Typography textTransform="capitalize">
-                                Wij verbinden IT’ers met opdrachtgevers
-                            </Typography>
-                            <Typography>
-                                IT Professionals voor elkaar
-                            </Typography>
+                        <FlexBox
+                            direction="vertical"
+                            space={3}
+                            sx={{ minWidth: '50%' }}
+                        >
+                            <Card
+                                title="Test Automation Engineer"
+                                salary="€3.000 - €4.500"
+                                location="Maassluis"
+                                url=""
+                            />
+                            <Card
+                                title="Software Ontwikkelaar"
+                                salary="€3.000 - €4.500"
+                                location="Den Haag"
+                                url=""
+                            />
+                            <Card
+                                title=".NET Test Automation Engineer"
+                                salary="€3.000 - €4.500"
+                                location="Rotterdam"
+                                url=""
+                            />
                             <Typography>
                                 The quick, brown fox jumps over a lazy dog. DJs
                                 flock by when MTV ax quiz prog. Junk MTV quiz
                                 graced by fox whelps. Bawds jog, flick quartz,
-                                vex nymphs. Waltz, bad nymph, for quick jigs
-                                vex! Fox nymphs grab quick-jived waltz. Brick
-                                quiz whangs jumpy veldt fox. Bright vixens jump;
-                                dozy fowl quack. Quick wafting zephyrs vex bold
-                                Jim. Quick zephyrs blow, vexing daft Jim.
+                                vex nymphs.
                             </Typography>
-                        </FlexBox>
-                        <FlexBox>
-                            <Typography>
-                                Op zoek naar een Test engineer?
-                            </Typography>
-                            <Typography>
-                                The quick, brown fox jumps over a lazy dog. DJs
-                                flock by when MTV ax quiz prog. Junk MTV quiz
-                                graced by fox whelps. Bawds jog, flick quartz,
-                                vex nymphs. Waltz, bad nymph, for quick jigs
-                                vex! Fox nymphs grab quick-jived waltz. Brick
-                                quiz whangs jumpy veldt fox. Bright vixens jump;
-                                dozy fowl quack. Quick wafting zephyrs vex bold
-                                Jim. Quick zephyrs blow, vexing daft Jim.
-                            </Typography>
-                            <FlexButton label="Plaats een opdracht" />
+                            <FlexButton
+                                label="Alle vacatures"
+                                variant="clear"
+                            />
                         </FlexBox>
                     </FlexBox>
                 </FlexBox>
+                {/* Recente cases */}
+                <ImageTextSection
+                    sectionTitle="Recente cases"
+                    bgColor={Colors.WHITE}
+                    logo="/company-logos/uwv-logo.svg"
+                    title="Geautomatiseerde test applicatie voor het UWV"
+                    description="The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs."
+                    perks={[
+                        'Testomgeving opgezet',
+                        'Support',
+                        'Langdurig traject',
+                    ]}
+                    buttonText="Bekijk de cases"
+                    buttonUrl=""
+                />
+
+                <ImageSlider
+                    divider
+                    images={[
+                        '/company-logos/uwv-logo.svg',
+                        '/company-logos/kadaster-logo.svg',
+                        '/company-logos/stedin-logo.png',
+                        '/company-logos/rfh-logo.svg',
+                    ]}
+                />
             </FlexBox>
         </motion.div>
     )

@@ -17,7 +17,7 @@ export function Icon(props: IconProps) {
 
     return (
         <FlexBox
-            centered
+            alignment="center"
             sx={{
                 color: props.color,
                 width: 'fit-content',
@@ -29,17 +29,18 @@ export function Icon(props: IconProps) {
     )
 }
 
-export function IconShaped(props: IconProps) {
+export const IconShaped = (props: IconProps) => {
     const iconName = props.iconName
     const Icon = IconsMapper[iconName]
 
     return (
         <FlexBox
-            centered
+            alignment="center"
             sx={{
                 color: props.color,
                 backgroundColor: Colors.DARK_BLUE,
-                height: 60,
+                borderRadius: 1,
+                height: 45,
                 width: 90,
                 rotate: '45deg',
                 ...props.sx,

@@ -12,7 +12,8 @@ import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
 import { Colors } from '@/constants/colors'
 import { Icon } from './Icon'
-import { FlexButton } from '.'
+import { FlexBox, FlexButton } from '.'
+import { screenMaxWidth } from '@/style'
 
 const pages = ['Werkgever', 'Kandidaten', 'Over ons', 'Contact']
 
@@ -22,10 +23,15 @@ export const Navigation = () => {
             position="static"
             sx={{ backgroundColor: Colors.DARK_BLUE, boxShadow: 'none' }}
         >
-            <Container maxWidth="xl">
+            <FlexBox alignment="center">
                 <Toolbar
                     disableGutters
-                    sx={{ display: 'flex', justifyContent: 'space-between' }}
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                        maxWidth: screenMaxWidth,
+                    }}
                 >
                     <Image
                         src="/logo-text.svg"
@@ -33,15 +39,15 @@ export const Navigation = () => {
                         height={80}
                         alt="logo adam it"
                     />
-                    <Container
+                    <FlexBox
+                        direction="horizontal"
                         sx={{
                             flexGrow: 1,
-                            display: { xs: 'flex' }, // minimum width xs -> 0px
+                            display: { xs: 'flex' },
                             justifyContent: 'flex-end',
                             m: 0,
                             gap: 2,
                         }}
-                        maxWidth="lg"
                     >
                         {pages.map((page, index) => (
                             <MenuItem key={index} sx={{ px: 1 }}>
@@ -49,8 +55,8 @@ export const Navigation = () => {
                             </MenuItem>
                         ))}
                         <FlexButton label="Vacatures" />
-                        <FlexButton label="Testnation" outlined />
-                    </Container>
+                        <FlexButton label="Testnation" variant="outlined" />
+                    </FlexBox>
                     {/* <Box
                         sx={{
                             flexGrow: 1,
@@ -68,7 +74,7 @@ export const Navigation = () => {
                         ))}
                     </Box> */}
                 </Toolbar>
-            </Container>
+            </FlexBox>
         </AppBar>
     )
 }
