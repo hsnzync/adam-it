@@ -6,7 +6,8 @@
         "start": "next dev",
         "build": "next build",
         "start:prd": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "cms": "npm start -C ./cms"
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
