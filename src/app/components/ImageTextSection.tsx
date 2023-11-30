@@ -6,13 +6,14 @@ import {
     ListItemIcon,
     ListItemText,
 } from '@mui/material'
-import { FlexBox, FlexImage, Icon, FlexButton } from '.'
+import { FlexBox, SectionImage, Icon, FlexButton, BackgroundPattern } from '.'
 import { screenMaxWidth } from '@/style'
 import Image from 'next/image'
 
 interface Props {
     sectionTitle?: string
     bgColor: string
+    bgPattern?: boolean
     title: string
     description: string
     perks: string[]
@@ -27,8 +28,8 @@ export const ImageTextSection = (props: Props) => {
             as="section"
             alignment="center"
             sx={{
-                p: 5,
                 backgroundColor: props.bgColor,
+                p: 5,
             }}
         >
             <FlexBox alignment="start" space={3}>
@@ -39,9 +40,24 @@ export const ImageTextSection = (props: Props) => {
                     direction="horizontal"
                     alignment="center"
                     space={5}
-                    sx={{ maxWidth: screenMaxWidth }}
+                    sx={{
+                        position: 'relative',
+                        maxWidth: screenMaxWidth,
+                    }}
                 >
-                    <FlexImage
+                    {props.bgPattern && (
+                        <BackgroundPattern
+                            sx={{
+                                position: 'absolute',
+                                top: 0,
+                                right: -800,
+                                rotate: '-180deg',
+                                scale: '2',
+                            }}
+                        />
+                    )}
+
+                    <SectionImage
                         src="/meeting-image.jpg"
                         alt="perks of working at adam it"
                     />

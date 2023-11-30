@@ -2,26 +2,17 @@
 import { useEffect, useState } from 'react'
 import { LoadingScreen } from './components/LoadingPage'
 import { motion } from 'framer-motion'
-import {
-    CardContent,
-    Divider,
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemText,
-    Typography,
-} from '@mui/material'
+import { Typography } from '@mui/material'
 import {
     FlexButton,
-    Icon,
-    IconButton,
     KpiBlock,
-    Navigation,
     ImageTextSection,
     ImageSlider,
+    HeaderImage,
+    BackgroundPattern,
 } from './components'
 import { Colors } from '@/constants'
-import { IconShaped, FlexBox, Card } from './components'
+import { FlexBox, Card } from './components'
 import { screenMaxWidth } from '@/style'
 
 export default function Home() {
@@ -63,27 +54,69 @@ export default function Home() {
                     alignment="center"
                     bgColor={Colors.DARK_BLUE}
                     sx={{
-                        height: 600,
+                        height: 730,
+                        zIndex: 2,
+                        overflow: 'hidden',
                     }}
                 >
+                    <FlexBox
+                        direction="horizontal"
+                        sx={{
+                            position: 'absolute',
+                            top: 0,
+                            zIndex: 1,
+                            width: '100vw',
+                            justifyContent: 'space-between',
+                        }}
+                    >
+                        <motion.div
+                            initial={{ x: -80 }}
+                            animate={{ x: -30 }}
+                            transition={{
+                                duration: 1,
+                                easeIn: [0, 0.71, 0.2, 1.01],
+                            }}
+                        >
+                            <BackgroundPattern />
+                        </motion.div>
+                        <motion.div
+                            initial={{ x: 80 }}
+                            animate={{ x: 30 }}
+                            transition={{
+                                duration: 1,
+                                easeIn: [0, 0.71, 0.2, 1.01],
+                            }}
+                        >
+                            <HeaderImage
+                                height={730}
+                                src="/meeting-image.jpg"
+                                alt="introduction image adam it"
+                            />
+                        </motion.div>
+                    </FlexBox>
                     <FlexBox
                         alignment="center"
                         direction="vertical"
                         space={4}
                         sx={{
                             height: '100%',
+                            zIndex: 2,
                         }}
                     >
-                        <Typography variant="body2" color={Colors.LIGHT_GREY}>
+                        <Typography
+                            variant="body2"
+                            color={Colors.LIGHT_GREY}
+                            textTransform="uppercase"
+                        >
                             Wij maken impact met IT
                         </Typography>
-                        <Typography variant="h3" color={Colors.WHITE}>
+                        <Typography variant="h2" color={Colors.WHITE}>
                             Ik ben
                         </Typography>
                         <FlexBox
                             alignment="center"
                             direction="horizontal"
-                            space={4}
+                            space={8}
                         >
                             <FlexButton label="Werkgevers" />
                             <FlexButton label="Kandidaten" />
@@ -97,6 +130,8 @@ export default function Home() {
                     space={4}
                     bgColor={Colors.WHITE}
                     sx={{
+                        overflow: 'hidden',
+                        zIndex: 1,
                         height: 500,
                         px: 5,
                     }}
@@ -132,6 +167,7 @@ export default function Home() {
                 </FlexBox>
                 {/* Voordelen Section */}
                 <ImageTextSection
+                    bgPattern
                     bgColor={Colors.LIGHT_BLUE}
                     title="De voordelen van werken via Adam IT?"
                     description="The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs."
@@ -151,6 +187,8 @@ export default function Home() {
                     bgColor={Colors.WHITE}
                     sx={{
                         height: 500,
+                        overflow: 'hidden',
+                        zIndex: 5,
                     }}
                 >
                     <FlexBox sx={{ maxWidth: screenMaxWidth.md }}>

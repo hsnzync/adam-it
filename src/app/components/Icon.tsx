@@ -8,7 +8,7 @@ interface IconProps {
     iconName: IconName
     color?: string
     sx?: SxProps<Theme>
-    onClick?: () => void
+    size?: number
 }
 
 export function Icon(props: IconProps) {
@@ -22,6 +22,9 @@ export function Icon(props: IconProps) {
                 color: props.color,
                 width: 'fit-content',
                 ...props.sx,
+                svg: {
+                    fontSize: props.size,
+                },
             }}
         >
             <Icon />

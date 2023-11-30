@@ -4,3 +4,5 @@ export type IconName =
     | 'person'
     | 'computer'
     | 'checkCircleOutline'
+    | 'linkedIn'
+    | 'instagram'

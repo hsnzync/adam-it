@@ -4,6 +4,8 @@ import {
     PersonPinCircle,
     Person2,
     CheckCircleOutline,
+    LinkedIn,
+    Instagram,
 } from '@mui/icons-material'
 
 export const IconsMapper: Record<string, React.ComponentType> = {
@@ -12,4 +14,6 @@ export const IconsMapper: Record<string, React.ComponentType> = {
     pin: PersonPinCircle,
     person: Person2,
     checkCircleOutline: CheckCircleOutline,
+    linkedIn: LinkedIn,
+    instagram: Instagram,
 }

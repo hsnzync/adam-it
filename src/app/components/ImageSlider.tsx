@@ -1,8 +1,10 @@
+'use client'
 import { Colors } from '@/constants'
 import { FlexBox } from '.'
 import Image from 'next/image'
 import { SxProps, Theme } from '@mui/material'
 import { screenMaxWidth } from '@/style'
+import { useEffect, useState } from 'react'
 
 interface Props {
     images: string[]
@@ -11,6 +13,19 @@ interface Props {
 }
 
 export const ImageSlider = (props: Props) => {
+    const [isHovered, setIsHovered] = useState(false)
+    const [images, setImages] = useState<string[]>(props.images)
+    const slideAnimation = () => ({
+        '@keyframes slide': {
+            '0%': {
+                left: 0,
+            },
+            '100%': {
+                left: '100%',
+            },
+        },
+    })
+
     return (
         <FlexBox
             as="section"
@@ -19,6 +34,7 @@ export const ImageSlider = (props: Props) => {
             sx={{
                 height: 200,
                 backgroundColor: Colors.WHITE,
+                overflow: 'hidden',
                 ...props.sx,
             }}
         >
@@ -36,16 +52,29 @@ export const ImageSlider = (props: Props) => {
                 }}
             >
                 {props.images.map((image, index) => (
-                    <Image
+                    <FlexBox
                         key={index}
-                        src={image}
-                        alt="company logo"
-                        width={100}
-                        height={100}
-                        style={{
-                            objectFit: 'contain',
+                        sx={{
+                            position: 'relative',
+                            animation: 'slide 20s linear infinite',
+                            animationPlayState: isHovered
+                                ? 'paused'
+                                : 'running',
+                            slideAnimation,
                         }}
-                    />
+                    >
+                        <Image
+                            src={image}
+                            alt="company logo"
+                            width={100}
+                            height={100}
+                            style={{
+                                objectFit: 'contain',
+                            }}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        />
+                    </FlexBox>
                 ))}
             </FlexBox>
         </FlexBox>

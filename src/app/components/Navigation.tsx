@@ -1,27 +1,49 @@
+'use client'
 import * as React from 'react'
 import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-import Menu from '@mui/material/Menu'
-import Container from '@mui/material/Container'
-import Avatar from '@mui/material/Avatar'
-import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
-import { Colors } from '@/constants/colors'
-import { Icon } from './Icon'
 import { FlexBox, FlexButton } from '.'
 import { screenMaxWidth } from '@/style'
+import { useEffect } from 'react'
+import { Colors } from '@/constants'
 
 const pages = ['Werkgever', 'Kandidaten', 'Over ons', 'Contact']
 
 export const Navigation = () => {
+    const handleScroll = () => {
+        const scrolled = window.scrollY
+        const appBar = document.getElementById('navigation')
+
+        if (scrolled > 50) {
+            if (appBar) {
+                appBar.style.backgroundColor = Colors.DARK_BLUE
+            }
+        } else {
+            if (appBar) {
+                appBar.style.backgroundColor = 'transparent'
+            }
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
     return (
         <AppBar
-            position="static"
-            sx={{ backgroundColor: Colors.DARK_BLUE, boxShadow: 'none' }}
+            id="navigation"
+            position="fixed"
+            sx={{
+                boxShadow: 'none',
+                backgroundColor: 'transparent',
+                zIndex: 10,
+                transition: 'background-color 0.3s ease',
+            }}
         >
             <FlexBox alignment="center">
                 <Toolbar
@@ -57,22 +79,6 @@ export const Navigation = () => {
                         <FlexButton label="Vacatures" />
                         <FlexButton label="Testnation" variant="outlined" />
                     </FlexBox>
-                    {/* <Box
-                        sx={{
-                            flexGrow: 1,
-                            display: { xs: 'none', md: 'flex' },
-                        }}
-                    >
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
-                    </Box> */}
                 </Toolbar>
             </FlexBox>
         </AppBar>
