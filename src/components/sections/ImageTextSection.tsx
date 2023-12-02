@@ -6,7 +6,7 @@ import {
     ListItemIcon,
     ListItemText,
 } from '@mui/material'
-import { FlexBox, SectionImage, Icon, FlexButton, BackgroundPattern } from '.'
+import { FlexBox, SectionImage, Icon, FlexButton, BackgroundPattern } from '..'
 import { screenMaxWidth } from '@/style'
 import Image from 'next/image'
 
@@ -30,6 +30,7 @@ export const ImageTextSection = (props: Props) => {
             sx={{
                 backgroundColor: props.bgColor,
                 p: 5,
+                overflow: 'hidden',
             }}
         >
             <FlexBox alignment="start" space={3}>

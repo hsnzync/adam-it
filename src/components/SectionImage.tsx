@@ -7,13 +7,12 @@ interface Props {
 }
 
 export const SectionImage = (props: Props) => {
-    const imageWidth = window.innerWidth / 2
-
+    const halfscreenWidth = window.innerWidth / 2
     return (
         <Image
             src={props.src}
             alt={props.alt}
-            width={imageWidth}
+            width={halfscreenWidth}
             height={props.height ?? 500}
             style={{
                 clipPath: 'polygon(0 0, 80% 0, 150% 100%, 0 100%)',
@@ -24,13 +23,11 @@ export const SectionImage = (props: Props) => {
 }
 
 export const HeaderImage = (props: Props) => {
-    const imageWidth = window.innerWidth / 2
-
     return (
         <Image
             src={props.src}
             alt={props.alt}
-            width={imageWidth}
+            width={880}
             height={props.height ?? 500}
             style={{
                 clipPath:

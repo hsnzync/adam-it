@@ -7,12 +7,14 @@ import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
 import { FlexBox, FlexButton } from '.'
 import { screenMaxWidth } from '@/style'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Colors } from '@/constants'
 
 const pages = ['Werkgever', 'Kandidaten', 'Over ons', 'Contact']
 
 export const Navigation = () => {
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 900)
+
     const handleScroll = () => {
         const scrolled = window.scrollY
         const appBar = document.getElementById('navigation')
@@ -27,6 +29,21 @@ export const Navigation = () => {
             }
         }
     }
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 900)
+        }
+
+        console.log(isSmallScreen)
+
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
 
@@ -40,9 +57,9 @@ export const Navigation = () => {
             position="fixed"
             sx={{
                 boxShadow: 'none',
-                backgroundColor: 'transparent',
                 zIndex: 10,
                 transition: 'background-color 0.3s ease',
+                backgroundColor: 'transparent',
             }}
         >
             <FlexBox alignment="center">
@@ -61,11 +78,12 @@ export const Navigation = () => {
                         height={80}
                         alt="logo adam it"
                     />
+
                     <FlexBox
-                        direction="horizontal"
                         sx={{
+                            flexDirection: { xs: 'column', md: 'row' },
+                            display: { xs: 'none', md: 'flex' },
                             flexGrow: 1,
-                            display: { xs: 'flex' },
                             justifyContent: 'flex-end',
                             m: 0,
                             gap: 2,
@@ -78,6 +96,7 @@ export const Navigation = () => {
                         ))}
                         <FlexButton label="Vacatures" />
                         <FlexButton label="Testnation" variant="outlined" />
+                        {isSmallScreen && <FlexButton label="hamburger" />}
                     </FlexBox>
                 </Toolbar>
             </FlexBox>
