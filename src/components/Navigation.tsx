@@ -9,48 +9,29 @@ import { FlexBox, FlexButton } from '.'
 import { screenMaxWidth } from '@/style'
 import { useEffect, useState } from 'react'
 import { Colors } from '@/constants'
+import { motion } from 'framer-motion'
 
 const pages = ['Werkgever', 'Kandidaten', 'Over ons', 'Contact']
 
 export const Navigation = () => {
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 900)
+    const [navScrolled, setNavScrolled] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false)
 
     const handleScroll = () => {
-        const scrolled = window.scrollY
-        const appBar = document.getElementById('navigation')
+        if (window.scrollY > 50) setNavScrolled(true)
+        else setNavScrolled(false)
+    }
 
-        if (scrolled > 50) {
-            if (appBar) {
-                appBar.style.backgroundColor = Colors.DARK_BLUE
-            }
-        } else {
-            if (appBar) {
-                appBar.style.backgroundColor = 'transparent'
-            }
-        }
+    const handleMenuOpen = () => {
+        console.log(menuOpen)
+        setMenuOpen(!menuOpen)
     }
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth < 900)
-        }
-
-        console.log(isSmallScreen)
-
-        window.addEventListener('resize', handleResize)
-
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
-
-    useEffect(() => {
         window.addEventListener('scroll', handleScroll)
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
+        return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
     return (
         <AppBar
             id="navigation"
@@ -59,44 +40,160 @@ export const Navigation = () => {
                 boxShadow: 'none',
                 zIndex: 10,
                 transition: 'background-color 0.3s ease',
-                backgroundColor: 'transparent',
+                backgroundColor: navScrolled ? Colors.WHITE : 'transparent',
             }}
         >
             <FlexBox alignment="center">
                 <Toolbar
                     disableGutters
                     sx={{
+                        p: 2,
                         display: 'flex',
                         justifyContent: 'space-between',
                         width: '100%',
                         maxWidth: screenMaxWidth,
                     }}
                 >
-                    <Image
-                        src="/logo-text.svg"
-                        width={130}
-                        height={80}
-                        alt="logo adam it"
-                    />
-
+                    <FlexBox
+                        sx={{
+                            img: {
+                                width: {
+                                    xs: 240,
+                                    md: 180,
+                                },
+                            },
+                        }}
+                    >
+                        <Image
+                            src={
+                                navScrolled
+                                    ? '/logo/logo-text-regular-red.svg'
+                                    : '/logo/logo-text-white-red.svg'
+                            }
+                            width={130}
+                            height={80}
+                            alt="logo adam it"
+                        />
+                    </FlexBox>
                     <FlexBox
                         sx={{
                             flexDirection: { xs: 'column', md: 'row' },
-                            display: { xs: 'none', md: 'flex' },
+                            display: {
+                                xs: menuOpen ? 'flex' : 'none',
+                                md: 'flex',
+                            },
+                            backgroundColor: {
+                                xs: menuOpen ? Colors.WHITE : undefined,
+                            },
+
+                            position: {
+                                xs: menuOpen ? 'absolute' : undefined,
+                            },
+                            top: { xs: menuOpen ? 130 : undefined },
+                            right: { xs: menuOpen ? 0 : undefined },
+                            p: { xs: menuOpen ? 4 : undefined },
+
+                            flexGrow: 1,
+                            justifyContent: { md: 'flex-end' },
+                            alignItems: { xs: 'flex-end', md: undefined },
+                            m: 0,
+                            gap: 2,
+                        }}
+                    >
+                        {pages.map((page, index) => (
+                            <MenuItem
+                                key={index}
+                                sx={{ px: 1, justifyContent: 'end' }}
+                            >
+                                <Typography
+                                    color={
+                                        navScrolled || menuOpen
+                                            ? Colors.DARK_BLUE
+                                            : Colors.WHITE
+                                    }
+                                    sx={{
+                                        fontSize: {
+                                            xs: 25,
+                                            md: 16,
+                                        },
+                                    }}
+                                >
+                                    {page}
+                                </Typography>
+                            </MenuItem>
+                        ))}
+                        <FlexButton label="Vacatures" />
+                        <FlexButton
+                            label="Testnation"
+                            variant="outlined"
+                            sx={{
+                                borderColor:
+                                    navScrolled || menuOpen
+                                        ? Colors.ORANGE
+                                        : Colors.WHITE,
+                                '& *': {
+                                    color:
+                                        navScrolled || menuOpen
+                                            ? Colors.ORANGE
+                                            : Colors.WHITE,
+                                    borderColor:
+                                        navScrolled || menuOpen
+                                            ? Colors.ORANGE
+                                            : Colors.WHITE,
+                                },
+                            }}
+                        />
+                    </FlexBox>
+
+                    <FlexBox
+                        sx={{
+                            flexDirection: 'row',
+                            display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             justifyContent: 'flex-end',
                             m: 0,
                             gap: 2,
                         }}
                     >
-                        {pages.map((page, index) => (
-                            <MenuItem key={index} sx={{ px: 1 }}>
-                                <Typography>{page}</Typography>
-                            </MenuItem>
-                        ))}
-                        <FlexButton label="Vacatures" />
-                        <FlexButton label="Testnation" variant="outlined" />
-                        {isSmallScreen && <FlexButton label="hamburger" />}
+                        <FlexButton
+                            onClick={handleMenuOpen}
+                            icon="menu"
+                            variant="clear"
+                            label="Menu"
+                            sx={{
+                                '.button-text': {
+                                    color: navScrolled
+                                        ? Colors.ORANGE
+                                        : Colors.WHITE,
+                                },
+                                '.button-icon-container': {
+                                    width: {
+                                        xs: 40,
+                                        md: 20,
+                                    },
+                                    height: {
+                                        xs: 40,
+                                        md: 20,
+                                    },
+                                },
+                                '.icon-container': {
+                                    top: {
+                                        xs: 5,
+                                        md: 2,
+                                    },
+                                    left: {
+                                        xs: 5,
+                                        md: 2,
+                                    },
+                                },
+                                svg: {
+                                    fontSize: {
+                                        xs: 30,
+                                        md: 20,
+                                    },
+                                },
+                            }}
+                        />
                     </FlexBox>
                 </Toolbar>
             </FlexBox>

@@ -62,7 +62,7 @@ export const ImageTextSection = (props: Props) => {
                         src="/meeting-image.jpg"
                         alt="perks of working at adam it"
                     />
-                    <FlexBox space={1}>
+                    <FlexBox space={1} sx={{ width: '50%' }}>
                         {props.logo && (
                             <Image
                                 src={props.logo}

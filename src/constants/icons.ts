@@ -6,6 +6,7 @@ import {
     CheckCircleOutline,
     LinkedIn,
     Instagram,
+    Menu,
 } from '@mui/icons-material'
 
 export const IconsMapper: Record<string, React.ComponentType> = {
@@ -16,4 +17,5 @@ export const IconsMapper: Record<string, React.ComponentType> = {
     checkCircleOutline: CheckCircleOutline,
     linkedIn: LinkedIn,
     instagram: Instagram,
+    menu: Menu,
 }

@@ -1,7 +1,6 @@
 import { SxProps, Theme } from '@mui/system'
 import { Colors, IconsMapper } from '@/constants'
 import { IconName } from '@/types'
-import { Box } from '@mui/material'
 import { FlexBox } from './FlexBox'
 
 interface IconProps {
@@ -17,6 +16,7 @@ export function Icon(props: IconProps) {
 
     return (
         <FlexBox
+            className="icon-container"
             alignment="center"
             sx={{
                 color: props.color,

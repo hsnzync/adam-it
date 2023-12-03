@@ -1,12 +1,21 @@
-import { Button as MuiButton, Typography, Container } from '@mui/material'
+import {
+    Button as MuiButton,
+    Typography,
+    Container,
+    SxProps,
+    Theme,
+} from '@mui/material'
 import { Icon } from './Icon'
 import { Colors } from '@/constants'
-import { ReactNode } from 'react'
+import { IconName } from '@/types'
 
 interface Props {
     label: string
+    icon?: IconName
     variant?: 'outlined' | 'clear'
     url?: string
+    sx?: SxProps<Theme>
+    onClick?: () => void
 }
 
 export const FlexButton = (props: Props) => {
@@ -15,6 +24,7 @@ export const FlexButton = (props: Props) => {
 
     return (
         <MuiButton
+            onClick={props.onClick}
             sx={{
                 cursor: 'pointer',
                 display: 'flex',
@@ -31,12 +41,23 @@ export const FlexButton = (props: Props) => {
                     backgroundColor:
                         isOutlined || isClear ? 'transparent' : Colors.RED,
                 },
+                ...props.sx,
             }}
         >
-            <Typography color={isClear ? Colors.ORANGE : Colors.WHITE}>
+            <Typography
+                className="button-text"
+                color={isClear ? Colors.ORANGE : Colors.WHITE}
+                sx={{
+                    fontSize: {
+                        xs: 25,
+                        md: 16,
+                    },
+                }}
+            >
                 {props.label}
             </Typography>
             <Container
+                className="button-icon-container"
                 sx={{
                     p: '0 !important',
                     border: !isClear ? '1px solid white' : undefined,
@@ -48,7 +69,7 @@ export const FlexButton = (props: Props) => {
                 }}
             >
                 <Icon
-                    iconName="chevronRight"
+                    iconName={props.icon ?? 'chevronRight'}
                     color={Colors.WHITE}
                     sx={{
                         rotate: '-45deg',

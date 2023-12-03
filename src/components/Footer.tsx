@@ -49,17 +49,32 @@ export const Footer = () => {
         },
     ]
     return (
-        <FlexBox bgColor={Colors.ORANGE} alignment="center">
+        <FlexBox as="footer" bgColor={Colors.ORANGE} alignment="center">
             <FlexBox
                 sx={{ maxWidth: screenMaxWidth, width: '100%', p: 10 }}
                 direction="vertical"
                 space={6}
             >
                 <FlexBox
-                    sx={{ justifyContent: 'space-between' }}
-                    direction="horizontal"
+                    sx={{
+                        justifyContent: 'space-between',
+                        flexDirection: {
+                            xs: 'column',
+                            sm: 'row',
+                        },
+                        gap: 5,
+                    }}
                 >
-                    <FlexBox direction="horizontal" space={15}>
+                    <FlexBox
+                        direction="horizontal"
+                        space={15}
+                        sx={{
+                            flexDirection: {
+                                xs: 'column',
+                                sm: 'row',
+                            },
+                        }}
+                    >
                         <FlexBox direction="vertical" space={2}>
                             <Typography variant="h6" color={Colors.WHITE}>
                                 Navigation
@@ -130,7 +145,7 @@ export const Footer = () => {
                     </FlexBox>
                     <FlexBox>
                         <Image
-                            src="/logo-text-white.svg"
+                            src="/logo/logo-text-white.svg"
                             alt="logo adam it"
                             width={300}
                             height={80}
@@ -138,8 +153,13 @@ export const Footer = () => {
                     </FlexBox>
                 </FlexBox>
                 <FlexBox
-                    direction="horizontal"
-                    sx={{ justifyContent: 'space-between' }}
+                    sx={{
+                        justifyContent: 'space-between',
+                        flexDirection: {
+                            xs: 'column',
+                            sm: 'row',
+                        },
+                    }}
                 >
                     <Typography color={Colors.WHITE}>
                         Adam IT © 2024 - Alle rechten voorbehouden

@@ -6,3 +6,4 @@ export type IconName =
     | 'checkCircleOutline'
     | 'linkedIn'
     | 'instagram'
+    | 'menu'

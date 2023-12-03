@@ -9,6 +9,12 @@ export { KpiBlock } from './KpiBlock'
 export { Card } from './Card'
 export { ImageSlider } from './ImageSlider'
 export { BackgroundPattern } from './patterns'
+export { LoadingScreen } from './LoadingScreen'
 
 /** Sections */
-export { QuoteSection, ImageTextSection, KpiSection } from './sections'
+export {
+    QuoteSection,
+    ImageTextSection,
+    KpiSection,
+    HeaderSection,
+} from './sections'

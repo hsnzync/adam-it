@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { LoadingScreen } from '../components/LoadingPage'
+import { HeaderSection, LoadingScreen } from '../components'
 import { motion } from 'framer-motion'
 import { Typography } from '@mui/material'
 import {
@@ -17,9 +17,18 @@ import {
 import { Colors } from '@/constants'
 import { FlexBox, Card } from '../components'
 import { screenMaxWidth } from '@/style'
+import { handleFirstVisitOrExpired } from '@/utils'
 
 export default function Home() {
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(() => {
+        const shouldShowLoadingScreen = handleFirstVisitOrExpired()
+
+        if (shouldShowLoadingScreen) {
+            setIsLoading(true)
+        }
+    }, [isLoading])
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
@@ -29,19 +38,7 @@ export default function Home() {
     }, [])
 
     const content = isLoading ? (
-        <motion.div
-            animate={{
-                opacity: 0,
-                transition: {
-                    delay: 2,
-                    duration: 0.2,
-                    ease: 'easeOut',
-                },
-            }}
-            initial={{ opacity: 1 }}
-        >
-            <LoadingScreen />
-        </motion.div>
+        <LoadingScreen />
     ) : (
         <motion.div
             animate={{
@@ -52,79 +49,7 @@ export default function Home() {
         >
             <Navigation />
             {/* Header Section */}
-            <FlexBox
-                as="section"
-                alignment="center"
-                bgColor={Colors.DARK_BLUE}
-                sx={{
-                    height: 730,
-                    zIndex: 2,
-                }}
-            >
-                <FlexBox
-                    direction="horizontal"
-                    sx={{
-                        position: 'absolute',
-                        top: 0,
-                        zIndex: 1,
-                        width: '100%',
-                        justifyContent: 'space-between',
-                    }}
-                >
-                    <motion.div
-                        initial={{ x: -150 }}
-                        animate={{ x: -100 }}
-                        transition={{
-                            duration: 1,
-                            easeIn: [0, 0.71, 0.2, 1.01],
-                        }}
-                    >
-                        <BackgroundPattern />
-                    </motion.div>
-                    <motion.div
-                        initial={{ x: 60 }}
-                        animate={{ x: 0 }}
-                        transition={{
-                            duration: 1,
-                            easeIn: [0, 0.71, 0.2, 1.01],
-                        }}
-                    >
-                        <HeaderImage
-                            height={730}
-                            src="/header-image.jpg"
-                            alt="introduction image adam it"
-                        />
-                    </motion.div>
-                </FlexBox>
-                <FlexBox
-                    alignment="center"
-                    direction="vertical"
-                    space={4}
-                    sx={{
-                        height: '100%',
-                        zIndex: 2,
-                    }}
-                >
-                    <Typography
-                        variant="body2"
-                        color={Colors.LIGHT_GREY}
-                        textTransform="uppercase"
-                    >
-                        Wij maken impact met IT
-                    </Typography>
-                    <Typography variant="h2" color={Colors.WHITE}>
-                        Ik ben
-                    </Typography>
-                    <FlexBox
-                        alignment="center"
-                        direction="horizontal"
-                        space={8}
-                    >
-                        <FlexButton label="Werkgevers" />
-                        <FlexButton label="Kandidaten" />
-                    </FlexBox>
-                </FlexBox>
-            </FlexBox>
+            <HeaderSection />
             {/* KPI Section */}
             <KpiSection />
             {/* Voordelen Section */}

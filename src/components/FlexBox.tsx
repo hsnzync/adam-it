@@ -8,13 +8,13 @@ interface Props {
     space?: number
     as?: any
     sx?: SxProps<Theme>
-    onAnimationEnd?: (event: TransitionEvent) => void
+    className?: string
 }
 
 export const FlexBox = (props: Props) => {
     return (
         <Box
-            onAnimationEnd={props.onAnimationEnd}
+            className={props.className}
             component={props.as}
             sx={{
                 display: 'flex',
