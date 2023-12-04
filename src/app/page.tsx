@@ -2,30 +2,26 @@
 import { useEffect, useState } from 'react'
 import { HeaderSection, JobsSection, LoadingScreen } from '../components'
 import { motion } from 'framer-motion'
-import { Typography } from '@mui/material'
 import {
-    FlexButton,
     ImageTextSection,
     ImageSlider,
-    HeaderImage,
-    BackgroundPattern,
     QuoteSection,
     KpiSection,
     Navigation,
     Footer,
 } from '../components'
 import { Colors } from '@/constants'
-import { FlexBox, Card } from '../components'
-import { screenMaxWidth } from '@/style'
 import { handleFirstVisitOrExpired } from '@/utils'
+import { breakspoints } from '@/style'
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         const shouldShowLoadingScreen = handleFirstVisitOrExpired()
+        const isMobile = window.innerWidth < breakspoints.sm
 
-        if (shouldShowLoadingScreen) {
+        if (shouldShowLoadingScreen && !isMobile) {
             setIsLoading(true)
         }
     }, [isLoading])
@@ -95,7 +91,7 @@ export default function Home() {
                 buttonUrl=""
             />
 
-            {/* <ImageSlider
+            <ImageSlider
                 divider
                 images={[
                     '/company-logos/uwv-logo.svg',
@@ -103,7 +99,7 @@ export default function Home() {
                     '/company-logos/stedin-logo.png',
                     '/company-logos/rfh-logo.svg',
                 ]}
-            /> */}
+            />
             <ImageTextSection
                 hasBgPattern
                 bgColor={Colors.LIGHT_BLUE}

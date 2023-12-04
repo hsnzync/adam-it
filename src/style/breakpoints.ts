@@ -1,4 +1,4 @@
-enum screenSizes {
+export enum breakspoints {
     xs = 500,
     sm = 800,
     md = 900,
@@ -7,9 +7,9 @@ enum screenSizes {
 }
 
 export const screenMaxWidth = {
-    xs: screenSizes.xs,
-    sm: screenSizes.sm,
-    md: screenSizes.md,
-    lg: screenSizes.lg,
-    xl: screenSizes.xl,
+    xs: breakspoints.xs,
+    sm: breakspoints.sm,
+    md: breakspoints.md,
+    lg: breakspoints.lg,
+    xl: breakspoints.xl,
 }
