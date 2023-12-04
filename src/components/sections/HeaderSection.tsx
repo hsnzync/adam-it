@@ -11,8 +11,10 @@ import {
 
 export const HeaderSection = () => {
     return (
-        <FlexBox
+        <BackgroundPattern
             as="header"
+            hasPattern
+            position="center"
             alignment="center"
             bgColor={Colors.DARK_BLUE}
             sx={{
@@ -21,7 +23,14 @@ export const HeaderSection = () => {
                     xs: 'auto',
                     md: 730,
                 },
-                zIndex: 0,
+                backgroundImage: {
+                    xs: 'url(/header/pattern.svg)',
+                    md: 'none',
+                },
+                backgroundSize: {
+                    xs: '600% auto',
+                    md: '250% auto',
+                },
             }}
         >
             <FlexBox
@@ -29,7 +38,10 @@ export const HeaderSection = () => {
                 sx={{
                     zIndex: 1,
                     width: '100%',
-                    height: '100%',
+                    height: {
+                        xs: 100,
+                        md: '100%',
+                    },
                     justifyContent: 'space-between',
                 }}
             >
@@ -40,10 +52,18 @@ export const HeaderSection = () => {
                         duration: 1,
                         easeIn: [0, 0.71, 0.2, 1.01],
                     }}
+                    style={{ height: '100%', width: '50%' }}
                 >
-                    <FlexBox sx={{ width: '50%' }}>
-                        <BackgroundPattern />
-                    </FlexBox>
+                    <BackgroundPattern
+                        position="right"
+                        hasPattern
+                        sx={{
+                            display: {
+                                xs: 'none',
+                                md: 'flex',
+                            },
+                        }}
+                    />
                 </motion.div>
                 <motion.div
                     initial={{ x: 60 }}
@@ -52,17 +72,16 @@ export const HeaderSection = () => {
                         duration: 1,
                         easeIn: [0, 0.71, 0.2, 1.01],
                     }}
+                    style={{ height: '100%', width: '50%' }}
                 >
-                    <FlexBox sx={{ width: '50%' }}>
-                        <HeaderImage
-                            sx={{
-                                display: {
-                                    xs: 'none',
-                                    md: 'flex',
-                                },
-                            }}
-                        />
-                    </FlexBox>
+                    <HeaderImage
+                        sx={{
+                            display: {
+                                xs: 'none',
+                                md: 'flex',
+                            },
+                        }}
+                    />
                 </motion.div>
             </FlexBox>
             <FlexBox
@@ -77,7 +96,7 @@ export const HeaderSection = () => {
                         md: 'absolute',
                     },
                     p: {
-                        xs: 2,
+                        xs: 3,
                         md: 0,
                     },
                 }}
@@ -106,10 +125,10 @@ export const HeaderSection = () => {
                             xs: 2,
                             md: 8,
                         },
-                        // width: {
-                        //     xs: '100%',
-                        //     md: 'auto',
-                        // },
+                        width: {
+                            xs: '100%',
+                            md: 'auto',
+                        },
                     }}
                 >
                     <FlexButton
@@ -140,6 +159,6 @@ export const HeaderSection = () => {
                 src="/header-image.jpg"
                 alt="business meeting adam it"
             />
-        </FlexBox>
+        </BackgroundPattern>
     )
 }

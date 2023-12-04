@@ -1,9 +1,8 @@
 import { Colors } from '@/constants/colors'
-import { Container } from '@mui/material'
+import { Box } from '@mui/material'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { LoadingBackgroundPattern } from './LoadingBackground'
-// import { LoadingBackgroundPattern } from './LoadingBackground'
 
 export const LoadingScreen = () => {
     return (
@@ -18,11 +17,10 @@ export const LoadingScreen = () => {
             }}
             initial={{ opacity: 1 }}
         >
-            <Container
+            <Box
                 sx={{
                     display: 'flex',
                     height: '100vh',
-                    maxWidth: 'unset !important',
                     justifyContent: 'center',
                     alignItems: 'center',
                     backgroundColor: Colors.DARK_BLUE,
@@ -45,7 +43,7 @@ export const LoadingScreen = () => {
                     />
                 </motion.div>
                 <LoadingBackgroundPattern />
-            </Container>
+            </Box>
         </motion.div>
     )
 }

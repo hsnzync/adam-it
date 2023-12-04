@@ -49,9 +49,19 @@ export const Footer = () => {
         },
     ]
     return (
-        <FlexBox as="footer" bgColor={Colors.ORANGE} alignment="center">
+        <FlexBox
+            as="footer"
+            bgColor={Colors.ORANGE}
+            alignment="center"
+            sx={{
+                p: {
+                    xs: 3,
+                    md: 10,
+                },
+            }}
+        >
             <FlexBox
-                sx={{ maxWidth: screenMaxWidth, width: '100%', p: 10 }}
+                sx={{ maxWidth: screenMaxWidth, width: '100%' }}
                 direction="vertical"
                 space={6}
             >
@@ -59,9 +69,21 @@ export const Footer = () => {
                     sx={{
                         justifyContent: 'space-between',
                         gap: 5,
+                        flexDirection: {
+                            xs: 'column',
+                            md: 'row',
+                        },
                     }}
                 >
-                    <FlexBox direction="horizontal" space={15}>
+                    <FlexBox
+                        direction="horizontal"
+                        sx={{
+                            gap: {
+                                xs: 5,
+                                md: 15,
+                            },
+                        }}
+                    >
                         <FlexBox direction="vertical" space={2}>
                             <Typography variant="h6" color={Colors.WHITE}>
                                 Navigation
@@ -112,7 +134,15 @@ export const Footer = () => {
                                     {link.name}
                                 </Link>
                             ))}
-                            <FlexBox direction="horizontal" space={1}>
+                            <FlexBox
+                                direction="horizontal"
+                                space={1}
+                                sx={{
+                                    flexDirection: {
+                                        xs: 'row',
+                                    },
+                                }}
+                            >
                                 <Link href="">
                                     <Icon
                                         iconName="linkedIn"
@@ -142,12 +172,24 @@ export const Footer = () => {
                 <FlexBox
                     sx={{
                         justifyContent: 'space-between',
+                        flexDirection: {
+                            xs: 'column',
+                            md: 'row',
+                        },
                     }}
                 >
                     <Typography color={Colors.WHITE}>
                         Adam IT © 2024 - Alle rechten voorbehouden
                     </Typography>
-                    <FlexBox direction="horizontal" space={1}>
+                    <FlexBox
+                        direction="horizontal"
+                        space={1}
+                        sx={{
+                            flexDirection: {
+                                xs: 'row',
+                            },
+                        }}
+                    >
                         <Link
                             href=""
                             style={{

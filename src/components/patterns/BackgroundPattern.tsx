@@ -1,21 +1,34 @@
 import { SxProps, Theme } from '@mui/material'
 import { FlexBox } from '..'
+import { ReactNode } from 'react'
 
 interface Props {
+    children?: ReactNode
+    hasPattern?: boolean
+    bgColor?: string
+    alignment?: 'center' | 'start' | 'end'
+    position?: 'right' | 'left' | 'center' | string
+    as?: string
     sx?: SxProps<Theme>
 }
 
 export const BackgroundPattern = (props: Props) => {
     return (
         <FlexBox
+            as={props.as}
+            alignment={props.alignment}
             sx={{
-                width: '100%',
                 height: '100%',
-                background: `url("/header/pattern.svg") no-repeat`,
-                backgroundPosition: 'right',
-                backgroundSize: '250% auto',
+                backgroundImage: props.hasPattern
+                    ? `url("/header/pattern.svg")`
+                    : undefined,
+                backgroundPosition: props.position,
+                backgroundRepeat: 'no-repeat',
+                backgroundColor: props.bgColor,
                 ...props.sx,
             }}
-        />
+        >
+            {props.children}
+        </FlexBox>
     )
 }

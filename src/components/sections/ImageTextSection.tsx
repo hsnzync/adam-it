@@ -15,7 +15,7 @@ import Image from 'next/image'
 interface Props {
     sectionTitle?: string
     bgColor: string
-    bgPattern?: boolean
+    hasBgPattern?: boolean
     title: string
     description: string
     perks: string[]
@@ -27,17 +27,33 @@ interface Props {
 
 export const ImageTextSection = (props: Props) => {
     return (
-        <FlexBox
+        <BackgroundPattern
             as="section"
+            hasPattern={props.hasBgPattern}
             alignment="center"
             sx={{
                 backgroundColor: props.bgColor,
-                p: 5,
+                backgroundSize: {
+                    xs: '600% auto',
+                    md: '250% auto',
+                },
+                backgroundPosition: {
+                    xs: 'center',
+                    md: '0% 30%',
+                },
+                p: {
+                    xs: 3,
+                    md: 5,
+                },
                 overflow: 'hidden',
                 ...props.sx,
             }}
         >
-            <FlexBox alignment="start" space={3}>
+            <FlexBox
+                alignment="start"
+                space={3}
+                sx={{ maxWidth: screenMaxWidth, m: 'auto' }}
+            >
                 {props.sectionTitle && (
                     <Typography variant="h4">{props.sectionTitle}</Typography>
                 )}
@@ -50,23 +66,22 @@ export const ImageTextSection = (props: Props) => {
                         maxWidth: screenMaxWidth,
                     }}
                 >
-                    {props.bgPattern && (
-                        <BackgroundPattern
-                            sx={{
-                                position: 'absolute',
-                                top: 0,
-                                right: -800,
-                                rotate: '-180deg',
-                                scale: '2',
-                            }}
-                        />
-                    )}
-
                     <SectionImage
                         src="/meeting-image.jpg"
                         alt="perks of working at adam it"
+                        sx={{
+                            width: '100%',
+                        }}
                     />
-                    <FlexBox space={1} sx={{ width: '50%' }}>
+                    <FlexBox
+                        space={1}
+                        sx={{
+                            width: {
+                                xs: '100%',
+                                md: '50',
+                            },
+                        }}
+                    >
                         {props.logo && (
                             <Image
                                 src={props.logo}
@@ -97,6 +112,6 @@ export const ImageTextSection = (props: Props) => {
                     </FlexBox>
                 </FlexBox>
             </FlexBox>
-        </FlexBox>
+        </BackgroundPattern>
     )
 }

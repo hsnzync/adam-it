@@ -8,23 +8,18 @@ interface Props {}
 export const KpiSection = (props: Props) => {
     return (
         <FlexBox
-            alignment="center"
             as="section"
+            alignment="center"
             space={4}
             bgColor={Colors.WHITE}
             sx={{
                 position: 'relative',
-                px: 5,
                 height: {
                     xs: 'auto',
                     md: 500,
                 },
-                mt: {
-                    xs: 20,
-                    md: 0,
-                },
-                py: {
-                    xs: 5,
+                p: {
+                    xs: 3,
                     md: 0,
                 },
             }}
@@ -32,8 +27,13 @@ export const KpiSection = (props: Props) => {
             <FlexBox
                 direction="horizontal"
                 alignment="start"
-                space={10}
-                sx={{ maxWidth: screenMaxWidth }}
+                sx={{
+                    maxWidth: screenMaxWidth,
+                    gap: {
+                        xs: 4,
+                        md: 10,
+                    },
+                }}
             >
                 <Typography variant="h4">
                     Als IT’er organisaties verder helpen?

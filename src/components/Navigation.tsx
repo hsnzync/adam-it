@@ -73,7 +73,7 @@ export const Navigation = () => {
                                     : '/logo/logo-text-white-red.svg'
                             }
                             width={130}
-                            height={80}
+                            height={50}
                             alt="logo adam it"
                         />
                     </FlexBox>
@@ -91,15 +91,15 @@ export const Navigation = () => {
                             position: {
                                 xs: menuOpen ? 'absolute' : undefined,
                             },
-                            top: { xs: menuOpen ? 130 : undefined },
-                            right: { xs: menuOpen ? 0 : undefined },
+                            top: { xs: menuOpen ? 120 : undefined },
+                            right: { xs: menuOpen ? 20 : undefined },
                             p: { xs: menuOpen ? 2 : undefined },
 
                             flexGrow: 1,
                             justifyContent: { md: 'flex-end' },
                             alignItems: { xs: 'flex-end', md: undefined },
                             m: 0,
-                            gap: 1,
+                            gap: 2,
                         }}
                     >
                         {pages.map((page, index) => (

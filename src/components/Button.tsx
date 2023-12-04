@@ -24,6 +24,7 @@ export const FlexButton = (props: Props) => {
 
     return (
         <MuiButton
+            aria-label={props.label}
             onClick={props.onClick}
             sx={{
                 cursor: 'pointer',
@@ -53,6 +54,7 @@ export const FlexButton = (props: Props) => {
             <Container
                 className="button-icon-container"
                 sx={{
+                    m: 0,
                     p: '0 !important',
                     border: !isClear ? '1px solid white' : undefined,
                     backgroundColor: isClear ? Colors.ORANGE : undefined,

@@ -17,8 +17,8 @@ export const SectionImage = (
                 img: {
                     width: '100%',
                     height: {
-                        xs: '',
-                        md: 300,
+                        xs: 350,
+                        md: 'auto',
                     },
                 },
 
@@ -50,6 +50,7 @@ export const HeaderImage = (props: Props) => {
                 backgroundSize: 'cover',
                 clipPath:
                     'polygon(360px 0%, 100% 0%, 100% 100%, 360px 100%, 0% 365px)',
+                ...props.sx,
             }}
         />
     )

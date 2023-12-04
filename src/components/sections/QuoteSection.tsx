@@ -16,9 +16,16 @@ export const QuoteSection = (props: Props) => {
             direction="vertical"
             bgColor={Colors.WHITE}
             sx={{
-                height: 500,
+                height: {
+                    xs: 'auto',
+                    md: 500,
+                },
                 overflow: 'hidden',
                 zIndex: 5,
+                p: {
+                    xs: 3,
+                    md: 0,
+                },
             }}
         >
             <FlexBox sx={{ maxWidth: screenMaxWidth.md }}>

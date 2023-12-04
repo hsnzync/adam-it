@@ -7,3 +7,6 @@ export type IconName =
     | 'linkedIn'
     | 'instagram'
     | 'menu'
+    | 'wallet'
+    | 'location'
+    | 'expandMore'
