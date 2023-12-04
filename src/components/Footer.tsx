@@ -58,23 +58,10 @@ export const Footer = () => {
                 <FlexBox
                     sx={{
                         justifyContent: 'space-between',
-                        flexDirection: {
-                            xs: 'column',
-                            sm: 'row',
-                        },
                         gap: 5,
                     }}
                 >
-                    <FlexBox
-                        direction="horizontal"
-                        space={15}
-                        sx={{
-                            flexDirection: {
-                                xs: 'column',
-                                sm: 'row',
-                            },
-                        }}
-                    >
+                    <FlexBox direction="horizontal" space={15}>
                         <FlexBox direction="vertical" space={2}>
                             <Typography variant="h6" color={Colors.WHITE}>
                                 Navigation
@@ -155,10 +142,6 @@ export const Footer = () => {
                 <FlexBox
                     sx={{
                         justifyContent: 'space-between',
-                        flexDirection: {
-                            xs: 'column',
-                            sm: 'row',
-                        },
                     }}
                 >
                     <Typography color={Colors.WHITE}>

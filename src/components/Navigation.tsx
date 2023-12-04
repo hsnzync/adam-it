@@ -10,6 +10,7 @@ import { screenMaxWidth } from '@/style'
 import { useEffect, useState } from 'react'
 import { Colors } from '@/constants'
 import { motion } from 'framer-motion'
+import { Box } from '@mui/material'
 
 const pages = ['Werkgever', 'Kandidaten', 'Over ons', 'Contact']
 
@@ -33,10 +34,11 @@ export const Navigation = () => {
     }, [])
 
     return (
-        <AppBar
-            id="navigation"
-            position="fixed"
+        <Box
+            component="nav"
             sx={{
+                position: 'fixed',
+                width: '100%',
                 boxShadow: 'none',
                 zIndex: 10,
                 transition: 'background-color 0.3s ease',
@@ -58,7 +60,7 @@ export const Navigation = () => {
                         sx={{
                             img: {
                                 width: {
-                                    xs: 240,
+                                    xs: 150,
                                     md: 180,
                                 },
                             },
@@ -91,13 +93,13 @@ export const Navigation = () => {
                             },
                             top: { xs: menuOpen ? 130 : undefined },
                             right: { xs: menuOpen ? 0 : undefined },
-                            p: { xs: menuOpen ? 4 : undefined },
+                            p: { xs: menuOpen ? 2 : undefined },
 
                             flexGrow: 1,
                             justifyContent: { md: 'flex-end' },
                             alignItems: { xs: 'flex-end', md: undefined },
                             m: 0,
-                            gap: 2,
+                            gap: 1,
                         }}
                     >
                         {pages.map((page, index) => (
@@ -111,12 +113,6 @@ export const Navigation = () => {
                                             ? Colors.DARK_BLUE
                                             : Colors.WHITE
                                     }
-                                    sx={{
-                                        fontSize: {
-                                            xs: 25,
-                                            md: 16,
-                                        },
-                                    }}
                                 >
                                     {page}
                                 </Typography>
@@ -199,6 +195,6 @@ export const Navigation = () => {
                     </FlexBox>
                 </Toolbar>
             </FlexBox>
-        </AppBar>
+        </Box>
     )
 }

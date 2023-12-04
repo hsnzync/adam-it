@@ -19,7 +19,10 @@ export default function RootLayout({
                 <link rel="icon" href="/favicon.ico" sizes="any" />
             </head>
             <body
-                style={{ margin: 0, backgroundColor: Colors.DARK_BLUE }}
+                style={{
+                    margin: 0,
+                    backgroundColor: Colors.DARK_BLUE,
+                }}
                 className={manrope.className}
             >
                 {children}

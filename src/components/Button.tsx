@@ -47,12 +47,6 @@ export const FlexButton = (props: Props) => {
             <Typography
                 className="button-text"
                 color={isClear ? Colors.ORANGE : Colors.WHITE}
-                sx={{
-                    fontSize: {
-                        xs: 25,
-                        md: 16,
-                    },
-                }}
             >
                 {props.label}
             </Typography>

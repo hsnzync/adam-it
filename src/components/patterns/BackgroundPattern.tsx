@@ -11,7 +11,7 @@ export const BackgroundPattern = (props: Props) => {
             sx={{
                 width: '100%',
                 height: '100%',
-                background: `url("/header/pattern.svg") repeat`,
+                background: `url("/header/pattern.svg") no-repeat`,
                 backgroundPosition: 'right',
                 backgroundSize: '250% auto',
                 ...props.sx,

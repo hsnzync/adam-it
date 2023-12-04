@@ -2,18 +2,26 @@ import { Box, SxProps, Theme } from '@mui/material'
 import Image from 'next/image'
 
 interface Props {
-    src: string
-    alt: string
     sx?: SxProps<Theme>
 }
 
-export const SectionImage = (props: Props) => {
+export const SectionImage = (
+    props: Props & {
+        src: string
+        alt: string
+    }
+) => {
     return (
         <Box
             sx={{
                 img: {
                     width: '100%',
+                    height: {
+                        xs: '',
+                        md: 300,
+                    },
                 },
+
                 ...props.sx,
             }}
         >
@@ -24,14 +32,14 @@ export const SectionImage = (props: Props) => {
                 height={500}
                 style={{
                     clipPath: 'polygon(0 0, 80% 0, 150% 100%, 0 100%)',
-                    objectFit: 'contain',
+                    objectFit: 'cover',
                 }}
             />
         </Box>
     )
 }
 
-export const HeaderImage = () => {
+export const HeaderImage = (props: Props) => {
     return (
         <Box
             sx={{

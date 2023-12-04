@@ -14,8 +14,19 @@ export const KpiSection = (props: Props) => {
             bgColor={Colors.WHITE}
             sx={{
                 position: 'relative',
-                height: 500,
                 px: 5,
+                height: {
+                    xs: 'auto',
+                    md: 500,
+                },
+                mt: {
+                    xs: 20,
+                    md: 0,
+                },
+                py: {
+                    xs: 5,
+                    md: 0,
+                },
             }}
         >
             <FlexBox

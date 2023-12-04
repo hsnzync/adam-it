@@ -43,8 +43,14 @@ export const IconShaped = (props: IconProps) => {
                 color: props.color,
                 backgroundColor: Colors.DARK_BLUE,
                 borderRadius: 1,
-                height: 45,
-                width: 90,
+                height: {
+                    xs: 50,
+                    md: 45,
+                },
+                width: {
+                    xs: 50,
+                    md: 90,
+                },
                 rotate: '45deg',
                 ...props.sx,
             }}

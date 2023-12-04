@@ -18,8 +18,11 @@ export const FlexBox = (props: Props) => {
             component={props.as}
             sx={{
                 display: 'flex',
-                flexDirection:
-                    props.direction === 'horizontal' ? 'row' : 'column',
+                flexDirection: {
+                    xs: 'column',
+                    md: props.direction === 'horizontal' ? 'row' : 'column',
+                },
+
                 alignItems: props.alignment ?? 'unset',
                 justifyContent: props.alignment ?? 'unset',
                 gap: props.space,

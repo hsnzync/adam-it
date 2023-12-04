@@ -44,6 +44,7 @@ export default function Home() {
             animate={{
                 opacity: 1,
                 transition: { duration: 0.5, ease: 'easeIn' },
+                overflow: 'hidden',
             }}
             initial={{ opacity: 0 }}
         >
@@ -65,6 +66,12 @@ export default function Home() {
                 ]}
                 buttonText="Meer over kandidaten"
                 buttonUrl=""
+                sx={{
+                    display: {
+                        xs: 'none',
+                        md: 'flex',
+                    },
+                }}
             />
             {/* Quote section */}
             <QuoteSection
