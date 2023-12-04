@@ -1,5 +1,5 @@
 enum screenSizes {
-    xs = 800,
+    xs = 500,
     sm = 800,
     md = 900,
     lg = 1200,

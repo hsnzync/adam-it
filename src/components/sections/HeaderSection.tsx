@@ -1,13 +1,7 @@
 import { Colors } from '@/constants'
 import { Typography } from '@mui/material'
 import { motion } from 'framer-motion'
-import {
-    BackgroundPattern,
-    FlexBox,
-    FlexButton,
-    HeaderImage,
-    SectionImage,
-} from '..'
+import { BackgroundPattern, FlexBox, FlexButton, HeaderImage } from '..'
 
 export const HeaderSection = () => {
     return (
@@ -16,30 +10,28 @@ export const HeaderSection = () => {
             alignment="center"
             bgColor={Colors.DARK_BLUE}
             sx={{
+                position: 'relative',
                 height: 730,
-                zIndex: 2,
+                zIndex: 0,
             }}
         >
             <FlexBox
                 direction="horizontal"
                 sx={{
-                    position: {
-                        xs: 'relative',
-                        md: 'absolute',
-                    },
-                    top: 0,
                     zIndex: 1,
                     width: '100%',
+                    height: '100%',
                     justifyContent: 'space-between',
                 }}
             >
                 <motion.div
-                    initial={{ x: -150 }}
-                    animate={{ x: -100 }}
+                    initial={{ x: -100 }}
+                    animate={{ x: 0 }}
                     transition={{
                         duration: 1,
                         easeIn: [0, 0.71, 0.2, 1.01],
                     }}
+                    style={{ width: '50%' }}
                 >
                     <BackgroundPattern />
                 </motion.div>
@@ -50,28 +42,9 @@ export const HeaderSection = () => {
                         duration: 1,
                         easeIn: [0, 0.71, 0.2, 1.01],
                     }}
+                    style={{ width: '50%' }}
                 >
-                    <SectionImage
-                        src="/header-image.jpg"
-                        alt="introduction image adam it"
-                        sx={{
-                            display: {
-                                xs: 'block',
-                                md: 'none',
-                            },
-                        }}
-                    />
-                    <HeaderImage
-                        height={730}
-                        src="/header-image.jpg"
-                        alt="introduction image adam it"
-                        sx={{
-                            display: {
-                                xs: 'none',
-                                md: 'block',
-                            },
-                        }}
-                    />
+                    <HeaderImage />
                 </motion.div>
             </FlexBox>
             <FlexBox
@@ -81,6 +54,7 @@ export const HeaderSection = () => {
                 sx={{
                     height: '100%',
                     zIndex: 2,
+                    position: 'absolute',
                 }}
             >
                 <Typography

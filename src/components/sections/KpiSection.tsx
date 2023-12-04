@@ -13,8 +13,7 @@ export const KpiSection = (props: Props) => {
             space={4}
             bgColor={Colors.WHITE}
             sx={{
-                overflow: 'hidden',
-                zIndex: 1,
+                position: 'relative',
                 height: 500,
                 px: 5,
             }}

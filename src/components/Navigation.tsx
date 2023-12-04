@@ -50,7 +50,7 @@ export const Navigation = () => {
                         p: 2,
                         display: 'flex',
                         justifyContent: 'space-between',
-                        width: '100%',
+                        width: '90%',
                         maxWidth: screenMaxWidth,
                     }}
                 >
@@ -153,6 +153,8 @@ export const Navigation = () => {
                             justifyContent: 'flex-end',
                             m: 0,
                             gap: 2,
+                            position: 'relative',
+                            right: 10,
                         }}
                     >
                         <FlexButton
