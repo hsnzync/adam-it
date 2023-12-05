@@ -1,2 +1,2 @@
-export { manrope } from './fonts'
+export { manrope, sourceCodePro } from './fonts'
 export { screenMaxWidth, breakspoints } from './breakpoints'

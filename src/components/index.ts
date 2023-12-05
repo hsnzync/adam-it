@@ -12,12 +12,13 @@ export { LoadingScreen } from './LoadingScreen'
 export { FlexBox } from './FlexBox'
 export { FlexAccordion } from './FlexAccordion'
 export { FlexButton } from './Button'
+export { FlexText } from './FlexText'
 
 /** Sections */
 export {
     QuoteSection,
     ImageTextSection,
     KpiSection,
-    HeaderSection,
+    HeroSection,
     JobsSection,
 } from './sections'

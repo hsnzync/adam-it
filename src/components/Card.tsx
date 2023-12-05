@@ -1,5 +1,5 @@
 import { Card as MuiCard, CardContent, Typography } from '@mui/material'
-import { FlexBox, Icon, IconButton } from '.'
+import { FlexBox, FlexText, Icon, IconButton } from '.'
 import { Colors } from '@/constants'
 import Link from 'next/link'
 
@@ -39,9 +39,13 @@ export const Card = (props: Props) => {
                             space={1}
                             sx={{ width: '100%' }}
                         >
-                            <Typography variant="h6" color={Colors.ORANGE}>
+                            <FlexText
+                                variant="h6"
+                                color={Colors.ORANGE}
+                                isHeader
+                            >
                                 {props.title}
-                            </Typography>
+                            </FlexText>
                             <FlexBox direction="horizontal" space={2}>
                                 <FlexBox
                                     direction="horizontal"
@@ -57,9 +61,9 @@ export const Card = (props: Props) => {
                                         color={Colors.DARK_BLUE}
                                         iconName="wallet"
                                     />
-                                    <Typography color={Colors.DARK_BLUE}>
+                                    <FlexText color={Colors.DARK_BLUE}>
                                         {props.salary}
-                                    </Typography>
+                                    </FlexText>
                                 </FlexBox>
                                 <FlexBox
                                     direction="horizontal"
@@ -75,9 +79,9 @@ export const Card = (props: Props) => {
                                         color={Colors.DARK_BLUE}
                                         iconName="location"
                                     />
-                                    <Typography color={Colors.DARK_BLUE}>
+                                    <FlexText color={Colors.DARK_BLUE}>
                                         {props.location}
-                                    </Typography>
+                                    </FlexText>
                                 </FlexBox>
                             </FlexBox>
                         </FlexBox>

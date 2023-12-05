@@ -1,6 +1,5 @@
 import { Colors } from '@/constants'
 import {
-    Typography,
     List,
     ListItem,
     ListItemIcon,
@@ -8,7 +7,14 @@ import {
     SxProps,
     Theme,
 } from '@mui/material'
-import { FlexBox, SectionImage, Icon, FlexButton, BackgroundPattern } from '..'
+import {
+    FlexBox,
+    SectionImage,
+    Icon,
+    FlexButton,
+    BackgroundPattern,
+    FlexText,
+} from '..'
 import { screenMaxWidth } from '@/style'
 import Image from 'next/image'
 
@@ -55,7 +61,9 @@ export const ImageTextSection = (props: Props) => {
                 sx={{ maxWidth: screenMaxWidth, m: 'auto' }}
             >
                 {props.sectionTitle && (
-                    <Typography variant="h4">{props.sectionTitle}</Typography>
+                    <FlexText variant="h4" isHeader>
+                        {props.sectionTitle}
+                    </FlexText>
                 )}
                 <FlexBox
                     direction="horizontal"
@@ -90,8 +98,10 @@ export const ImageTextSection = (props: Props) => {
                                 height={80}
                             />
                         )}
-                        <Typography variant="h5">{props.title}</Typography>
-                        <Typography>{props.description}</Typography>
+                        <FlexText variant="h4" isHeader>
+                            {props.title}
+                        </FlexText>
+                        <FlexText>{props.description}</FlexText>
                         <List dense sx={{ my: 3 }}>
                             {props.perks.map((perk, index) => (
                                 <ListItem key={index} sx={{ p: 0, mb: 1 }}>
@@ -101,7 +111,11 @@ export const ImageTextSection = (props: Props) => {
                                             color={Colors.ORANGE}
                                         />
                                     </ListItemIcon>
-                                    <ListItemText primary={perk} />
+                                    <ListItemText
+                                        primary={
+                                            <FlexText isHeader>{perk}</FlexText>
+                                        }
+                                    />
                                 </ListItem>
                             ))}
                         </List>

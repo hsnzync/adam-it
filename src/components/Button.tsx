@@ -8,6 +8,7 @@ import {
 import { Icon } from './Icon'
 import { Colors } from '@/constants'
 import { IconName } from '@/types'
+import { FlexText } from '.'
 
 interface Props {
     label: string
@@ -45,12 +46,12 @@ export const FlexButton = (props: Props) => {
                 ...props.sx,
             }}
         >
-            <Typography
+            <FlexText
                 className="button-text"
                 color={isClear ? Colors.ORANGE : Colors.WHITE}
             >
                 {props.label}
-            </Typography>
+            </FlexText>
             <Container
                 className="button-icon-container"
                 sx={{

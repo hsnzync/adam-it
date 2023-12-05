@@ -1,9 +1,10 @@
 import { Box, SxProps, Theme } from '@mui/material'
+import { ReactNode } from 'react'
 
 interface Props {
     direction?: 'horizontal' | 'vertical'
     alignment?: 'center' | 'start' | 'end'
-    children?: React.ReactNode
+    children?: ReactNode
     bgColor?: string
     space?: number
     as?: any

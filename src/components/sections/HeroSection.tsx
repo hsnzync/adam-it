@@ -5,11 +5,12 @@ import {
     BackgroundPattern,
     FlexBox,
     FlexButton,
+    FlexText,
     HeaderImage,
     SectionImage,
 } from '..'
 
-export const HeaderSection = () => {
+export const HeroSection = () => {
     return (
         <BackgroundPattern
             as="header"
@@ -95,13 +96,17 @@ export const HeaderSection = () => {
                         xs: 'relative',
                         md: 'absolute',
                     },
+                    bottom: {
+                        xs: 'auto',
+                        md: 30,
+                    },
                     p: {
                         xs: 3,
                         md: 0,
                     },
                 }}
             >
-                <Typography
+                <FlexText
                     variant="body2"
                     color={Colors.BLUE}
                     textTransform="uppercase"
@@ -113,10 +118,10 @@ export const HeaderSection = () => {
                     }}
                 >
                     In verbinding met IT&apos;ers & opdrachtgevers
-                </Typography>
-                <Typography variant="h3" color={Colors.WHITE}>
+                </FlexText>
+                <FlexText variant="h3" color={Colors.WHITE} isHeader>
                     Wij maken impact met IT
-                </Typography>
+                </FlexText>
                 <FlexBox
                     alignment="center"
                     direction="horizontal"
@@ -128,6 +133,10 @@ export const HeaderSection = () => {
                         width: {
                             xs: '100%',
                             md: 'auto',
+                        },
+                        mt: {
+                            xs: 0,
+                            md: 5,
                         },
                     }}
                 >

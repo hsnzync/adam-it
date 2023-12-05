@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material'
-import { FlexBox, Icon } from '.'
+import { FlexBox, FlexText, Icon } from '.'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Colors } from '@/constants'
@@ -85,9 +85,13 @@ export const Footer = () => {
                         }}
                     >
                         <FlexBox direction="vertical" space={2}>
-                            <Typography variant="h6" color={Colors.WHITE}>
+                            <FlexText
+                                variant="h6"
+                                color={Colors.WHITE}
+                                isHeader
+                            >
                                 Navigation
-                            </Typography>
+                            </FlexText>
                             {navigationLinks.map((link, index) => (
                                 <Link
                                     href=""
@@ -97,14 +101,18 @@ export const Footer = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    {link.name}
+                                    <FlexText>{link.name}</FlexText>
                                 </Link>
                             ))}
                         </FlexBox>
                         <FlexBox direction="vertical" space={2}>
-                            <Typography variant="h6" color={Colors.WHITE}>
+                            <FlexText
+                                variant="h6"
+                                color={Colors.WHITE}
+                                isHeader
+                            >
                                 Support
-                            </Typography>
+                            </FlexText>
                             {supportLinks.map((link, index) => (
                                 <Link
                                     href=""
@@ -114,14 +122,18 @@ export const Footer = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    {link.name}
+                                    <FlexText>{link.name}</FlexText>
                                 </Link>
                             ))}
                         </FlexBox>
                         <FlexBox direction="vertical" space={2}>
-                            <Typography variant="h6" color={Colors.WHITE}>
+                            <FlexText
+                                variant="h6"
+                                color={Colors.WHITE}
+                                isHeader
+                            >
                                 Contact
-                            </Typography>
+                            </FlexText>
                             {contactLinks.map((link, index) => (
                                 <Link
                                     href=""
@@ -131,7 +143,7 @@ export const Footer = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    {link.name}
+                                    <FlexText>{link.name}</FlexText>
                                 </Link>
                             ))}
                             <FlexBox
@@ -178,9 +190,9 @@ export const Footer = () => {
                         },
                     }}
                 >
-                    <Typography color={Colors.WHITE}>
+                    <FlexText color={Colors.WHITE}>
                         Adam IT © 2024 - Alle rechten voorbehouden
-                    </Typography>
+                    </FlexText>
                     <FlexBox
                         direction="horizontal"
                         space={1}
@@ -197,9 +209,9 @@ export const Footer = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            Algemene voorwaarden
+                            <FlexText>Algemene voorwaarden</FlexText>
                         </Link>
-                        <Typography color={Colors.WHITE}>|</Typography>
+                        <FlexText color={Colors.WHITE}>|</FlexText>
                         <Link
                             href=""
                             style={{
@@ -207,9 +219,9 @@ export const Footer = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            Privacy Policy
+                            <FlexText>Privacy Policy</FlexText>
                         </Link>
-                        <Typography color={Colors.WHITE}>|</Typography>
+                        <FlexText color={Colors.WHITE}>|</FlexText>
                         <Link
                             href=""
                             style={{
@@ -217,7 +229,7 @@ export const Footer = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            Cookies
+                            <FlexText>Cookies</FlexText>
                         </Link>
                     </FlexBox>
                 </FlexBox>

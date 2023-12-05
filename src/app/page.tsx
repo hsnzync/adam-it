@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { HeaderSection, JobsSection, LoadingScreen } from '../components'
+import { HeroSection, JobsSection, LoadingScreen } from '../components'
 import { motion } from 'framer-motion'
 import {
     ImageTextSection,
@@ -46,7 +46,7 @@ export default function Home() {
         >
             <Navigation />
             {/* Header Section */}
-            <HeaderSection />
+            <HeroSection />
             {/* KPI Section */}
             <KpiSection />
             {/* Voordelen Section */}
@@ -92,6 +92,12 @@ export default function Home() {
             />
 
             <ImageSlider
+                sx={{
+                    display: {
+                        xs: 'none',
+                        md: 'flex',
+                    },
+                }}
                 divider
                 images={[
                     '/company-logos/uwv-logo.svg',

@@ -5,6 +5,11 @@ import Image from 'next/image'
 import { SxProps, Theme } from '@mui/material'
 import { screenMaxWidth } from '@/style'
 import { useEffect, useState } from 'react'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
+// Import Swiper styles
+import 'swiper/css'
 
 interface Props {
     images: string[]
@@ -14,7 +19,10 @@ interface Props {
 
 export const ImageSlider = (props: Props) => {
     const [isHovered, setIsHovered] = useState(false)
-    const [images, setImages] = useState<string[]>(props.images)
+    const [logos, setLogos] = useState<string[]>([
+        ...props.images,
+        ...props.images,
+    ])
     const slideAnimation = () => ({
         '@keyframes slide': {
             '0%': {
@@ -25,6 +33,8 @@ export const ImageSlider = (props: Props) => {
             },
         },
     })
+
+    // useEffect()
 
     return (
         <FlexBox
@@ -51,31 +61,41 @@ export const ImageSlider = (props: Props) => {
                         : undefined,
                 }}
             >
-                {props.images.map((image, index) => (
-                    <FlexBox
-                        key={index}
-                        sx={{
-                            position: 'relative',
-                            animation: 'slide 20s linear infinite',
-                            animationPlayState: isHovered
-                                ? 'paused'
-                                : 'running',
-                            slideAnimation,
-                        }}
-                    >
-                        <Image
-                            src={image}
-                            alt="company logo"
-                            width={100}
-                            height={100}
+                <Swiper
+                    spaceBetween={10}
+                    slidesPerView={4}
+                    speed={10000}
+                    autoplay={{
+                        delay: 0,
+                        pauseOnMouseEnter: true,
+                        disableOnInteraction: false,
+                        reverseDirection: true,
+                    }}
+                    modules={[Autoplay]}
+                    onSlideChange={() => setIsHovered(false)}
+                >
+                    {logos.map((logo, index) => (
+                        <SwiperSlide
+                            key={index}
                             style={{
-                                objectFit: 'contain',
+                                display: 'flex',
+                                justifyContent: 'center',
                             }}
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
-                        />
-                    </FlexBox>
-                ))}
+                        >
+                            <Image
+                                src={logo}
+                                alt="company logo"
+                                width={100}
+                                height={100}
+                                style={{
+                                    objectFit: 'contain',
+                                }}
+                                onMouseEnter={() => setIsHovered(true)}
+                                onMouseLeave={() => setIsHovered(false)}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </FlexBox>
         </FlexBox>
     )

@@ -1,7 +1,7 @@
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
 import { Typography } from '@mui/material'
-import { FlexBox, KpiBlock } from '..'
+import { FlexBox, FlexText, KpiBlock } from '..'
 
 interface Props {}
 
@@ -35,9 +35,9 @@ export const KpiSection = (props: Props) => {
                     },
                 }}
             >
-                <Typography variant="h4">
+                <FlexText variant="h4" isHeader>
                     Als IT’er organisaties verder helpen?
-                </Typography>
+                </FlexText>
                 <KpiBlock
                     title="Test Automation Engineering"
                     description="Geautomatiseerde systeem opstellen om (complexe )

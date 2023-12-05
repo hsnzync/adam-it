@@ -1,7 +1,7 @@
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
 import { Typography } from '@mui/material'
-import { FlexBox } from '..'
+import { FlexBox, FlexText } from '..'
 
 interface Props {
     content: string
@@ -29,10 +29,10 @@ export const QuoteSection = (props: Props) => {
             }}
         >
             <FlexBox sx={{ maxWidth: screenMaxWidth.md }}>
-                <Typography variant="h5" marginBottom={3} color={Colors.ORANGE}>
+                <FlexText variant="h5" color={Colors.ORANGE} sx={{ mb: 3 }}>
                     “{props.content}”
-                </Typography>
-                <Typography>- {props.name}</Typography>
+                </FlexText>
+                <FlexText>- {props.name}</FlexText>
             </FlexBox>
         </FlexBox>
     )

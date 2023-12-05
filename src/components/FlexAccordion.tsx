@@ -7,7 +7,7 @@ import MuiAccordionSummary, {
 } from '@mui/material/AccordionSummary'
 import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import Typography from '@mui/material/Typography'
-import { Icon } from '.'
+import { FlexText, Icon } from '.'
 import { Colors } from '@/constants'
 
 const Accordion = styled((props: AccordionProps) => (
@@ -69,16 +69,16 @@ export const FlexAccordion = () => {
                     aria-controls="panel1d-content"
                     id="panel1d-header"
                 >
-                    <Typography>IT Professionals voor elkaar</Typography>
+                    <FlexText>IT Professionals voor elkaar</FlexText>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                    <FlexText>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Suspendisse malesuada lacus ex, sit amet blandit leo
                         lobortis eget. Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit. Suspendisse malesuada lacus ex, sit
                         amet blandit leo lobortis eget.
-                    </Typography>
+                    </FlexText>
                 </AccordionDetails>
             </Accordion>
             <Accordion
@@ -93,16 +93,16 @@ export const FlexAccordion = () => {
                     aria-controls="panel2d-content"
                     id="panel2d-header"
                 >
-                    <Typography>Op zoek naar een Test engineer?</Typography>
+                    <FlexText>Op zoek naar een Test engineer?</FlexText>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                    <FlexText>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Suspendisse malesuada lacus ex, sit amet blandit leo
                         lobortis eget. Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit. Suspendisse malesuada lacus ex, sit
                         amet blandit leo lobortis eget.
-                    </Typography>
+                    </FlexText>
                 </AccordionDetails>
             </Accordion>
         </>

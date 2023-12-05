@@ -1,7 +1,7 @@
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
 import { Accordion, Typography } from '@mui/material'
-import { FlexBox, FlexButton, Card, FlexAccordion } from '..'
+import { FlexBox, FlexButton, Card, FlexAccordion, FlexText } from '..'
 
 export const JobsSection = () => {
     return (
@@ -22,60 +22,15 @@ export const JobsSection = () => {
                 space={8}
                 sx={{ maxWidth: screenMaxWidth }}
             >
-                <FlexBox
-                    direction="vertical"
-                    sx={{
-                        display: {
-                            xs: 'none',
-                            md: 'flex',
-                        },
-                    }}
-                >
-                    <FlexBox space={1} sx={{ mb: 3 }}>
-                        <Typography
-                            textTransform="uppercase"
-                            color={Colors.BLUE}
-                        >
-                            Wij verbinden IT’ers met opdrachtgevers
-                        </Typography>
-                        <Typography variant="h4">
-                            IT Professionals voor elkaar
-                        </Typography>
-                        <Typography>
-                            The quick, brown fox jumps over a lazy dog. DJs
-                            flock by when MTV ax quiz prog. Junk MTV quiz graced
-                            by fox whelps. Bawds jog, flick quartz, vex nymphs.
-                            Waltz, bad nymph, for quick jigs vex! Fox nymphs
-                            grab quick-jived waltz. Brick quiz whangs jumpy
-                            veldt fox. Bright vixens jump; dozy fowl quack.
-                            Quick wafting zephyrs vex bold Jim. Quick zephyrs
-                            blow, vexing daft Jim.
-                        </Typography>
-                    </FlexBox>
-                    <FlexBox sx={{ mb: 3 }}>
-                        <Typography variant="h4">
-                            Op zoek naar een Test engineer?
-                        </Typography>
-                        <Typography>
-                            The quick, brown fox jumps over a lazy dog. DJs
-                            flock by when MTV ax quiz prog. Junk MTV quiz graced
-                            by fox whelps. Bawds jog, flick quartz, vex nymphs.
-                            Waltz, bad nymph, for quick jigs vex! Fox nymphs
-                            grab quick-jived waltz. Brick quiz whangs jumpy
-                            veldt fox. Bright vixens jump; dozy fowl quack.
-                            Quick wafting zephyrs vex bold Jim. Quick zephyrs
-                            blow, vexing daft Jim.
-                        </Typography>
-                    </FlexBox>
-                    <FlexButton label="Plaats een opdracht" />
-                </FlexBox>
                 {/* Job cards */}
                 <FlexBox
                     direction="vertical"
                     space={3}
                     sx={{ minWidth: '50%' }}
                 >
-                    <Typography variant="h4">Vacatures</Typography>
+                    <FlexText variant="h4" isHeader>
+                        Vacatures
+                    </FlexText>
                     <Card
                         title="Test Automation Engineer"
                         salary="€3.000 - €4.500"
@@ -94,11 +49,11 @@ export const JobsSection = () => {
                         location="Rotterdam"
                         url=""
                     />
-                    <Typography>
+                    <FlexText>
                         The quick, brown fox jumps over a lazy dog. DJs flock by
                         when MTV ax quiz prog. Junk MTV quiz graced by fox
                         whelps. Bawds jog, flick quartz, vex nymphs.
-                    </Typography>
+                    </FlexText>
                     <FlexButton
                         label="Alle vacatures"
                         sx={{
@@ -108,6 +63,51 @@ export const JobsSection = () => {
                             },
                         }}
                     />
+                </FlexBox>
+                <FlexBox
+                    direction="vertical"
+                    space={2}
+                    sx={{
+                        display: {
+                            xs: 'none',
+                            md: 'flex',
+                        },
+                    }}
+                >
+                    <FlexBox space={2} sx={{ mb: 3 }}>
+                        <FlexText textTransform="uppercase" color={Colors.BLUE}>
+                            Wij verbinden IT’ers met opdrachtgevers
+                        </FlexText>
+                        <FlexText variant="h4" isHeader>
+                            IT Professionals voor elkaar
+                        </FlexText>
+                        <FlexText>
+                            The quick, brown fox jumps over a lazy dog. DJs
+                            flock by when MTV ax quiz prog. Junk MTV quiz graced
+                            by fox whelps. Bawds jog, flick quartz, vex nymphs.
+                            Waltz, bad nymph, for quick jigs vex! Fox nymphs
+                            grab quick-jived waltz. Brick quiz whangs jumpy
+                            veldt fox. Bright vixens jump; dozy fowl quack.
+                            Quick wafting zephyrs vex bold Jim. Quick zephyrs
+                            blow, vexing daft Jim.
+                        </FlexText>
+                    </FlexBox>
+                    <FlexBox space={2} sx={{ mb: 3 }}>
+                        <FlexText variant="h4">
+                            Op zoek naar een Test engineer?
+                        </FlexText>
+                        <FlexText>
+                            The quick, brown fox jumps over a lazy dog. DJs
+                            flock by when MTV ax quiz prog. Junk MTV quiz graced
+                            by fox whelps. Bawds jog, flick quartz, vex nymphs.
+                            Waltz, bad nymph, for quick jigs vex! Fox nymphs
+                            grab quick-jived waltz. Brick quiz whangs jumpy
+                            veldt fox. Bright vixens jump; dozy fowl quack.
+                            Quick wafting zephyrs vex bold Jim. Quick zephyrs
+                            blow, vexing daft Jim.
+                        </FlexText>
+                    </FlexBox>
+                    <FlexButton label="Plaats een opdracht" />
                 </FlexBox>
                 <FlexBox
                     direction="horizontal"

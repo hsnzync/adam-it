@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
-import { FlexBox, FlexButton } from '.'
+import { FlexBox, FlexButton, FlexText } from '.'
 import { screenMaxWidth } from '@/style'
 import { useEffect, useState } from 'react'
 import { Colors } from '@/constants'
@@ -91,9 +91,10 @@ export const Navigation = () => {
                             position: {
                                 xs: menuOpen ? 'absolute' : undefined,
                             },
-                            top: { xs: menuOpen ? 120 : undefined },
+                            top: { xs: menuOpen ? 100 : undefined },
                             right: { xs: menuOpen ? 20 : undefined },
-                            p: { xs: menuOpen ? 2 : undefined },
+                            p: { xs: menuOpen ? 3 : undefined },
+                            pl: { xs: menuOpen ? 6 : undefined },
 
                             flexGrow: 1,
                             justifyContent: { md: 'flex-end' },
@@ -107,7 +108,7 @@ export const Navigation = () => {
                                 key={index}
                                 sx={{ px: 1, justifyContent: 'end' }}
                             >
-                                <Typography
+                                <FlexText
                                     color={
                                         navScrolled || menuOpen
                                             ? Colors.DARK_BLUE
@@ -115,7 +116,7 @@ export const Navigation = () => {
                                     }
                                 >
                                     {page}
-                                </Typography>
+                                </FlexText>
                             </MenuItem>
                         ))}
                         <FlexButton label="Vacatures" />
