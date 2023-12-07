@@ -1,11 +1,10 @@
-import { Typography } from '@mui/material'
-import { FlexBox, FlexText, Icon } from '.'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
+import { BoxAtom, TextAtom, IconAtom } from '@/components'
 
-export const Footer = () => {
+export const FooterOrganism = () => {
     const navigationLinks = [
         {
             name: 'Werkgevers',
@@ -50,7 +49,7 @@ export const Footer = () => {
     ]
 
     return (
-        <FlexBox
+        <BoxAtom
             as="footer"
             bgColor={Colors.ORANGE}
             alignment="center"
@@ -61,12 +60,12 @@ export const Footer = () => {
                 },
             }}
         >
-            <FlexBox
+            <BoxAtom
                 sx={{ maxWidth: screenMaxWidth, width: '100%' }}
                 direction="vertical"
                 space={6}
             >
-                <FlexBox
+                <BoxAtom
                     sx={{
                         justifyContent: 'space-between',
                         gap: 5,
@@ -76,7 +75,7 @@ export const Footer = () => {
                         },
                     }}
                 >
-                    <FlexBox
+                    <BoxAtom
                         direction="horizontal"
                         sx={{
                             gap: {
@@ -85,14 +84,10 @@ export const Footer = () => {
                             },
                         }}
                     >
-                        <FlexBox direction="vertical" space={2}>
-                            <FlexText
-                                variant="h6"
-                                color={Colors.WHITE}
-                                isHeader
-                            >
+                        <BoxAtom direction="vertical" space={2}>
+                            <TextAtom variant="h6" color={Colors.WHITE} header>
                                 Navigation
-                            </FlexText>
+                            </TextAtom>
                             {navigationLinks.map((link, index) => (
                                 <Link
                                     href=""
@@ -102,18 +97,14 @@ export const Footer = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    <FlexText>{link.name}</FlexText>
+                                    <TextAtom>{link.name}</TextAtom>
                                 </Link>
                             ))}
-                        </FlexBox>
-                        <FlexBox direction="vertical" space={2}>
-                            <FlexText
-                                variant="h6"
-                                color={Colors.WHITE}
-                                isHeader
-                            >
+                        </BoxAtom>
+                        <BoxAtom direction="vertical" space={2}>
+                            <TextAtom variant="h6" color={Colors.WHITE} header>
                                 Support
-                            </FlexText>
+                            </TextAtom>
                             {supportLinks.map((link, index) => (
                                 <Link
                                     href=""
@@ -123,18 +114,14 @@ export const Footer = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    <FlexText>{link.name}</FlexText>
+                                    <TextAtom>{link.name}</TextAtom>
                                 </Link>
                             ))}
-                        </FlexBox>
-                        <FlexBox direction="vertical" space={2}>
-                            <FlexText
-                                variant="h6"
-                                color={Colors.WHITE}
-                                isHeader
-                            >
+                        </BoxAtom>
+                        <BoxAtom direction="vertical" space={2}>
+                            <TextAtom variant="h6" color={Colors.WHITE} header>
                                 Contact
-                            </FlexText>
+                            </TextAtom>
                             {contactLinks.map((link, index) => (
                                 <Link
                                     href=""
@@ -144,10 +131,10 @@ export const Footer = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    <FlexText>{link.name}</FlexText>
+                                    <TextAtom>{link.name}</TextAtom>
                                 </Link>
                             ))}
-                            <FlexBox
+                            <BoxAtom
                                 direction="horizontal"
                                 space={1}
                                 sx={{
@@ -157,32 +144,32 @@ export const Footer = () => {
                                 }}
                             >
                                 <Link href="">
-                                    <Icon
+                                    <IconAtom
                                         iconName="linkedIn"
                                         color={Colors.WHITE}
                                         size={30}
                                     />
                                 </Link>
                                 <Link href="">
-                                    <Icon
+                                    <IconAtom
                                         iconName="instagram"
                                         color={Colors.WHITE}
                                         size={30}
                                     />
                                 </Link>
-                            </FlexBox>
-                        </FlexBox>
-                    </FlexBox>
-                    <FlexBox>
+                            </BoxAtom>
+                        </BoxAtom>
+                    </BoxAtom>
+                    <BoxAtom>
                         <Image
                             src="/logo/logo-text-white.svg"
                             alt="logo adam it"
                             width={300}
                             height={80}
                         />
-                    </FlexBox>
-                </FlexBox>
-                <FlexBox
+                    </BoxAtom>
+                </BoxAtom>
+                <BoxAtom
                     sx={{
                         justifyContent: 'space-between',
                         flexDirection: {
@@ -191,10 +178,10 @@ export const Footer = () => {
                         },
                     }}
                 >
-                    <FlexText color={Colors.WHITE}>
+                    <TextAtom color={Colors.WHITE}>
                         Adam IT © 2024 - Alle rechten voorbehouden
-                    </FlexText>
-                    <FlexBox
+                    </TextAtom>
+                    <BoxAtom
                         direction="horizontal"
                         space={1}
                         sx={{
@@ -210,9 +197,9 @@ export const Footer = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            <FlexText>Algemene voorwaarden</FlexText>
+                            <TextAtom>Algemene voorwaarden</TextAtom>
                         </Link>
-                        <FlexText color={Colors.WHITE}>|</FlexText>
+                        <TextAtom color={Colors.WHITE}>|</TextAtom>
                         <Link
                             href=""
                             style={{
@@ -220,9 +207,9 @@ export const Footer = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            <FlexText>Privacy Policy</FlexText>
+                            <TextAtom>Privacy Policy</TextAtom>
                         </Link>
-                        <FlexText color={Colors.WHITE}>|</FlexText>
+                        <TextAtom color={Colors.WHITE}>|</TextAtom>
                         <Link
                             href=""
                             style={{
@@ -230,11 +217,11 @@ export const Footer = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            <FlexText>Cookies</FlexText>
+                            <TextAtom>Cookies</TextAtom>
                         </Link>
-                    </FlexBox>
-                </FlexBox>
-            </FlexBox>
-        </FlexBox>
+                    </BoxAtom>
+                </BoxAtom>
+            </BoxAtom>
+        </BoxAtom>
     )
 }

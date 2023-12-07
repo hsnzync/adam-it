@@ -1,14 +1,10 @@
 import { Colors } from '@/constants'
-import { Typography } from '@mui/material'
-import { motion } from 'framer-motion'
 import {
     BackgroundPattern,
-    FlexBox,
-    FlexButton,
-    FlexText,
-    HeaderImage,
-    SectionImage,
-} from '..'
+    BoxAtom,
+    TextAtom,
+    SectionImageAtom,
+} from '@/components'
 
 export const SmallHeroSection = () => {
     return (
@@ -26,7 +22,7 @@ export const SmallHeroSection = () => {
                 },
             }}
         >
-            <FlexBox
+            <BoxAtom
                 alignment="center"
                 direction="vertical"
                 space={3}
@@ -47,7 +43,7 @@ export const SmallHeroSection = () => {
                     },
                 }}
             >
-                <FlexText
+                <TextAtom
                     variant="body2"
                     color={Colors.BLUE}
                     textTransform="uppercase"
@@ -59,12 +55,12 @@ export const SmallHeroSection = () => {
                     }}
                 >
                     In verbinding met IT&apos;ers & opdrachtgevers
-                </FlexText>
-                <FlexText variant="h3" color={Colors.WHITE} isHeader>
+                </TextAtom>
+                <TextAtom variant="h3" color={Colors.WHITE} header>
                     Wij maken impact met IT
-                </FlexText>
-            </FlexBox>
-            <SectionImage
+                </TextAtom>
+            </BoxAtom>
+            <SectionImageAtom
                 sx={{
                     display: {
                         xs: 'flex',

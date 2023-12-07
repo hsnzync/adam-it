@@ -14,12 +14,12 @@ interface Props {
     textTransform?: TypographyProps['textTransform']
     color?: string
     lineHeight?: number
-    isHeader?: boolean
+    header?: boolean
     className?: string
     sx?: SxProps<Theme>
 }
 
-export function FlexText(props: Props) {
+export function TextAtom(props: Props) {
     return (
         <Typography
             sx={{ ...props.sx }}
@@ -28,7 +28,7 @@ export function FlexText(props: Props) {
             textAlign={props.alignment}
             fontWeight={props.fontWeight}
             fontFamily={
-                props.isHeader
+                props.header
                     ? sourceCodePro.style.fontFamily
                     : manrope.style.fontFamily
             }

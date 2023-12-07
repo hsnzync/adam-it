@@ -1,13 +1,12 @@
 import * as React from 'react'
 import { styled } from '@mui/material/styles'
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp'
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion'
 import MuiAccordionSummary, {
     AccordionSummaryProps,
 } from '@mui/material/AccordionSummary'
 import MuiAccordionDetails from '@mui/material/AccordionDetails'
-import Typography from '@mui/material/Typography'
-import { FlexText, Icon } from '.'
+
+import { TextAtom, IconAtom } from '@/components'
 import { Colors } from '@/constants'
 
 const Accordion = styled((props: AccordionProps) => (
@@ -25,7 +24,7 @@ const Accordion = styled((props: AccordionProps) => (
 const AccordionSummary = (props: AccordionSummaryProps) => (
     <MuiAccordionSummary
         expandIcon={
-            <Icon iconName="expandMore" sx={{ color: Colors.ORANGE }} />
+            <IconAtom iconName="expandMore" sx={{ color: Colors.ORANGE }} />
         }
         sx={{
             p: 0,
@@ -45,7 +44,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }))
 
-export const FlexAccordion = () => {
+export const AccordionMolecule = () => {
     const [expanded, setExpanded] = React.useState<string | false>('panel1')
 
     const handleChange =
@@ -69,16 +68,16 @@ export const FlexAccordion = () => {
                     aria-controls="panel1d-content"
                     id="panel1d-header"
                 >
-                    <FlexText>IT Professionals voor elkaar</FlexText>
+                    <TextAtom>IT Professionals voor elkaar</TextAtom>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <FlexText>
+                    <TextAtom>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Suspendisse malesuada lacus ex, sit amet blandit leo
                         lobortis eget. Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit. Suspendisse malesuada lacus ex, sit
                         amet blandit leo lobortis eget.
-                    </FlexText>
+                    </TextAtom>
                 </AccordionDetails>
             </Accordion>
             <Accordion
@@ -93,16 +92,16 @@ export const FlexAccordion = () => {
                     aria-controls="panel2d-content"
                     id="panel2d-header"
                 >
-                    <FlexText>Op zoek naar een Test engineer?</FlexText>
+                    <TextAtom>Op zoek naar een Test engineer?</TextAtom>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <FlexText>
+                    <TextAtom>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Suspendisse malesuada lacus ex, sit amet blandit leo
                         lobortis eget. Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit. Suspendisse malesuada lacus ex, sit
                         amet blandit leo lobortis eget.
-                    </FlexText>
+                    </TextAtom>
                 </AccordionDetails>
             </Accordion>
         </>

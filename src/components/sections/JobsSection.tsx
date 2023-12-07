@@ -1,11 +1,16 @@
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
-import { Accordion, Typography } from '@mui/material'
-import { FlexBox, FlexButton, Card, FlexAccordion, FlexText } from '..'
+import {
+    BoxAtom,
+    ButtonMolecule,
+    CardMolecule,
+    AccordionMolecule,
+    TextAtom,
+} from '@/components'
 
 export const JobsSection = () => {
     return (
-        <FlexBox
+        <BoxAtom
             as="section"
             alignment="center"
             bgColor={Colors.LIGHT_BLUE}
@@ -16,45 +21,45 @@ export const JobsSection = () => {
                 },
             }}
         >
-            <FlexBox
+            <BoxAtom
                 direction="horizontal"
                 alignment="start"
                 space={8}
                 sx={{ maxWidth: screenMaxWidth }}
             >
                 {/* Job cards */}
-                <FlexBox
+                <BoxAtom
                     direction="vertical"
                     space={3}
                     sx={{ minWidth: '50%' }}
                 >
-                    <FlexText variant="h4" isHeader>
+                    <TextAtom variant="h4" header>
                         Vacatures
-                    </FlexText>
-                    <Card
+                    </TextAtom>
+                    <CardMolecule
                         title="Test Automation Engineer"
                         salary="€3.000 - €4.500"
                         location="Maassluis"
                         url=""
                     />
-                    <Card
+                    <CardMolecule
                         title="Software Ontwikkelaar"
                         salary="€3.000 - €4.500"
                         location="Den Haag"
                         url=""
                     />
-                    <Card
+                    <CardMolecule
                         title=".NET Test Automation Engineer"
                         salary="€3.000 - €4.500"
                         location="Rotterdam"
                         url=""
                     />
-                    <FlexText>
+                    <TextAtom>
                         The quick, brown fox jumps over a lazy dog. DJs flock by
                         when MTV ax quiz prog. Junk MTV quiz graced by fox
                         whelps. Bawds jog, flick quartz, vex nymphs.
-                    </FlexText>
-                    <FlexButton
+                    </TextAtom>
+                    <ButtonMolecule
                         label="Alle vacatures"
                         sx={{
                             width: {
@@ -63,8 +68,8 @@ export const JobsSection = () => {
                             },
                         }}
                     />
-                </FlexBox>
-                <FlexBox
+                </BoxAtom>
+                <BoxAtom
                     direction="vertical"
                     space={2}
                     sx={{
@@ -74,14 +79,14 @@ export const JobsSection = () => {
                         },
                     }}
                 >
-                    <FlexBox space={2} sx={{ mb: 3 }}>
-                        <FlexText textTransform="uppercase" color={Colors.BLUE}>
+                    <BoxAtom space={2} sx={{ mb: 3 }}>
+                        <TextAtom textTransform="uppercase" color={Colors.BLUE}>
                             Wij verbinden IT’ers met opdrachtgevers
-                        </FlexText>
-                        <FlexText variant="h4" isHeader>
+                        </TextAtom>
+                        <TextAtom variant="h4" header>
                             IT Professionals voor elkaar
-                        </FlexText>
-                        <FlexText>
+                        </TextAtom>
+                        <TextAtom>
                             The quick, brown fox jumps over a lazy dog. DJs
                             flock by when MTV ax quiz prog. Junk MTV quiz graced
                             by fox whelps. Bawds jog, flick quartz, vex nymphs.
@@ -90,13 +95,13 @@ export const JobsSection = () => {
                             veldt fox. Bright vixens jump; dozy fowl quack.
                             Quick wafting zephyrs vex bold Jim. Quick zephyrs
                             blow, vexing daft Jim.
-                        </FlexText>
-                    </FlexBox>
-                    <FlexBox space={2} sx={{ mb: 3 }}>
-                        <FlexText variant="h4">
+                        </TextAtom>
+                    </BoxAtom>
+                    <BoxAtom space={2} sx={{ mb: 3 }}>
+                        <TextAtom variant="h4" header>
                             Op zoek naar een Test engineer?
-                        </FlexText>
-                        <FlexText>
+                        </TextAtom>
+                        <TextAtom>
                             The quick, brown fox jumps over a lazy dog. DJs
                             flock by when MTV ax quiz prog. Junk MTV quiz graced
                             by fox whelps. Bawds jog, flick quartz, vex nymphs.
@@ -105,17 +110,17 @@ export const JobsSection = () => {
                             veldt fox. Bright vixens jump; dozy fowl quack.
                             Quick wafting zephyrs vex bold Jim. Quick zephyrs
                             blow, vexing daft Jim.
-                        </FlexText>
-                    </FlexBox>
-                    <FlexButton label="Plaats een opdracht" />
-                </FlexBox>
-                <FlexBox
+                        </TextAtom>
+                    </BoxAtom>
+                    <ButtonMolecule label="Plaats een opdracht" />
+                </BoxAtom>
+                <BoxAtom
                     direction="horizontal"
                     alignment="start"
                     space={8}
                     sx={{ maxWidth: screenMaxWidth }}
                 >
-                    <FlexBox
+                    <BoxAtom
                         direction="vertical"
                         sx={{
                             display: {
@@ -124,10 +129,10 @@ export const JobsSection = () => {
                             },
                         }}
                     >
-                        <FlexAccordion />
-                    </FlexBox>
-                </FlexBox>
-            </FlexBox>
-        </FlexBox>
+                        <AccordionMolecule />
+                    </BoxAtom>
+                </BoxAtom>
+            </BoxAtom>
+        </BoxAtom>
     )
 }

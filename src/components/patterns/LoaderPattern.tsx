@@ -1,10 +1,9 @@
-'use client'
 import { Container } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Colors } from '@/constants/colors'
 
-export const LoadingBackgroundPattern = () => {
+export const LoaderPattern = () => {
     const [animationCount, setAnimationCount] = useState(0)
     const animationLength = 1
     const wrapperStyling = {

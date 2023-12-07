@@ -1,7 +1,6 @@
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
-import { Typography } from '@mui/material'
-import { FlexBox, FlexText } from '..'
+import { BoxAtom, TextAtom } from '@/components'
 
 interface Props {
     content: string
@@ -10,7 +9,7 @@ interface Props {
 
 export const QuoteSection = (props: Props) => {
     return (
-        <FlexBox
+        <BoxAtom
             as="section"
             alignment="center"
             direction="vertical"
@@ -28,12 +27,12 @@ export const QuoteSection = (props: Props) => {
                 },
             }}
         >
-            <FlexBox sx={{ maxWidth: screenMaxWidth.md }}>
-                <FlexText variant="h5" color={Colors.ORANGE} sx={{ mb: 3 }}>
+            <BoxAtom sx={{ maxWidth: screenMaxWidth.md }}>
+                <TextAtom variant="h5" color={Colors.ORANGE} sx={{ mb: 3 }}>
                     “{props.content}”
-                </FlexText>
-                <FlexText>- {props.name}</FlexText>
-            </FlexBox>
-        </FlexBox>
+                </TextAtom>
+                <TextAtom>- {props.name}</TextAtom>
+            </BoxAtom>
+        </BoxAtom>
     )
 }

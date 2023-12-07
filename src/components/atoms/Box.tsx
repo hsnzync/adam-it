@@ -12,7 +12,7 @@ interface Props {
     className?: string
 }
 
-export const FlexBox = (props: Props) => {
+export const BoxAtom = (props: Props) => {
     return (
         <Box
             className={props.className}

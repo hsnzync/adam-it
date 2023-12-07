@@ -1,10 +1,10 @@
-import { Colors } from '@/constants/colors'
 import { Box } from '@mui/material'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { LoadingBackgroundPattern } from './LoadingBackground'
+import { LoaderPattern } from '@/components'
+import { Colors } from '@/constants/colors'
 
-export const LoadingScreen = () => {
+export const LoaderMolecule = () => {
     return (
         <motion.div
             animate={{
@@ -46,7 +46,7 @@ export const LoadingScreen = () => {
                         alt={'logo adam it'}
                     />
                 </motion.div>
-                <LoadingBackgroundPattern />
+                <LoaderPattern />
             </Box>
         </motion.div>
     )

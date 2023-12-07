@@ -1,5 +1,5 @@
-import { Card as MuiCard, CardContent, Typography } from '@mui/material'
-import { FlexBox, FlexText, Icon, IconButton } from '.'
+import { Card, CardContent } from '@mui/material'
+import { IconButtonMolecule, IconAtom, TextAtom, BoxAtom } from '@/components'
 import { Colors } from '@/constants'
 import Link from 'next/link'
 
@@ -10,9 +10,9 @@ interface Props {
     url: string
 }
 
-export const Card = (props: Props) => {
+export const CardMolecule = (props: Props) => {
     return (
-        <MuiCard
+        <Card
             sx={{
                 a: {
                     textDecoration: 'none',
@@ -24,7 +24,7 @@ export const Card = (props: Props) => {
         >
             <Link href={props.url}>
                 <CardContent>
-                    <FlexBox
+                    <BoxAtom
                         direction="horizontal"
                         alignment="center"
                         sx={{
@@ -34,20 +34,16 @@ export const Card = (props: Props) => {
                             },
                         }}
                     >
-                        <FlexBox
+                        <BoxAtom
                             direction="vertical"
                             space={1}
                             sx={{ width: '100%' }}
                         >
-                            <FlexText
-                                variant="h6"
-                                color={Colors.ORANGE}
-                                isHeader
-                            >
+                            <TextAtom variant="h6" color={Colors.ORANGE} header>
                                 {props.title}
-                            </FlexText>
-                            <FlexBox direction="horizontal" space={2}>
-                                <FlexBox
+                            </TextAtom>
+                            <BoxAtom direction="horizontal" space={2}>
+                                <BoxAtom
                                     direction="horizontal"
                                     alignment="start"
                                     space={1}
@@ -57,15 +53,15 @@ export const Card = (props: Props) => {
                                         },
                                     }}
                                 >
-                                    <Icon
+                                    <IconAtom
                                         color={Colors.DARK_BLUE}
                                         iconName="wallet"
                                     />
-                                    <FlexText color={Colors.DARK_BLUE}>
+                                    <TextAtom color={Colors.DARK_BLUE}>
                                         {props.salary}
-                                    </FlexText>
-                                </FlexBox>
-                                <FlexBox
+                                    </TextAtom>
+                                </BoxAtom>
+                                <BoxAtom
                                     direction="horizontal"
                                     alignment="start"
                                     space={1}
@@ -75,20 +71,20 @@ export const Card = (props: Props) => {
                                         },
                                     }}
                                 >
-                                    <Icon
+                                    <IconAtom
                                         color={Colors.DARK_BLUE}
                                         iconName="location"
                                     />
-                                    <FlexText color={Colors.DARK_BLUE}>
+                                    <TextAtom color={Colors.DARK_BLUE}>
                                         {props.location}
-                                    </FlexText>
-                                </FlexBox>
-                            </FlexBox>
-                        </FlexBox>
-                        <IconButton url={props.url} />
-                    </FlexBox>
+                                    </TextAtom>
+                                </BoxAtom>
+                            </BoxAtom>
+                        </BoxAtom>
+                        <IconButtonMolecule url={props.url} />
+                    </BoxAtom>
                 </CardContent>
             </Link>
-        </MuiCard>
+        </Card>
     )
 }

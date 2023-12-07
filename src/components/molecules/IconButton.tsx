@@ -1,14 +1,12 @@
-import { Button, Typography, Container } from '@mui/material'
-import { Icon } from './Icon'
+import { Button } from '@mui/material'
+import { IconAtom } from '@/components'
 import { Colors } from '@/constants'
-import { FlexBox, FlexButton } from '.'
-import { IconName } from '@/types'
 
 interface Props {
     url: string
 }
 
-export const IconButton = (props: Props) => {
+export const IconButtonMolecule = (props: Props) => {
     return (
         <Button
             href={props.url}
@@ -26,7 +24,7 @@ export const IconButton = (props: Props) => {
                 },
             }}
         >
-            <Icon
+            <IconAtom
                 iconName="chevronRight"
                 color={Colors.WHITE}
                 sx={{

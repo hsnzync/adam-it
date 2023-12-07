@@ -1,7 +1,7 @@
 import { SxProps, Theme } from '@mui/system'
 import { Colors, IconsMapper } from '@/constants'
 import { IconName } from '@/types'
-import { FlexBox } from './FlexBox'
+import { BoxAtom } from './Box'
 
 interface IconProps {
     iconName: IconName
@@ -10,12 +10,12 @@ interface IconProps {
     size?: number
 }
 
-export function Icon(props: IconProps) {
+export function IconAtom(props: IconProps) {
     const iconName = props.iconName
     const Icon = IconsMapper[iconName]
 
     return (
-        <FlexBox
+        <BoxAtom
             className="icon-container"
             alignment="center"
             sx={{
@@ -28,34 +28,29 @@ export function Icon(props: IconProps) {
             }}
         >
             <Icon />
-        </FlexBox>
+        </BoxAtom>
     )
 }
 
-export const IconShaped = (props: IconProps) => {
+export const IconShapedAtom = (props: IconProps) => {
     const iconName = props.iconName
     const Icon = IconsMapper[iconName]
 
     return (
-        <FlexBox
+        <BoxAtom
             alignment="center"
             sx={{
                 color: props.color,
                 backgroundColor: Colors.DARK_BLUE,
                 borderRadius: 1,
-                height: {
-                    xs: 50,
-                    md: 45,
-                },
-                width: {
-                    xs: 50,
-                    md: 90,
-                },
+                minWidth: 50,
+                width: 50,
+                height: 50,
                 rotate: '45deg',
                 ...props.sx,
             }}
         >
-            <FlexBox
+            <BoxAtom
                 sx={{
                     rotate: '-45deg',
                     p: '0px !important',
@@ -64,7 +59,7 @@ export const IconShaped = (props: IconProps) => {
                 }}
             >
                 <Icon />
-            </FlexBox>
-        </FlexBox>
+            </BoxAtom>
+        </BoxAtom>
     )
 }

@@ -1,13 +1,12 @@
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
-import { Typography } from '@mui/material'
-import { FlexBox, FlexText, KpiBlock } from '..'
+import { BoxAtom, TextAtom, KpiCardMolecule } from '@/components'
 
 interface Props {}
 
 export const KpiSection = (props: Props) => {
     return (
-        <FlexBox
+        <BoxAtom
             as="section"
             alignment="center"
             space={4}
@@ -24,7 +23,7 @@ export const KpiSection = (props: Props) => {
                 },
             }}
         >
-            <FlexBox
+            <BoxAtom
                 direction="horizontal"
                 alignment="start"
                 sx={{
@@ -35,28 +34,28 @@ export const KpiSection = (props: Props) => {
                     },
                 }}
             >
-                <FlexText variant="h4" isHeader>
+                <TextAtom variant="h4" header>
                     Als IT’er organisaties verder helpen?
-                </FlexText>
-                <KpiBlock
+                </TextAtom>
+                <KpiCardMolecule
                     title="Test Automation Engineering"
                     description="Geautomatiseerde systeem opstellen om (complexe )
                             software te laten testen."
                     icon="computer"
                 />
-                <KpiBlock
+                <KpiCardMolecule
                     title="Software testing op afstand"
                     description="The quick, brown fox jumps over a lazy dog.
                             DJs flock by when MTV ax quiz prog."
                     icon="pin"
                 />
-                <KpiBlock
+                <KpiCardMolecule
                     title="Interim een vaste tester inhuren"
                     description="Een eigen vaste IT Professional inhuren als
                             test automation engineer."
                     icon="person"
                 />
-            </FlexBox>
-        </FlexBox>
+            </BoxAtom>
+        </BoxAtom>
     )
 }

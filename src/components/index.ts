@@ -1,20 +1,34 @@
-export { Navigation } from './Navigation'
-export { Footer } from './Footer'
-export { Icon, IconShaped } from './Icon'
-export { SectionImage, HeaderImage } from './SectionImage'
-export { IconButton } from './IconButton'
-export { KpiBlock } from './KpiBlock'
-export { Card } from './Card'
-export { ImageSlider } from './ImageSlider'
-export { BackgroundPattern } from './patterns'
-export { LoadingScreen } from './LoadingScreen'
+// patterns
+export { BackgroundPattern, LoaderPattern } from './patterns'
 
-export { FlexBox } from './FlexBox'
-export { FlexAccordion } from './FlexAccordion'
-export { FlexButton } from './Button'
-export { FlexText } from './FlexText'
+// atoms
+export {
+    IconAtom,
+    IconShapedAtom,
+    BoxAtom,
+    TextAtom,
+    SectionImageAtom,
+    HeaderImageAtom,
+} from './atoms'
 
-/** Sections */
+// molecules
+export {
+    CardMolecule,
+    ButtonMolecule,
+    AccordionMolecule,
+    IconButtonMolecule,
+    KpiCardMolecule,
+    LoaderMolecule,
+} from './molecules'
+
+// organisms
+export {
+    ImageSliderOrganism,
+    FooterOrganism,
+    NavigationOrganism,
+} from './organisms'
+
+// sections
 export {
     QuoteSection,
     ImageTextSection,

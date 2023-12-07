@@ -1,4 +1,3 @@
-import { Navigation } from '@/components'
 import { Colors } from '@/constants'
 import { Html, Head, Main, NextScript } from 'next/document'
 

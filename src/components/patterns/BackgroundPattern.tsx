@@ -1,6 +1,6 @@
-import { SxProps, Theme } from '@mui/material'
-import { FlexBox } from '..'
 import { ReactNode } from 'react'
+import { SxProps, Theme } from '@mui/material'
+import { BoxAtom } from '@/components'
 
 interface Props {
     children?: ReactNode
@@ -14,7 +14,7 @@ interface Props {
 
 export const BackgroundPattern = (props: Props) => {
     return (
-        <FlexBox
+        <BoxAtom
             as={props.as}
             alignment={props.alignment}
             sx={{
@@ -29,6 +29,6 @@ export const BackgroundPattern = (props: Props) => {
             }}
         >
             {props.children}
-        </FlexBox>
+        </BoxAtom>
     )
 }

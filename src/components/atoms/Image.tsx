@@ -5,7 +5,7 @@ interface Props {
     sx?: SxProps<Theme>
 }
 
-export const SectionImage = (
+export const SectionImageAtom = (
     props: Props & {
         src: string
         alt: string
@@ -39,7 +39,7 @@ export const SectionImage = (
     )
 }
 
-export const HeaderImage = (props: Props) => {
+export const HeaderImageAtom = (props: Props) => {
     return (
         <Box
             sx={{

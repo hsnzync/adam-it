@@ -5,11 +5,11 @@ import {
     HeroSection,
     JobsSection,
     ImageTextSection,
-    ImageSlider,
+    ImageSliderOrganism,
     QuoteSection,
     KpiSection,
-    Footer,
-    Navigation,
+    FooterOrganism,
+    NavigationOrganism,
 } from '@/components'
 import { Colors } from '@/constants'
 
@@ -35,7 +35,7 @@ export default function Home() {
                 }}
                 initial={{ opacity: 0 }}
             >
-                <Navigation />
+                <NavigationOrganism />
 
                 <main>
                     <HeroSection />
@@ -82,7 +82,7 @@ export default function Home() {
                         buttonUrl=""
                     />
 
-                    <ImageSlider
+                    <ImageSliderOrganism
                         sx={{
                             display: {
                                 xs: 'none',
@@ -117,7 +117,7 @@ export default function Home() {
                         }}
                     />
                 </main>
-                <Footer />
+                <FooterOrganism />
             </motion.div>
         </>
     )

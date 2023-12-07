@@ -1,14 +1,11 @@
-'use client'
 import { Colors } from '@/constants'
-import { FlexBox } from '.'
+import { BoxAtom } from '@/components'
 import Image from 'next/image'
 import { SxProps, Theme } from '@mui/material'
 import { screenMaxWidth } from '@/style'
-import { useEffect, useState } from 'react'
-// Import Swiper React components
+import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
-// Import Swiper styles
 import 'swiper/css'
 
 interface Props {
@@ -17,7 +14,7 @@ interface Props {
     sx?: SxProps<Theme>
 }
 
-export const ImageSlider = (props: Props) => {
+export const ImageSliderOrganism = (props: Props) => {
     const [isHovered, setIsHovered] = useState(false)
     const [logos, setLogos] = useState<string[]>([
         ...props.images,
@@ -34,10 +31,8 @@ export const ImageSlider = (props: Props) => {
         },
     })
 
-    // useEffect()
-
     return (
-        <FlexBox
+        <BoxAtom
             as="section"
             space={5}
             alignment="center"
@@ -48,7 +43,7 @@ export const ImageSlider = (props: Props) => {
                 ...props.sx,
             }}
         >
-            <FlexBox
+            <BoxAtom
                 direction="horizontal"
                 alignment="center"
                 sx={{
@@ -96,7 +91,7 @@ export const ImageSlider = (props: Props) => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-            </FlexBox>
-        </FlexBox>
+            </BoxAtom>
+        </BoxAtom>
     )
 }

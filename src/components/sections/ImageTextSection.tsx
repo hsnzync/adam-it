@@ -8,12 +8,12 @@ import {
     Theme,
 } from '@mui/material'
 import {
-    FlexBox,
-    SectionImage,
-    Icon,
-    FlexButton,
+    BoxAtom,
+    SectionImageAtom,
+    IconAtom,
+    ButtonMolecule,
     BackgroundPattern,
-    FlexText,
+    TextAtom,
 } from '..'
 import { screenMaxWidth } from '@/style'
 import Image from 'next/image'
@@ -55,17 +55,17 @@ export const ImageTextSection = (props: Props) => {
                 ...props.sx,
             }}
         >
-            <FlexBox
+            <BoxAtom
                 alignment="start"
                 space={3}
                 sx={{ maxWidth: screenMaxWidth, m: 'auto' }}
             >
                 {props.sectionTitle && (
-                    <FlexText variant="h4" isHeader>
+                    <TextAtom variant="h4" header>
                         {props.sectionTitle}
-                    </FlexText>
+                    </TextAtom>
                 )}
-                <FlexBox
+                <BoxAtom
                     direction="horizontal"
                     alignment="center"
                     space={5}
@@ -74,14 +74,14 @@ export const ImageTextSection = (props: Props) => {
                         maxWidth: screenMaxWidth,
                     }}
                 >
-                    <SectionImage
+                    <SectionImageAtom
                         src="/meeting-image.jpg"
                         alt="perks of working at adam it"
                         sx={{
                             width: '100%',
                         }}
                     />
-                    <FlexBox
+                    <BoxAtom
                         space={1}
                         sx={{
                             width: {
@@ -98,34 +98,34 @@ export const ImageTextSection = (props: Props) => {
                                 height={80}
                             />
                         )}
-                        <FlexText variant="h4" isHeader>
+                        <TextAtom variant="h4" header>
                             {props.title}
-                        </FlexText>
-                        <FlexText>{props.description}</FlexText>
+                        </TextAtom>
+                        <TextAtom>{props.description}</TextAtom>
                         <List dense sx={{ my: 3 }}>
                             {props.perks.map((perk, index) => (
                                 <ListItem key={index} sx={{ p: 0, mb: 1 }}>
                                     <ListItemIcon sx={{ minWidth: 35 }}>
-                                        <Icon
+                                        <IconAtom
                                             iconName="checkCircleOutline"
                                             color={Colors.ORANGE}
                                         />
                                     </ListItemIcon>
                                     <ListItemText
                                         primary={
-                                            <FlexText isHeader>{perk}</FlexText>
+                                            <TextAtom header>{perk}</TextAtom>
                                         }
                                     />
                                 </ListItem>
                             ))}
                         </List>
-                        <FlexButton
+                        <ButtonMolecule
                             label={props.buttonText}
                             url={props.buttonUrl}
                         />
-                    </FlexBox>
-                </FlexBox>
-            </FlexBox>
+                    </BoxAtom>
+                </BoxAtom>
+            </BoxAtom>
         </BackgroundPattern>
     )
 }

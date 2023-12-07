@@ -1,13 +1,12 @@
-import { Colors } from '@/constants'
-import { Typography } from '@mui/material'
 import { motion } from 'framer-motion'
+import { Colors } from '@/constants'
 import {
     BackgroundPattern,
-    FlexBox,
-    FlexButton,
-    FlexText,
-    HeaderImage,
-    SectionImage,
+    BoxAtom,
+    ButtonMolecule,
+    TextAtom,
+    HeaderImageAtom,
+    SectionImageAtom,
 } from '..'
 
 export const HeroSection = () => {
@@ -34,7 +33,7 @@ export const HeroSection = () => {
                 },
             }}
         >
-            <FlexBox
+            <BoxAtom
                 direction="horizontal"
                 sx={{
                     zIndex: 1,
@@ -75,7 +74,7 @@ export const HeroSection = () => {
                     }}
                     style={{ height: '100%', width: '50%' }}
                 >
-                    <HeaderImage
+                    <HeaderImageAtom
                         sx={{
                             display: {
                                 xs: 'none',
@@ -84,8 +83,8 @@ export const HeroSection = () => {
                         }}
                     />
                 </motion.div>
-            </FlexBox>
-            <FlexBox
+            </BoxAtom>
+            <BoxAtom
                 alignment="center"
                 direction="vertical"
                 space={3}
@@ -106,7 +105,7 @@ export const HeroSection = () => {
                     },
                 }}
             >
-                <FlexText
+                <TextAtom
                     variant="body2"
                     color={Colors.BLUE}
                     textTransform="uppercase"
@@ -118,11 +117,11 @@ export const HeroSection = () => {
                     }}
                 >
                     In verbinding met IT&apos;ers & opdrachtgevers
-                </FlexText>
-                <FlexText variant="h3" color={Colors.WHITE} isHeader>
+                </TextAtom>
+                <TextAtom variant="h3" color={Colors.WHITE} header>
                     Wij maken impact met IT
-                </FlexText>
-                <FlexBox
+                </TextAtom>
+                <BoxAtom
                     alignment="center"
                     direction="horizontal"
                     sx={{
@@ -140,7 +139,7 @@ export const HeroSection = () => {
                         },
                     }}
                 >
-                    <FlexButton
+                    <ButtonMolecule
                         label="Werkgevers"
                         sx={{
                             width: {
@@ -148,7 +147,7 @@ export const HeroSection = () => {
                             },
                         }}
                     />
-                    <FlexButton
+                    <ButtonMolecule
                         label="Kandidaten"
                         sx={{
                             width: {
@@ -156,9 +155,9 @@ export const HeroSection = () => {
                             },
                         }}
                     />
-                </FlexBox>
-            </FlexBox>
-            <SectionImage
+                </BoxAtom>
+            </BoxAtom>
+            <SectionImageAtom
                 sx={{
                     display: {
                         xs: 'flex',

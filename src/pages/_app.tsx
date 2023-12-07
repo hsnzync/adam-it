@@ -1,4 +1,4 @@
-import { LoadingScreen } from '@/components'
+import { LoaderMolecule } from '@/components'
 import { breakspoints } from '@/style'
 import { handleFirstVisitOrExpired } from '@/utils'
 import type { AppProps } from 'next/app'
@@ -23,5 +23,5 @@ export default function App({ Component, pageProps }: AppProps) {
         return () => clearTimeout(timeoutId)
     }, [])
 
-    return showLoader ? <LoadingScreen /> : <Component {...pageProps} />
+    return showLoader ? <LoaderMolecule /> : <Component {...pageProps} />
 }

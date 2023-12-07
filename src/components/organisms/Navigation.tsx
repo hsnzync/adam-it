@@ -1,17 +1,14 @@
-'use client'
-import * as React from 'react'
-import AppBar from '@mui/material/AppBar'
+import React from 'react'
 import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
 import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
-import { FlexBox, FlexButton, FlexText } from '.'
 import { screenMaxWidth } from '@/style'
 import { useEffect, useState } from 'react'
 import { Colors } from '@/constants'
 import { motion } from 'framer-motion'
 import { Box } from '@mui/material'
 import Link from 'next/link'
+import { BoxAtom, TextAtom, ButtonMolecule } from '@/components'
 
 const pages = [
     { name: 'Werkgever', slug: '/werkgever' },
@@ -20,7 +17,7 @@ const pages = [
     { name: 'Contact', slug: '/contact' },
 ]
 
-export const Navigation = () => {
+export const NavigationOrganism = () => {
     const [navScrolled, setNavScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
 
@@ -51,7 +48,7 @@ export const Navigation = () => {
                 backgroundColor: navScrolled ? Colors.WHITE : 'transparent',
             }}
         >
-            <FlexBox alignment="center">
+            <BoxAtom alignment="center">
                 <Toolbar
                     disableGutters
                     sx={{
@@ -62,7 +59,7 @@ export const Navigation = () => {
                         maxWidth: screenMaxWidth,
                     }}
                 >
-                    <FlexBox
+                    <BoxAtom
                         sx={{
                             img: {
                                 width: {
@@ -84,8 +81,8 @@ export const Navigation = () => {
                                 alt="logo adam it"
                             />
                         </Link>
-                    </FlexBox>
-                    <FlexBox
+                    </BoxAtom>
+                    <BoxAtom
                         sx={{
                             flexDirection: { xs: 'column', md: 'row' },
                             display: {
@@ -133,7 +130,7 @@ export const Navigation = () => {
                                     href={page.slug}
                                     style={{ paddingBottom: 0 }}
                                 >
-                                    <FlexText
+                                    <TextAtom
                                         color={
                                             navScrolled || menuOpen
                                                 ? Colors.DARK_BLUE
@@ -141,12 +138,12 @@ export const Navigation = () => {
                                         }
                                     >
                                         {page.name}
-                                    </FlexText>
+                                    </TextAtom>
                                 </Link>
                             </MenuItem>
                         ))}
-                        <FlexButton label="Vacatures" />
-                        <FlexButton
+                        <ButtonMolecule label="Vacatures" />
+                        <ButtonMolecule
                             label="Testnation"
                             variant="outlined"
                             sx={{
@@ -166,9 +163,9 @@ export const Navigation = () => {
                                 },
                             }}
                         />
-                    </FlexBox>
+                    </BoxAtom>
 
-                    <FlexBox
+                    <BoxAtom
                         sx={{
                             flexDirection: 'row',
                             display: { xs: 'flex', md: 'none' },
@@ -180,7 +177,7 @@ export const Navigation = () => {
                             right: 10,
                         }}
                     >
-                        <FlexButton
+                        <ButtonMolecule
                             onClick={handleMenuOpen}
                             icon="menu"
                             variant="clear"
@@ -219,9 +216,9 @@ export const Navigation = () => {
                                 },
                             }}
                         />
-                    </FlexBox>
+                    </BoxAtom>
                 </Toolbar>
-            </FlexBox>
+            </BoxAtom>
         </Box>
     )
 }
