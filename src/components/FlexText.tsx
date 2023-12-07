@@ -1,6 +1,10 @@
 import { SxProps, Theme, Typography, TypographyProps } from '@mui/material'
 import { Variant } from '@mui/material/styles/createTypography'
 import { ReactNode } from 'react'
+import { Manrope, Source_Code_Pro } from 'next/font/google'
+
+const manrope = Manrope({ subsets: ['latin'] })
+const sourceCodePro = Source_Code_Pro({ subsets: ['latin'] })
 
 interface Props {
     children: ReactNode
@@ -23,7 +27,11 @@ export function FlexText(props: Props) {
             variant={props.variant}
             textAlign={props.alignment}
             fontWeight={props.fontWeight}
-            fontFamily={props.isHeader ? 'Source Code Pro' : 'Manrope'}
+            fontFamily={
+                props.isHeader
+                    ? sourceCodePro.style.fontFamily
+                    : manrope.style.fontFamily
+            }
             lineHeight={props.lineHeight}
             textTransform={props.textTransform}
             color={props.color}

@@ -16,6 +16,10 @@ export const LoadingScreen = () => {
                 },
             }}
             initial={{ opacity: 1 }}
+            style={{
+                position: 'relative',
+                zIndex: 10,
+            }}
         >
             <Box
                 sx={{

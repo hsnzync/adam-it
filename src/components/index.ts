@@ -20,5 +20,6 @@ export {
     ImageTextSection,
     KpiSection,
     HeroSection,
+    SmallHeroSection,
     JobsSection,
 } from './sections'

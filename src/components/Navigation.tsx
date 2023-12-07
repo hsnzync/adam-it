@@ -11,8 +11,14 @@ import { useEffect, useState } from 'react'
 import { Colors } from '@/constants'
 import { motion } from 'framer-motion'
 import { Box } from '@mui/material'
+import Link from 'next/link'
 
-const pages = ['Werkgever', 'Kandidaten', 'Over ons', 'Contact']
+const pages = [
+    { name: 'Werkgever', slug: '/werkgever' },
+    { name: 'Kandidaten', slug: '/kandidaten' },
+    { name: 'Over ons', slug: '/over-ons' },
+    { name: 'Contact', slug: '/contact' },
+]
 
 export const Navigation = () => {
     const [navScrolled, setNavScrolled] = useState(false)
@@ -66,16 +72,18 @@ export const Navigation = () => {
                             },
                         }}
                     >
-                        <Image
-                            src={
-                                navScrolled
-                                    ? '/logo/logo-text-regular-red.svg'
-                                    : '/logo/logo-text-white-red.svg'
-                            }
-                            width={130}
-                            height={50}
-                            alt="logo adam it"
-                        />
+                        <Link href="/">
+                            <Image
+                                src={
+                                    navScrolled
+                                        ? '/logo/logo-text-regular-red.svg'
+                                        : '/logo/logo-text-white-red.svg'
+                                }
+                                width={130}
+                                height={50}
+                                alt="logo adam it"
+                            />
+                        </Link>
                     </FlexBox>
                     <FlexBox
                         sx={{
@@ -106,17 +114,35 @@ export const Navigation = () => {
                         {pages.map((page, index) => (
                             <MenuItem
                                 key={index}
-                                sx={{ px: 1, justifyContent: 'end' }}
+                                sx={{
+                                    px: 1,
+                                    justifyContent: 'end',
+                                    a: {
+                                        textDecoration: 'none',
+                                        borderBottom: '2px solid transparent',
+                                        transition: '.2s',
+                                        pb: 2,
+
+                                        ':hover': {
+                                            borderBottom: `2px solid ${Colors.ORANGE}`,
+                                        },
+                                    },
+                                }}
                             >
-                                <FlexText
-                                    color={
-                                        navScrolled || menuOpen
-                                            ? Colors.DARK_BLUE
-                                            : Colors.WHITE
-                                    }
+                                <Link
+                                    href={page.slug}
+                                    style={{ paddingBottom: 0 }}
                                 >
-                                    {page}
-                                </FlexText>
+                                    <FlexText
+                                        color={
+                                            navScrolled || menuOpen
+                                                ? Colors.DARK_BLUE
+                                                : Colors.WHITE
+                                        }
+                                    >
+                                        {page.name}
+                                    </FlexText>
+                                </Link>
                             </MenuItem>
                         ))}
                         <FlexButton label="Vacatures" />
