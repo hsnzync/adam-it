@@ -1,23 +1,25 @@
 import { motion } from 'framer-motion'
 import { Colors } from '@/constants'
 import {
-    BackgroundPattern,
+    Background,
     BoxAtom,
     ButtonMolecule,
     TextAtom,
     HeaderImageAtom,
     SectionImageAtom,
-} from '..'
+    HeaderGlow,
+} from '@/components'
 
 export const HeroSection = () => {
     return (
-        <BackgroundPattern
+        <Background
             as="header"
             hasPattern
             position="center"
             alignment="center"
             bgColor={Colors.DARK_BLUE}
             sx={{
+                overflow: 'hidden',
                 position: 'relative',
                 height: {
                     xs: 'auto',
@@ -54,7 +56,7 @@ export const HeroSection = () => {
                     }}
                     style={{ height: '100%', width: '50%' }}
                 >
-                    <BackgroundPattern
+                    <Background
                         position="right"
                         hasPattern
                         sx={{
@@ -167,6 +169,7 @@ export const HeroSection = () => {
                 src="/header-image.jpg"
                 alt="business meeting adam it"
             />
-        </BackgroundPattern>
+            <HeaderGlow />
+        </Background>
     )
 }

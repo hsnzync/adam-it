@@ -1,5 +1,5 @@
 // patterns
-export { BackgroundPattern, LoaderPattern } from './patterns'
+export { Background, LoaderPattern, Glow, HeaderGlow } from './patterns'
 
 // atoms
 export {
@@ -23,7 +23,7 @@ export {
 
 // organisms
 export {
-    ImageSliderOrganism,
+    LogoSliderOrganism,
     FooterOrganism,
     NavigationOrganism,
 } from './organisms'
@@ -36,4 +36,5 @@ export {
     HeroSection,
     SmallHeroSection,
     JobsSection,
+    TextImageSection,
 } from './sections'

@@ -28,7 +28,12 @@ export const QuoteSection = (props: Props) => {
             }}
         >
             <BoxAtom sx={{ maxWidth: screenMaxWidth.md }}>
-                <TextAtom variant="h5" color={Colors.ORANGE} sx={{ mb: 3 }}>
+                <TextAtom
+                    variant="h5"
+                    color={Colors.ORANGE}
+                    lineHeight={1.8}
+                    sx={{ mb: 3 }}
+                >
                     “{props.content}”
                 </TextAtom>
                 <TextAtom>- {props.name}</TextAtom>

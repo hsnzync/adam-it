@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { screenMaxWidth } from '@/style'
 import { useEffect, useState } from 'react'
 import { Colors } from '@/constants'
-import { motion } from 'framer-motion'
 import { Box } from '@mui/material'
 import Link from 'next/link'
 import { BoxAtom, TextAtom, ButtonMolecule } from '@/components'
@@ -114,21 +113,32 @@ export const NavigationOrganism = () => {
                                 sx={{
                                     px: 1,
                                     justifyContent: 'end',
-                                    a: {
-                                        textDecoration: 'none',
-                                        borderBottom: '2px solid transparent',
-                                        transition: '.2s',
-                                        pb: 2,
+                                    transition: '.3s',
 
-                                        ':hover': {
+                                    ':hover': {
+                                        background: 'none',
+                                    },
+
+                                    a: {
+                                        ':hover::after': {
+                                            content: '""',
+
                                             borderBottom: `2px solid ${Colors.ORANGE}`,
+                                            position: 'absolute',
+                                            width: '100%',
+                                            left: 0,
+                                            bottom: -10,
                                         },
                                     },
                                 }}
                             >
                                 <Link
                                     href={page.slug}
-                                    style={{ paddingBottom: 0 }}
+                                    style={{
+                                        paddingBottom: 0,
+                                        textDecoration: 'none',
+                                        borderBottom: '2px solid transparent',
+                                    }}
                                 >
                                     <TextAtom
                                         color={
@@ -179,7 +189,7 @@ export const NavigationOrganism = () => {
                     >
                         <ButtonMolecule
                             onClick={handleMenuOpen}
-                            icon="menu"
+                            icon={menuOpen ? 'close' : 'menu'}
                             variant="clear"
                             label="Menu"
                             sx={{

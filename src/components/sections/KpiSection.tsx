@@ -1,8 +1,18 @@
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
 import { BoxAtom, TextAtom, KpiCardMolecule } from '@/components'
+import { IconName } from '@/types'
 
-interface Props {}
+interface Props {
+    tileTitle: string
+    tiles: Tile[]
+}
+
+interface Tile {
+    title: string
+    description: string
+    icon: IconName
+}
 
 export const KpiSection = (props: Props) => {
     return (
@@ -35,26 +45,16 @@ export const KpiSection = (props: Props) => {
                 }}
             >
                 <TextAtom variant="h4" header>
-                    Als IT’er organisaties verder helpen?
+                    {props.tileTitle}
                 </TextAtom>
-                <KpiCardMolecule
-                    title="Test Automation Engineering"
-                    description="Geautomatiseerde systeem opstellen om (complexe )
-                            software te laten testen."
-                    icon="computer"
-                />
-                <KpiCardMolecule
-                    title="Software testing op afstand"
-                    description="The quick, brown fox jumps over a lazy dog.
-                            DJs flock by when MTV ax quiz prog."
-                    icon="pin"
-                />
-                <KpiCardMolecule
-                    title="Interim een vaste tester inhuren"
-                    description="Een eigen vaste IT Professional inhuren als
-                            test automation engineer."
-                    icon="person"
-                />
+                {props.tiles.map((tile, index) => (
+                    <KpiCardMolecule
+                        key={index}
+                        title={tile.title}
+                        description={tile.description}
+                        icon={tile.icon}
+                    />
+                ))}
             </BoxAtom>
         </BoxAtom>
     )

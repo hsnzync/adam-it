@@ -1,4 +1,3 @@
-// ./src/utils/visitUtils.ts
 export const handleFirstVisitOrExpired = (): boolean => {
     const storedData = localStorage.getItem('visitData')
 

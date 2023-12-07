@@ -1,42 +1,26 @@
 import { Colors } from '@/constants'
-import {
-    BackgroundPattern,
-    BoxAtom,
-    TextAtom,
-    SectionImageAtom,
-} from '@/components'
+import { BoxAtom, TextAtom, SectionImageAtom, Background } from '@/components'
 
 export const SmallHeroSection = () => {
     return (
-        <BackgroundPattern
+        <Background
             as="header"
             hasPattern
-            position="center"
+            hero
             alignment="center"
+            position="50% 40%"
             bgColor={Colors.DARK_BLUE}
             sx={{
-                position: 'relative',
-                height: {
-                    xs: 'auto',
-                    md: 300,
-                },
+                height: 350,
+                backgroundSize: '200% auto',
             }}
         >
             <BoxAtom
                 alignment="center"
                 direction="vertical"
-                space={3}
+                space={1}
                 sx={{
                     height: '100%',
-                    zIndex: 2,
-                    position: {
-                        xs: 'relative',
-                        md: 'absolute',
-                    },
-                    bottom: {
-                        xs: 'auto',
-                        md: 30,
-                    },
                     p: {
                         xs: 3,
                         md: 0,
@@ -54,22 +38,12 @@ export const SmallHeroSection = () => {
                         },
                     }}
                 >
-                    In verbinding met IT&apos;ers & opdrachtgevers
+                    Voor opdrachtgevers
                 </TextAtom>
                 <TextAtom variant="h3" color={Colors.WHITE} header>
-                    Wij maken impact met IT
+                    Werkgevers
                 </TextAtom>
             </BoxAtom>
-            <SectionImageAtom
-                sx={{
-                    display: {
-                        xs: 'flex',
-                        md: 'none',
-                    },
-                }}
-                src="/header-image.jpg"
-                alt="business meeting adam it"
-            />
-        </BackgroundPattern>
+        </Background>
     )
 }

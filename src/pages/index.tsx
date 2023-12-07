@@ -5,7 +5,7 @@ import {
     HeroSection,
     JobsSection,
     ImageTextSection,
-    ImageSliderOrganism,
+    LogoSliderOrganism,
     QuoteSection,
     KpiSection,
     FooterOrganism,
@@ -28,18 +28,39 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <motion.div
-                animate={{
-                    opacity: 1,
-                    transition: { duration: 0.5, ease: 'easeIn' },
-                }}
-                initial={{ opacity: 0 }}
-            >
-                <NavigationOrganism />
-
-                <main>
+            <NavigationOrganism />
+            <main>
+                <motion.div
+                    animate={{
+                        opacity: 1,
+                        transition: { duration: 0.5, ease: 'easeIn' },
+                    }}
+                    initial={{ opacity: 0 }}
+                >
                     <HeroSection />
-                    <KpiSection />
+                    <KpiSection
+                        tileTitle="Als IT’er organisaties verder helpen?"
+                        tiles={[
+                            {
+                                title: 'Test Automation Engineering',
+                                description:
+                                    'Geautomatiseerde systeem opstellen om (complexe) software te laten testen.',
+                                icon: 'computer',
+                            },
+                            {
+                                title: 'Software testing op afstand',
+                                description:
+                                    'The quick, brown fox jumps over a lazy dog, DJs flock by when MTV ax quiz prog.',
+                                icon: 'pin',
+                            },
+                            {
+                                title: 'Interim een vaste tester inhuren',
+                                description:
+                                    'Een eigen vaste IT Professional inhuren als test automation engineer.',
+                                icon: 'person',
+                            },
+                        ]}
+                    />
                     <ImageTextSection
                         hasBgPattern
                         bgColor={Colors.LIGHT_BLUE}
@@ -82,21 +103,7 @@ export default function Home() {
                         buttonUrl=""
                     />
 
-                    <ImageSliderOrganism
-                        sx={{
-                            display: {
-                                xs: 'none',
-                                md: 'flex',
-                            },
-                        }}
-                        divider
-                        images={[
-                            '/company-logos/uwv-logo.svg',
-                            '/company-logos/kadaster-logo.svg',
-                            '/company-logos/stedin-logo.png',
-                            '/company-logos/rfh-logo.svg',
-                        ]}
-                    />
+                    <LogoSliderOrganism divider />
                     <ImageTextSection
                         hasBgPattern
                         bgColor={Colors.LIGHT_BLUE}
@@ -116,9 +123,9 @@ export default function Home() {
                             },
                         }}
                     />
-                </main>
-                <FooterOrganism />
-            </motion.div>
+                </motion.div>
+            </main>
+            <FooterOrganism />
         </>
     )
 }

@@ -9,16 +9,22 @@ import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 
 interface Props {
-    images: string[]
     divider?: boolean
     sx?: SxProps<Theme>
 }
 
-export const ImageSliderOrganism = (props: Props) => {
+const companyLogos = [
+    '/company-logos/uwv-logo.svg',
+    '/company-logos/kadaster-logo.svg',
+    '/company-logos/stedin-logo.png',
+    '/company-logos/rfh-logo.svg',
+]
+
+export const LogoSliderOrganism = (props: Props) => {
     const [isHovered, setIsHovered] = useState(false)
     const [logos, setLogos] = useState<string[]>([
-        ...props.images,
-        ...props.images,
+        ...companyLogos,
+        ...companyLogos,
     ])
     const slideAnimation = () => ({
         '@keyframes slide': {
@@ -40,6 +46,12 @@ export const ImageSliderOrganism = (props: Props) => {
                 height: 200,
                 backgroundColor: Colors.WHITE,
                 overflow: 'hidden',
+
+                display: {
+                    xs: 'none',
+                    md: 'flex',
+                },
+
                 ...props.sx,
             }}
         >

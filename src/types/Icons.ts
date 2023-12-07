@@ -10,3 +10,4 @@ export type IconName =
     | 'wallet'
     | 'location'
     | 'expandMore'
+    | 'close'

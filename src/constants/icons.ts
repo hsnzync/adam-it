@@ -10,6 +10,7 @@ import {
     Wallet,
     PlaceOutlined,
     ArrowForwardIosSharp,
+    Close,
 } from '@mui/icons-material'
 
 export const IconsMapper: Record<string, React.ComponentType> = {
@@ -24,4 +25,5 @@ export const IconsMapper: Record<string, React.ComponentType> = {
     menu: Menu,
     wallet: Wallet,
     expandMore: ArrowForwardIosSharp,
+    close: Close,
 }

@@ -10,7 +10,6 @@ import {
 import {
     BoxAtom,
     SectionImageAtom,
-    IconAtom,
     ButtonMolecule,
     Background,
     TextAtom,
@@ -23,15 +22,13 @@ interface Props {
     bgColor: string
     hasBgPattern?: boolean
     title: string
+    subTitle: string
     description: string
-    perks: string[]
-    buttonText: string
-    buttonUrl: string
     logo?: string
     sx?: SxProps<Theme>
 }
 
-export const ImageTextSection = (props: Props) => {
+export const TextImageSection = (props: Props) => {
     return (
         <Background
             as="section"
@@ -39,19 +36,10 @@ export const ImageTextSection = (props: Props) => {
             alignment="center"
             sx={{
                 backgroundColor: props.bgColor,
-                backgroundSize: {
-                    xs: '600% auto',
-                    md: '250% auto',
-                },
-                backgroundPosition: {
-                    xs: 'center',
-                    md: '0% 30%',
-                },
                 p: {
                     xs: 3,
                     md: 5,
                 },
-                overflow: 'hidden',
                 ...props.sx,
             }}
         >
@@ -74,13 +62,6 @@ export const ImageTextSection = (props: Props) => {
                         maxWidth: screenMaxWidth,
                     }}
                 >
-                    <SectionImageAtom
-                        src="/meeting-image.jpg"
-                        alt="perks of working at adam it"
-                        sx={{
-                            width: '100%',
-                        }}
-                    />
                     <BoxAtom
                         space={1}
                         sx={{
@@ -98,32 +79,21 @@ export const ImageTextSection = (props: Props) => {
                                 height={80}
                             />
                         )}
+                        <TextAtom textTransform="uppercase" color={Colors.BLUE}>
+                            {props.subTitle}
+                        </TextAtom>
                         <TextAtom variant="h4" header>
                             {props.title}
                         </TextAtom>
                         <TextAtom>{props.description}</TextAtom>
-                        <List dense sx={{ my: 3 }}>
-                            {props.perks.map((perk, index) => (
-                                <ListItem key={index} sx={{ p: 0, mb: 1 }}>
-                                    <ListItemIcon sx={{ minWidth: 35 }}>
-                                        <IconAtom
-                                            iconName="checkCircleOutline"
-                                            color={Colors.ORANGE}
-                                        />
-                                    </ListItemIcon>
-                                    <ListItemText
-                                        primary={
-                                            <TextAtom header>{perk}</TextAtom>
-                                        }
-                                    />
-                                </ListItem>
-                            ))}
-                        </List>
-                        <ButtonMolecule
-                            label={props.buttonText}
-                            url={props.buttonUrl}
-                        />
                     </BoxAtom>
+                    <SectionImageAtom
+                        src="/meeting-image.jpg"
+                        alt="perks of working at adam it"
+                        sx={{
+                            width: '100%',
+                        }}
+                    />
                 </BoxAtom>
             </BoxAtom>
         </Background>
