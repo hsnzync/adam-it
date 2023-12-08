@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@mui/material'
 import { IconButtonMolecule, IconAtom, TextAtom, BoxAtom } from '@/components'
-import { Colors } from '@/constants'
+import { CARD_SHADOW, Colors } from '@/constants'
 import Link from 'next/link'
 
 interface Props {
@@ -14,16 +14,13 @@ export const CardMolecule = (props: Props) => {
     return (
         <Card
             sx={{
-                a: {
-                    textDecoration: 'none',
-                },
                 ':hover': {
-                    boxShadow: '0px 0px 15px 0px rgba(0,0,0,.2)',
+                    boxShadow: CARD_SHADOW,
                 },
             }}
         >
-            <Link href={props.url}>
-                <CardContent>
+            <Link href={props.url} style={{ textDecoration: 'none' }}>
+                <CardContent sx={{ p: 3 }}>
                     <BoxAtom
                         direction="horizontal"
                         alignment="center"

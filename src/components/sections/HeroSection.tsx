@@ -6,7 +6,7 @@ import {
     ButtonMolecule,
     TextAtom,
     HeaderImageAtom,
-    SectionImageAtom,
+    ImageAtom,
     HeaderGlow,
 } from '@/components'
 
@@ -129,15 +129,11 @@ export const HeroSection = () => {
                     sx={{
                         gap: {
                             xs: 2,
-                            md: 8,
+                            md: 4,
                         },
                         width: {
                             xs: '100%',
                             md: 'auto',
-                        },
-                        mt: {
-                            xs: 0,
-                            md: 5,
                         },
                     }}
                 >
@@ -159,14 +155,14 @@ export const HeroSection = () => {
                     />
                 </BoxAtom>
             </BoxAtom>
-            <SectionImageAtom
+            <ImageAtom
                 sx={{
                     display: {
                         xs: 'flex',
                         md: 'none',
                     },
                 }}
-                src="/header-image.jpg"
+                src="/home-meeting-image.jpg"
                 alt="business meeting adam it"
             />
             <HeaderGlow />

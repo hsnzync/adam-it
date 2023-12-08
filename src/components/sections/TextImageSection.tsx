@@ -1,19 +1,6 @@
 import { Colors } from '@/constants'
-import {
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemText,
-    SxProps,
-    Theme,
-} from '@mui/material'
-import {
-    BoxAtom,
-    SectionImageAtom,
-    ButtonMolecule,
-    Background,
-    TextAtom,
-} from '..'
+import { SxProps, Theme } from '@mui/material'
+import { BoxAtom, ImageAtom, Background, TextAtom } from '..'
 import { screenMaxWidth } from '@/style'
 import Image from 'next/image'
 
@@ -87,7 +74,7 @@ export const TextImageSection = (props: Props) => {
                         </TextAtom>
                         <TextAtom>{props.description}</TextAtom>
                     </BoxAtom>
-                    <SectionImageAtom
+                    <ImageAtom
                         src="/meeting-image.jpg"
                         alt="perks of working at adam it"
                         sx={{

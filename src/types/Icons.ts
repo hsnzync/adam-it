@@ -11,3 +11,5 @@ export type IconName =
     | 'location'
     | 'expandMore'
     | 'close'
+    | 'attachFile'
+    | 'delete'

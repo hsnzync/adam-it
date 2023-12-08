@@ -9,6 +9,7 @@ import {
     QuoteSection,
     SmallHeroSection,
     TextImageSection,
+    ContactSection,
 } from '@/components'
 import { Colors } from '@/constants'
 
@@ -87,6 +88,7 @@ export default function Home() {
                         name="Jan Verstegen"
                     />
                     <LogoSliderOrganism divider />
+                    <ContactSection />
                 </motion.div>
             </main>
             <FooterOrganism />

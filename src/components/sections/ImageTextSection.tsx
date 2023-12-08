@@ -9,7 +9,7 @@ import {
 } from '@mui/material'
 import {
     BoxAtom,
-    SectionImageAtom,
+    ImageAtom,
     IconAtom,
     ButtonMolecule,
     Background,
@@ -74,7 +74,7 @@ export const ImageTextSection = (props: Props) => {
                         maxWidth: screenMaxWidth,
                     }}
                 >
-                    <SectionImageAtom
+                    <ImageAtom
                         src="/meeting-image.jpg"
                         alt="perks of working at adam it"
                         sx={{
@@ -84,10 +84,7 @@ export const ImageTextSection = (props: Props) => {
                     <BoxAtom
                         space={1}
                         sx={{
-                            width: {
-                                xs: '100%',
-                                md: '50',
-                            },
+                            width: '100%',
                         }}
                     >
                         {props.logo && (

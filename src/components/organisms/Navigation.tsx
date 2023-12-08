@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
 import { screenMaxWidth } from '@/style'
 import { useEffect, useState } from 'react'
-import { Colors } from '@/constants'
+import { CARD_SHADOW, Colors } from '@/constants'
 import { Box } from '@mui/material'
 import Link from 'next/link'
 import { BoxAtom, TextAtom, ButtonMolecule } from '@/components'
@@ -41,7 +41,7 @@ export const NavigationOrganism = () => {
             sx={{
                 position: 'fixed',
                 width: '100%',
-                boxShadow: 'none',
+                boxShadow: navScrolled ? CARD_SHADOW : undefined,
                 zIndex: 10,
                 transition: 'background-color 0.3s ease',
                 backgroundColor: navScrolled ? Colors.WHITE : 'transparent',
@@ -105,6 +105,10 @@ export const NavigationOrganism = () => {
                             alignItems: { xs: 'flex-end', md: undefined },
                             m: 0,
                             gap: 2,
+                            boxShadow: {
+                                xs: menuOpen ? CARD_SHADOW : undefined,
+                                md: undefined,
+                            },
                         }}
                     >
                         {pages.map((page, index) => (

@@ -1,5 +1,5 @@
 import { Colors } from '@/constants'
-import { BoxAtom, TextAtom, SectionImageAtom, Background } from '@/components'
+import { BoxAtom, TextAtom, Background } from '@/components'
 
 export const SmallHeroSection = () => {
     return (

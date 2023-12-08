@@ -5,20 +5,21 @@ interface Props {
     sx?: SxProps<Theme>
 }
 
-export const SectionImageAtom = (
+export const ImageAtom = (
     props: Props & {
         src: string
         alt: string
+        size?: number
     }
 ) => {
     return (
         <Box
             sx={{
                 img: {
-                    width: '100%',
+                    width: props.size ?? '100%',
                     height: {
                         xs: 350,
-                        md: 'auto',
+                        md: 500,
                     },
                 },
 
@@ -45,7 +46,7 @@ export const HeaderImageAtom = (props: Props) => {
             sx={{
                 width: '100%',
                 height: '100%',
-                background: `url("/header-image.jpg") no-repeat`,
+                background: `url("/home-meeting-image.jpg") no-repeat`,
                 backgroundPosition: 'right',
                 backgroundSize: 'cover',
                 clipPath:

@@ -7,7 +7,7 @@ export {
     IconShapedAtom,
     BoxAtom,
     TextAtom,
-    SectionImageAtom,
+    ImageAtom,
     HeaderImageAtom,
 } from './atoms'
 
@@ -19,6 +19,8 @@ export {
     IconButtonMolecule,
     KpiCardMolecule,
     LoaderMolecule,
+    FormInputMolecule,
+    UploadMolecule,
 } from './molecules'
 
 // organisms
@@ -37,4 +39,5 @@ export {
     SmallHeroSection,
     JobsSection,
     TextImageSection,
+    ContactSection,
 } from './sections'

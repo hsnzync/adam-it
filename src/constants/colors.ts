@@ -9,6 +9,11 @@ export enum Colors {
     LIGHT_GREY = '#EEEEEE',
     LIGHT_BLUE = '#E8F5FC',
 
+    // Regular tones
+    MID_BLUE = '#136E9F',
+
     // Dark tones
     DARK_BLUE = '#06202D',
 }
+
+export const CARD_SHADOW = '0px 0px 15px 0px rgba(0,0,0,.2)'

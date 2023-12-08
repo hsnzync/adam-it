@@ -1,14 +1,16 @@
-import { Button, Typography, Container, SxProps, Theme } from '@mui/material'
+import { Button, Container, SxProps, Theme } from '@mui/material'
 import { IconAtom, TextAtom } from '@/components'
 import { Colors } from '@/constants'
 import { IconName } from '@/types'
 
 interface Props {
     label: string
+    additionalLabel?: string
     icon?: IconName
     variant?: 'outlined' | 'clear'
     url?: string
     sx?: SxProps<Theme>
+    disabled?: boolean
     onClick?: () => void
 }
 
@@ -20,6 +22,7 @@ export const ButtonMolecule = (props: Props) => {
         <Button
             aria-label={props.label}
             onClick={props.onClick}
+            disabled={props.disabled}
             sx={{
                 cursor: 'pointer',
                 display: 'flex',
@@ -32,6 +35,9 @@ export const ButtonMolecule = (props: Props) => {
                 border: isOutlined ? `1px solid ${Colors.WHITE}` : undefined,
                 backgroundColor:
                     isOutlined || isClear ? 'transparent' : Colors.ORANGE,
+                '&.Mui-disabled': {
+                    backgroundColor: Colors.GREY,
+                },
                 ':hover': {
                     backgroundColor:
                         isOutlined || isClear ? 'transparent' : Colors.RED,
