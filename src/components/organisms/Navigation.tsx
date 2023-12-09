@@ -1,24 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Box } from '@mui/material'
 import Toolbar from '@mui/material/Toolbar'
 import MenuItem from '@mui/material/MenuItem'
-import Image from 'next/image'
 import { screenMaxWidth } from '@/style'
-import { useEffect, useState } from 'react'
 import { CARD_SHADOW, Colors } from '@/constants'
-import { Box } from '@mui/material'
-import Link from 'next/link'
 import { BoxAtom, TextAtom, ButtonMolecule } from '@/components'
-
-const pages = [
-    { name: 'Werkgever', slug: '/werkgever' },
-    { name: 'Kandidaten', slug: '/kandidaten' },
-    { name: 'Over ons', slug: '/over-ons' },
-    { name: 'Contact', slug: '/contact' },
-]
+import { textContent } from '@/content'
 
 export const NavigationOrganism = () => {
     const [navScrolled, setNavScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
+    const { pages } = textContent.navigation
 
     const handleScroll = () => {
         if (window.scrollY > 50) setNavScrolled(true)

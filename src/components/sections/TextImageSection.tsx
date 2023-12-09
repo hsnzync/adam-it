@@ -1,6 +1,13 @@
 import { Colors } from '@/constants'
-import { SxProps, Theme } from '@mui/material'
-import { BoxAtom, ImageAtom, Background, TextAtom } from '..'
+import {
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    SxProps,
+    Theme,
+} from '@mui/material'
+import { BoxAtom, ImageAtom, Background, TextAtom, IconAtom } from '..'
 import { screenMaxWidth } from '@/style'
 import Image from 'next/image'
 
@@ -9,9 +16,10 @@ interface Props {
     bgColor: string
     hasBgPattern?: boolean
     title: string
-    subTitle: string
+    subtitle?: string
     description: string
     logo?: string
+    perks?: string[]
     sx?: SxProps<Theme>
 }
 
@@ -23,10 +31,22 @@ export const TextImageSection = (props: Props) => {
             alignment="center"
             sx={{
                 backgroundColor: props.bgColor,
+                backgroundSize: {
+                    xs: '600% auto',
+                    md: '250% auto',
+                },
+                backgroundPosition: {
+                    xs: 'center',
+                    md: '-15% 50%',
+                },
                 p: {
                     xs: 3,
                     md: 5,
                 },
+                py: {
+                    md: 10,
+                },
+                overflow: 'hidden',
                 ...props.sx,
             }}
         >
@@ -52,10 +72,7 @@ export const TextImageSection = (props: Props) => {
                     <BoxAtom
                         space={1}
                         sx={{
-                            width: {
-                                xs: '100%',
-                                md: '50',
-                            },
+                            width: '100%',
                         }}
                     >
                         {props.logo && (
@@ -66,13 +83,39 @@ export const TextImageSection = (props: Props) => {
                                 height={80}
                             />
                         )}
-                        <TextAtom textTransform="uppercase" color={Colors.BLUE}>
-                            {props.subTitle}
-                        </TextAtom>
+                        {props.subtitle && (
+                            <TextAtom
+                                textTransform="uppercase"
+                                color={Colors.BLUE}
+                            >
+                                {props.subtitle}
+                            </TextAtom>
+                        )}
                         <TextAtom variant="h4" header>
                             {props.title}
                         </TextAtom>
                         <TextAtom>{props.description}</TextAtom>
+                        {props.perks && (
+                            <List dense sx={{ my: 3 }}>
+                                {props.perks.map((perk, index) => (
+                                    <ListItem key={index} sx={{ p: 0, mb: 1 }}>
+                                        <ListItemIcon sx={{ minWidth: 35 }}>
+                                            <IconAtom
+                                                iconName="checkCircleOutline"
+                                                color={Colors.ORANGE}
+                                            />
+                                        </ListItemIcon>
+                                        <ListItemText
+                                            primary={
+                                                <TextAtom header>
+                                                    {perk}
+                                                </TextAtom>
+                                            }
+                                        />
+                                    </ListItem>
+                                ))}
+                            </List>
+                        )}
                     </BoxAtom>
                     <ImageAtom
                         src="/meeting-image.jpg"

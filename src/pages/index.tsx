@@ -12,15 +12,18 @@ import {
     NavigationOrganism,
 } from '@/components'
 import { Colors } from '@/constants'
+import { textContent } from '@/content'
 
 export default function Home() {
+    const content = textContent.home
+
     return (
         <>
             <Head>
-                <title>Adam IT - Wij maken impact met IT</title>
+                <title>{content.seo_head.title}</title>
                 <meta
-                    name="Adam IT - Wij maken impact met IT"
-                    content="Wij maken impact met IT"
+                    name={content.seo_head.meta_name}
+                    content={content.seo_head.meta_content}
                 />
                 <meta
                     name="viewport"
@@ -37,41 +40,21 @@ export default function Home() {
                     }}
                     initial={{ opacity: 0 }}
                 >
-                    <HeroSection />
+                    <HeroSection
+                        title={content.hero.title}
+                        subtitle={content.hero.subtitle}
+                    />
                     <KpiSection
-                        tileTitle="Als IT’er organisaties verder helpen?"
-                        tiles={[
-                            {
-                                title: 'Test Automation Engineering',
-                                description:
-                                    'Geautomatiseerde systeem opstellen om (complexe) software te laten testen.',
-                                icon: 'computer',
-                            },
-                            {
-                                title: 'Software testing op afstand',
-                                description:
-                                    'The quick, brown fox jumps over a lazy dog, DJs flock by when MTV ax quiz prog.',
-                                icon: 'pin',
-                            },
-                            {
-                                title: 'Interim een vaste tester inhuren',
-                                description:
-                                    'Een eigen vaste IT Professional inhuren als test automation engineer.',
-                                icon: 'person',
-                            },
-                        ]}
+                        tileTitle={content.kpi_section.title}
+                        tiles={content.kpi_section.tiles}
                     />
                     <ImageTextSection
                         hasBgPattern
                         bgColor={Colors.LIGHT_BLUE}
-                        title="De voordelen van werken via Adam IT?"
-                        description="The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs."
-                        perks={[
-                            'Goed salaris, markt conform',
-                            'Altijd opdrachten genoeg',
-                            'Bawds jog, flick quartz, vex nymphs.',
-                        ]}
-                        buttonText="Meer over kandidaten"
+                        title={content.perks_section.title}
+                        description={content.perks_section.description}
+                        perks={content.perks_section.perks}
+                        buttonText={content.perks_section.button_text}
                         buttonUrl=""
                         sx={{
                             display: {
@@ -81,25 +64,21 @@ export default function Home() {
                         }}
                     />
                     <QuoteSection
-                        content="The quick, brown fox jumps over a lazy dog. DJs flock by
-                  when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.
-                  Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for
-                  quick jigs vex! Fox nymphs grab."
-                        name="Jan Verstegen"
+                        content={content.quote_section.content}
+                        name={content.quote_section.name}
                     />
-                    <JobsSection />
+                    <JobsSection
+                        tiles={content.jobs_section.tiles}
+                        information={content.jobs_section.information}
+                    />
                     <ImageTextSection
-                        sectionTitle="Recente cases"
+                        sectionTitle={content.cases_section.section_title}
                         bgColor={Colors.WHITE}
                         logo="/company-logos/uwv-logo.svg"
-                        title="Geautomatiseerde test applicatie voor het UWV"
-                        description="The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs."
-                        perks={[
-                            'Testomgeving opgezet',
-                            'Support',
-                            'Langdurig traject',
-                        ]}
-                        buttonText="Bekijk de cases"
+                        title={content.cases_section.title}
+                        description={content.cases_section.description}
+                        perks={content.cases_section.perks}
+                        buttonText={content.cases_section.button_text}
                         buttonUrl=""
                     />
 
@@ -107,14 +86,10 @@ export default function Home() {
                     <ImageTextSection
                         hasBgPattern
                         bgColor={Colors.LIGHT_BLUE}
-                        title="De voordelen van werken via Adam IT?"
-                        description="The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs."
-                        perks={[
-                            'Goed salaris, markt conform',
-                            'Altijd opdrachten genoeg',
-                            'Bawds jog, flick quartz, vex nymphs.',
-                        ]}
-                        buttonText="Meer over kandidaten"
+                        title={content.perks_section.title}
+                        description={content.perks_section.description}
+                        perks={content.perks_section.perks}
+                        buttonText={content.perks_section.button_text}
                         buttonUrl=""
                         sx={{
                             display: {

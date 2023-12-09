@@ -10,9 +10,13 @@ interface Props {
 
 export const KpiCardMolecule = (props: Props) => {
     return (
-        <BoxAtom direction="vertical" space={2}>
+        <BoxAtom direction="vertical" space={2} sx={{ width: '100%' }}>
             <BoxAtom direction="horizontal" alignment="center" space={4}>
-                <BoxAtom direction="horizontal" space={3}>
+                <BoxAtom
+                    direction="horizontal"
+                    space={3}
+                    sx={{ width: '100%' }}
+                >
                     <IconShapedAtom
                         color={Colors.WHITE}
                         iconName={props.icon}

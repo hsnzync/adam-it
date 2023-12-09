@@ -10,7 +10,12 @@ import {
     HeaderGlow,
 } from '@/components'
 
-export const HeroSection = () => {
+interface Props {
+    title: string
+    subtitle: string
+}
+
+export const HeroSection = (props: Props) => {
     return (
         <Background
             as="header"
@@ -118,10 +123,10 @@ export const HeroSection = () => {
                         },
                     }}
                 >
-                    In verbinding met IT&apos;ers & opdrachtgevers
+                    {props.subtitle}
                 </TextAtom>
                 <TextAtom variant="h3" color={Colors.WHITE} header>
-                    Wij maken impact met IT
+                    {props.title}
                 </TextAtom>
                 <BoxAtom
                     alignment="center"

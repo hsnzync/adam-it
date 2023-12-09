@@ -21,8 +21,8 @@ export const Background = (props: Props) => {
                 height: '100%',
                 backgroundImage: props.hasPattern
                     ? props.hero
-                        ? `url("/header/hero-pattern.svg")`
-                        : `url("/header/pattern.svg")`
+                        ? `url("/header/pattern.svg")`
+                        : `url("/background/pattern.svg")`
                     : undefined,
 
                 backgroundPosition: props.position,

@@ -3,50 +3,10 @@ import Image from 'next/image'
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
 import { BoxAtom, TextAtom, IconAtom } from '@/components'
+import { textContent } from '@/content'
 
 export const FooterOrganism = () => {
-    const navigationLinks = [
-        {
-            name: 'Werkgevers',
-            url: '',
-        },
-        {
-            name: 'Werken bij',
-            url: '',
-        },
-        {
-            name: 'Over Adam IT',
-            url: '',
-        },
-        {
-            name: 'Testnation',
-            url: '',
-        },
-        {
-            name: 'Vacatures',
-            url: '',
-        },
-    ]
-    const supportLinks = [
-        {
-            name: 'Klantenservice',
-            url: '',
-        },
-        {
-            name: 'Contact',
-            url: '',
-        },
-    ]
-    const contactLinks = [
-        {
-            name: '+ 31 20 123 45 78',
-            url: '',
-        },
-        {
-            name: 'info@adamit.nl',
-            url: '',
-        },
-    ]
+    const content = textContent.footer
 
     return (
         <BoxAtom
@@ -86,9 +46,9 @@ export const FooterOrganism = () => {
                     >
                         <BoxAtom direction="vertical" space={2}>
                             <TextAtom variant="h6" color={Colors.WHITE} header>
-                                Navigation
+                                {content.navigation.title}
                             </TextAtom>
-                            {navigationLinks.map((link, index) => (
+                            {content.navigation.links.map((link, index) => (
                                 <Link
                                     href=""
                                     key={index}
@@ -103,9 +63,9 @@ export const FooterOrganism = () => {
                         </BoxAtom>
                         <BoxAtom direction="vertical" space={2}>
                             <TextAtom variant="h6" color={Colors.WHITE} header>
-                                Support
+                                {content.support.title}
                             </TextAtom>
-                            {supportLinks.map((link, index) => (
+                            {content.support.links.map((link, index) => (
                                 <Link
                                     href=""
                                     key={index}
@@ -120,9 +80,9 @@ export const FooterOrganism = () => {
                         </BoxAtom>
                         <BoxAtom direction="vertical" space={2}>
                             <TextAtom variant="h6" color={Colors.WHITE} header>
-                                Contact
+                                {content.contact.title}
                             </TextAtom>
-                            {contactLinks.map((link, index) => (
+                            {content.contact.links.map((link, index) => (
                                 <Link
                                     href=""
                                     key={index}
@@ -179,7 +139,7 @@ export const FooterOrganism = () => {
                     }}
                 >
                     <TextAtom color={Colors.WHITE}>
-                        Adam IT © 2024 - Alle rechten voorbehouden
+                        {content.copyright}
                     </TextAtom>
                     <BoxAtom
                         direction="horizontal"
@@ -197,7 +157,7 @@ export const FooterOrganism = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            <TextAtom>Algemene voorwaarden</TextAtom>
+                            <TextAtom>{content.terms_and_conditions}</TextAtom>
                         </Link>
                         <TextAtom color={Colors.WHITE}>|</TextAtom>
                         <Link
@@ -207,7 +167,7 @@ export const FooterOrganism = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            <TextAtom>Privacy Policy</TextAtom>
+                            <TextAtom>{content.privacy_policy}</TextAtom>
                         </Link>
                         <TextAtom color={Colors.WHITE}>|</TextAtom>
                         <Link
@@ -217,7 +177,7 @@ export const FooterOrganism = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            <TextAtom>Cookies</TextAtom>
+                            <TextAtom>{content.cookies}</TextAtom>
                         </Link>
                     </BoxAtom>
                 </BoxAtom>

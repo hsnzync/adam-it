@@ -23,14 +23,13 @@ export const HeaderGlow = () => {
         <Box
             sx={{
                 position: 'absolute',
-
                 bottom: -150,
                 left: 0,
                 right: 0,
                 backgroundColor: Colors.RED,
                 filter: 'blur(100px)',
                 width: '50%',
-                height: 180,
+                height: 150,
                 margin: 'auto',
                 zIndex: 1,
             }}

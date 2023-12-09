@@ -7,8 +7,14 @@ import {
     AccordionMolecule,
     TextAtom,
 } from '@/components'
+import { Information, Tile } from '@/types'
 
-export const JobsSection = () => {
+interface Props {
+    tiles: Tile
+    information: Information
+}
+
+export const JobsSection = (props: Props) => {
     return (
         <BoxAtom
             as="section"
@@ -17,6 +23,9 @@ export const JobsSection = () => {
             sx={{
                 p: {
                     xs: 3,
+                    md: 10,
+                },
+                py: {
                     md: 10,
                 },
             }}

@@ -1,7 +1,12 @@
 import { Colors } from '@/constants'
-import { BoxAtom, TextAtom, Background } from '@/components'
+import { BoxAtom, TextAtom, Background, HeaderGlow } from '@/components'
 
-export const SmallHeroSection = () => {
+interface Props {
+    title: string
+    subtitle: string
+}
+
+export const SmallHeroSection = (props: Props) => {
     return (
         <Background
             as="header"
@@ -11,7 +16,12 @@ export const SmallHeroSection = () => {
             position="50% 40%"
             bgColor={Colors.DARK_BLUE}
             sx={{
-                height: 350,
+                height: {
+                    xs: 250,
+                    md: 350,
+                },
+                overflow: 'hidden',
+                position: 'relative',
                 backgroundSize: '200% auto',
             }}
         >
@@ -38,12 +48,13 @@ export const SmallHeroSection = () => {
                         },
                     }}
                 >
-                    Voor opdrachtgevers
+                    {props.subtitle}
                 </TextAtom>
                 <TextAtom variant="h3" color={Colors.WHITE} header>
-                    Werkgevers
+                    {props.title}
                 </TextAtom>
             </BoxAtom>
+            <HeaderGlow />
         </Background>
     )
 }

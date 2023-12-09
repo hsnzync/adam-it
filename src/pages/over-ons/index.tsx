@@ -10,12 +10,13 @@ import {
     SmallHeroSection,
     TextImageSection,
     ContactSection,
+    TextSection,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
 
 export default function Home() {
-    const content = textContent.employee
+    const content = textContent.about
 
     return (
         <>
@@ -46,35 +47,20 @@ export default function Home() {
                     />
                     <TextImageSection
                         bgColor={Colors.WHITE}
-                        title={content.connect_section.title}
-                        subtitle={content.connect_section.subtitle}
-                        description={content.connect_section.description}
+                        title={content.intro_section.title}
+                        subtitle={content.intro_section.subtitle}
+                        description={content.intro_section.description}
                     />
-                    <KpiSection
-                        tileTitle={content.kpi_section.title}
-                        tiles={content.kpi_section.tiles}
+                    <TextSection
+                        bgColor={Colors.WHITE}
+                        content={content.about_section}
                     />
-                    <ImageTextSection
+                    <TextImageSection
                         hasBgPattern
                         bgColor={Colors.LIGHT_BLUE}
                         title={content.perks_section.title}
                         description={content.perks_section.description}
                         perks={content.perks_section.perks}
-                        buttonText={content.perks_section.button_text}
-                        buttonUrl=""
-                    />
-                    <QuoteSection
-                        content={content.quote_section.content}
-                        name={content.quote_section.name}
-                    />
-                    <LogoSliderOrganism divider />
-                    <ContactSection
-                        title={content.contact_section.title}
-                        contactName={content.contact_section.name}
-                        contactPhone={content.contact_section.phone_number}
-                        contactEmail={content.contact_section.email}
-                        formTitle={content.contact_section.form_title}
-                        buttonText={content.contact_section.button_text}
                     />
                 </motion.div>
             </main>

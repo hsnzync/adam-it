@@ -41,15 +41,18 @@ export const ImageTextSection = (props: Props) => {
                 backgroundColor: props.bgColor,
                 backgroundSize: {
                     xs: '600% auto',
-                    md: '250% auto',
+                    md: '250%',
                 },
                 backgroundPosition: {
                     xs: 'center',
-                    md: '0% 30%',
+                    md: '-15% 50%',
                 },
                 p: {
                     xs: 3,
                     md: 5,
+                },
+                py: {
+                    md: 10,
                 },
                 overflow: 'hidden',
                 ...props.sx,

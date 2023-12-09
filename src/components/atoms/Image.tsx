@@ -9,14 +9,14 @@ export const ImageAtom = (
     props: Props & {
         src: string
         alt: string
-        size?: number
     }
 ) => {
     return (
         <Box
             sx={{
+                width: '100%',
                 img: {
-                    width: props.size ?? '100%',
+                    width: '100%',
                     height: {
                         xs: 350,
                         md: 500,

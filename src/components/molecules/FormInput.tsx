@@ -4,7 +4,9 @@ import { ChangeEvent, ChangeEventHandler } from 'react'
 interface Props {
     name: string
     label: string
+    type: string
     textarea?: boolean
+    error?: boolean
     onChange: (value: string) => void
 }
 
@@ -15,7 +17,8 @@ export const FormInputMolecule = (props: Props) => {
                 {props.label}
             </InputLabel>
             <TextField
-                error={false}
+                type={props.type}
+                error={props.error}
                 multiline={props.textarea}
                 id={`${props.name}-input`}
                 onChange={(

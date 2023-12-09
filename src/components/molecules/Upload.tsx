@@ -90,18 +90,6 @@ export const UploadMolecule = (props: Props) => {
                 <TextAtom color={Colors.DARK_BLUE} sx={{ fontSize: 14 }}>
                     {props.label}
                 </TextAtom>
-                <TextAtom
-                    color={Colors.DARK_BLUE}
-                    sx={{ fontSize: 14, px: 0.5 }}
-                >
-                    of
-                </TextAtom>
-                <TextAtom
-                    color={Colors.ORANGE}
-                    sx={{ fontSize: 14, textDecoration: 'underline' }}
-                >
-                    {props.additionalLabel}
-                </TextAtom>
             </Button>
             <VisuallyHiddenInput
                 type="file"

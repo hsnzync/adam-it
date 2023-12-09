@@ -1,0 +1,5 @@
+export { navigation as navigationContent } from './navigation'
+export { footer as footerContent } from './footer'
+export { home as homeContent } from './home'
+export { employee as employeeContent } from './employee'
+export { about as aboutContent } from './about'
