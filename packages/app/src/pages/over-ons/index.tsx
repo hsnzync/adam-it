@@ -2,15 +2,11 @@ import Head from 'next/head'
 import { motion } from 'framer-motion'
 import {
     FooterOrganism,
-    LogoSliderOrganism,
-    ImageTextSection,
-    KpiSection,
     NavigationOrganism,
-    QuoteSection,
     SmallHeroSection,
     TextImageSection,
-    ContactSection,
-    TextSection,
+    OneTextSection,
+    TwoTextSection,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
@@ -51,7 +47,7 @@ export default function Home() {
                         subtitle={content.intro_section.subtitle}
                         description={content.intro_section.description}
                     />
-                    <TextSection
+                    <OneTextSection
                         bgColor={Colors.WHITE}
                         content={content.about_section}
                     />
@@ -61,6 +57,11 @@ export default function Home() {
                         title={content.perks_section.title}
                         description={content.perks_section.description}
                         perks={content.perks_section.perks}
+                    />
+                    <TwoTextSection
+                        bgColor={Colors.WHITE}
+                        firstContent={content.extra_section.first_column}
+                        secondContent={content.extra_section.second_column}
                     />
                 </motion.div>
             </main>

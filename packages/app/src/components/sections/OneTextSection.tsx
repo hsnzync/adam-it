@@ -1,13 +1,5 @@
-import { Colors } from '@/constants'
-import {
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemText,
-    SxProps,
-    Theme,
-} from '@mui/material'
-import { BoxAtom, ImageAtom, Background, TextAtom, IconAtom } from '..'
+import { SxProps, Theme } from '@mui/material'
+import { BoxAtom, Background, TextAtom } from '@/components'
 import { screenMaxWidth } from '@/style'
 
 interface Content {
@@ -21,7 +13,7 @@ interface Props {
     sx?: SxProps<Theme>
 }
 
-export const TextSection = (props: Props) => {
+export const OneTextSection = (props: Props) => {
     return (
         <Background
             as="section"

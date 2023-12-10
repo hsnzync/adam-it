@@ -40,5 +40,6 @@ export {
     JobsSection,
     TextImageSection,
     ContactSection,
-    TextSection,
+    OneTextSection,
+    TwoTextSection,
 } from './sections'
