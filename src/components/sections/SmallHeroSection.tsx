@@ -26,15 +26,27 @@ export const SmallHeroSection = (props: Props) => {
             }}
         >
             <BoxAtom
-                alignment="center"
                 direction="vertical"
-                space={1}
                 sx={{
                     height: '100%',
-                    p: {
+                    width: {
+                        xs: '90%',
+                        md: '100%',
+                    },
+                    px: {
                         xs: 3,
                         md: 0,
                     },
+                    py: {
+                        xs: 4,
+                        md: 12,
+                    },
+                    justifyContent: 'end',
+                    alignItems: {
+                        xs: 'start',
+                        md: 'center',
+                    },
+                    zIndex: 3,
                 }}
             >
                 <TextAtom

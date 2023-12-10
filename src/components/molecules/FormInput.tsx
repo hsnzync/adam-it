@@ -7,7 +7,7 @@ interface Props {
     type: string
     textarea?: boolean
     error?: boolean
-    onChange: (value: string) => void
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const FormInputMolecule = (props: Props) => {
@@ -21,9 +21,10 @@ export const FormInputMolecule = (props: Props) => {
                 error={props.error}
                 multiline={props.textarea}
                 id={`${props.name}-input`}
-                onChange={(
-                    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-                ) => props.onChange(event.target.value)}
+                name={props.name}
+                onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    props.onChange(event)
+                }
                 sx={{
                     mt: 3,
                     input: {

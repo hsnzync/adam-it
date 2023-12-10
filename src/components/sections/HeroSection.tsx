@@ -31,7 +31,7 @@ export const HeroSection = (props: Props) => {
                     md: 730,
                 },
                 backgroundImage: {
-                    xs: 'url(/header/pattern.svg)',
+                    xs: 'url(/background/pattern.svg)',
                     md: 'none',
                 },
                 backgroundSize: {

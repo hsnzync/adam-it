@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { screenMaxWidth } from '@/style'
 import {
     BoxAtom,
@@ -21,20 +21,30 @@ interface Props {
 }
 
 export const ContactSection = (props: Props) => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [message, setMessage] = useState('')
+    const [form, setForm] = useState({
+        name: '',
+        email: '',
+        message: '',
+    })
     const [file, setFile] = useState<File>()
 
-    const disableSubmit = name === '' || email === '' || message === ''
+    const disableSubmit =
+        form.name === '' || form.email === '' || form.message === ''
 
     // const isEmail = email.includes('@') && email.includes('.')
 
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value,
+        })
+    }
+
     const handleSubmit = async () => {
         const formData = new FormData()
-        formData.append('name', name)
-        formData.append('email', email)
-        formData.append('message', message)
+        formData.append('name', form.name)
+        formData.append('email', form.email)
+        formData.append('message', form.message)
         if (file) {
             formData.append('file', file)
         }
@@ -159,20 +169,20 @@ export const ContactSection = (props: Props) => {
                             name="name"
                             label="Naam"
                             type="text"
-                            onChange={setName}
+                            onChange={handleChange}
                         />
                         <FormInputMolecule
                             name="email"
                             label="E-mailadres"
                             type="email"
-                            onChange={setEmail}
+                            onChange={handleChange}
                         />
                         <FormInputMolecule
                             name="message"
                             label="Bericht"
                             type="text"
                             textarea
-                            onChange={setMessage}
+                            onChange={handleChange}
                         />
                         <UploadMolecule
                             onUpload={setFile}
