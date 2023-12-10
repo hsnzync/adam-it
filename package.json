@@ -1,35 +1,19 @@
 {
     "name": "adam-it",
-    "version": "0.1.0",
     "private": true,
+    "workspaces": [
+        "packages/app",
+        "packages/cms"
+    ],
     "scripts": {
-        "start": "next dev",
-        "build": "next build",
-        "start:prd": "next start",
-        "lint": "next lint",
-        "cms": "npm start -C ./cms",
-        "typecheck": "tsc"
-    },
-    "dependencies": {
-        "@emotion/react": "^11.11.1",
-        "@emotion/styled": "^11.11.0",
-        "@mui/material": "^5.14.18",
-        "framer-motion": "^10.16.5",
-        "next": "14.0.3",
-        "nodemailer": "^6.9.7",
-        "react": "^18",
-        "react-dom": "^18",
-        "styled-components": "^6.1.1",
-        "swiper": "^11.0.5"
+        "build": "npx lerna run build",
+        "cms": "npx lerna run develop --scope=@adam-it/cms",
+        "setup": "npm install --workspaces --if-present",
+        "start": "npx lerna run start --scope=@adam-it/app"
     },
     "devDependencies": {
-        "@mui/icons-material": "^5.14.18",
-        "@types/node": "^20",
-        "@types/nodemailer": "^6.4.14",
-        "@types/react": "^18",
-        "@types/react-dom": "^18",
-        "eslint": "^8",
-        "eslint-config-next": "14.0.3",
-        "typescript": "^5"
-    }
+        "lerna": "^8.0.0"
+    },
+    "packageManager": "yarn@3.7.0",
+    "pnp": false
 }
