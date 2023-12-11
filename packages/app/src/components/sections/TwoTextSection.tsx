@@ -38,7 +38,7 @@ export const TwoTextSection = (props: Props) => {
             <BoxAtom
                 direction="horizontal"
                 alignment="start"
-                space={5}
+                space={8}
                 sx={{
                     width: '100%',
                     position: 'relative',
@@ -103,7 +103,6 @@ export const TwoTextSection = (props: Props) => {
                         </BoxAtom>
                     ))}
                 </BoxAtom>
-                <BoxAtom />
             </BoxAtom>
         </Background>
     )

@@ -5,7 +5,8 @@ import {
     footerPage,
     aboutPage,
     contactPage,
-} from './fragments'
+    candidatesPage,
+} from './parts'
 
 export const textContent = {
     navigation: navigationPage,
@@ -14,4 +15,5 @@ export const textContent = {
     employee: employeePage,
     about: aboutPage,
     contact: contactPage,
+    candidates: candidatesPage,
 }

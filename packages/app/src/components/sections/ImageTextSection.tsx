@@ -25,11 +25,11 @@ interface Props {
     hasBgPattern?: boolean
     title: string
     description: string
-    perks: string[]
-    buttonText: string
-    buttonUrl: string
     imageUrl: string
+    perks?: string[]
     logo?: string
+    buttonText?: string
+    buttonUrl?: string
     sx?: SxProps<Theme>
 }
 
@@ -105,7 +105,7 @@ export const ImageTextSection = (props: Props) => {
                         </TextAtom>
                         <TextAtom>{props.description}</TextAtom>
                         <List dense sx={{ my: 3 }}>
-                            {props.perks.map((perk, index) => (
+                            {props.perks?.map((perk, index) => (
                                 <ListItem key={index} sx={{ p: 0, mb: 1 }}>
                                     <ListItemIcon sx={{ minWidth: 35 }}>
                                         <IconAtom
@@ -121,10 +121,12 @@ export const ImageTextSection = (props: Props) => {
                                 </ListItem>
                             ))}
                         </List>
-                        <ButtonMolecule
-                            label={props.buttonText}
-                            url={props.buttonUrl}
-                        />
+                        {props.buttonText && (
+                            <ButtonMolecule
+                                label={props.buttonText}
+                                url={props.buttonUrl}
+                            />
+                        )}
                     </BoxAtom>
                 </BoxAtom>
             </BoxAtom>
