@@ -15,6 +15,7 @@ export const employee = {
         subtitle: 'Wij verbinden IT’ers met opdrachtgevers',
         description:
             'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. ',
+        image_url: 'pitching-meeting.jpg',
     },
     kpi_section: {
         title: 'Als IT’er organisaties verder helpen',
@@ -49,6 +50,7 @@ export const employee = {
             'Bawds jog, flick quartz, vex nymphs.',
         ],
         button_text: 'Meer over kandidaten',
+        image_url: 'mentoring-meeting.jpg',
     },
     quote_section: {
         content:
@@ -62,5 +64,6 @@ export const employee = {
         email: 'adam@adamit.nl',
         form_title: 'Meer informatie? Neem dan contact op met Adam.',
         button_text: 'Verzenden',
+        image_url: 'recruiter.jpg',
     },
 }

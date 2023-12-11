@@ -1,5 +1,7 @@
 import { Box, SxProps, Theme } from '@mui/material'
 import Image from 'next/image'
+import { BoxAtom } from '@/components'
+import { getAsset } from '@/utils'
 
 interface Props {
     sx?: SxProps<Theme>
@@ -12,15 +14,12 @@ export const ImageAtom = (
     }
 ) => {
     return (
-        <Box
+        <BoxAtom
+            alignment="end"
             sx={{
                 width: '100%',
                 img: {
                     width: '100%',
-                    height: {
-                        xs: 350,
-                        md: 500,
-                    },
                 },
 
                 ...props.sx,
@@ -36,17 +35,22 @@ export const ImageAtom = (
                     objectFit: 'cover',
                 }}
             />
-        </Box>
+        </BoxAtom>
     )
 }
 
-export const HeaderImageAtom = (props: Props) => {
+export const HeaderImageAtom = (
+    props: Props & {
+        imageUrl: string
+    }
+) => {
+    console.log(props.imageUrl)
     return (
         <Box
             sx={{
                 width: '100%',
                 height: '100%',
-                background: `url("/home-meeting-image.jpg") no-repeat`,
+                background: `url(${props.imageUrl}) no-repeat`,
                 backgroundPosition: 'right',
                 backgroundSize: 'cover',
                 clipPath:

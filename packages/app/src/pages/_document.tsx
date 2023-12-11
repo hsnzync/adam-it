@@ -5,7 +5,13 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head />
-            <body style={{ margin: 0, backgroundColor: Colors.DARK_BLUE }}>
+            <body
+                style={{
+                    margin: 0,
+                    backgroundColor: Colors.DARK_BLUE,
+                    overflowX: 'hidden',
+                }}
+            >
                 <Main />
                 <NextScript />
             </body>

@@ -9,6 +9,7 @@ export const home = {
     hero: {
         title: 'Wij maken impact met IT',
         subtitle: "In verbinding met IT'ers & opdrachtgevers",
+        image_url: 'onboarding.jpg',
     },
     kpi_section: {
         title: 'Als IT’er organisaties verder helpen',
@@ -43,6 +44,7 @@ export const home = {
             'Bawds jog, flick quartz, vex nymphs.',
         ],
         button_text: 'Meer over kandidaten',
+        image_url: 'offer.jpg',
     },
     quote_section: {
         content:
@@ -75,5 +77,7 @@ export const home = {
         perks: ['Testomgeving opgezet', 'Support', 'Langdurig traject'],
         button_text: 'Bekijk de cases',
         button_url: '',
+        image_url: 'company-meeting.jpg',
+        logo_url: 'uwv-logo.svg',
     },
 }

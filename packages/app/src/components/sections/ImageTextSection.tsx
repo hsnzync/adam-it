@@ -17,6 +17,7 @@ import {
 } from '..'
 import { screenMaxWidth } from '@/style'
 import Image from 'next/image'
+import { getAsset } from '@/utils'
 
 interface Props {
     sectionTitle?: string
@@ -27,6 +28,7 @@ interface Props {
     perks: string[]
     buttonText: string
     buttonUrl: string
+    imageUrl: string
     logo?: string
     sx?: SxProps<Theme>
 }
@@ -78,7 +80,7 @@ export const ImageTextSection = (props: Props) => {
                     }}
                 >
                     <ImageAtom
-                        src="/meeting-image.jpg"
+                        src={getAsset(props.imageUrl)}
                         alt="perks of working at adam it"
                         sx={{
                             width: '100%',

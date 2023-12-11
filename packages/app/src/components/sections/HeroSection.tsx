@@ -9,10 +9,12 @@ import {
     ImageAtom,
     HeaderGlow,
 } from '@/components'
+import { getAsset } from '@/utils'
 
 interface Props {
     title: string
     subtitle: string
+    imageUrl: string
 }
 
 export const HeroSection = (props: Props) => {
@@ -31,7 +33,7 @@ export const HeroSection = (props: Props) => {
                     md: 730,
                 },
                 backgroundImage: {
-                    xs: 'url(/background/pattern.svg)',
+                    xs: `url(${getAsset('pattern.svg', 'background')})`,
                     md: 'none',
                 },
                 backgroundSize: {
@@ -82,6 +84,7 @@ export const HeroSection = (props: Props) => {
                     style={{ height: '100%', width: '50%' }}
                 >
                     <HeaderImageAtom
+                        imageUrl={getAsset(props.imageUrl)}
                         sx={{
                             display: {
                                 xs: 'none',
@@ -167,7 +170,7 @@ export const HeroSection = (props: Props) => {
                         md: 'none',
                     },
                 }}
-                src="/home-meeting-image.jpg"
+                src={getAsset(props.imageUrl)}
                 alt="business meeting adam it"
             />
             <HeaderGlow />

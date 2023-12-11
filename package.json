@@ -9,7 +9,8 @@
         "build": "npx lerna run build",
         "cms": "npx lerna run develop --scope=@adam-it/cms",
         "setup": "npm install --workspaces --if-present",
-        "start": "npx lerna run start --scope=@adam-it/app"
+        "start": "npx lerna run start --scope=@adam-it/app",
+        "typecheck": "npx lerna run typecheck --scope=@adam-it/app"
     },
     "devDependencies": {
         "lerna": "^8.0.0"

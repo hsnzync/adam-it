@@ -13,3 +13,6 @@ export type IconName =
     | 'close'
     | 'attachFile'
     | 'delete'
+    | 'business'
+    | 'businessCenter'
+    | 'help'

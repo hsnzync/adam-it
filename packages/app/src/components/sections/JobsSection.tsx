@@ -1,5 +1,6 @@
+// 'use client'
 import { Colors } from '@/constants'
-import { screenMaxWidth } from '@/style'
+import { breakspoints, screenMaxWidth } from '@/style'
 import {
     BoxAtom,
     ButtonMolecule,
@@ -8,6 +9,7 @@ import {
     TextAtom,
 } from '@/components'
 import { Information, Tile } from '@/types'
+import { useEffect, useState } from 'react'
 
 interface Props {
     tiles: Tile
@@ -15,6 +17,12 @@ interface Props {
 }
 
 export const JobsSection = (props: Props) => {
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < breakspoints.sm)
+    }, [])
+
     return (
         <BoxAtom
             as="section"
@@ -43,7 +51,7 @@ export const JobsSection = (props: Props) => {
                     sx={{ minWidth: '50%' }}
                 >
                     <TextAtom variant="h4" header>
-                        Vacatures
+                        {props.tiles.title}
                     </TextAtom>
                     <CardMolecule
                         title="Test Automation Engineer"
@@ -63,13 +71,9 @@ export const JobsSection = (props: Props) => {
                         location="Rotterdam"
                         url=""
                     />
-                    <TextAtom>
-                        The quick, brown fox jumps over a lazy dog. DJs flock by
-                        when MTV ax quiz prog. Junk MTV quiz graced by fox
-                        whelps. Bawds jog, flick quartz, vex nymphs.
-                    </TextAtom>
+                    <TextAtom>{props.tiles.caption}</TextAtom>
                     <ButtonMolecule
-                        label="Alle vacatures"
+                        label={props.tiles.button_text}
                         sx={{
                             width: {
                                 xs: '100%',
@@ -90,57 +94,41 @@ export const JobsSection = (props: Props) => {
                 >
                     <BoxAtom space={2} sx={{ mb: 3 }}>
                         <TextAtom textTransform="uppercase" color={Colors.BLUE}>
-                            Wij verbinden IT’ers met opdrachtgevers
+                            {props.information.subtitle}
                         </TextAtom>
                         <TextAtom variant="h4" header>
-                            IT Professionals voor elkaar
+                            {props.information.title}
                         </TextAtom>
-                        <TextAtom>
-                            The quick, brown fox jumps over a lazy dog. DJs
-                            flock by when MTV ax quiz prog. Junk MTV quiz graced
-                            by fox whelps. Bawds jog, flick quartz, vex nymphs.
-                            Waltz, bad nymph, for quick jigs vex! Fox nymphs
-                            grab quick-jived waltz. Brick quiz whangs jumpy
-                            veldt fox. Bright vixens jump; dozy fowl quack.
-                            Quick wafting zephyrs vex bold Jim. Quick zephyrs
-                            blow, vexing daft Jim.
-                        </TextAtom>
+                        <TextAtom>{props.information.description}</TextAtom>
                     </BoxAtom>
                     <BoxAtom space={2} sx={{ mb: 3 }}>
                         <TextAtom variant="h4" header>
-                            Op zoek naar een Test engineer?
+                            {props.information.title_2}
                         </TextAtom>
-                        <TextAtom>
-                            The quick, brown fox jumps over a lazy dog. DJs
-                            flock by when MTV ax quiz prog. Junk MTV quiz graced
-                            by fox whelps. Bawds jog, flick quartz, vex nymphs.
-                            Waltz, bad nymph, for quick jigs vex! Fox nymphs
-                            grab quick-jived waltz. Brick quiz whangs jumpy
-                            veldt fox. Bright vixens jump; dozy fowl quack.
-                            Quick wafting zephyrs vex bold Jim. Quick zephyrs
-                            blow, vexing daft Jim.
-                        </TextAtom>
+                        <TextAtom>{props.information.description_2}</TextAtom>
                     </BoxAtom>
-                    <ButtonMolecule label="Plaats een opdracht" />
+                    <ButtonMolecule label={props.information.button_text} />
                 </BoxAtom>
-                <BoxAtom
-                    direction="horizontal"
-                    alignment="start"
-                    space={8}
-                    sx={{ maxWidth: screenMaxWidth }}
-                >
+                {isMobile && (
                     <BoxAtom
-                        direction="vertical"
-                        sx={{
-                            display: {
-                                xs: 'flex',
-                                md: 'none',
-                            },
-                        }}
+                        direction="horizontal"
+                        alignment="start"
+                        space={8}
+                        sx={{ maxWidth: screenMaxWidth }}
                     >
-                        <AccordionMolecule />
+                        <BoxAtom
+                            direction="vertical"
+                            sx={{
+                                display: {
+                                    xs: 'flex',
+                                    md: 'none',
+                                },
+                            }}
+                        >
+                            <AccordionMolecule />
+                        </BoxAtom>
                     </BoxAtom>
-                </BoxAtom>
+                )}
             </BoxAtom>
         </BoxAtom>
     )

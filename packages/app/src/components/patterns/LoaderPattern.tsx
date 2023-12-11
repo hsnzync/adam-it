@@ -2,11 +2,12 @@ import { Box } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import BottomShape from '@/../public/loader/shape-1.svg'
-import RightShape from '@/../public/loader/shape-2.svg'
-import LeftShape from '@/../public/loader/shape-3.svg'
-import TopShape from '@/../public/loader/shape-4.svg'
+import BottomShape from '@/../public/assets/loader/shape-1.svg'
+import RightShape from '@/../public/assets/loader/shape-2.svg'
+import LeftShape from '@/../public/assets/loader/shape-3.svg'
+import TopShape from '@/../public/assets/loader/shape-4.svg'
 import { Glow } from '@/components'
+import { getAsset } from '@/utils'
 
 export const LoaderPattern = () => {
     const [animationCount, setAnimationCount] = useState(0)
@@ -23,10 +24,7 @@ export const LoaderPattern = () => {
         }
     }, [animationCount])
 
-    useEffect(() => {
-        console.log(window.innerWidth)
-        setScreenSize(window.innerWidth)
-    }, [])
+    useEffect(() => setScreenSize(window.innerWidth), [])
 
     return (
         <Box sx={{ position: 'relative', height: '100vh', width: '100%' }}>
@@ -49,7 +47,10 @@ export const LoaderPattern = () => {
                     bottom: 0,
                 }}
             >
-                <Image src={BottomShape} alt="bottom shape" />
+                <Image
+                    src={getAsset('shape-1.svg', 'loader')}
+                    alt="bottom shape"
+                />
             </motion.div>
 
             <motion.div
@@ -70,7 +71,10 @@ export const LoaderPattern = () => {
                     right: 0,
                 }}
             >
-                <Image src={RightShape} alt="right shape" />
+                <Image
+                    src={getAsset('shape-2.svg', 'loader')}
+                    alt="right shape"
+                />
             </motion.div>
             <motion.div
                 initial={{ x: -100 }}
@@ -91,7 +95,10 @@ export const LoaderPattern = () => {
                     left: 0,
                 }}
             >
-                <Image src={LeftShape} alt="left shape" />
+                <Image
+                    src={getAsset('shape-3.svg', 'loader')}
+                    alt="left shape"
+                />
             </motion.div>
             <motion.div
                 initial={{ y: -200 }}
@@ -112,7 +119,10 @@ export const LoaderPattern = () => {
                     top: 0,
                 }}
             >
-                <Image src={TopShape} alt="top shape" />
+                <Image
+                    src={getAsset('shape-4.svg', 'loader')}
+                    alt="top shape"
+                />
             </motion.div>
 
             {/* Glowing effect */}

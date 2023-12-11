@@ -39,7 +39,8 @@ export {
     SmallHeroSection,
     JobsSection,
     TextImageSection,
-    ContactSection,
+    FormSection,
     OneTextSection,
     TwoTextSection,
+    ContactSection,
 } from './sections'

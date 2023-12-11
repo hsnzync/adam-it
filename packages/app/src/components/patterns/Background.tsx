@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { SxProps, Theme } from '@mui/material'
 import { BoxAtom } from '@/components'
+import { getAsset } from '@/utils'
 
 interface Props {
     children?: ReactNode
@@ -21,8 +22,8 @@ export const Background = (props: Props) => {
                 height: '100%',
                 backgroundImage: props.hasPattern
                     ? props.hero
-                        ? `url("/header/pattern.svg")`
-                        : `url("/background/pattern.svg")`
+                        ? `url(${getAsset('pattern.svg', 'header')})`
+                        : `url(${getAsset('pattern.svg', 'background')})`
                     : undefined,
 
                 backgroundPosition: props.position,

@@ -39,21 +39,26 @@ export const KpiSection = (props: Props) => {
                 sx={{
                     maxWidth: screenMaxWidth,
                     gap: {
-                        xs: 4,
-                        md: 10,
+                        xs: 0,
+                        sm: 4,
+                        lg: 10,
                     },
                 }}
             >
-                <TextAtom variant="h4" header>
+                <TextAtom variant="h4" header sx={{ pr: 3 }}>
                     {props.tileTitle}
                 </TextAtom>
                 {props.tiles.map((tile, index) => (
-                    <KpiCardMolecule
-                        key={index}
-                        title={tile.title}
-                        description={tile.description}
-                        icon={tile.icon}
-                    />
+                    <KpiCardMolecule key={index} icon={tile.icon} button>
+                        <BoxAtom direction="vertical" space={2}>
+                            <TextAtom variant="h6" header lineHeight={1.3}>
+                                {tile.title}
+                            </TextAtom>
+                            <TextAtom variant="body1">
+                                {tile.description}
+                            </TextAtom>
+                        </BoxAtom>
+                    </KpiCardMolecule>
                 ))}
             </BoxAtom>
         </BoxAtom>

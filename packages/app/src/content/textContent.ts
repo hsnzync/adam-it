@@ -1,15 +1,17 @@
 import {
-    homeContent,
-    navigationContent,
-    employeeContent,
-    footerContent,
-    aboutContent,
+    homePage,
+    navigationPage,
+    employeePage,
+    footerPage,
+    aboutPage,
+    contactPage,
 } from './fragments'
 
 export const textContent = {
-    navigation: navigationContent,
-    footer: footerContent,
-    home: homeContent,
-    employee: employeeContent,
-    about: aboutContent,
+    navigation: navigationPage,
+    footer: footerPage,
+    home: homePage,
+    employee: employeePage,
+    about: aboutPage,
+    contact: contactPage,
 }

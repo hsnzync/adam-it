@@ -13,6 +13,7 @@ import {
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
+import { getAsset } from '@/utils'
 
 export default function Home() {
     const content = textContent.home
@@ -43,6 +44,7 @@ export default function Home() {
                     <HeroSection
                         title={content.hero.title}
                         subtitle={content.hero.subtitle}
+                        imageUrl={content.hero.image_url}
                     />
                     <KpiSection
                         tileTitle={content.kpi_section.title}
@@ -56,6 +58,7 @@ export default function Home() {
                         perks={content.perks_section.perks}
                         buttonText={content.perks_section.button_text}
                         buttonUrl=""
+                        imageUrl={content.perks_section.image_url}
                         sx={{
                             display: {
                                 xs: 'none',
@@ -74,12 +77,16 @@ export default function Home() {
                     <ImageTextSection
                         sectionTitle={content.cases_section.section_title}
                         bgColor={Colors.WHITE}
-                        logo="/company-logos/uwv-logo.svg"
+                        logo={getAsset(
+                            content.cases_section.logo_url,
+                            'company-logos'
+                        )}
                         title={content.cases_section.title}
                         description={content.cases_section.description}
                         perks={content.cases_section.perks}
                         buttonText={content.cases_section.button_text}
                         buttonUrl=""
+                        imageUrl={content.cases_section.image_url}
                     />
 
                     <LogoSliderOrganism divider />
@@ -91,6 +98,7 @@ export default function Home() {
                         perks={content.perks_section.perks}
                         buttonText={content.perks_section.button_text}
                         buttonUrl=""
+                        imageUrl={content.perks_section.image_url}
                         sx={{
                             display: {
                                 xs: 'flex',

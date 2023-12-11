@@ -4,15 +4,15 @@ import {
     FooterOrganism,
     NavigationOrganism,
     SmallHeroSection,
-    TextImageSection,
-    OneTextSection,
+    ContactSection,
     TwoTextSection,
+    FormSection,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
 
 export default function Home() {
-    const content = textContent.about
+    const content = textContent.contact
 
     return (
         <>
@@ -41,24 +41,17 @@ export default function Home() {
                         title={content.hero.title}
                         subtitle={content.hero.subtitle}
                     />
-                    <TextImageSection
-                        bgColor={Colors.WHITE}
-                        title={content.intro_section.title}
-                        subtitle={content.intro_section.subtitle}
-                        description={content.intro_section.description}
-                        imageUrl={content.intro_section.image_url}
-                    />
-                    <OneTextSection
-                        bgColor={Colors.WHITE}
-                        content={content.about_section}
-                    />
-                    <TextImageSection
-                        hasBgPattern
-                        bgColor={Colors.LIGHT_BLUE}
-                        title={content.perks_section.title}
-                        description={content.perks_section.description}
-                        perks={content.perks_section.perks}
-                        imageUrl={content.perks_section.image_url}
+
+                    <ContactSection items={content.contact_section} />
+
+                    <FormSection
+                        contactName={content.contact_form.name}
+                        contactPhone={content.contact_form.phone_number}
+                        contactEmail={content.contact_form.email}
+                        formTitle={content.contact_form.form_title}
+                        buttonText={content.contact_form.button_text}
+                        imageUrl={content.contact_form.image_url}
+                        basic
                     />
                     <TwoTextSection
                         bgColor={Colors.WHITE}

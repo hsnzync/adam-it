@@ -1,11 +1,12 @@
 import { Colors } from '@/constants'
 import { BoxAtom, TextAtom, IconButtonMolecule, IconShapedAtom } from '..'
 import { IconName } from '@/types'
+import { ReactNode } from 'react'
 
 interface Props {
-    title: string
-    description: string
     icon: IconName
+    children: ReactNode
+    button?: boolean
 }
 
 export const KpiCardMolecule = (props: Props) => {
@@ -15,23 +16,20 @@ export const KpiCardMolecule = (props: Props) => {
                 <BoxAtom
                     direction="horizontal"
                     space={3}
-                    sx={{ width: '100%' }}
+                    sx={{ width: '100%', justifyContent: 'center' }}
                 >
                     <IconShapedAtom
                         color={Colors.WHITE}
                         iconName={props.icon}
                     />
-                    <BoxAtom direction="vertical" space={2}>
-                        <TextAtom variant="h6" header lineHeight={1.3}>
-                            {props.title}
-                        </TextAtom>
-                        <TextAtom variant="body1">{props.description}</TextAtom>
-                    </BoxAtom>
+                    {props.children}
                 </BoxAtom>
             </BoxAtom>
-            <BoxAtom alignment="end">
-                <IconButtonMolecule url="" />
-            </BoxAtom>
+            {props.button && (
+                <BoxAtom alignment="end">
+                    <IconButtonMolecule url="" />
+                </BoxAtom>
+            )}
         </BoxAtom>
     )
 }

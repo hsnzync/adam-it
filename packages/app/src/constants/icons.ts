@@ -13,6 +13,9 @@ import {
     Close,
     AttachFile,
     Delete,
+    Business,
+    BusinessCenter,
+    Help,
 } from '@mui/icons-material'
 
 export const IconsMapper: Record<string, React.ComponentType> = {
@@ -30,4 +33,7 @@ export const IconsMapper: Record<string, React.ComponentType> = {
     close: Close,
     attachFile: AttachFile,
     delete: Delete,
+    business: Business,
+    businessCenter: BusinessCenter,
+    help: Help,
 }

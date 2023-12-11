@@ -8,6 +8,7 @@ import { screenMaxWidth } from '@/style'
 import { CARD_SHADOW, Colors } from '@/constants'
 import { BoxAtom, TextAtom, ButtonMolecule } from '@/components'
 import { textContent } from '@/content'
+import { getAsset } from '@/utils'
 
 export const NavigationOrganism = () => {
     const [navScrolled, setNavScrolled] = useState(false)
@@ -66,8 +67,14 @@ export const NavigationOrganism = () => {
                             <Image
                                 src={
                                     navScrolled
-                                        ? '/logo/logo-text-regular-red.svg'
-                                        : '/logo/logo-text-white-red.svg'
+                                        ? getAsset(
+                                              'logo-text-regular-red.svg',
+                                              'logo'
+                                          )
+                                        : getAsset(
+                                              'logo-text-white-red.svg',
+                                              'logo'
+                                          )
                                 }
                                 width={130}
                                 height={50}

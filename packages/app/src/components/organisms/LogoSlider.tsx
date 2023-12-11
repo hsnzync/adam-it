@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
+import { getAsset } from '@/utils'
 
 interface Props {
     divider?: boolean
@@ -14,10 +15,10 @@ interface Props {
 }
 
 const companyLogos = [
-    '/company-logos/uwv-logo.svg',
-    '/company-logos/kadaster-logo.svg',
-    '/company-logos/stedin-logo.png',
-    '/company-logos/rfh-logo.svg',
+    'uwv-logo.svg',
+    'kadaster-logo.svg',
+    'stedin-logo.png',
+    'rfh-logo.svg',
 ]
 
 export const LogoSliderOrganism = (props: Props) => {
@@ -90,7 +91,7 @@ export const LogoSliderOrganism = (props: Props) => {
                             }}
                         >
                             <Image
-                                src={logo}
+                                src={getAsset(logo, 'company-logos')}
                                 alt="company logo"
                                 width={100}
                                 height={100}

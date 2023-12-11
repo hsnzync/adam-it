@@ -4,6 +4,7 @@ import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
 import { BoxAtom, TextAtom, IconAtom } from '@/components'
 import { textContent } from '@/content'
+import { getAsset } from '@/utils'
 
 export const FooterOrganism = () => {
     const content = textContent.footer
@@ -120,9 +121,17 @@ export const FooterOrganism = () => {
                             </BoxAtom>
                         </BoxAtom>
                     </BoxAtom>
-                    <BoxAtom>
+                    <BoxAtom
+                        sx={{
+                            img: {
+                                md: {
+                                    width: '100%',
+                                },
+                            },
+                        }}
+                    >
                         <Image
-                            src="/logo/logo-text-white.svg"
+                            src={getAsset('logo-text-white.svg', 'logo')}
                             alt="logo adam it"
                             width={300}
                             height={80}
