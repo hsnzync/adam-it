@@ -104,7 +104,7 @@ export const ImageTextSection = (props: Props) => {
                             {props.title}
                         </TextAtom>
                         <TextAtom>{props.description}</TextAtom>
-                        <List dense sx={{ my: 3 }}>
+                        <List dense sx={{ mt: 3 }}>
                             {props.perks?.map((perk, index) => (
                                 <ListItem key={index} sx={{ p: 0, mb: 1 }}>
                                     <ListItemIcon sx={{ minWidth: 35 }}>

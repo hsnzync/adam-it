@@ -21,7 +21,6 @@ export const NavigationOrganism = () => {
     }
 
     const handleMenuOpen = () => {
-        console.log(menuOpen)
         setMenuOpen(!menuOpen)
     }
 

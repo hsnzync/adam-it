@@ -47,10 +47,7 @@ export const LoaderPattern = () => {
                     bottom: 0,
                 }}
             >
-                <Image
-                    src={getAsset('shape-1.svg', 'loader')}
-                    alt="bottom shape"
-                />
+                <Image src={BottomShape} alt="" />
             </motion.div>
 
             <motion.div
@@ -71,10 +68,7 @@ export const LoaderPattern = () => {
                     right: 0,
                 }}
             >
-                <Image
-                    src={getAsset('shape-2.svg', 'loader')}
-                    alt="right shape"
-                />
+                <Image src={RightShape} alt="" />
             </motion.div>
             <motion.div
                 initial={{ x: -100 }}
@@ -95,10 +89,7 @@ export const LoaderPattern = () => {
                     left: 0,
                 }}
             >
-                <Image
-                    src={getAsset('shape-3.svg', 'loader')}
-                    alt="left shape"
-                />
+                <Image src={LeftShape} alt="" />
             </motion.div>
             <motion.div
                 initial={{ y: -200 }}
@@ -119,10 +110,7 @@ export const LoaderPattern = () => {
                     top: 0,
                 }}
             >
-                <Image
-                    src={getAsset('shape-4.svg', 'loader')}
-                    alt="top shape"
-                />
+                <Image src={TopShape} alt="" />
             </motion.div>
 
             {/* Glowing effect */}

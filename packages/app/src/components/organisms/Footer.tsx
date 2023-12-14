@@ -126,6 +126,7 @@ export const FooterOrganism = () => {
                             img: {
                                 md: {
                                     width: '100%',
+                                    height: 100,
                                 },
                             },
                         }}
@@ -154,9 +155,12 @@ export const FooterOrganism = () => {
                         direction="horizontal"
                         space={1}
                         sx={{
-                            flexDirection: {
-                                xs: 'row',
+                            pt: {
+                                xs: 1,
+                                md: 0,
                             },
+                            flexDirection: 'row',
+                            flexWrap: 'wrap',
                         }}
                     >
                         <Link
@@ -164,6 +168,7 @@ export const FooterOrganism = () => {
                             style={{
                                 color: Colors.WHITE,
                                 textDecoration: 'none',
+                                whiteSpace: 'pre',
                             }}
                         >
                             <TextAtom>{content.terms_and_conditions}</TextAtom>
@@ -174,6 +179,7 @@ export const FooterOrganism = () => {
                             style={{
                                 color: Colors.WHITE,
                                 textDecoration: 'none',
+                                whiteSpace: 'pre',
                             }}
                         >
                             <TextAtom>{content.privacy_policy}</TextAtom>
@@ -184,6 +190,7 @@ export const FooterOrganism = () => {
                             style={{
                                 color: Colors.WHITE,
                                 textDecoration: 'none',
+                                whiteSpace: 'pre',
                             }}
                         >
                             <TextAtom>{content.cookies}</TextAtom>

@@ -18,14 +18,21 @@ export const ImageAtom = (
             alignment="end"
             sx={{
                 width: '100%',
+
                 img: {
                     width: '100%',
+                    height: {
+                        xs: 300,
+                        sm: 400,
+                        md: 500,
+                    },
                 },
 
                 ...props.sx,
             }}
         >
             <Image
+                loading="eager"
                 src={props.src}
                 alt={props.alt}
                 width={500}

@@ -22,7 +22,10 @@ export const SmallHeroSection = (props: Props) => {
                 },
                 overflow: 'hidden',
                 position: 'relative',
-                backgroundSize: '200% auto',
+                backgroundSize: {
+                    xs: '350% auto',
+                    md: '200% auto',
+                },
             }}
         >
             <BoxAtom

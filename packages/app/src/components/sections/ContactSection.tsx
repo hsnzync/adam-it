@@ -35,7 +35,7 @@ export const ContactSection = (props: Props) => {
                     md: 500,
                 },
                 p: {
-                    xs: 3,
+                    xs: 5,
                     md: 0,
                 },
             }}
@@ -52,7 +52,24 @@ export const ContactSection = (props: Props) => {
                 }}
             >
                 {props.items.map((item, index) => (
-                    <KpiCardMolecule key={index} icon={item.icon}>
+                    <KpiCardMolecule
+                        key={index}
+                        icon={item.icon}
+                        sx={{
+                            flexDirection: {
+                                xs: 'row',
+                                sm: 'column',
+                            },
+                            justifyContent: {
+                                xs: 'flex-start',
+                                sm: 'center',
+                            },
+                            width: {
+                                xs: '100%',
+                                md: '50%',
+                            },
+                        }}
+                    >
                         <BoxAtom direction="vertical" space={1}>
                             <TextAtom variant="h6" header>
                                 {item.title}

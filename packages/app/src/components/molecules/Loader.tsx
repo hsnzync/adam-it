@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { LoaderPattern } from '@/components'
 import { Colors } from '@/constants/colors'
+import { getAsset } from '@/utils'
 
 export const LoaderMolecule = () => {
     return (
@@ -37,7 +38,7 @@ export const LoaderMolecule = () => {
                 style={{ zIndex: 5, position: 'absolute' }}
             >
                 <Image
-                    src="/logo/logo-no-text.svg"
+                    src={getAsset('logo-no-text.svg', 'logo')}
                     width={300}
                     height={300}
                     alt={'logo adam it'}

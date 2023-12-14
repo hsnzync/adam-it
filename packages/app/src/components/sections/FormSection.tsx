@@ -77,7 +77,7 @@ export const FormSection = (props: Props) => {
             bgColor={Colors.LIGHT_BLUE}
             sx={{
                 p: {
-                    xs: 5,
+                    xs: 3,
                     md: 10,
                 },
                 py: {
@@ -97,12 +97,15 @@ export const FormSection = (props: Props) => {
             >
                 <BoxAtom
                     direction="vertical"
-                    alignment="end"
                     space={2}
                     sx={{
                         width: {
                             xs: '100%',
                             md: props.basic ? '20%' : '30%',
+                        },
+                        alignItems: {
+                            xs: 'flex-start',
+                            md: 'flex-end',
                         },
                     }}
                 >
@@ -112,10 +115,13 @@ export const FormSection = (props: Props) => {
                         sx={{
                             img: {
                                 height: {
-                                    xs: props.basic ? 150 : 350,
+                                    xs: 350,
                                     md: props.basic ? 150 : 500,
                                 },
-                                width: props.basic ? 150 : '100%',
+                                width: {
+                                    xs: '100%',
+                                    md: props.basic ? 150 : '100%',
+                                },
                             },
                         }}
                     />
