@@ -1,5 +1,5 @@
-import { Colors } from '@/constants'
 import { Html, Head, Main, NextScript } from 'next/document'
+import { Colors } from '@/constants'
 
 export default function Document() {
     return (

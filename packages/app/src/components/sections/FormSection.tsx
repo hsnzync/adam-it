@@ -43,7 +43,8 @@ export const FormSection = (props: Props) => {
         })
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: any) => {
+        e.preventDefault()
         const formData = new FormData()
         formData.append('name', form.name)
         formData.append('email', form.email)
@@ -53,18 +54,18 @@ export const FormSection = (props: Props) => {
         }
 
         try {
-            const response = await fetch('/api/submitForm', {
+            await fetch('/api/submitForm', {
                 method: 'POST',
                 body: formData,
-            })
+            }).catch((error) => console.error(error))
 
-            if (response.ok) {
-                // Form submitted successfully
-                console.log('Form submitted successfully')
-            } else {
-                // Handle error
-                console.error('Form submission failed')
-            }
+            // if (response.ok) {
+            //     // Form submitted successfully
+            //     console.log('Form submitted successfully')
+            // } else {
+            //     // Handle error
+            //     console.error('Form submission failed')
+            // }
         } catch (error) {
             console.error('Error submitting form:', error)
         }
@@ -173,7 +174,6 @@ export const FormSection = (props: Props) => {
                         {props.formTitle}
                     </TextAtom>
                     <BoxAtom
-                        as="form"
                         space={2}
                         sx={{
                             mt: 4,
@@ -203,9 +203,8 @@ export const FormSection = (props: Props) => {
                             label="Voeg hier uw bestanden toe"
                         />
                         <ButtonMolecule
-                            onClick={handleSubmit}
+                            onClick={(e: SubmitEvent) => handleSubmit(e)}
                             label={props.buttonText}
-                            disabled={disableSubmit}
                         />
                     </BoxAtom>
                 </BoxAtom>

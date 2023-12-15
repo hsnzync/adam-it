@@ -45,7 +45,16 @@ export const KpiSection = (props: Props) => {
                     },
                 }}
             >
-                <TextAtom variant="h4" header sx={{ pr: 3 }}>
+                <TextAtom
+                    variant="h4"
+                    header
+                    sx={{
+                        pr: {
+                            xs: 0,
+                            md: 3,
+                        },
+                    }}
+                >
                     {props.tileTitle}
                 </TextAtom>
                 {props.tiles.map((tile, index) => (

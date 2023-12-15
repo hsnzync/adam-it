@@ -1,7 +1,6 @@
 import { Box, SxProps, Theme } from '@mui/material'
 import Image from 'next/image'
 import { BoxAtom } from '@/components'
-import { getAsset } from '@/utils'
 
 interface Props {
     sx?: SxProps<Theme>
@@ -51,7 +50,6 @@ export const HeaderImageAtom = (
         imageUrl: string
     }
 ) => {
-    console.log(props.imageUrl)
     return (
         <Box
             sx={{

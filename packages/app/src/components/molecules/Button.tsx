@@ -11,7 +11,7 @@ interface Props {
     url?: string
     sx?: SxProps<Theme>
     disabled?: boolean
-    onClick?: () => void
+    onClick?: (e?: any) => void
 }
 
 export const ButtonMolecule = (props: Props) => {
@@ -20,6 +20,7 @@ export const ButtonMolecule = (props: Props) => {
 
     return (
         <Button
+            type="button"
             aria-label={props.label}
             onClick={props.onClick}
             disabled={props.disabled}
