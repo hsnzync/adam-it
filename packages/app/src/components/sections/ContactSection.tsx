@@ -56,13 +56,10 @@ export const ContactSection = (props: Props) => {
                         key={index}
                         icon={item.icon}
                         sx={{
-                            flexDirection: {
-                                xs: 'row',
-                                sm: 'column',
-                            },
+                            flexDirection: 'row',
                             justifyContent: {
                                 xs: 'flex-start',
-                                sm: 'center',
+                                md: 'center',
                             },
                             width: {
                                 xs: '100%',

@@ -1,0 +1,23 @@
+{
+    "root": true,
+    "project": {
+        "name": "cms"
+    },
+    "api": {
+        "projectId": "wdzh4l4i",
+        "dataset": "production"
+    },
+    "plugins": [
+        "@sanity/base",
+        "@sanity/default-layout",
+        "@sanity/default-login",
+        "@sanity/desk-tool",
+        "@sanity/google-maps-input"
+    ],
+    "parts": [
+        {
+            "name": "part:@sanity/base/schema",
+            "path": "./schemas/schema"
+        }
+    ]
+}
