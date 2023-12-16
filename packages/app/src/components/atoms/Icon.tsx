@@ -16,6 +16,7 @@ export function IconAtom(props: IconProps) {
 
     return (
         <BoxAtom
+            as="span"
             className="icon-container"
             alignment="center"
             sx={{

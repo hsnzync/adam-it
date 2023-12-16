@@ -1,15 +1,23 @@
-import { Colors } from '@/constants'
-import { BoxAtom, TextAtom, IconButtonMolecule, IconShapedAtom } from '..'
-import { IconName } from '@/types'
 import { ReactNode } from 'react'
 import { SxProps, Theme } from '@mui/material'
+import { Colors } from '@/constants'
+import { BoxAtom, IconButtonMolecule, IconShapedAtom } from '..'
+import { IconName } from '@/types'
 
-interface Props {
+type Button =
+    | {
+          button: true
+          buttonUrl: string
+      }
+    | {
+          button: false
+      }
+
+type Props = {
     icon: IconName
     children: ReactNode
-    button?: boolean
     sx?: SxProps<Theme>
-}
+} & Button
 
 export const KpiCardMolecule = (props: Props) => {
     return (
@@ -47,7 +55,7 @@ export const KpiCardMolecule = (props: Props) => {
             </BoxAtom>
             {props.button && (
                 <BoxAtom alignment="end">
-                    <IconButtonMolecule url="" />
+                    <IconButtonMolecule link href={props.buttonUrl} />
                 </BoxAtom>
             )}
         </BoxAtom>

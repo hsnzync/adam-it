@@ -42,8 +42,9 @@ export const ContactSection = (props: Props) => {
         >
             <BoxAtom
                 direction="horizontal"
-                alignment="center"
                 sx={{
+                    justifyContent: 'center',
+                    alignItems: 'start',
                     width: '100%',
                     maxWidth: screenMaxWidth,
                     gap: {
@@ -55,15 +56,12 @@ export const ContactSection = (props: Props) => {
                     <KpiCardMolecule
                         key={index}
                         icon={item.icon}
+                        button={false}
                         sx={{
                             flexDirection: 'row',
                             justifyContent: {
                                 xs: 'flex-start',
                                 md: 'center',
-                            },
-                            width: {
-                                xs: '100%',
-                                md: '50%',
                             },
                         }}
                     >

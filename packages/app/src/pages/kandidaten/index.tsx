@@ -10,6 +10,8 @@ import {
     SmallHeroSection,
     TextImageSection,
     FormSection,
+    JobsSection,
+    TextImageTextSection,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
@@ -44,12 +46,33 @@ export default function Home() {
                         title={content.hero.title}
                         subtitle={content.hero.subtitle}
                     />
+                    <TextImageTextSection
+                        bgColor={Colors.WHITE}
+                        title={content.perks_section.title}
+                        subtitle={content.perks_section.subtitle}
+                        description={content.perks_section.description}
+                        imageUrl={content.perks_section.image_url}
+                        button
+                        buttonText={content.perks_section.button_text}
+                        buttonUrl={content.perks_section.button_url}
+                        perks={content.perks_section.perks}
+                    />
                     <ImageTextSection
                         hasBgPattern
                         bgColor={Colors.LIGHT_BLUE}
                         title={content.connect_section.title}
+                        subtitle={content.connect_section.subtitle}
                         description={content.connect_section.description}
                         imageUrl={content.connect_section.image_url}
+                        button={false}
+                    />
+                    <KpiSection
+                        tiles={content.kpi_section.tiles}
+                        title={content.kpi_section.title}
+                    />
+                    <JobsSection
+                        tiles={content.jobs_section.tiles}
+                        information={content.jobs_section.information}
                     />
                     <QuoteSection
                         content={content.quote_section.content}

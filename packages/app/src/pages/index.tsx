@@ -45,9 +45,10 @@ export default function Home() {
                         title={content.hero.title}
                         subtitle={content.hero.subtitle}
                         imageUrl={content.hero.image_url}
+                        buttons={content.hero.buttons}
                     />
                     <KpiSection
-                        tileTitle={content.kpi_section.title}
+                        tileTitle={content.kpi_section.tileTitle}
                         tiles={content.kpi_section.tiles}
                     />
                     <ImageTextSection
@@ -56,8 +57,9 @@ export default function Home() {
                         title={content.perks_section.title}
                         description={content.perks_section.description}
                         perks={content.perks_section.perks}
+                        button
                         buttonText={content.perks_section.button_text}
-                        buttonUrl=""
+                        buttonUrl={content.perks_section.button_url}
                         imageUrl={content.perks_section.image_url}
                         sx={{
                             display: {
@@ -84,8 +86,9 @@ export default function Home() {
                         title={content.cases_section.title}
                         description={content.cases_section.description}
                         perks={content.cases_section.perks}
+                        button
                         buttonText={content.cases_section.button_text}
-                        buttonUrl=""
+                        buttonUrl={content.cases_section.button_url}
                         imageUrl={content.cases_section.image_url}
                     />
 
@@ -96,8 +99,9 @@ export default function Home() {
                         title={content.perks_section.title}
                         description={content.perks_section.description}
                         perks={content.perks_section.perks}
+                        button
                         buttonText={content.perks_section.button_text}
-                        buttonUrl=""
+                        buttonUrl={content.perks_section.button_url}
                         imageUrl={content.perks_section.image_url}
                         sx={{
                             display: {

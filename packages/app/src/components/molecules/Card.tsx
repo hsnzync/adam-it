@@ -7,19 +7,20 @@ interface Props {
     title: string
     salary: string
     location: string
-    url: string
+    href: string
 }
 
 export const CardMolecule = (props: Props) => {
     return (
         <Card
             sx={{
+                width: '100%',
                 ':hover': {
                     boxShadow: CARD_SHADOW,
                 },
             }}
         >
-            <Link href={props.url} style={{ textDecoration: 'none' }}>
+            <Link href={props.href} passHref style={{ textDecoration: 'none' }}>
                 <CardContent sx={{ p: 3 }}>
                     <BoxAtom
                         direction="horizontal"
@@ -78,7 +79,7 @@ export const CardMolecule = (props: Props) => {
                                 </BoxAtom>
                             </BoxAtom>
                         </BoxAtom>
-                        <IconButtonMolecule url={props.url} />
+                        <IconButtonMolecule link={false} />
                     </BoxAtom>
                 </CardContent>
             </Link>

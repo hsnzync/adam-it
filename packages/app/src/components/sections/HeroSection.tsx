@@ -8,13 +8,19 @@ import {
     HeaderImageAtom,
     ImageAtom,
     HeaderGlow,
+    LinkButtonAtom,
 } from '@/components'
 import { getAsset } from '@/utils'
 
+interface Button {
+    label: string
+    href: string
+}
 interface Props {
     title: string
     subtitle: string
     imageUrl: string
+    buttons: Button[]
 }
 
 export const HeroSection = (props: Props) => {
@@ -145,22 +151,18 @@ export const HeroSection = (props: Props) => {
                         },
                     }}
                 >
-                    <ButtonMolecule
-                        label="Werkgevers"
-                        sx={{
-                            width: {
-                                xs: '100%',
-                            },
-                        }}
-                    />
-                    <ButtonMolecule
-                        label="Kandidaten"
-                        sx={{
-                            width: {
-                                xs: '100%',
-                            },
-                        }}
-                    />
+                    {props.buttons.map((button, index) => (
+                        <LinkButtonAtom
+                            key={index}
+                            label={button.label}
+                            href={button.href}
+                            sx={{
+                                width: {
+                                    xs: '100%',
+                                },
+                            }}
+                        />
+                    ))}
                 </BoxAtom>
             </BoxAtom>
             <ImageAtom

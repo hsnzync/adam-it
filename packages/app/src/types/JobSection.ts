@@ -8,16 +8,18 @@ interface Job {
 interface Tile {
     title: string
     caption: string
-    button_text: string
+    button_text?: string
+    button_url?: string
 }
 
 interface Information {
     title: string
     subtitle: string
     description: string
-    title_2: string
-    description_2: string
-    button_text: string
+    title_2?: string
+    description_2?: string
+    button_text?: string
+    button_url?: string
 }
 
 export type { Information, Tile, Job }

@@ -9,6 +9,7 @@ export {
     TextAtom,
     ImageAtom,
     HeaderImageAtom,
+    LinkButtonAtom,
 } from './atoms'
 
 // molecules
@@ -21,6 +22,7 @@ export {
     LoaderMolecule,
     FormInputMolecule,
     UploadMolecule,
+    ContactImageMolecule,
 } from './molecules'
 
 // organisms
@@ -43,4 +45,6 @@ export {
     OneTextSection,
     TwoTextSection,
     ContactSection,
+    TextImageTextSection,
+    JobsListSection,
 } from './sections'

@@ -7,16 +7,8 @@ import {
     SxProps,
     Theme,
 } from '@mui/material'
-import {
-    BoxAtom,
-    ImageAtom,
-    IconAtom,
-    Background,
-    TextAtom,
-    LinkButtonAtom,
-} from '..'
+import { BoxAtom, ImageAtom, IconAtom, TextAtom, LinkButtonAtom } from '..'
 import { screenMaxWidth } from '@/style'
-import Image from 'next/image'
 import { getAsset } from '@/utils'
 
 type Button =
@@ -30,34 +22,22 @@ type Button =
       }
 
 type Props = {
-    sectionTitle?: string
     bgColor: string
-    hasBgPattern?: boolean
     title: string
     subtitle?: string
     description: string
     imageUrl: string
-    perks?: string[]
-    logo?: string
+    perks: string[]
     sx?: SxProps<Theme>
 } & Button
 
-export const ImageTextSection = (props: Props) => {
+export const TextImageTextSection = (props: Props) => {
     return (
-        <Background
+        <BoxAtom
             as="section"
-            hasPattern={props.hasBgPattern}
             alignment="center"
             sx={{
                 backgroundColor: props.bgColor,
-                backgroundSize: {
-                    xs: '600% auto',
-                    md: '250%',
-                },
-                backgroundPosition: {
-                    xs: 'center',
-                    md: '-15% 50%',
-                },
                 p: {
                     xs: 3,
                     md: 5,
@@ -74,20 +54,34 @@ export const ImageTextSection = (props: Props) => {
                 space={3}
                 sx={{ maxWidth: screenMaxWidth, m: 'auto' }}
             >
-                {props.sectionTitle && (
-                    <TextAtom variant="h4" header>
-                        {props.sectionTitle}
-                    </TextAtom>
-                )}
                 <BoxAtom
                     direction="horizontal"
-                    alignment="center"
+                    alignment="start"
                     space={5}
                     sx={{
                         position: 'relative',
                         maxWidth: screenMaxWidth,
                     }}
                 >
+                    <BoxAtom
+                        space={1}
+                        sx={{
+                            width: '100%',
+                        }}
+                    >
+                        {props.subtitle && (
+                            <TextAtom
+                                textTransform="uppercase"
+                                color={Colors.BLUE}
+                            >
+                                {props.subtitle}
+                            </TextAtom>
+                        )}
+                        <TextAtom variant="h4" header>
+                            {props.title}
+                        </TextAtom>
+                        <TextAtom>{props.description}</TextAtom>
+                    </BoxAtom>
                     <ImageAtom
                         src={getAsset(props.imageUrl)}
                         alt="perks of working at adam it"
@@ -101,27 +95,7 @@ export const ImageTextSection = (props: Props) => {
                             width: '100%',
                         }}
                     >
-                        {props.logo && (
-                            <Image
-                                src={props.logo}
-                                alt="company logo"
-                                width={80}
-                                height={80}
-                            />
-                        )}
-                        {props.subtitle && (
-                            <TextAtom
-                                textTransform="uppercase"
-                                color={Colors.BLUE}
-                            >
-                                {props.subtitle}
-                            </TextAtom>
-                        )}
-                        <TextAtom variant="h4" header>
-                            {props.title}
-                        </TextAtom>
-                        <TextAtom>{props.description}</TextAtom>
-                        <List dense sx={{ mt: 3 }}>
+                        <List dense>
                             {props.perks?.map((perk, index) => (
                                 <ListItem key={index} sx={{ p: 0, mb: 1 }}>
                                     <ListItemIcon sx={{ minWidth: 35 }}>
@@ -147,6 +121,6 @@ export const ImageTextSection = (props: Props) => {
                     </BoxAtom>
                 </BoxAtom>
             </BoxAtom>
-        </Background>
+        </BoxAtom>
     )
 }

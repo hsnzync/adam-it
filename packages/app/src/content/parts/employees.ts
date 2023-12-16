@@ -1,6 +1,6 @@
 import { IconName } from '@/types'
 
-export const employee = {
+export const employees = {
     seo_head: {
         title: 'Werkgever | Adam IT - Wij maken impact met IT',
         meta_name: 'Adam IT - Wij maken impact met IT',
@@ -18,25 +18,28 @@ export const employee = {
         image_url: 'pitching-meeting.jpg',
     },
     kpi_section: {
-        title: 'Als IT’er organisaties verder helpen',
+        tileTitle: 'Als IT’er organisaties verder helpen',
         tiles: [
             {
                 title: 'Test Automation Engineering',
                 description:
                     'Geautomatiseerde systeem opstellen om (complexe) software te laten testen.',
                 icon: 'computer' as IconName,
+                button_url: '',
             },
             {
                 title: 'Software testing op afstand',
                 description:
                     'The quick, brown fox jumps over a lazy dog, DJs flock by when MTV ax quiz prog.',
                 icon: 'pin' as IconName,
+                button_url: '',
             },
             {
                 title: 'Interim een vaste tester inhuren',
                 description:
                     'Een eigen vaste IT Professional inhuren als test automation engineer.',
                 icon: 'person' as IconName,
+                button_url: '',
             },
         ],
     },
@@ -50,6 +53,7 @@ export const employee = {
             'Bawds jog, flick quartz, vex nymphs.',
         ],
         button_text: 'Meer over kandidaten',
+        button_url: '',
         image_url: 'mentoring-meeting.jpg',
     },
     quote_section: {

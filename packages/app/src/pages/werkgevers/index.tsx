@@ -15,7 +15,7 @@ import { Colors } from '@/constants'
 import { textContent } from '@/content'
 
 export default function Home() {
-    const content = textContent.employee
+    const content = textContent.employees
 
     return (
         <>
@@ -52,7 +52,7 @@ export default function Home() {
                         imageUrl={content.connect_section.image_url}
                     />
                     <KpiSection
-                        tileTitle={content.kpi_section.title}
+                        tileTitle={content.kpi_section.tileTitle}
                         tiles={content.kpi_section.tiles}
                     />
                     <ImageTextSection
@@ -61,8 +61,9 @@ export default function Home() {
                         title={content.perks_section.title}
                         description={content.perks_section.description}
                         perks={content.perks_section.perks}
+                        button
                         buttonText={content.perks_section.button_text}
-                        buttonUrl=""
+                        buttonUrl={content.perks_section.button_url}
                         imageUrl={content.perks_section.image_url}
                     />
                     <QuoteSection

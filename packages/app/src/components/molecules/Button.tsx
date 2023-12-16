@@ -1,25 +1,14 @@
-import { Button, Container, SxProps, Theme } from '@mui/material'
+import { Button as MuiButton, Container } from '@mui/material'
 import { IconAtom, TextAtom } from '@/components'
 import { Colors } from '@/constants'
-import { IconName } from '@/types'
+import { Button } from '@/types'
 
-interface Props {
-    label: string
-    additionalLabel?: string
-    icon?: IconName
-    variant?: 'outlined' | 'clear'
-    url?: string
-    sx?: SxProps<Theme>
-    disabled?: boolean
-    onClick?: (e?: any) => void
-}
-
-export const ButtonMolecule = (props: Props) => {
+export const ButtonMolecule = (props: Button) => {
     const isOutlined = props.variant === 'outlined'
     const isClear = props.variant === 'clear'
 
     return (
-        <Button
+        <MuiButton
             type="button"
             aria-label={props.label}
             onClick={props.onClick}
@@ -53,6 +42,7 @@ export const ButtonMolecule = (props: Props) => {
                 {props.label}
             </TextAtom>
             <Container
+                component="span"
                 className="button-icon-container"
                 sx={{
                     m: 0,
@@ -74,6 +64,6 @@ export const ButtonMolecule = (props: Props) => {
                     }}
                 />
             </Container>
-        </Button>
+        </MuiButton>
     )
 }

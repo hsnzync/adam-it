@@ -1,19 +1,21 @@
 import {
     homePage,
     navigationPage,
-    employeePage,
+    employeesPage,
     footerPage,
     aboutPage,
     contactPage,
     candidatesPage,
+    jobsPage,
 } from './parts'
 
 export const textContent = {
     navigation: navigationPage,
     footer: footerPage,
     home: homePage,
-    employee: employeePage,
+    employees: employeesPage,
     about: aboutPage,
     contact: contactPage,
     candidates: candidatesPage,
+    jobs: jobsPage,
 }

@@ -3,10 +3,10 @@ import { Colors } from '@/constants'
 import { breakspoints, screenMaxWidth } from '@/style'
 import {
     BoxAtom,
-    ButtonMolecule,
     CardMolecule,
     AccordionMolecule,
     TextAtom,
+    LinkButtonAtom,
 } from '@/components'
 import { Information, Tile } from '@/types'
 import { useEffect, useState } from 'react'
@@ -57,30 +57,33 @@ export const JobsSection = (props: Props) => {
                         title="Test Automation Engineer"
                         salary="€3.000 - €4.500"
                         location="Maassluis"
-                        url=""
+                        href=""
                     />
                     <CardMolecule
                         title="Software Ontwikkelaar"
                         salary="€3.000 - €4.500"
                         location="Den Haag"
-                        url=""
+                        href=""
                     />
                     <CardMolecule
                         title=".NET Test Automation Engineer"
                         salary="€3.000 - €4.500"
                         location="Rotterdam"
-                        url=""
+                        href=""
                     />
                     <TextAtom>{props.tiles.caption}</TextAtom>
-                    <ButtonMolecule
-                        label={props.tiles.button_text}
-                        sx={{
-                            width: {
-                                xs: '100%',
-                                md: 'fit-content',
-                            },
-                        }}
-                    />
+                    {props.tiles.button_text && (
+                        <LinkButtonAtom
+                            label={props.tiles.button_text}
+                            href={props.tiles.button_url ?? ''}
+                            sx={{
+                                width: {
+                                    xs: '100%',
+                                    md: 'fit-content',
+                                },
+                            }}
+                        />
+                    )}
                 </BoxAtom>
                 <BoxAtom
                     direction="vertical"
@@ -101,13 +104,24 @@ export const JobsSection = (props: Props) => {
                         </TextAtom>
                         <TextAtom>{props.information.description}</TextAtom>
                     </BoxAtom>
-                    <BoxAtom space={2} sx={{ mb: 3 }}>
-                        <TextAtom variant="h4" header>
-                            {props.information.title_2}
-                        </TextAtom>
-                        <TextAtom>{props.information.description_2}</TextAtom>
-                    </BoxAtom>
-                    <ButtonMolecule label={props.information.button_text} />
+
+                    {props.information.title_2 &&
+                        props.information.description_2 && (
+                            <BoxAtom space={2} sx={{ mb: 3 }}>
+                                <TextAtom variant="h4" header>
+                                    {props.information.title_2}
+                                </TextAtom>
+                                <TextAtom>
+                                    {props.information.description_2}
+                                </TextAtom>
+                            </BoxAtom>
+                        )}
+                    {props.information.button_text && (
+                        <LinkButtonAtom
+                            label={props.information.button_text}
+                            href={props.information.button_url ?? ''}
+                        />
+                    )}
                 </BoxAtom>
                 {isMobile && (
                     <BoxAtom

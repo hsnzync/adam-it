@@ -1,4 +1,5 @@
 export { IconAtom, IconShapedAtom } from './Icon'
 export { BoxAtom } from './Box'
 export { TextAtom } from './Text'
+export { LinkButtonAtom } from './LinkButton'
 export { ImageAtom, HeaderImageAtom } from './Image'

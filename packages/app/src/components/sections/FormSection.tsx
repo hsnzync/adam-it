@@ -4,6 +4,7 @@ import { screenMaxWidth } from '@/style'
 import {
     BoxAtom,
     ButtonMolecule,
+    ContactImageMolecule,
     FormInputMolecule,
     ImageAtom,
     TextAtom,
@@ -96,71 +97,12 @@ export const FormSection = (props: Props) => {
                 alignment="center"
                 space={10}
             >
-                <BoxAtom
-                    direction="vertical"
-                    space={2}
-                    sx={{
-                        width: {
-                            xs: '100%',
-                            md: props.basic ? '20%' : '30%',
-                        },
-                        alignItems: {
-                            xs: 'flex-start',
-                            md: 'flex-end',
-                        },
-                    }}
-                >
-                    <ImageAtom
-                        src={getAsset(props.imageUrl)}
-                        alt="recruiter apply contact image"
-                        sx={{
-                            img: {
-                                height: {
-                                    xs: 350,
-                                    md: props.basic ? 150 : 500,
-                                },
-                                width: {
-                                    xs: '100%',
-                                    md: props.basic ? 150 : '100%',
-                                },
-                            },
-                        }}
-                    />
-                    <BoxAtom alignment="start" space={2}>
-                        <TextAtom variant="h5" header>
-                            {props.title}
-                        </TextAtom>
-                        <TextAtom variant="body1" header>
-                            {props.contactName}
-                        </TextAtom>
-                        <BoxAtom>
-                            <Link
-                                href=""
-                                style={{ textDecorationColor: Colors.ORANGE }}
-                            >
-                                <TextAtom
-                                    variant="body1"
-                                    header
-                                    color={Colors.ORANGE}
-                                >
-                                    {props.contactPhone}
-                                </TextAtom>
-                            </Link>
-                            <Link
-                                href=""
-                                style={{ textDecorationColor: Colors.ORANGE }}
-                            >
-                                <TextAtom
-                                    variant="body1"
-                                    header
-                                    color={Colors.ORANGE}
-                                >
-                                    {props.contactEmail}
-                                </TextAtom>
-                            </Link>
-                        </BoxAtom>
-                    </BoxAtom>
-                </BoxAtom>
+                <ContactImageMolecule
+                    contactName={props.contactName}
+                    contactPhone={props.contactPhone}
+                    contactEmail={props.contactEmail}
+                    imageUrl={props.imageUrl}
+                />
                 <BoxAtom
                     direction="vertical"
                     sx={{

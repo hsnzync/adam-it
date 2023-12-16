@@ -16,3 +16,4 @@ export type IconName =
     | 'business'
     | 'businessCenter'
     | 'help'
+    | 'homeWork'

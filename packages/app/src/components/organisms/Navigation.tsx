@@ -6,14 +6,14 @@ import Toolbar from '@mui/material/Toolbar'
 import MenuItem from '@mui/material/MenuItem'
 import { screenMaxWidth } from '@/style'
 import { CARD_SHADOW, Colors } from '@/constants'
-import { BoxAtom, TextAtom, ButtonMolecule } from '@/components'
+import { BoxAtom, TextAtom, ButtonMolecule, LinkButtonAtom } from '@/components'
 import { textContent } from '@/content'
 import { getAsset } from '@/utils'
 
 export const NavigationOrganism = () => {
     const [navScrolled, setNavScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
-    const { pages } = textContent.navigation
+    const { pages, buttons } = textContent.navigation
 
     const handleScroll = () => {
         if (window.scrollY > 50) setNavScrolled(true)
@@ -137,7 +137,7 @@ export const NavigationOrganism = () => {
                                 }}
                             >
                                 <Link
-                                    href={page.slug}
+                                    href={page.href}
                                     style={{
                                         paddingBottom: 0,
                                         textDecoration: 'none',
@@ -151,14 +151,18 @@ export const NavigationOrganism = () => {
                                                 : Colors.WHITE
                                         }
                                     >
-                                        {page.name}
+                                        {page.label}
                                     </TextAtom>
                                 </Link>
                             </MenuItem>
                         ))}
-                        <ButtonMolecule label="Vacatures" />
-                        <ButtonMolecule
-                            label="Testnation"
+                        <LinkButtonAtom
+                            label={buttons.jobs.label}
+                            href={buttons.jobs.href}
+                        />
+                        <LinkButtonAtom
+                            label={buttons.testnation.label}
+                            href={buttons.testnation.href}
                             variant="outlined"
                             sx={{
                                 borderColor:

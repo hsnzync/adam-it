@@ -1,14 +1,24 @@
-import { SxProps, Theme } from '@mui/material'
-import { BoxAtom, Background, TextAtom, ButtonMolecule } from '@/components'
+import { Button, SxProps, Theme } from '@mui/material'
+import {
+    BoxAtom,
+    Background,
+    TextAtom,
+    ButtonMolecule,
+    LinkButtonAtom,
+} from '@/components'
 import { screenMaxWidth } from '@/style'
 import { Colors } from '@/constants'
 
-interface Content {
+type Button = {
+    button_text?: string
+    button_url?: string
+}
+
+type Content = {
     title: string
     subtitle: string
     description: string
-    button_text?: string
-}
+} & Button
 
 interface Props {
     bgColor: string
@@ -69,7 +79,10 @@ export const TwoTextSection = (props: Props) => {
                                 {text.description}
                             </TextAtom>
                             {text.button_text && (
-                                <ButtonMolecule label={text.button_text} />
+                                <LinkButtonAtom
+                                    href={text.button_url ?? ''}
+                                    label={text.button_text}
+                                />
                             )}
                         </BoxAtom>
                     ))}
@@ -98,7 +111,10 @@ export const TwoTextSection = (props: Props) => {
                                 {text.description}
                             </TextAtom>
                             {text.button_text && (
-                                <ButtonMolecule label={text.button_text} />
+                                <LinkButtonAtom
+                                    href={text.button_url ?? ''}
+                                    label={text.button_text}
+                                />
                             )}
                         </BoxAtom>
                     ))}

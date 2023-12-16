@@ -39,6 +39,7 @@ export const ImageAtom = (
                 style={{
                     clipPath: 'polygon(0 0, 80% 0, 150% 100%, 0 100%)',
                     objectFit: 'cover',
+                    borderRadius: 5,
                 }}
             />
         </BoxAtom>

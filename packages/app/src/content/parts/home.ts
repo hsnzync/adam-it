@@ -10,27 +10,34 @@ export const home = {
         title: 'Wij maken impact met IT',
         subtitle: "In verbinding met IT'ers & opdrachtgevers",
         image_url: 'onboarding.jpg',
+        buttons: [
+            { label: 'Werkgevers', href: '/werkgevers' },
+            { label: 'Kandidaten', href: '/kandidaten' },
+        ],
     },
     kpi_section: {
-        title: 'Als IT’er organisaties verder helpen',
+        tileTitle: 'Als IT’er organisaties verder helpen',
         tiles: [
             {
                 title: 'Test Automation Engineering',
                 description:
                     'Geautomatiseerde systeem opstellen om (complexe) software te laten testen.',
                 icon: 'computer' as IconName,
+                button_url: '',
             },
             {
                 title: 'Software testing op afstand',
                 description:
                     'The quick, brown fox jumps over a lazy dog, DJs flock by when MTV ax quiz prog.',
                 icon: 'pin' as IconName,
+                button_url: '',
             },
             {
                 title: 'Interim een vaste tester inhuren',
                 description:
                     'Een eigen vaste IT Professional inhuren als test automation engineer.',
                 icon: 'person' as IconName,
+                button_url: '',
             },
         ],
     },
@@ -44,6 +51,7 @@ export const home = {
             'Bawds jog, flick quartz, vex nymphs.',
         ],
         button_text: 'Meer over kandidaten',
+        button_url: '',
         image_url: 'offer.jpg',
     },
     quote_section: {
@@ -57,6 +65,7 @@ export const home = {
             caption:
                 'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.',
             button_text: 'Alle vacatures',
+            button_url: '',
         },
         information: {
             title: 'IT Professionals voor elkaar',
@@ -67,6 +76,7 @@ export const home = {
             description_2:
                 'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.',
             button_text: 'Plaats een opdracht',
+            button_url: '',
         },
     },
     cases_section: {
