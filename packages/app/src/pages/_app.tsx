@@ -1,3 +1,5 @@
+import store from '@/store'
+import { Provider } from 'react-redux'
 import { LoaderMolecule } from '@/components'
 import { breakspoints } from '@/style'
 import { handleFirstVisitOrExpired } from '@/utils'
@@ -23,5 +25,11 @@ export default function App({ Component, pageProps }: AppProps) {
         return () => clearTimeout(timeoutId)
     }, [])
 
-    return showLoader ? <LoaderMolecule /> : <Component {...pageProps} />
+    return showLoader ? (
+        <LoaderMolecule />
+    ) : (
+        <Provider store={store}>
+            <Component {...pageProps} />
+        </Provider>
+    )
 }

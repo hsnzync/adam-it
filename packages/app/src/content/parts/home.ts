@@ -64,7 +64,7 @@ export const home = {
             title: 'Vacatures',
             caption:
                 'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.',
-            button_text: 'Alle vacatures',
+            button_text: 'Bekijk alle vacatures',
             button_url: '',
         },
         information: {

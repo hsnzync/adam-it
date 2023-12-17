@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,6 +14,7 @@ import { getAsset } from '@/utils'
 export const NavigationOrganism = () => {
     const [navScrolled, setNavScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
+    const [currentPage, setCurrentPage] = useState('')
     const { pages, buttons } = textContent.navigation
 
     const handleScroll = () => {
@@ -23,6 +25,11 @@ export const NavigationOrganism = () => {
     const handleMenuOpen = () => {
         setMenuOpen(!menuOpen)
     }
+
+    useEffect(() => {
+        const page = window.location.pathname.replace('/', '').replace('-', ' ')
+        setCurrentPage(page)
+    }, [])
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
@@ -124,6 +131,19 @@ export const NavigationOrganism = () => {
                                     },
 
                                     a: {
+                                        '::after': {
+                                            content: '""',
+
+                                            borderBottom:
+                                                currentPage ===
+                                                page.label.toLowerCase()
+                                                    ? `2px solid ${Colors.ORANGE} !important`
+                                                    : undefined,
+                                            position: 'absolute',
+                                            width: '100%',
+                                            left: 0,
+                                            bottom: -10,
+                                        },
                                         ':hover::after': {
                                             content: '""',
 

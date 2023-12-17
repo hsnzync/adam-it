@@ -76,12 +76,6 @@ export const JobsSection = (props: Props) => {
                         <LinkButtonAtom
                             label={props.tiles.button_text}
                             href={props.tiles.button_url ?? ''}
-                            sx={{
-                                width: {
-                                    xs: '100%',
-                                    md: 'fit-content',
-                                },
-                            }}
                         />
                     )}
                 </BoxAtom>

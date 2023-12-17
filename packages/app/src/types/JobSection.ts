@@ -1,8 +1,15 @@
 interface Job {
     title: string
-    salary: string
+    type: string
     location: string
-    url: string
+    hours: string
+    salary: string
+    section: JobSection[]
+}
+
+interface JobSection {
+    title: string
+    description: any
 }
 
 interface Tile {
@@ -22,4 +29,4 @@ interface Information {
     button_url?: string
 }
 
-export type { Information, Tile, Job }
+export type { Information, Tile, Job, JobSection }

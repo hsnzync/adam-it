@@ -42,7 +42,7 @@ export const OneTextSection = (props: Props) => {
                 }}
             >
                 <BoxAtom
-                    space={1}
+                    space={5}
                     sx={{
                         width: {
                             xs: '100%',

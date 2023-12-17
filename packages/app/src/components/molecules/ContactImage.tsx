@@ -2,6 +2,7 @@ import { Colors } from '@/constants'
 import { getAsset } from '@/utils'
 import Link from 'next/link'
 import { BoxAtom, ImageAtom, TextAtom } from '@/components'
+import { SxProps, Theme } from '@mui/material'
 
 interface Props {
     title?: string
@@ -10,22 +11,20 @@ interface Props {
     contactEmail: string
     imageUrl: string
     basic?: boolean
+    sx?: SxProps<Theme>
 }
 
 export const ContactImageMolecule = (props: Props) => {
     return (
         <BoxAtom
             direction="vertical"
+            alignment="start"
             space={2}
             sx={{
                 width: {
-                    xs: '100%',
                     md: props.basic ? '20%' : '30%',
                 },
-                alignItems: {
-                    xs: 'flex-start',
-                    md: 'flex-end',
-                },
+                ...props.sx,
             }}
         >
             <ImageAtom
@@ -48,22 +47,16 @@ export const ContactImageMolecule = (props: Props) => {
                 <TextAtom variant="h5" header>
                     {props.title}
                 </TextAtom>
-                <TextAtom variant="body1" header>
+                <TextAtom variant="h6" header>
                     {props.contactName}
                 </TextAtom>
                 <BoxAtom>
-                    <Link
-                        href=""
-                        style={{ textDecorationColor: Colors.ORANGE }}
-                    >
+                    <Link href="" style={{ textDecoration: 'none' }}>
                         <TextAtom variant="body1" header color={Colors.ORANGE}>
                             {props.contactPhone}
                         </TextAtom>
                     </Link>
-                    <Link
-                        href=""
-                        style={{ textDecorationColor: Colors.ORANGE }}
-                    >
+                    <Link href="" style={{ textDecoration: 'none' }}>
                         <TextAtom variant="body1" header color={Colors.ORANGE}>
                             {props.contactEmail}
                         </TextAtom>

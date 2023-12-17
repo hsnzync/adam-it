@@ -1,12 +1,16 @@
+import Link from 'next/link'
 import { Card, CardContent } from '@mui/material'
 import { IconButtonMolecule, IconAtom, TextAtom, BoxAtom } from '@/components'
 import { CARD_SHADOW, Colors } from '@/constants'
-import Link from 'next/link'
+import { JobSection } from '@/types'
 
 interface Props {
     title: string
-    salary: string
+    type: string
     location: string
+    hours: string
+    salary: string
+    sections: JobSection[]
     href: string
 }
 
@@ -15,6 +19,7 @@ export const CardMolecule = (props: Props) => {
         <Card
             sx={{
                 width: '100%',
+                border: `1px solid ${Colors.LIGHT_GREY}`,
                 ':hover': {
                     boxShadow: CARD_SHADOW,
                 },

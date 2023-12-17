@@ -30,9 +30,11 @@ export const KpiCardMolecule = (props: Props) => {
                     xs: 4,
                     md: 0,
                 },
-                borderBottom: {
-                    xs: `1px solid ${Colors.LIGHT_GREY}`,
-                    md: 'none',
+                '&:not(:last-child)': {
+                    borderBottom: {
+                        xs: `1px solid ${Colors.LIGHT_GREY}`,
+                        md: 'none',
+                    },
                 },
             }}
         >

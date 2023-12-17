@@ -20,9 +20,10 @@ export {
     IconButtonMolecule,
     KpiCardMolecule,
     LoaderMolecule,
-    FormInputMolecule,
+    InputMolecule,
     UploadMolecule,
     ContactImageMolecule,
+    SelectMolecule,
 } from './molecules'
 
 // organisms

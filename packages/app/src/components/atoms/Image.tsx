@@ -37,7 +37,7 @@ export const ImageAtom = (
                 width={500}
                 height={500}
                 style={{
-                    clipPath: 'polygon(0 0, 80% 0, 150% 100%, 0 100%)',
+                    clipPath: 'polygon(0px 0px, 70% 0px, 200% 100%, 0px 100%)',
                     objectFit: 'cover',
                     borderRadius: 5,
                 }}

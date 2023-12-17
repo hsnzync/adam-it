@@ -5,7 +5,7 @@ import {
     BoxAtom,
     ButtonMolecule,
     ContactImageMolecule,
-    FormInputMolecule,
+    InputMolecule,
     ImageAtom,
     TextAtom,
     UploadMolecule,
@@ -98,6 +98,7 @@ export const FormSection = (props: Props) => {
                 space={10}
             >
                 <ContactImageMolecule
+                    title={props.title}
                     contactName={props.contactName}
                     contactPhone={props.contactPhone}
                     contactEmail={props.contactEmail}
@@ -121,19 +122,19 @@ export const FormSection = (props: Props) => {
                             mt: 4,
                         }}
                     >
-                        <FormInputMolecule
+                        <InputMolecule
                             name="name"
                             label="Naam"
                             type="text"
                             onChange={handleChange}
                         />
-                        <FormInputMolecule
+                        <InputMolecule
                             name="email"
                             label="E-mailadres"
                             type="email"
                             onChange={handleChange}
                         />
-                        <FormInputMolecule
+                        <InputMolecule
                             name="message"
                             label="Bericht"
                             type="text"

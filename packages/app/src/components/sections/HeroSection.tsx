@@ -156,6 +156,7 @@ export const HeroSection = (props: Props) => {
                             key={index}
                             label={button.label}
                             href={button.href}
+                            fullWidth
                             sx={{
                                 width: {
                                     xs: '100%',
