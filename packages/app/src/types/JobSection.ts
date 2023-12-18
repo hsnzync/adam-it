@@ -3,7 +3,8 @@ interface Job {
     type: string
     location: string
     hours: string
-    salary: string
+    minSalary: string
+    maxSalary: string
     section: JobSection[]
 }
 

@@ -58,18 +58,27 @@ export const JobsSection = (props: Props) => {
                         salary="€3.000 - €4.500"
                         location="Maassluis"
                         href=""
+                        type=""
+                        hours=""
+                        sections={[]}
                     />
                     <CardMolecule
                         title="Software Ontwikkelaar"
                         salary="€3.000 - €4.500"
                         location="Den Haag"
                         href=""
+                        type=""
+                        hours=""
+                        sections={[]}
                     />
                     <CardMolecule
                         title=".NET Test Automation Engineer"
                         salary="€3.000 - €4.500"
                         location="Rotterdam"
                         href=""
+                        type=""
+                        hours=""
+                        sections={[]}
                     />
                     <TextAtom>{props.tiles.caption}</TextAtom>
                     {props.tiles.button_text && (

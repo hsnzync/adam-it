@@ -14,7 +14,7 @@ import {
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
 
-export default function Home() {
+export default function EmployeePage() {
     const content = textContent.employees
 
     return (

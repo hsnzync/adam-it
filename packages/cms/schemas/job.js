@@ -24,8 +24,13 @@ export default {
             type: 'number',
         },
         {
-            name: 'salary',
-            title: 'Salarisindicatie',
+            name: 'minSalary',
+            title: 'Salarisindicatie (minimum)',
+            type: 'number',
+        },
+        {
+            name: 'maxSalary',
+            title: 'Salarisindicatie (maximum)',
             type: 'number',
         },
         {

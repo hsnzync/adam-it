@@ -17,8 +17,19 @@ import { screenMaxWidth } from '@/style'
 import client from '@/../client'
 import { Job } from '@/types'
 
-export default function Home(jobs: Job[]) {
+export const getStaticProps = async () => {
+    const data = await client.fetch(`*[_type == "job"]`)
+    return {
+        props: {
+            jobs: data,
+        },
+    }
+}
+
+export default function JobsPage(data: { jobs: Job[] }) {
     const content = textContent.jobs
+    const { jobs } = data
+
     return (
         <>
             <Head>
@@ -68,6 +79,7 @@ export default function Home(jobs: Job[]) {
                                     },
                                     justifyContent: 'start',
                                 }}
+                                filterOptions={content.filter_options}
                             />
                             <ContactImageMolecule
                                 contactName={content.contact.name}
@@ -103,14 +115,4 @@ export default function Home(jobs: Job[]) {
             <FooterOrganism />
         </>
     )
-}
-
-export async function getStaticProps() {
-    const jobs = await client.fetch(`*[_type == "job"]`)
-
-    return {
-        props: {
-            jobs,
-        },
-    }
 }

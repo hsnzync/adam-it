@@ -8,7 +8,8 @@ import {
 import { Colors } from '@/constants'
 import { Job } from '@/types'
 import { SxProps, Theme } from '@mui/material'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { Option } from '@/types'
 
 interface Filter {
     title: string
@@ -20,17 +21,91 @@ interface Filter {
 interface Props {
     text: Filter
     jobs: Job[]
+    filterOptions: {
+        job_title: Option[]
+        job_type: Option[]
+        job_location: Option[]
+    }
     plain?: boolean
     sx?: SxProps<Theme>
 }
 
 export const JobsListSection = (props: Props) => {
-    const [jobs, setJobs] = useState<Job[]>([])
+    const [searchValue, setSearchValue] = useState('')
+    const [selectedTitleValue, setSelectedTitleValue] = useState<string[]>([])
+    const [selectedTypeValue, setSelectedTypeValue] = useState<string[]>([])
+    const [selectedLocationValue, setSelectedLocationValue] = useState<
+        string[]
+    >([])
+    const [filteredJobs, setFilteredJobs] = useState<Job[]>(props.jobs)
 
-    useEffect(() => {
-        setJobs(props.jobs)
-        console.log(jobs)
-    }, [props.jobs])
+    const handleFilterChange = (
+        search: string,
+        selectedTitles: string[],
+        selectedTypes: string[],
+        selectedLocations: string[]
+    ) => {
+        const filteredJobs = props.jobs?.filter((job) => {
+            const titleMatch =
+                selectedTitles.length === 0 ||
+                selectedTitles.includes(job.title.toLowerCase())
+            const typeMatch =
+                selectedTypes.length === 0 ||
+                selectedTypes.includes(job.type.toLowerCase())
+            const locationMatch =
+                selectedLocations.length === 0 ||
+                selectedLocations.includes(job.location.toLowerCase())
+
+            const searchMatch =
+                job.title.toLowerCase().includes(search.toLowerCase()) ||
+                job.type.toLowerCase().includes(search.toLowerCase()) ||
+                job.location.toLowerCase().includes(search.toLowerCase())
+
+            return titleMatch && typeMatch && locationMatch && searchMatch
+        })
+
+        return filteredJobs
+    }
+
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const searchValue = event.target.value
+        setSearchValue(searchValue)
+
+        const filteredJobs = handleFilterChange(
+            searchValue,
+            selectedTitleValue,
+            selectedTypeValue,
+            selectedLocationValue
+        )
+        setFilteredJobs(filteredJobs)
+    }
+
+    const handleSelectChange = (
+        type: 'title' | 'type' | 'location',
+        value: string[]
+    ) => {
+        switch (type) {
+            case 'title':
+                setSelectedTitleValue(value)
+                break
+            case 'type':
+                setSelectedTypeValue(value)
+                break
+            case 'location':
+                setSelectedLocationValue(value)
+                break
+            default:
+                break
+        }
+
+        const filteredJobs = handleFilterChange(
+            searchValue,
+            selectedTitleValue,
+            selectedTypeValue,
+            selectedLocationValue
+        )
+        setFilteredJobs(filteredJobs)
+    }
 
     return (
         <BoxAtom
@@ -54,34 +129,43 @@ export const JobsListSection = (props: Props) => {
                 <InputMolecule
                     label={props.text.search}
                     type="text"
-                    onChange={() => {}}
+                    onChange={handleSearchChange}
                 />
                 <BoxAtom direction="horizontal" space={2}>
-                    <SelectMolecule label={props.text.job_title} options={[]} />
-                    <SelectMolecule label={props.text.job_type} options={[]} />
+                    <SelectMolecule
+                        label={props.text.job_title}
+                        options={props.filterOptions.job_title}
+                        onChange={(value) => handleSelectChange('title', value)}
+                    />
+                    <SelectMolecule
+                        label={props.text.job_type}
+                        options={props.filterOptions.job_type}
+                        onChange={(value) => handleSelectChange('type', value)}
+                    />
 
                     <SelectMolecule
                         label={props.text.job_location}
-                        options={[]}
+                        options={props.filterOptions.job_location}
+                        onChange={(value) =>
+                            handleSelectChange('location', value)
+                        }
                     />
                 </BoxAtom>
-                {Array.isArray(jobs) ? (
-                    jobs.map((job, index) => (
+                {filteredJobs?.length > 0 &&
+                    filteredJobs.map((job, index) => (
                         <CardMolecule
                             key={index}
                             title={job.title}
                             type={job.type}
                             location={job.location}
                             hours={job.hours}
-                            salary={job.salary}
+                            salary={`€${job.minSalary} - €${job.maxSalary}`}
                             sections={job.section}
                             href=""
                         />
-                    ))
-                ) : (
-                    // Render a loading state or handle the case where jobs are not yet available
-                    <p>Loading...</p>
-                )}
+                    ))}
+
+                {props.jobs?.length === 0 && <p>Aan het laden...</p>}
             </BoxAtom>
         </BoxAtom>
     )

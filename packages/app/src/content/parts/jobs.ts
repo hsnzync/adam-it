@@ -46,4 +46,21 @@ export const jobs = {
         job_type: 'Functisoort',
         job_location: 'Locatie',
     },
+    filter_options: {
+        job_title: [
+            { label: 'Software ontwikkelaar', value: 'software ontwikkelaar' },
+            {
+                label: 'Test automation engineer',
+                value: 'test automation engineer',
+            },
+        ],
+        job_type: [
+            { label: 'Vast', value: 'vast' },
+            { label: 'Freelance', value: 'freelance' },
+        ],
+        job_location: [
+            { label: 'Maassluis', value: 'maassluis' },
+            { label: 'Utrecht', value: 'utrecht' },
+        ],
+    },
 }

@@ -15,7 +15,7 @@ import { Colors } from '@/constants'
 import { textContent } from '@/content'
 import { getAsset } from '@/utils'
 
-export default function Home() {
+export default function HomePage() {
     const content = textContent.home
 
     return (

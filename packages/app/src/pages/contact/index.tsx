@@ -11,7 +11,7 @@ import {
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
 
-export default function Home() {
+export default function ContactPage() {
     const content = textContent.contact
 
     return (
