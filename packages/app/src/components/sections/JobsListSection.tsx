@@ -45,7 +45,7 @@ export const JobsListSection = (props: Props) => {
         selectedTypes: string[],
         selectedLocations: string[]
     ) => {
-        const filteredJobs = props.jobs?.filter((job) => {
+        return props.jobs.filter((job) => {
             const titleMatch =
                 selectedTitles.length === 0 ||
                 selectedTitles.includes(job.title.toLowerCase())
@@ -63,16 +63,14 @@ export const JobsListSection = (props: Props) => {
 
             return titleMatch && typeMatch && locationMatch && searchMatch
         })
-
-        return filteredJobs
     }
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const searchValue = event.target.value
+        const search = event.target.value
         setSearchValue(searchValue)
 
         const filteredJobs = handleFilterChange(
-            searchValue,
+            search,
             selectedTitleValue,
             selectedTypeValue,
             selectedLocationValue
@@ -82,29 +80,39 @@ export const JobsListSection = (props: Props) => {
 
     const handleSelectChange = (
         type: 'title' | 'type' | 'location',
-        value: string[]
+        selectedValues: string[]
     ) => {
         switch (type) {
             case 'title':
-                setSelectedTitleValue(value)
-                break
+                const title = handleFilterChange(
+                    searchValue,
+                    selectedValues,
+                    selectedTypeValue,
+                    selectedLocationValue
+                )
+                setSelectedTitleValue(selectedValues)
+                return setFilteredJobs(title)
             case 'type':
-                setSelectedTypeValue(value)
-                break
+                const type = handleFilterChange(
+                    searchValue,
+                    selectedTitleValue,
+                    selectedValues,
+                    selectedLocationValue
+                )
+                setSelectedTypeValue(selectedValues)
+                return setFilteredJobs(type)
             case 'location':
-                setSelectedLocationValue(value)
-                break
+                const location = handleFilterChange(
+                    searchValue,
+                    selectedTitleValue,
+                    selectedTypeValue,
+                    selectedValues
+                )
+                setSelectedLocationValue(selectedValues)
+                return setFilteredJobs(location)
             default:
-                break
+                return
         }
-
-        const filteredJobs = handleFilterChange(
-            searchValue,
-            selectedTitleValue,
-            selectedTypeValue,
-            selectedLocationValue
-        )
-        setFilteredJobs(filteredJobs)
     }
 
     return (

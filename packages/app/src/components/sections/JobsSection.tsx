@@ -59,7 +59,7 @@ export const JobsSection = (props: Props) => {
                         location="Maassluis"
                         href=""
                         type=""
-                        hours=""
+                        hours={40}
                         sections={[]}
                     />
                     <CardMolecule
@@ -68,7 +68,7 @@ export const JobsSection = (props: Props) => {
                         location="Den Haag"
                         href=""
                         type=""
-                        hours=""
+                        hours={40}
                         sections={[]}
                     />
                     <CardMolecule
@@ -77,7 +77,7 @@ export const JobsSection = (props: Props) => {
                         location="Rotterdam"
                         href=""
                         type=""
-                        hours=""
+                        hours={40}
                         sections={[]}
                     />
                     <TextAtom>{props.tiles.caption}</TextAtom>

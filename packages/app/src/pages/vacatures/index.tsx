@@ -18,10 +18,10 @@ import client from '@/../client'
 import { Job } from '@/types'
 
 export const getStaticProps = async () => {
-    const data = await client.fetch(`*[_type == "job"]`)
+    // const data = await client.fetch(`*[_type == "job"]`)
     return {
         props: {
-            jobs: data,
+            jobs: [],
         },
     }
 }
@@ -29,6 +29,27 @@ export const getStaticProps = async () => {
 export default function JobsPage(data: { jobs: Job[] }) {
     const content = textContent.jobs
     const { jobs } = data
+
+    const dummyJobs: Job[] = [
+        {
+            title: 'Software ontwikkelaar',
+            type: 'Vast',
+            location: 'Maassluis',
+            hours: 40,
+            minSalary: 3000,
+            maxSalary: 5000,
+            section: [],
+        },
+        {
+            title: 'Test automation engineer',
+            type: 'Freelance',
+            location: 'Utrecht',
+            hours: 32,
+            minSalary: 4000,
+            maxSalary: 5500,
+            section: [],
+        },
+    ]
 
     return (
         <>
@@ -71,7 +92,7 @@ export default function JobsPage(data: { jobs: Job[] }) {
                             <JobsListSection
                                 plain
                                 text={content.filter}
-                                jobs={jobs}
+                                jobs={dummyJobs}
                                 sx={{
                                     width: {
                                         xs: undefined,

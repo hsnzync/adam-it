@@ -8,7 +8,7 @@ interface Props {
     title: string
     type: string
     location: string
-    hours: string
+    hours: number
     salary: string
     sections: JobSection[]
     href: string

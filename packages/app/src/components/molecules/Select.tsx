@@ -27,11 +27,9 @@ export const SelectMolecule = (props: Props) => {
     const [checkedValues, setCheckedValues] = useState<string[]>([])
 
     const handleChange = (event: SelectChangeEvent<typeof checkedValues>) => {
-        const {
-            target: { value },
-        } = event
-        setCheckedValues(typeof value === 'string' ? value.split(',') : value)
-        props.onChange(checkedValues)
+        const value = event.target.value as string[]
+        setCheckedValues(value)
+        props.onChange(value)
     }
 
     return (
@@ -39,13 +37,13 @@ export const SelectMolecule = (props: Props) => {
             <InputLabel id="filter-list">{props.label}</InputLabel>
 
             <Select
-                labelId="filter-list"
                 multiple
+                displayEmpty
+                labelId="filter-list"
+                label="Age"
                 value={checkedValues}
                 onChange={handleChange}
-                input={<OutlinedInput label="0 Selectie" />}
                 renderValue={(selected) => `${selected.length} Selectie`}
-                placeholder="eeerr"
                 sx={{
                     ul: {
                         display: 'flex',
