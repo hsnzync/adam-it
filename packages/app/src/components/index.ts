@@ -24,6 +24,7 @@ export {
     UploadMolecule,
     ContactImageMolecule,
     SelectMolecule,
+    BadgeMolecule,
 } from './molecules'
 
 // organisms

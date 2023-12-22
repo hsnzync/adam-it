@@ -10,21 +10,26 @@ import {
     ListItemText,
 } from '@mui/material'
 import { Manrope } from 'next/font/google'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BoxAtom } from '..'
-import { Option } from '@/types'
+import { JobFilterOption } from '@/types'
 
 const manrope = Manrope({ subsets: ['latin'] })
 
 interface Props {
     label: string
     defaultValue?: string
-    options: Option[]
+    options: JobFilterOption[]
     onChange: (value: string[]) => void
 }
 
 export const SelectMolecule = (props: Props) => {
     const [checkedValues, setCheckedValues] = useState<string[]>([])
+
+    // useEffect(() => {
+    //     console.log(props.values)
+    //     setCheckedValues(props.values)
+    // }, [props.values])
 
     const handleChange = (event: SelectChangeEvent<typeof checkedValues>) => {
         const value = event.target.value as string[]
@@ -65,11 +70,13 @@ export const SelectMolecule = (props: Props) => {
                 }}
             >
                 {props.options.map((option, index) => (
-                    <MenuItem key={index} value={option.value}>
+                    <MenuItem key={index} value={option.filterName}>
                         <Checkbox
-                            checked={checkedValues.indexOf(option.value) > -1}
+                            checked={
+                                checkedValues.indexOf(option.filterName) > -1
+                            }
                         />
-                        <ListItemText primary={option.label} />
+                        <ListItemText primary={option.filterName} />
                     </MenuItem>
                 ))}
             </Select>

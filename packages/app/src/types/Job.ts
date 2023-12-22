@@ -1,4 +1,5 @@
 interface Job {
+    slug: string
     title: string
     type: string
     location: string
@@ -11,6 +12,15 @@ interface Job {
 interface JobSection {
     title: string
     description: any
+}
+
+interface JobFilterOption {
+    filterName: string
+}
+
+interface JobFilters {
+    title: string
+    filterList: JobFilterOption[]
 }
 
 interface Tile {
@@ -30,4 +40,4 @@ interface Information {
     button_url?: string
 }
 
-export type { Information, Tile, Job, JobSection }
+export type { Information, Tile, Job, JobSection, JobFilters, JobFilterOption }

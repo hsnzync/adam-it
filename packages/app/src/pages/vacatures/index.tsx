@@ -16,40 +16,22 @@ import { textContent } from '@/content'
 import { screenMaxWidth } from '@/style'
 import client from '@/../client'
 import { Job } from '@/types'
+import { JobFilters } from '@/types/Job'
 
 export const getStaticProps = async () => {
-    // const data = await client.fetch(`*[_type == "job"]`)
+    const jobData = await client.fetch(`*[_type == "job"]`)
+    const filterData = await client.fetch(`*[_type == "jobFilters"]`)
     return {
         props: {
-            jobs: [],
+            jobs: jobData,
+            filters: filterData,
         },
     }
 }
 
-export default function JobsPage(data: { jobs: Job[] }) {
+export default function JobsPage(data: { jobs: Job[]; filters: JobFilters[] }) {
     const content = textContent.jobs
-    const { jobs } = data
-
-    const dummyJobs: Job[] = [
-        {
-            title: 'Software ontwikkelaar',
-            type: 'Vast',
-            location: 'Maassluis',
-            hours: 40,
-            minSalary: 3000,
-            maxSalary: 5000,
-            section: [],
-        },
-        {
-            title: 'Test automation engineer',
-            type: 'Freelance',
-            location: 'Utrecht',
-            hours: 32,
-            minSalary: 4000,
-            maxSalary: 5500,
-            section: [],
-        },
-    ]
+    const { jobs, filters } = data
 
     return (
         <>
@@ -91,8 +73,8 @@ export default function JobsPage(data: { jobs: Job[] }) {
                         >
                             <JobsListSection
                                 plain
-                                text={content.filter}
-                                jobs={dummyJobs}
+                                labels={content.filter}
+                                jobs={jobs}
                                 sx={{
                                     width: {
                                         xs: undefined,
@@ -100,7 +82,7 @@ export default function JobsPage(data: { jobs: Job[] }) {
                                     },
                                     justifyContent: 'start',
                                 }}
-                                filterOptions={content.filter_options}
+                                filters={filters}
                             />
                             <ContactImageMolecule
                                 contactName={content.contact.name}

@@ -3,7 +3,7 @@ import { removeFileExtension } from '@/utils'
 import { Button, List, ListItem, ListItemText } from '@mui/material'
 import { useState } from 'react'
 import styled from 'styled-components'
-import { BoxAtom, IconAtom, TextAtom } from '@/components'
+import { BadgeMolecule, BoxAtom, IconAtom, TextAtom } from '@/components'
 
 interface Props {
     label: string
@@ -103,39 +103,10 @@ export const UploadMolecule = (props: Props) => {
                     <ListItem sx={{ p: 0 }}>
                         <ListItemText
                             primary={
-                                <BoxAtom
-                                    direction="horizontal"
-                                    sx={{
-                                        alignItems: 'center',
-                                        justifyContent: 'space-between',
-                                        backgroundColor: Colors.MID_BLUE,
-                                        maxWidth: 200,
-                                        py: 1,
-                                        px: 2,
-                                        borderRadius: 2,
-                                    }}
-                                >
-                                    <TextAtom
-                                        color={Colors.WHITE}
-                                        sx={{
-                                            fontSize: 14,
-                                            whiteSpace: 'nowrap',
-                                            textOverflow: 'ellipsis',
-                                            overflow: 'hidden',
-                                        }}
-                                    >
-                                        {removeFileExtension(document.name)}
-                                    </TextAtom>
-                                    <Button
-                                        sx={{ display: 'contents' }}
-                                        onClick={handleDeleteDocument}
-                                    >
-                                        <IconAtom
-                                            iconName="delete"
-                                            color={Colors.WHITE}
-                                        />
-                                    </Button>
-                                </BoxAtom>
+                                <BadgeMolecule
+                                    label={removeFileExtension(document.name)}
+                                    onClick={handleDeleteDocument}
+                                />
                             }
                         />
                     </ListItem>

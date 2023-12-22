@@ -4,6 +4,22 @@ export default {
     type: 'document',
     fields: [
         {
+            name: 'slug',
+            title: 'Pagina url',
+            type: 'slug',
+            options: {
+                source: 'title',
+                slugify: (input) =>
+                    input
+                        .toLowerCase()
+                        //Remove spaces
+                        .replace(/\s+/g, '-')
+                        //Remove special characters
+                        .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ''),
+                validation: (Rule) => Rule.required(),
+            },
+        },
+        {
             name: 'title',
             title: 'Functie',
             type: 'string',
