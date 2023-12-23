@@ -86,6 +86,7 @@ export default function CandidatesPage() {
                         contactEmail={content.contact_section.email}
                         formTitle={content.contact_section.form_title}
                         buttonText={content.contact_section.button_text}
+                        image
                         imageUrl={content.contact_section.image_url}
                     />
                 </motion.div>

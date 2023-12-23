@@ -10,6 +10,7 @@ export {
     ImageAtom,
     HeaderImageAtom,
     LinkButtonAtom,
+    RichContent,
 } from './atoms'
 
 // molecules
@@ -49,4 +50,5 @@ export {
     ContactSection,
     TextImageTextSection,
     JobsListSection,
+    JobDetailHeaderSection,
 } from './sections'

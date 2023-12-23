@@ -60,7 +60,6 @@ export const JobsSection = (props: Props) => {
                         href=""
                         type=""
                         hours={40}
-                        sections={[]}
                     />
                     <CardMolecule
                         title="Software Ontwikkelaar"
@@ -69,7 +68,6 @@ export const JobsSection = (props: Props) => {
                         href=""
                         type=""
                         hours={40}
-                        sections={[]}
                     />
                     <CardMolecule
                         title=".NET Test Automation Engineer"
@@ -78,7 +76,6 @@ export const JobsSection = (props: Props) => {
                         href=""
                         type=""
                         hours={40}
-                        sections={[]}
                     />
                     <TextAtom>{props.tiles.caption}</TextAtom>
                     {props.tiles.button_text && (

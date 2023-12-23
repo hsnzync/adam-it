@@ -1,12 +1,14 @@
 interface Job {
-    slug: string
+    slug: {
+        current: string
+    }
     title: string
     type: string
     location: string
     hours: number
     minSalary: number
     maxSalary: number
-    section: JobSection[]
+    sections: JobSection[]
 }
 
 interface JobSection {

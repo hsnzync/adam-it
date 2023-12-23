@@ -20,6 +20,7 @@ export const ContactImageMolecule = (props: Props) => {
             direction="vertical"
             alignment="start"
             space={2}
+            bgColor={Colors.WHITE}
             sx={{
                 width: {
                     md: props.basic ? '20%' : '30%',
@@ -44,9 +45,11 @@ export const ContactImageMolecule = (props: Props) => {
                 }}
             />
             <BoxAtom alignment="start" space={2}>
-                <TextAtom variant="h5" header>
-                    {props.title}
-                </TextAtom>
+                {props.title && (
+                    <TextAtom variant="h5" header>
+                        {props.title}
+                    </TextAtom>
+                )}
                 <TextAtom variant="h6" header>
                     {props.contactName}
                 </TextAtom>

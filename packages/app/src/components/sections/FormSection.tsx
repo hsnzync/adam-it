@@ -12,17 +12,28 @@ import {
 } from '@/components'
 import { Colors } from '@/constants'
 import { getAsset } from '@/utils'
+import { SxProps, Theme } from '@mui/material'
 
-interface Props {
+type Image =
+    | {
+          image: true
+          imageUrl: string
+      }
+    | {
+          image: false
+      }
+
+type Props = {
     title?: string
     contactName: string
     contactPhone: string
     contactEmail: string
     formTitle: string
     buttonText: string
-    imageUrl: string
     basic?: boolean
-}
+    alignment?: 'start' | 'center' | 'end'
+    sx?: SxProps<Theme>
+} & Image
 
 export const FormSection = (props: Props) => {
     const [form, setForm] = useState({
@@ -78,6 +89,7 @@ export const FormSection = (props: Props) => {
             alignment="center"
             bgColor={Colors.LIGHT_BLUE}
             sx={{
+                width: '100%',
                 p: {
                     xs: 3,
                     md: 10,
@@ -85,6 +97,7 @@ export const FormSection = (props: Props) => {
                 py: {
                     md: 10,
                 },
+                ...props.sx,
             }}
         >
             <BoxAtom
@@ -94,16 +107,18 @@ export const FormSection = (props: Props) => {
                     alignItems: 'start',
                 }}
                 direction="horizontal"
-                alignment="center"
+                alignment={props.alignment ?? 'center'}
                 space={10}
             >
-                <ContactImageMolecule
-                    title={props.title}
-                    contactName={props.contactName}
-                    contactPhone={props.contactPhone}
-                    contactEmail={props.contactEmail}
-                    imageUrl={props.imageUrl}
-                />
+                {props.image && (
+                    <ContactImageMolecule
+                        title={props.title}
+                        contactName={props.contactName}
+                        contactPhone={props.contactPhone}
+                        contactEmail={props.contactEmail}
+                        imageUrl={props.imageUrl}
+                    />
+                )}
                 <BoxAtom
                     direction="vertical"
                     sx={{
@@ -113,7 +128,7 @@ export const FormSection = (props: Props) => {
                         },
                     }}
                 >
-                    <TextAtom header variant="h5">
+                    <TextAtom header variant="h4">
                         {props.formTitle}
                     </TextAtom>
                     <BoxAtom

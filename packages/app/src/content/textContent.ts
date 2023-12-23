@@ -7,6 +7,7 @@ import {
     contactPage,
     candidatesPage,
     jobsPage,
+    jobDetailPage,
 } from './parts'
 
 export const textContent = {
@@ -18,4 +19,5 @@ export const textContent = {
     contact: contactPage,
     candidates: candidatesPage,
     jobs: jobsPage,
+    jobDetail: jobDetailPage,
 }

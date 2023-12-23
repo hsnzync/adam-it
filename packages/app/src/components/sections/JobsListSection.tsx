@@ -1,5 +1,5 @@
+import { useState } from 'react'
 import {
-    BadgeMolecule,
     BoxAtom,
     CardMolecule,
     InputMolecule,
@@ -7,11 +7,9 @@ import {
     TextAtom,
 } from '@/components'
 import { Colors } from '@/constants'
-import { Job } from '@/types'
+import { Job, JobFilters } from '@/types'
 import { SxProps, Theme } from '@mui/material'
-import { useState } from 'react'
-import { JobFilters } from '@/types/Job'
-import { filterMapper } from '@/utils'
+import { filterMapper, formatSalary } from '@/utils'
 
 interface Filter {
     title: string
@@ -230,9 +228,8 @@ export const JobsListSection = (props: Props) => {
                             type={job.type}
                             location={job.location}
                             hours={job.hours}
-                            salary={`€${job.minSalary} - €${job.maxSalary}`}
-                            sections={job.section}
-                            href={`/vacatures/${job.slug}`}
+                            salary={formatSalary(job.minSalary, job.maxSalary)}
+                            href={`/vacatures/${job.slug.current}`}
                         />
                     ))}
 

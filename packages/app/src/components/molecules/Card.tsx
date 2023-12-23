@@ -10,7 +10,6 @@ interface Props {
     location: string
     hours: number
     salary: string
-    sections: JobSection[]
     href: string
 }
 
