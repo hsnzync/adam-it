@@ -1,3 +1,4 @@
+'use client'
 import { Box } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
@@ -7,7 +8,7 @@ import RightShape from '@/../public/assets/loader/shape-2.svg'
 import LeftShape from '@/../public/assets/loader/shape-3.svg'
 import TopShape from '@/../public/assets/loader/shape-4.svg'
 import { Glow } from '@/components'
-import { getAsset } from '@/utils'
+import { setXPatternPosition } from '@/utils'
 
 export const LoaderPattern = () => {
     const [animationCount, setAnimationCount] = useState(0)
@@ -24,7 +25,9 @@ export const LoaderPattern = () => {
         }
     }, [animationCount])
 
-    useEffect(() => setScreenSize(window.innerWidth), [])
+    useEffect(() => {
+        setScreenSize(window.innerWidth)
+    }, [screenSize])
 
     return (
         <Box sx={{ position: 'relative', height: '100vh', width: '100%' }}>
@@ -65,7 +68,7 @@ export const LoaderPattern = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    right: 0,
+                    right: setXPatternPosition(screenSize),
                 }}
             >
                 <Image src={RightShape} alt="" />
@@ -86,7 +89,7 @@ export const LoaderPattern = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    left: 0,
+                    left: setXPatternPosition(screenSize),
                 }}
             >
                 <Image src={LeftShape} alt="" />

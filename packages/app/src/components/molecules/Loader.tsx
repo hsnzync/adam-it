@@ -12,7 +12,7 @@ export const LoaderMolecule = () => {
                 opacity: 0,
                 transition: {
                     delay: 2,
-                    duration: 0.2,
+                    duration: 200,
                     ease: 'easeOut',
                 },
             }}

@@ -1,6 +1,5 @@
-import { Provider } from 'react-redux'
 import { LoaderMolecule } from '@/components'
-import { breakspoints } from '@/style'
+import { breakpoints } from '@/style'
 import { handleFirstVisitOrExpired } from '@/utils'
 import type { AppProps } from 'next/app'
 import { useState, useEffect } from 'react'
@@ -10,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
     useEffect(() => {
         const shouldShowLoadingScreen = handleFirstVisitOrExpired()
-        const isMobile = window.innerWidth < breakspoints.sm
+        const isMobile = window.innerWidth < breakpoints.sm
 
         if (shouldShowLoadingScreen && !isMobile) {
             setShowLoader(true)

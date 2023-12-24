@@ -1,6 +1,7 @@
 import { FormControl, InputLabel, TextField } from '@mui/material'
 import { ChangeEvent } from 'react'
 import { Manrope } from 'next/font/google'
+import { TextareaAutosize } from '@mui/base'
 
 const manrope = Manrope({ subsets: ['latin'] })
 
@@ -15,7 +16,7 @@ interface Props {
 
 export const InputMolecule = (props: Props) => {
     return (
-        <FormControl variant="standard">
+        <FormControl variant="standard" sx={{ width: '100%' }}>
             <InputLabel
                 shrink
                 htmlFor={`${props.name}-input`}

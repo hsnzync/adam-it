@@ -93,6 +93,10 @@ export default function JobDetailPage(data: { job: Job }) {
                         sx={{
                             alignItems: 'unset',
                             position: 'relative',
+                            pt: {
+                                xs: 0,
+                                md: 8,
+                            },
                         }}
                     >
                         <BoxAtom alignment="center">
@@ -115,7 +119,7 @@ export default function JobDetailPage(data: { job: Job }) {
                                         },
                                         mb: {
                                             xs: 0,
-                                            md: 80,
+                                            md: 100,
                                         },
                                     }}
                                 >

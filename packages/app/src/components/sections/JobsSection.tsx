@@ -1,6 +1,6 @@
 // 'use client'
 import { Colors } from '@/constants'
-import { breakspoints, screenMaxWidth } from '@/style'
+import { breakpoints, screenMaxWidth } from '@/style'
 import {
     BoxAtom,
     CardMolecule,
@@ -20,7 +20,7 @@ export const JobsSection = (props: Props) => {
     const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
-        setIsMobile(window.innerWidth < breakspoints.sm)
+        setIsMobile(window.innerWidth < breakpoints.sm)
     }, [])
 
     return (

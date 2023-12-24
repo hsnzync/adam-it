@@ -30,6 +30,7 @@ export const ApplyFormSection = (props: Props) => {
     const [form, setForm] = useState({
         name: '',
         email: '',
+        phone: '',
         message: '',
     })
     const [file, setFile] = useState<File>()
@@ -84,7 +85,7 @@ export const ApplyFormSection = (props: Props) => {
                     md: 10,
                 },
                 py: {
-                    md: 10,
+                    md: 15,
                 },
                 ...props.sx,
             }}
@@ -104,7 +105,7 @@ export const ApplyFormSection = (props: Props) => {
                     sx={{
                         width: {
                             xs: '100%',
-                            md: '35%',
+                            md: '50%',
                         },
                     }}
                 >
@@ -123,15 +124,23 @@ export const ApplyFormSection = (props: Props) => {
                             type="text"
                             onChange={handleChange}
                         />
-                        <InputMolecule
-                            name="email"
-                            label="E-mailadres"
-                            type="email"
-                            onChange={handleChange}
-                        />
+                        <BoxAtom direction="horizontal" space={2}>
+                            <InputMolecule
+                                name="email"
+                                label="E-mailadres"
+                                type="email"
+                                onChange={handleChange}
+                            />
+                            <InputMolecule
+                                name="phone"
+                                label="Telefoonnummer"
+                                type="email"
+                                onChange={handleChange}
+                            />
+                        </BoxAtom>
                         <InputMolecule
                             name="message"
-                            label="Bericht"
+                            label="Motivatie"
                             type="text"
                             textarea
                             onChange={handleChange}
