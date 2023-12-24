@@ -21,8 +21,8 @@ export const ImageAtom = (
                 img: {
                     width: '100%',
                     height: {
-                        xs: 300,
-                        sm: 400,
+                        xs: 400,
+                        sm: 450,
                         md: 500,
                     },
                 },

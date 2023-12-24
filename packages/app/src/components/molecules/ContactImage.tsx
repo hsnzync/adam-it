@@ -34,7 +34,7 @@ export const ContactImageMolecule = (props: Props) => {
                 sx={{
                     img: {
                         height: {
-                            xs: 350,
+                            xs: 400,
                             md: props.basic ? 150 : 500,
                         },
                         width: {

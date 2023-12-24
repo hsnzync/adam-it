@@ -9,7 +9,7 @@ import {
     QuoteSection,
     SmallHeroSection,
     TextImageSection,
-    FormSection,
+    ContactFormSection,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
@@ -71,7 +71,7 @@ export default function EmployeePage() {
                         name={content.quote_section.name}
                     />
                     <LogoSliderOrganism divider />
-                    <FormSection
+                    <ContactFormSection
                         title={content.contact_section.title}
                         contactName={content.contact_section.name}
                         contactPhone={content.contact_section.phone_number}

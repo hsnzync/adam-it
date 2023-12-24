@@ -9,12 +9,7 @@ interface Props {
 
 export const JobDetailSection = (props: Props) => {
     return (
-        <BoxAtom
-            as="section"
-            bgColor={Colors.WHITE}
-            alignment="center"
-            sx={{ py: 5 }}
-        >
+        <BoxAtom bgColor={Colors.WHITE} alignment="center" sx={{ py: 5 }}>
             <BoxAtom
                 sx={{
                     maxWidth: screenMaxWidth,
@@ -23,7 +18,9 @@ export const JobDetailSection = (props: Props) => {
                 {props.job?.sections?.length > 0 &&
                     props.job?.sections?.map((section, index) => (
                         <BoxAtom key={index} sx={{ py: 2 }}>
-                            <TextAtom variant="h4">{section.title}</TextAtom>
+                            <TextAtom variant="h4" header>
+                                {section.title}
+                            </TextAtom>
                             <RichContent richText={section.description} />
                         </BoxAtom>
                     ))}

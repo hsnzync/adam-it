@@ -15,10 +15,12 @@ interface Props {
 export const JobDetailHeaderSection = (props: Props) => {
     return (
         <BoxAtom
-            direction="horizontal"
+            space={2}
             sx={{
                 width: '100%',
+                py: { xs: 3 },
                 justifyContent: 'space-between',
+                flexDirection: { xs: 'row' },
             }}
         >
             {props.job && (
@@ -62,7 +64,10 @@ export const JobDetailHeaderSection = (props: Props) => {
             {!props.job && (
                 <TextAtom color={Colors.BLUE}>Aan het laden...</TextAtom>
             )}
-            <ButtonMolecule label={props.buttonLabel} />
+            <ButtonMolecule
+                label={props.buttonLabel}
+                sx={{ height: 'fit-content', minWidth: 'fit-content' }}
+            />
         </BoxAtom>
     )
 }

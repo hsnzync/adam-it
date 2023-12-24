@@ -23,7 +23,6 @@
         "npm": "^10.2.5",
         "react": "^18",
         "react-dom": "^18",
-        "react-redux": "^9.0.4",
         "rxjs": "^7.8.1",
         "styled-components": "^6.1.1",
         "swiper": "^11.0.5"

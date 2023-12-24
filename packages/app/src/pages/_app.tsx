@@ -1,4 +1,3 @@
-import store from '@/store'
 import { Provider } from 'react-redux'
 import { LoaderMolecule } from '@/components'
 import { breakspoints } from '@/style'
@@ -25,11 +24,5 @@ export default function App({ Component, pageProps }: AppProps) {
         return () => clearTimeout(timeoutId)
     }, [])
 
-    return showLoader ? (
-        <LoaderMolecule />
-    ) : (
-        <Provider store={store}>
-            <Component {...pageProps} />
-        </Provider>
-    )
+    return showLoader ? <LoaderMolecule /> : <Component {...pageProps} />
 }

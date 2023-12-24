@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { ChangeEvent, useState } from 'react'
 import { screenMaxWidth } from '@/style'
 import {
@@ -6,7 +5,6 @@ import {
     ButtonMolecule,
     ContactImageMolecule,
     InputMolecule,
-    ImageAtom,
     TextAtom,
     UploadMolecule,
 } from '@/components'
@@ -35,7 +33,7 @@ type Props = {
     sx?: SxProps<Theme>
 } & Image
 
-export const FormSection = (props: Props) => {
+export const ContactFormSection = (props: Props) => {
     const [form, setForm] = useState({
         name: '',
         email: '',

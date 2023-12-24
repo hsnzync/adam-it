@@ -6,7 +6,7 @@ import {
     SmallHeroSection,
     ContactSection,
     TwoTextSection,
-    FormSection,
+    ContactFormSection,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
@@ -44,7 +44,7 @@ export default function ContactPage() {
 
                     <ContactSection items={content.contact_section} />
 
-                    <FormSection
+                    <ContactFormSection
                         contactName={content.contact_form.name}
                         contactPhone={content.contact_form.phone_number}
                         contactEmail={content.contact_form.email}

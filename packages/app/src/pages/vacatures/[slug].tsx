@@ -8,7 +8,7 @@ import {
     SmallHeroSection,
     BoxAtom,
     JobDetailHeaderSection,
-    FormSection,
+    ApplyFormSection,
     ContactImageMolecule,
     JobDetailSection,
 } from '@/components'
@@ -86,74 +86,114 @@ export default function JobDetailPage(data: { job: Job }) {
                         title={job?.title ?? ''}
                         subtitle={content.hero.subtitle}
                     />
-                    <BoxAtom direction="horizontal">
-                        <BoxAtom
-                            bgColor={Colors.WHITE}
-                            sx={{ p: { xs: 3, md: 8 } }}
-                        >
+                    <BoxAtom
+                        alignment="center"
+                        as="section"
+                        bgColor={Colors.WHITE}
+                        sx={{
+                            alignItems: 'unset',
+                            position: 'relative',
+                        }}
+                    >
+                        <BoxAtom alignment="center">
                             <BoxAtom
-                                as="section"
-                                alignment="center"
-                                direction="vertical"
+                                direction="horizontal"
+                                sx={{
+                                    maxWidth: screenMaxWidth,
+                                    p: { xs: 3, md: 0 },
+                                    gap: {
+                                        xs: 0,
+                                        md: 15,
+                                    },
+                                }}
                             >
                                 <BoxAtom
-                                    direction="vertical"
                                     sx={{
-                                        maxWidth: screenMaxWidth,
-                                        width: '100%',
+                                        width: {
+                                            xs: 'auto',
+                                            md: '75%',
+                                        },
+                                        mb: {
+                                            xs: 0,
+                                            md: 80,
+                                        },
                                     }}
                                 >
-                                    <JobDetailHeaderSection
-                                        typeLabel={content.detail.type}
-                                        locationLabel={content.detail.location}
-                                        hoursLabel={content.detail.hours}
-                                        salaryLabel={content.detail.salary}
-                                        buttonLabel={content.detail.button_text}
-                                        job={job}
+                                    <BoxAtom
+                                        alignment="center"
+                                        direction="vertical"
+                                    >
+                                        <JobDetailHeaderSection
+                                            typeLabel={content.detail.type}
+                                            locationLabel={
+                                                content.detail.location
+                                            }
+                                            hoursLabel={content.detail.hours}
+                                            salaryLabel={content.detail.salary}
+                                            buttonLabel={
+                                                content.detail.button_text
+                                            }
+                                            job={job}
+                                        />
+                                    </BoxAtom>
+
+                                    <JobDetailSection job={job} />
+                                </BoxAtom>
+                                <BoxAtom
+                                    sx={{
+                                        width: {
+                                            xs: 'auto',
+                                            md: '25%',
+                                        },
+                                        zIndex: 1,
+                                        py: { xs: 3 },
+                                    }}
+                                >
+                                    <ContactImageMolecule
+                                        title={content.contact.title}
+                                        contactName={content.contact.name}
+                                        contactPhone={
+                                            content.contact.phone_number
+                                        }
+                                        contactEmail={content.contact.email}
+                                        imageUrl={content.contact.image_url}
+                                        sx={{
+                                            width: 'auto',
+                                            position: {
+                                                xs: 'relative',
+                                                md: scrolled
+                                                    ? 'sticky'
+                                                    : 'relative',
+                                            },
+                                            top: {
+                                                xs: undefined,
+                                                md: scrolled ? 120 : undefined,
+                                            },
+                                            backgroundColor: 'transparent',
+                                        }}
                                     />
                                 </BoxAtom>
                             </BoxAtom>
-
-                            <JobDetailSection job={job} />
                         </BoxAtom>
-                        <BoxAtom
-                            as="section"
-                            bgColor={Colors.WHITE}
+                        <ApplyFormSection
+                            formTitle={content.contact_section.title}
+                            contactName={content.contact_section.name}
+                            contactPhone={content.contact_section.phone_number}
+                            contactEmail={content.contact_section.email}
+                            buttonText={content.contact_section.button_text}
+                            alignment="start"
                             sx={{
-                                width: {
-                                    xs: '100%',
-                                    md: '25%',
+                                position: {
+                                    xs: 'relative',
+                                    md: 'absolute',
                                 },
+                                zIndex: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
                             }}
-                        >
-                            <ContactImageMolecule
-                                title={content.contact.title}
-                                contactName={content.contact.name}
-                                contactPhone={content.contact.phone_number}
-                                contactEmail={content.contact.email}
-                                imageUrl={content.contact.image_url}
-                                sx={{
-                                    p: 3,
-                                    width: 'auto',
-                                    position: scrolled ? 'sticky' : 'relative',
-                                    top: scrolled
-                                        ? Math.min(100, 1200) + 'px'
-                                        : undefined,
-                                    backgroundColor: 'transparent',
-                                }}
-                            />
-                        </BoxAtom>
+                        />
                     </BoxAtom>
-                    <FormSection
-                        formTitle={content.contact_section.title}
-                        contactName={content.contact_section.name}
-                        contactPhone={content.contact_section.phone_number}
-                        contactEmail={content.contact_section.email}
-                        buttonText={content.contact_section.button_text}
-                        image={false}
-                        alignment="start"
-                        sx={{ p: 0 }}
-                    />
                 </motion.div>
             </main>
             <FooterOrganism />
