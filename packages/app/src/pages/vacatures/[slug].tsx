@@ -7,21 +7,17 @@ import {
     NavigationOrganism,
     SmallHeroSection,
     BoxAtom,
-    TextAtom,
-    ButtonMolecule,
     JobDetailHeaderSection,
-    RichContent,
-    ContactSection,
     FormSection,
     ContactImageMolecule,
+    JobDetailSection,
 } from '@/components'
 import { textContent } from '@/content'
 import { screenMaxWidth } from '@/style'
 import client from '@/../client'
 import { Job } from '@/types'
-import { formatSalary } from '@/utils'
 import { Colors } from '@/constants'
-import { Fragment, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const getStaticPaths = async () => {
     const paths = await client.fetch(
@@ -50,7 +46,6 @@ export const getStaticProps = async ({ params }: any) => {
 
 export default function JobDetailPage(data: { job: Job }) {
     const [scrolled, setScrolled] = useState(false)
-    const [maxScroll, setMaxScroll] = useState<number>(0)
     const content = textContent.jobDetail
     const { job } = data
 
@@ -61,17 +56,8 @@ export default function JobDetailPage(data: { job: Job }) {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
-        // const footer = document.getElementsByTagName('footer')[0]
-        // setMaxScroll(footer.offsetTop - window.innerHeight)
-        // console.log(maxScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
-
-    // Get the footer element
-    // const footer = document.getElementsByTagName('footer')[0]
-
-    // Calculate the maximum scroll position
-    // const maxScroll = footerRef.offsetTop - window.innerHeight
 
     return (
         <>
@@ -97,7 +83,7 @@ export default function JobDetailPage(data: { job: Job }) {
                     initial={{ opacity: 0 }}
                 >
                     <SmallHeroSection
-                        title={job.title}
+                        title={job?.title ?? ''}
                         subtitle={content.hero.subtitle}
                     />
                     <BoxAtom direction="horizontal">
@@ -128,29 +114,7 @@ export default function JobDetailPage(data: { job: Job }) {
                                 </BoxAtom>
                             </BoxAtom>
 
-                            <BoxAtom
-                                as="section"
-                                bgColor={Colors.WHITE}
-                                alignment="center"
-                                sx={{ py: 5 }}
-                            >
-                                <BoxAtom
-                                    sx={{
-                                        maxWidth: screenMaxWidth,
-                                    }}
-                                >
-                                    {job.sections.map((section, index) => (
-                                        <BoxAtom key={index} sx={{ py: 2 }}>
-                                            <TextAtom variant="h4">
-                                                {section.title}
-                                            </TextAtom>
-                                            <RichContent
-                                                richText={section.description}
-                                            />
-                                        </BoxAtom>
-                                    ))}
-                                </BoxAtom>
-                            </BoxAtom>
+                            <JobDetailSection job={job} />
                         </BoxAtom>
                         <BoxAtom
                             as="section"

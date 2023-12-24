@@ -233,7 +233,9 @@ export const JobsListSection = (props: Props) => {
                         />
                     ))}
 
-                {props.jobs?.length === 0 && <p>Aan het laden...</p>}
+                {props.jobs?.length === 0 && (
+                    <TextAtom color={Colors.BLUE}>Aan het laden...</TextAtom>
+                )}
             </BoxAtom>
         </BoxAtom>
     )

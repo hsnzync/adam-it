@@ -51,4 +51,5 @@ export {
     TextImageTextSection,
     JobsListSection,
     JobDetailHeaderSection,
+    JobDetailSection,
 } from './sections'
