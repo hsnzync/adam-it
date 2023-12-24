@@ -3,6 +3,7 @@ import {
     BoxAtom,
     CardMolecule,
     InputMolecule,
+    LoaderAtom,
     SelectMolecule,
     TextAtom,
 } from '@/components'
@@ -233,9 +234,7 @@ export const JobsListSection = (props: Props) => {
                         />
                     ))}
 
-                {props.jobs?.length === 0 && (
-                    <TextAtom color={Colors.BLUE}>Aan het laden...</TextAtom>
-                )}
+                {props.jobs?.length === 0 && <LoaderAtom />}
             </BoxAtom>
         </BoxAtom>
     )

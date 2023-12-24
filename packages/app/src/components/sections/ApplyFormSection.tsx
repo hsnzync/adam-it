@@ -79,6 +79,7 @@ export const ApplyFormSection = (props: Props) => {
         <BoxAtom
             alignment="center"
             bgColor={Colors.LIGHT_BLUE}
+            id="apply-form"
             sx={{
                 p: {
                     xs: 3,

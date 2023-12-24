@@ -6,7 +6,6 @@ import {
     SmallHeroSection,
     TextImageSection,
     OneTextSection,
-    TwoTextSection,
     BoxAtom,
     JobsListSection,
     ContactImageMolecule,

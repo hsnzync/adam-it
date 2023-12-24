@@ -4,6 +4,7 @@ import { IconName } from '.'
 interface Button {
     label: string
     icon?: IconName
+    href?: string
     variant?: 'outlined' | 'clear'
     sx?: SxProps<Theme>
     disabled?: boolean

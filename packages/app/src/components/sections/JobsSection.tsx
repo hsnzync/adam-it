@@ -7,13 +7,16 @@ import {
     AccordionMolecule,
     TextAtom,
     LinkButtonAtom,
+    LoaderAtom,
 } from '@/components'
-import { Information, Tile } from '@/types'
+import { Information, Job, Tile } from '@/types'
 import { useEffect, useState } from 'react'
+import { formatSalary } from '@/utils'
 
 interface Props {
     tiles: Tile
     information: Information
+    jobs: Job[]
 }
 
 export const JobsSection = (props: Props) => {
@@ -53,30 +56,22 @@ export const JobsSection = (props: Props) => {
                     <TextAtom variant="h4" header>
                         {props.tiles.title}
                     </TextAtom>
-                    <CardMolecule
-                        title="Test Automation Engineer"
-                        salary="€3.000 - €4.500"
-                        location="Maassluis"
-                        href=""
-                        type=""
-                        hours={40}
-                    />
-                    <CardMolecule
-                        title="Software Ontwikkelaar"
-                        salary="€3.000 - €4.500"
-                        location="Den Haag"
-                        href=""
-                        type=""
-                        hours={40}
-                    />
-                    <CardMolecule
-                        title=".NET Test Automation Engineer"
-                        salary="€3.000 - €4.500"
-                        location="Rotterdam"
-                        href=""
-                        type=""
-                        hours={40}
-                    />
+                    {props.jobs.length > 0 &&
+                        props.jobs.map((job, index) => (
+                            <CardMolecule
+                                key={index}
+                                title={job.title}
+                                type={job.type}
+                                location={job.location}
+                                hours={job.hours}
+                                salary={formatSalary(
+                                    job.minSalary,
+                                    job.maxSalary
+                                )}
+                                href={`/vacatures/${job.slug.current}`}
+                            />
+                        ))}
+                    {props.jobs.length === 0 && <LoaderAtom />}
                     <TextAtom>{props.tiles.caption}</TextAtom>
                     {props.tiles.button_text && (
                         <LinkButtonAtom

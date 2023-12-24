@@ -66,6 +66,7 @@ export const JobDetailHeaderSection = (props: Props) => {
             )}
             <ButtonMolecule
                 label={props.buttonLabel}
+                href="#apply-form"
                 sx={{ height: 'fit-content', minWidth: 'fit-content' }}
             />
         </BoxAtom>

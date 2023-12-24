@@ -50,7 +50,6 @@ export default function ContactPage() {
                         contactEmail={content.contact_form.email}
                         formTitle={content.contact_form.form_title}
                         buttonText={content.contact_form.button_text}
-                        image
                         imageUrl={content.contact_form.image_url}
                         basic
                     />

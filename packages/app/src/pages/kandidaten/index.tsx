@@ -8,16 +8,29 @@ import {
     NavigationOrganism,
     QuoteSection,
     SmallHeroSection,
-    TextImageSection,
     ContactFormSection,
     JobsSection,
     TextImageTextSection,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
+import client from '../../../client'
+import { Job } from '@/types'
 
-export default function CandidatesPage() {
+export const getStaticProps = async () => {
+    const jobData = await client.fetch(
+        '*[_type == "job"] | order(_createdAt desc)[0..2]'
+    )
+    return {
+        props: {
+            jobs: jobData,
+        },
+    }
+}
+
+export default function CandidatesPage(data: { jobs: Job[] }) {
     const content = textContent.candidates
+    const { jobs } = data
 
     return (
         <>
@@ -73,6 +86,7 @@ export default function CandidatesPage() {
                     <JobsSection
                         tiles={content.jobs_section.tiles}
                         information={content.jobs_section.information}
+                        jobs={jobs}
                     />
                     <QuoteSection
                         content={content.quote_section.content}
@@ -86,7 +100,6 @@ export default function CandidatesPage() {
                         contactEmail={content.contact_section.email}
                         formTitle={content.contact_section.form_title}
                         buttonText={content.contact_section.button_text}
-                        image
                         imageUrl={content.contact_section.image_url}
                     />
                 </motion.div>

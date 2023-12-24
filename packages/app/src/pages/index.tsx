@@ -14,9 +14,23 @@ import {
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
 import { getAsset } from '@/utils'
+import client from '../../client'
+import { Job } from '@/types'
 
-export default function HomePage() {
+export const getStaticProps = async () => {
+    const jobData = await client.fetch(
+        '*[_type == "job"] | order(_createdAt desc)[0..2]'
+    )
+    return {
+        props: {
+            jobs: jobData,
+        },
+    }
+}
+
+export default function HomePage(data: { jobs: Job[] }) {
     const content = textContent.home
+    const { jobs } = data
 
     return (
         <>
@@ -75,6 +89,7 @@ export default function HomePage() {
                     <JobsSection
                         tiles={content.jobs_section.tiles}
                         information={content.jobs_section.information}
+                        jobs={jobs}
                     />
                     <ImageTextSection
                         sectionTitle={content.cases_section.section_title}

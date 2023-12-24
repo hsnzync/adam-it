@@ -20,10 +20,13 @@ export const ContactImageMolecule = (props: Props) => {
             direction="vertical"
             alignment="start"
             space={2}
-            bgColor={Colors.WHITE}
             sx={{
                 width: {
                     md: props.basic ? '20%' : '30%',
+                },
+                display: {
+                    xs: 'none',
+                    md: 'initial',
                 },
                 ...props.sx,
             }}
@@ -42,6 +45,7 @@ export const ContactImageMolecule = (props: Props) => {
                             md: props.basic ? 150 : '100%',
                         },
                     },
+                    mb: 3,
                 }}
             />
             <BoxAtom alignment="start" space={2}>

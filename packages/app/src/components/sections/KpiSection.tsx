@@ -58,6 +58,7 @@ export const KpiSection = (props: Props) => {
                     direction="horizontal"
                     alignment="start"
                     sx={{
+                        width: '100%',
                         gap: {
                             xs: 0,
                             sm: 4,

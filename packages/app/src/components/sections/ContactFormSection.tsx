@@ -9,17 +9,7 @@ import {
     UploadMolecule,
 } from '@/components'
 import { Colors } from '@/constants'
-import { getAsset } from '@/utils'
 import { SxProps, Theme } from '@mui/material'
-
-type Image =
-    | {
-          image: true
-          imageUrl: string
-      }
-    | {
-          image: false
-      }
 
 type Props = {
     title?: string
@@ -28,10 +18,11 @@ type Props = {
     contactEmail: string
     formTitle: string
     buttonText: string
+    imageUrl: string
     basic?: boolean
     alignment?: 'start' | 'center' | 'end'
     sx?: SxProps<Theme>
-} & Image
+}
 
 export const ContactFormSection = (props: Props) => {
     const [form, setForm] = useState({
@@ -87,10 +78,9 @@ export const ContactFormSection = (props: Props) => {
             alignment="center"
             bgColor={Colors.LIGHT_BLUE}
             sx={{
-                width: '100%',
                 p: {
                     xs: 3,
-                    md: 10,
+                    md: 0,
                 },
                 py: {
                     md: 10,
@@ -108,15 +98,19 @@ export const ContactFormSection = (props: Props) => {
                 alignment={props.alignment ?? 'center'}
                 space={10}
             >
-                {props.image && (
-                    <ContactImageMolecule
-                        title={props.title}
-                        contactName={props.contactName}
-                        contactPhone={props.contactPhone}
-                        contactEmail={props.contactEmail}
-                        imageUrl={props.imageUrl}
-                    />
-                )}
+                <ContactImageMolecule
+                    title={props.title}
+                    contactName={props.contactName}
+                    contactPhone={props.contactPhone}
+                    contactEmail={props.contactEmail}
+                    imageUrl={props.imageUrl}
+                    sx={{
+                        p: {
+                            xs: 3,
+                            md: 0,
+                        },
+                    }}
+                />
                 <BoxAtom
                     direction="vertical"
                     sx={{

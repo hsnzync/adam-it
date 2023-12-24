@@ -8,6 +8,7 @@ interface Props {
     bgColor?: string
     space?: number
     as?: any
+    id?: string
     sx?: SxProps<Theme>
     className?: string
 }
@@ -15,6 +16,7 @@ interface Props {
 export const BoxAtom = (props: Props) => {
     return (
         <Box
+            id={props.id}
             className={props.className}
             component={props.as}
             sx={{
