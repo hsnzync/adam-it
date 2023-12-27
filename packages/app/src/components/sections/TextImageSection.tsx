@@ -1,3 +1,4 @@
+import NextImage from 'next/image'
 import { Colors } from '@/constants'
 import {
     List,
@@ -9,10 +10,10 @@ import {
 } from '@mui/material'
 import { BoxAtom, ImageAtom, Background, TextAtom, IconAtom } from '..'
 import { screenMaxWidth } from '@/style'
-import Image from 'next/image'
 import { getAsset } from '@/utils'
+import { Image } from '@/types'
 
-interface Props {
+type Props = {
     sectionTitle?: string
     bgColor: string
     hasBgPattern?: boolean
@@ -21,9 +22,8 @@ interface Props {
     description: string
     logo?: string
     perks?: string[]
-    imageUrl: string
     sx?: SxProps<Theme>
-}
+} & Image
 
 export const TextImageSection = (props: Props) => {
     return (
@@ -78,9 +78,9 @@ export const TextImageSection = (props: Props) => {
                         }}
                     >
                         {props.logo && (
-                            <Image
+                            <NextImage
                                 src={props.logo}
-                                alt="company logo"
+                                alt="Officieel logo van het bedrijf. Representatief voor samenwerking en dienstverlening."
                                 width={80}
                                 height={80}
                             />
@@ -121,7 +121,7 @@ export const TextImageSection = (props: Props) => {
                     </BoxAtom>
                     <ImageAtom
                         src={getAsset(props.imageUrl)}
-                        alt="perks of working at adam it"
+                        alt={props.imageAlt}
                         sx={{
                             width: '100%',
                         }}

@@ -1,9 +1,9 @@
 import { Button as MuiButton, Container } from '@mui/material'
 import { IconAtom, TextAtom } from '@/components'
 import { Colors } from '@/constants'
-import { Button } from '@/types'
+import { ButtonProps } from '@/types'
 
-export const ButtonMolecule = (props: Button) => {
+export const ButtonMolecule = (props: ButtonProps) => {
     const isOutlined = props.variant === 'outlined'
     const isClear = props.variant === 'clear'
 

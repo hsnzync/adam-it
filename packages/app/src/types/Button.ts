@@ -1,7 +1,7 @@
 import { SxProps, Theme } from '@mui/material'
 import { IconName } from '.'
 
-interface Button {
+interface ButtonProps {
     label: string
     icon?: IconName
     href?: string
@@ -11,4 +11,14 @@ interface Button {
     onClick?: (e?: any) => void
 }
 
-export type { Button }
+type Button =
+    | {
+          button: true
+          buttonText: string
+          buttonUrl: string
+      }
+    | {
+          button: false
+      }
+
+export type { ButtonProps, Button }

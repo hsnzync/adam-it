@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { Button } from '@/types'
+import { ButtonProps } from '@/types'
 import { ButtonMolecule } from '..'
 
 export const LinkButtonAtom = (
-    props: Button & { fullWidth?: boolean; href: string }
+    props: ButtonProps & { fullWidth?: boolean; href: string }
 ) => {
     return (
         <Link

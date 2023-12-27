@@ -1,17 +1,13 @@
 import { Box, SxProps, Theme } from '@mui/material'
-import Image from 'next/image'
+import NextImage from 'next/image'
 import { BoxAtom } from '@/components'
+import { Image } from '@/types'
 
 interface Props {
     sx?: SxProps<Theme>
 }
 
-export const ImageAtom = (
-    props: Props & {
-        src: string
-        alt: string
-    }
-) => {
+export const ImageAtom = (props: Props & Image & { logo?: boolean }) => {
     return (
         <BoxAtom
             alignment="end"
@@ -21,19 +17,19 @@ export const ImageAtom = (
                 img: {
                     width: '100%',
                     height: {
-                        xs: 400,
-                        sm: 450,
-                        md: 500,
+                        xs: props.logo ? 200 : 400,
+                        sm: props.logo ? 250 : 450,
+                        md: props.logo ? 300 : 500,
                     },
                 },
 
                 ...props.sx,
             }}
         >
-            <Image
+            <NextImage
                 loading="eager"
-                src={props.src}
-                alt={props.alt}
+                src={props.imageUrl}
+                alt={props.imageAlt}
                 width={500}
                 height={500}
                 style={{

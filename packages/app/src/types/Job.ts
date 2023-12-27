@@ -32,12 +32,13 @@ interface Tile {
     button_url?: string
 }
 
-interface Information {
+interface InformationContent {
     title: string
-    subtitle: string
+    subtitle?: string
     description: string
-    title_2?: string
-    description_2?: string
+}
+interface Information {
+    content: InformationContent[]
     button_text?: string
     button_url?: string
 }

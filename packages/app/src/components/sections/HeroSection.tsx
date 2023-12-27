@@ -3,7 +3,6 @@ import { Colors } from '@/constants'
 import {
     Background,
     BoxAtom,
-    ButtonMolecule,
     TextAtom,
     HeaderImageAtom,
     ImageAtom,
@@ -11,17 +10,18 @@ import {
     LinkButtonAtom,
 } from '@/components'
 import { getAsset } from '@/utils'
+import { screenMaxWidth } from '@/style'
+import { Image } from '@/types'
 
 interface Button {
     label: string
     href: string
 }
-interface Props {
+type Props = {
     title: string
     subtitle: string
-    imageUrl: string
     buttons: Button[]
-}
+} & Image
 
 export const HeroSection = (props: Props) => {
     return (
@@ -106,10 +106,19 @@ export const HeroSection = (props: Props) => {
                 space={3}
                 sx={{
                     height: '100%',
+                    maxWidth: screenMaxWidth,
                     zIndex: 2,
+                    width: {
+                        xs: '90%',
+                        md: '100%',
+                    },
                     position: {
                         xs: 'relative',
                         md: 'absolute',
+                    },
+                    alignItems: {
+                        xs: 'start',
+                        md: 'center',
                     },
                     bottom: {
                         xs: 'auto',
@@ -126,15 +135,18 @@ export const HeroSection = (props: Props) => {
                     color={Colors.BLUE}
                     textTransform="uppercase"
                     sx={{
-                        fontSize: {
-                            xs: 18,
-                            md: 16,
-                        },
+                        fontSize: 18,
                     }}
                 >
                     {props.subtitle}
                 </TextAtom>
-                <TextAtom variant="h3" color={Colors.WHITE} header>
+                <TextAtom
+                    variant="h3"
+                    color={Colors.WHITE}
+                    header
+                    textTransform="uppercase"
+                    sx={{ wordBreak: 'break-word' }}
+                >
                     {props.title}
                 </TextAtom>
                 <BoxAtom
@@ -173,8 +185,8 @@ export const HeroSection = (props: Props) => {
                         md: 'none',
                     },
                 }}
-                src={getAsset(props.imageUrl)}
-                alt="business meeting adam it"
+                imageUrl={getAsset(props.imageUrl)}
+                imageAlt={props.imageAlt}
             />
             <HeaderGlow />
         </Background>

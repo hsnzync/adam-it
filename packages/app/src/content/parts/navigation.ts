@@ -7,6 +7,6 @@ export const navigation = {
     ],
     buttons: {
         jobs: { label: 'Vacatures', href: '/vacatures' },
-        testnation: { label: 'Testnation', href: '/' },
+        testnation: { label: 'Testnation', href: '#' },
     },
 }

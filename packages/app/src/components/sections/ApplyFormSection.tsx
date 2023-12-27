@@ -1,17 +1,13 @@
-import Link from 'next/link'
 import { ChangeEvent, useState } from 'react'
 import { screenMaxWidth } from '@/style'
 import {
     BoxAtom,
     ButtonMolecule,
-    ContactImageMolecule,
     InputMolecule,
-    ImageAtom,
     TextAtom,
     UploadMolecule,
 } from '@/components'
 import { Colors } from '@/constants'
-import { getAsset } from '@/utils'
 import { SxProps, Theme } from '@mui/material'
 
 type Props = {

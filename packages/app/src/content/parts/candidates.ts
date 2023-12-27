@@ -16,12 +16,12 @@ export const candidates = {
         description:
             'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz.',
         perks: [
-            'Goed salaris, markt conform',
-            'Altijd opdrachten genoeg',
-            'Bawds jog, flick quartz, vex nymphs.',
+            'Vind dè geschikte opdracht',
+            'Geheel vrijblijvend en gratis registratie',
+            'Kom in contact met jouw kandidaat',
         ],
         button_text: 'Direct naar vacatures',
-        button_url: '',
+        button_url: '/vacatures',
         image_url: 'working-office.jpg',
     },
     connect_section: {
@@ -39,14 +39,14 @@ export const candidates = {
                 description:
                     'Geautomatiseerde systeem opstellen om (complexe) software te laten testen.',
                 icon: 'homeWork' as IconName,
-                button_url: '',
+                button_url: '/vacatures',
             },
             {
                 title: 'Vaste jobs',
                 description:
                     'The quick, brown fox jumps over a lazy dog, DJs flock by when MTV ax quiz prog.',
                 icon: 'businessCenter' as IconName,
-                button_url: '',
+                button_url: '/vacatures',
             },
         ],
     },
@@ -57,18 +57,21 @@ export const candidates = {
                 'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.',
         },
         information: {
-            title: "Wij verbinden IT'ers met opdrachtgevers",
-            subtitle: 'Je droombaan als IT Professional',
-            description:
-                'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.',
+            content: [
+                {
+                    title: "Wij verbinden IT'ers met opdrachtgevers",
+                    subtitle: 'Je droombaan als IT Professional',
+                    description:
+                        'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.',
+                },
+            ],
             button_text: 'Bekijk alle vacatures',
-            button_url: '',
+            button_url: '/vacatures',
         },
     },
     quote_section: {
-        content:
-            'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab.',
-        name: 'Jan Verstegen',
+        content: 'Wij van ADAM IT adviseren ADAM IT',
+        name: 'Adam El Hajjami',
     },
     contact_section: {
         title: 'Zit je droombaan er niet tussen? Bel met Adam.',

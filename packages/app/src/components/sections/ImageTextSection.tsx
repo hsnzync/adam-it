@@ -16,18 +16,9 @@ import {
     LinkButtonAtom,
 } from '..'
 import { screenMaxWidth } from '@/style'
-import Image from 'next/image'
+import LogoImage from 'next/image'
 import { getAsset } from '@/utils'
-
-type Button =
-    | {
-          button: true
-          buttonText: string
-          buttonUrl: string
-      }
-    | {
-          button: false
-      }
+import { Image, Button } from '@/types'
 
 type Props = {
     sectionTitle?: string
@@ -36,11 +27,11 @@ type Props = {
     title: string
     subtitle?: string
     description: string
-    imageUrl: string
     perks?: string[]
     logo?: string
     sx?: SxProps<Theme>
-} & Button
+} & Button &
+    Image
 
 export const ImageTextSection = (props: Props) => {
     return (
@@ -90,7 +81,7 @@ export const ImageTextSection = (props: Props) => {
                 >
                     <ImageAtom
                         src={getAsset(props.imageUrl)}
-                        alt="perks of working at adam it"
+                        alt={props.imageAlt}
                         sx={{
                             width: '100%',
                         }}
@@ -102,9 +93,9 @@ export const ImageTextSection = (props: Props) => {
                         }}
                     >
                         {props.logo && (
-                            <Image
+                            <LogoImage
                                 src={props.logo}
-                                alt="company logo"
+                                alt="Officieel logo van het UWV, de uitvoeringsorganisatie van de overheid voor werknemersverzekeringen. Representatief voor samenwerking en dienstverlening."
                                 width={80}
                                 height={80}
                             />

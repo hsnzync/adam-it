@@ -25,41 +25,39 @@ export const employees = {
                 description:
                     'Geautomatiseerde systeem opstellen om (complexe) software te laten testen.',
                 icon: 'computer' as IconName,
-                button_url: '',
+                button_url: '/kandidaten',
             },
             {
                 title: 'Software testing op afstand',
                 description:
                     'The quick, brown fox jumps over a lazy dog, DJs flock by when MTV ax quiz prog.',
                 icon: 'pin' as IconName,
-                button_url: '',
+                button_url: '/kandidaten',
             },
             {
                 title: 'Interim een vaste tester inhuren',
                 description:
                     'Een eigen vaste IT Professional inhuren als test automation engineer.',
                 icon: 'person' as IconName,
-                button_url: '',
+                button_url: '/kandidaten',
             },
         ],
     },
     perks_section: {
         title: 'De voordelen van werken via Adam IT?',
-        description:
-            'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.',
+        description: 'Krijg toegang tot een breed netwerk.',
         perks: [
-            'Goed salaris, markt conform',
-            'Altijd opdrachten genoeg',
-            'Bawds jog, flick quartz, vex nymphs.',
+            'Vind dè geschikte opdracht',
+            'Geheel vrijblijvend en gratis registratie',
+            'Kom in contact met jouw kandidaat',
         ],
         button_text: 'Meer over kandidaten',
-        button_url: '',
+        button_url: '/kandidaten',
         image_url: 'mentoring-meeting.jpg',
     },
     quote_section: {
-        content:
-            'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab.',
-        name: 'Jan Verstegen',
+        content: 'Wij van ADAM IT adviseren ADAM IT',
+        name: 'Adam El Hajjami',
     },
     contact_section: {
         title: 'Zit je droombaan er niet tussen? Bel met Adam.',

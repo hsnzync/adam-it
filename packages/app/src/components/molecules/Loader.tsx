@@ -1,7 +1,5 @@
-import { Box } from '@mui/material'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { LoaderPattern } from '@/components'
+import { ImageAtom, LoaderPattern } from '@/components'
 import { Colors } from '@/constants/colors'
 import { getAsset } from '@/utils'
 
@@ -37,11 +35,10 @@ export const LoaderMolecule = () => {
                 }}
                 style={{ zIndex: 5, position: 'absolute' }}
             >
-                <Image
-                    src={getAsset('logo-no-text.svg', 'logo')}
-                    width={300}
-                    height={300}
-                    alt={'logo adam it'}
+                <ImageAtom
+                    imageUrl={getAsset('logo-no-text.svg', 'logo')}
+                    imageAlt="Logo van Adam IT, verbindt IT'ers en opdrachtgevers met deskundige dienstverlening."
+                    logo
                 />
             </motion.div>
             <LoaderPattern />

@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 import { Colors } from '@/constants'
 import { breakpoints, screenMaxWidth } from '@/style'
 import {
@@ -45,13 +45,13 @@ export const JobsSection = (props: Props) => {
                 direction="horizontal"
                 alignment="start"
                 space={8}
-                sx={{ maxWidth: screenMaxWidth }}
+                sx={{ maxWidth: screenMaxWidth, width: '100%' }}
             >
                 {/* Job cards */}
                 <BoxAtom
                     direction="vertical"
                     space={3}
-                    sx={{ minWidth: '50%' }}
+                    sx={{ minWidth: '50%', width: '100%' }}
                 >
                     <TextAtom variant="h4" header>
                         {props.tiles.title}
@@ -90,27 +90,23 @@ export const JobsSection = (props: Props) => {
                         },
                     }}
                 >
-                    <BoxAtom space={2} sx={{ mb: 3 }}>
-                        <TextAtom textTransform="uppercase" color={Colors.BLUE}>
-                            {props.information.subtitle}
-                        </TextAtom>
-                        <TextAtom variant="h4" header>
-                            {props.information.title}
-                        </TextAtom>
-                        <TextAtom>{props.information.description}</TextAtom>
-                    </BoxAtom>
+                    {props.information.content.map((item, index) => (
+                        <BoxAtom key={index} space={2} sx={{ mb: 3 }}>
+                            {item.subtitle && (
+                                <TextAtom
+                                    textTransform="uppercase"
+                                    color={Colors.BLUE}
+                                >
+                                    {item.subtitle}
+                                </TextAtom>
+                            )}
+                            <TextAtom variant="h4" header>
+                                {item.title}
+                            </TextAtom>
+                            <TextAtom>{item.description}</TextAtom>
+                        </BoxAtom>
+                    ))}
 
-                    {props.information.title_2 &&
-                        props.information.description_2 && (
-                            <BoxAtom space={2} sx={{ mb: 3 }}>
-                                <TextAtom variant="h4" header>
-                                    {props.information.title_2}
-                                </TextAtom>
-                                <TextAtom>
-                                    {props.information.description_2}
-                                </TextAtom>
-                            </BoxAtom>
-                        )}
                     {props.information.button_text && (
                         <LinkButtonAtom
                             label={props.information.button_text}
@@ -134,7 +130,14 @@ export const JobsSection = (props: Props) => {
                                 },
                             }}
                         >
-                            <AccordionMolecule />
+                            {props.information.content.map((item, index) => (
+                                <AccordionMolecule
+                                    key={index}
+                                    index={index + 1}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            ))}
                         </BoxAtom>
                     </BoxAtom>
                 )}

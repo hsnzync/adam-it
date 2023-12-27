@@ -44,8 +44,14 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }))
 
-export const AccordionMolecule = () => {
-    const [expanded, setExpanded] = React.useState<string | false>('panel1')
+interface Props {
+    index: number
+    title: string
+    description: string
+}
+
+export const AccordionMolecule = (props: Props) => {
+    const [expanded, setExpanded] = React.useState<string | false>(`panel1`)
 
     const handleChange =
         (panel: string) =>
@@ -54,56 +60,24 @@ export const AccordionMolecule = () => {
         }
 
     return (
-        <>
-            <Accordion
-                expanded={expanded === 'panel1'}
-                onChange={handleChange('panel1')}
-                variant="outlined"
-                sx={{
-                    background: 'transparent',
-                    border: 'none',
-                }}
+        <Accordion
+            expanded={expanded === `panel${props.index}`}
+            onChange={handleChange(`panel${props.index}`)}
+            variant="outlined"
+            sx={{
+                background: 'transparent',
+                border: 'none',
+            }}
+        >
+            <AccordionSummary
+                aria-controls={`panel${props.index}-content`}
+                id={`panel${props.index}-header`}
             >
-                <AccordionSummary
-                    aria-controls="panel1d-content"
-                    id="panel1d-header"
-                >
-                    <TextAtom>IT Professionals voor elkaar</TextAtom>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <TextAtom>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                        lobortis eget. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Suspendisse malesuada lacus ex, sit
-                        amet blandit leo lobortis eget.
-                    </TextAtom>
-                </AccordionDetails>
-            </Accordion>
-            <Accordion
-                expanded={expanded === 'panel2'}
-                onChange={handleChange('panel2')}
-                sx={{
-                    background: 'transparent',
-                    border: 'none',
-                }}
-            >
-                <AccordionSummary
-                    aria-controls="panel2d-content"
-                    id="panel2d-header"
-                >
-                    <TextAtom>Op zoek naar een Test engineer?</TextAtom>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <TextAtom>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                        lobortis eget. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Suspendisse malesuada lacus ex, sit
-                        amet blandit leo lobortis eget.
-                    </TextAtom>
-                </AccordionDetails>
-            </Accordion>
-        </>
+                <TextAtom>{props.title}</TextAtom>
+            </AccordionSummary>
+            <AccordionDetails>
+                <TextAtom>{props.description}</TextAtom>
+            </AccordionDetails>
+        </Accordion>
     )
 }

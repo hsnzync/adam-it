@@ -75,6 +75,7 @@ export default function HomePage(data: { jobs: Job[] }) {
                         buttonText={content.perks_section.button_text}
                         buttonUrl={content.perks_section.button_url}
                         imageUrl={content.perks_section.image_url}
+                        imageAlt={}
                         sx={{
                             display: {
                                 xs: 'none',

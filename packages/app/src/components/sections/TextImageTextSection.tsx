@@ -10,26 +10,17 @@ import {
 import { BoxAtom, ImageAtom, IconAtom, TextAtom, LinkButtonAtom } from '..'
 import { screenMaxWidth } from '@/style'
 import { getAsset } from '@/utils'
-
-type Button =
-    | {
-          button: true
-          buttonText: string
-          buttonUrl: string
-      }
-    | {
-          button: false
-      }
+import { Button, Image } from '@/types'
 
 type Props = {
     bgColor: string
     title: string
     subtitle?: string
     description: string
-    imageUrl: string
     perks: string[]
     sx?: SxProps<Theme>
-} & Button
+} & Button &
+    Image
 
 export const TextImageTextSection = (props: Props) => {
     return (
@@ -84,7 +75,7 @@ export const TextImageTextSection = (props: Props) => {
                     </BoxAtom>
                     <ImageAtom
                         src={getAsset(props.imageUrl)}
-                        alt="perks of working at adam it"
+                        alt={props.imageAlt}
                         sx={{
                             width: '100%',
                         }}

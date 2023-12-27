@@ -33,7 +33,7 @@ export const ContactImageMolecule = (props: Props) => {
         >
             <ImageAtom
                 src={getAsset(props.imageUrl)}
-                alt="recruiter apply contact image"
+                alt="Adam IT recruiter, vertegenwoordiger van het human resources team van het bedrijf in een professionele setting."
                 sx={{
                     img: {
                         height: {
@@ -58,12 +58,18 @@ export const ContactImageMolecule = (props: Props) => {
                     {props.contactName}
                 </TextAtom>
                 <BoxAtom>
-                    <Link href="" style={{ textDecoration: 'none' }}>
+                    <Link
+                        href="tel:0102333923"
+                        style={{ textDecoration: 'none' }}
+                    >
                         <TextAtom variant="body1" header color={Colors.ORANGE}>
                             {props.contactPhone}
                         </TextAtom>
                     </Link>
-                    <Link href="" style={{ textDecoration: 'none' }}>
+                    <Link
+                        href="mailto:info@adamit.nl"
+                        style={{ textDecoration: 'none' }}
+                    >
                         <TextAtom variant="body1" header color={Colors.ORANGE}>
                             {props.contactEmail}
                         </TextAtom>

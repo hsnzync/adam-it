@@ -17,15 +17,14 @@ export const about = {
     },
     perks_section: {
         title: 'Waarom IT’er inhuren via Adam IT?',
-        description:
-            'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.',
+        description: 'Krijg toegang tot een breed netwerk.',
         perks: [
-            'Goed salaris, markt conform',
-            'Altijd opdrachten genoeg',
-            'Bawds jog, flick quartz, vex nymphs.',
+            'Vind dè geschikte opdracht',
+            'Geheel vrijblijvend en gratis registratie',
+            'Kom in contact met jouw kandidaat',
         ],
         button_text: 'Meer over kandidaten',
-        button_url: '',
+        button_url: '/kandidaten',
         image_url: 'meeting.jpg',
     },
     about_section: [
@@ -43,7 +42,7 @@ export const about = {
                 description:
                     'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.',
                 button_text: 'Opdrachtgever',
-                button_url: '',
+                button_url: '/werkgevers',
             },
         ],
         second_column: [

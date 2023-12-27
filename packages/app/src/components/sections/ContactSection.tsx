@@ -8,6 +8,7 @@ interface Content {
     link: boolean
     content: string
     href?: string
+    target?: string
 }
 interface Item {
     title: string
@@ -94,6 +95,7 @@ export const ContactSection = (props: Props) => {
                                         style={{
                                             color: Colors.ORANGE,
                                         }}
+                                        target={item.text_3.target}
                                     >
                                         <TextAtom>
                                             {item.text_3.content}

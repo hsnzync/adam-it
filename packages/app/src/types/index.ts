@@ -7,5 +7,6 @@ export type {
     JobFilters,
     JobSection,
 } from './Job'
-export type { Button } from './Button'
+export type { Button, ButtonProps } from './Button'
 export type { Option } from './Option'
+export type { Image } from './Image'
