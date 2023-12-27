@@ -82,7 +82,7 @@ export const ApplyFormSection = (props: Props) => {
                     md: 10,
                 },
                 py: {
-                    md: 15,
+                    md: 18,
                 },
                 ...props.sx,
             }}

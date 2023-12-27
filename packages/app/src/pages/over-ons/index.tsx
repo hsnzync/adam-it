@@ -7,6 +7,7 @@ import {
     TextImageSection,
     OneTextSection,
     TwoTextSection,
+    HeadAtom,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
@@ -16,18 +17,13 @@ export default function AboutPage() {
 
     return (
         <>
-            <Head>
-                <title>{content.seo_head.title}</title>
-                <meta
-                    name={content.seo_head.meta_name}
-                    content={content.seo_head.meta_content}
-                />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <HeadAtom
+                title={content.seo_head.title}
+                name={content.seo_head.name}
+                description={content.seo_head.description}
+                opengraph={content.seo_head.opengraph}
+                twitter={content.seo_head.twitter}
+            />
             <NavigationOrganism />
             <main>
                 <motion.div
@@ -47,6 +43,7 @@ export default function AboutPage() {
                         subtitle={content.intro_section.subtitle}
                         description={content.intro_section.description}
                         imageUrl={content.intro_section.image_url}
+                        imageAlt={content.intro_section.image_alt}
                     />
                     <OneTextSection
                         bgColor={Colors.WHITE}
@@ -59,6 +56,7 @@ export default function AboutPage() {
                         description={content.perks_section.description}
                         perks={content.perks_section.perks}
                         imageUrl={content.perks_section.image_url}
+                        imageAlt={content.perks_section.image_alt}
                     />
                     <TwoTextSection
                         bgColor={Colors.WHITE}

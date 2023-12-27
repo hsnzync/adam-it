@@ -3,13 +3,28 @@ import { IconName } from '@/types'
 export const home = {
     seo_head: {
         title: 'Adam IT - Wij maken impact met IT',
-        meta_name: 'Adam IT - Wij maken impact met IT',
-        meta_content: 'Wij maken impact met IT',
+        name: 'Adam IT - Wij maken impact met IT',
+        description:
+            'Adam IT helpt organisaties bij het vinden van de juiste IT-opdrachten en ondersteunt werkgevers bij het vinden van geschikte IT-kandidaten. Ontdek onze diensten en mogelijkheden.',
+        opengraph: {
+            title: 'Adam IT - Wij maken impact met IT',
+            description:
+                'Adam IT helpt organisaties bij het vinden van de juiste IT-opdrachten en ondersteunt werkgevers bij het vinden van geschikte IT-kandidaten. Ontdek onze diensten en mogelijkheden.',
+            url: 'https://www.adamit.nl',
+        },
+        twitter: {
+            title: 'Adam IT - Wij maken impact met IT',
+            description:
+                'Adam IT helpt organisaties bij het vinden van de juiste IT-opdrachten en ondersteunt werkgevers bij het vinden van geschikte IT-kandidaten. Ontdek onze diensten en mogelijkheden.',
+            url: 'https://www.adamit.nl',
+        },
     },
     hero: {
         title: "IT'ers en opdrachtgevers in verbinding",
         subtitle: 'Maak impact met IT',
         image_url: 'onboarding.jpg',
+        image_alt:
+            "Samenwerkende collega's van Adam IT in overleg, te zien in de hero van de startpagina.",
         buttons: [
             { label: 'Werkgevers', href: '/werkgevers' },
             { label: 'Kandidaten', href: '/kandidaten' },
@@ -52,6 +67,8 @@ export const home = {
         button_text: 'Meer over kandidaten',
         button_url: '/kandidaten',
         image_url: 'offer.jpg',
+        image_alt:
+            'Ontdek de voordelen van werken via Adam IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
     },
     quote_section: {
         content: 'Wij van ADAM IT adviseren ADAM IT',
@@ -95,6 +112,10 @@ export const home = {
         button_text: 'Bekijk de cases',
         button_url: '/kandidaten',
         image_url: 'company-meeting.jpg',
+        image_alt:
+            'Een professioneel team in actie - Recent uitgevoerde cases illustreren onze expertise in het oplossen van testvraagstukken en het begeleiden van individuen naar volwaardige professionals.',
         logo_url: 'uwv-logo.svg',
+        logo_alt:
+            'Officieel logo van het UWV, de uitvoeringsorganisatie van de overheid voor werknemersverzekeringen. Representatief voor samenwerking en dienstverlening.',
     },
 }

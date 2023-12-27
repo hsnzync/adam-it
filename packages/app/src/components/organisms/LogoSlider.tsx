@@ -1,6 +1,6 @@
 import { Colors } from '@/constants'
 import { BoxAtom } from '@/components'
-import Image from 'next/image'
+import NextImage from 'next/image'
 import { SxProps, Theme } from '@mui/material'
 import { screenMaxWidth } from '@/style'
 import { useState } from 'react'
@@ -8,22 +8,18 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import { getAsset } from '@/utils'
+import { Image } from '@/types'
+import { textContent } from '@/content'
 
 interface Props {
     divider?: boolean
     sx?: SxProps<Theme>
 }
 
-const companyLogos = [
-    'uwv-logo.svg',
-    'kadaster-logo.svg',
-    'stedin-logo.png',
-    'rfh-logo.svg',
-]
-
 export const LogoSliderOrganism = (props: Props) => {
+    const companyLogos = textContent.logos
     const [isHovered, setIsHovered] = useState(false)
-    const [logos, setLogos] = useState<string[]>([
+    const [logos, setLogos] = useState<Image[]>([
         ...companyLogos,
         ...companyLogos,
     ])
@@ -90,9 +86,9 @@ export const LogoSliderOrganism = (props: Props) => {
                                 justifyContent: 'center',
                             }}
                         >
-                            <Image
-                                src={getAsset(logo, 'company-logos')}
-                                alt="company logo"
+                            <NextImage
+                                src={getAsset(logo.imageUrl, 'company-logos')}
+                                alt={logo.imageAlt}
                                 width={100}
                                 height={100}
                                 style={{

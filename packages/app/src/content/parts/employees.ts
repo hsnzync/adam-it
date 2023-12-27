@@ -2,9 +2,22 @@ import { IconName } from '@/types'
 
 export const employees = {
     seo_head: {
-        title: 'Werkgever | Adam IT - Wij maken impact met IT',
-        meta_name: 'Adam IT - Wij maken impact met IT',
-        meta_content: 'Wij maken impact met IT',
+        title: 'Vind geschikte kandidaten - Adam IT',
+        name: 'Vind geschikte kandidaten - Adam IT',
+        description:
+            'Ontdek getalenteerde IT-professionals voor uw organisatie. Adam IT helpt werkgevers bij het vinden van geschikte kandidaten voor IT-opdrachten.',
+        opengraph: {
+            title: 'Vind geschikte kandidaten - Adam IT',
+            description:
+                'Ontdek getalenteerde IT-professionals voor uw organisatie. Adam IT helpt werkgevers bij het vinden van geschikte kandidaten voor IT-opdrachten.',
+            url: 'https://www.adamit.nl/werkgevers',
+        },
+        twitter: {
+            title: 'Vind geschikte kandidaten - Adam IT',
+            description:
+                'Ontdek getalenteerde IT-professionals voor uw organisatie. Adam IT helpt werkgevers bij het vinden van geschikte kandidaten voor IT-opdrachten.',
+            url: 'https://www.adamit.nl/werkgevers',
+        },
     },
     hero: {
         title: 'Werkgevers',
@@ -16,6 +29,8 @@ export const employees = {
         description:
             'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. ',
         image_url: 'pitching-meeting.jpg',
+        image_alt:
+            'Dynamisch team van IT-professionals beschikbaar voor detachering - Ontsluit expertise en flexibiliteit door onze gespecialiseerde IT-professionals in te huren.',
     },
     kpi_section: {
         tileTitle: 'Als IT’er organisaties verder helpen',
@@ -54,6 +69,8 @@ export const employees = {
         button_text: 'Meer over kandidaten',
         button_url: '/kandidaten',
         image_url: 'mentoring-meeting.jpg',
+        image_alt:
+            'Ontdek de voordelen van werken via Adam IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
     },
     quote_section: {
         content: 'Wij van ADAM IT adviseren ADAM IT',

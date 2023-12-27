@@ -120,8 +120,8 @@ export const TextImageSection = (props: Props) => {
                         )}
                     </BoxAtom>
                     <ImageAtom
-                        src={getAsset(props.imageUrl)}
-                        alt={props.imageAlt}
+                        imageUrl={getAsset(props.imageUrl)}
+                        imageAlt={props.imageAlt}
                         sx={{
                             width: '100%',
                         }}

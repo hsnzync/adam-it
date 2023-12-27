@@ -7,6 +7,7 @@ import {
     ContactSection,
     TwoTextSection,
     ContactFormSection,
+    HeadAtom,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
@@ -16,18 +17,13 @@ export default function ContactPage() {
 
     return (
         <>
-            <Head>
-                <title>{content.seo_head.title}</title>
-                <meta
-                    name={content.seo_head.meta_name}
-                    content={content.seo_head.meta_content}
-                />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <HeadAtom
+                title={content.seo_head.title}
+                name={content.seo_head.name}
+                description={content.seo_head.description}
+                opengraph={content.seo_head.opengraph}
+                twitter={content.seo_head.twitter}
+            />
             <NavigationOrganism />
             <main>
                 <motion.div

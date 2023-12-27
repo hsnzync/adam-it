@@ -8,6 +8,7 @@ import {
     candidatesPage,
     jobsPage,
     jobDetailPage,
+    logos,
 } from './parts'
 
 export const textContent = {
@@ -20,4 +21,5 @@ export const textContent = {
     candidates: candidatesPage,
     jobs: jobsPage,
     jobDetail: jobDetailPage,
+    logos: logos,
 }

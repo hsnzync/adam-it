@@ -12,6 +12,7 @@ export {
     LinkButtonAtom,
     RichContent,
     LoaderAtom,
+    HeadAtom,
 } from './atoms'
 
 // molecules

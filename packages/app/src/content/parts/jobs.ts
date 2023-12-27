@@ -1,8 +1,21 @@
 export const jobs = {
     seo_head: {
-        title: 'Vacatures | Adam IT - Wij maken impact met IT',
-        meta_name: 'Adam IT - Wij maken impact met IT',
-        meta_content: 'Wij maken impact met IT',
+        title: 'Vacatures - Adam IT',
+        name: 'Vacatures - Adam IT',
+        description:
+            'Bekijk de nieuwste IT-vacatures bij Adam IT. Vind de perfecte opdracht voor jouw IT-vaardigheden.',
+        opengraph: {
+            title: 'Vacatures - Adam IT',
+            description:
+                'Bekijk de nieuwste IT-vacatures bij Adam IT. Vind de perfecte opdracht voor jouw IT-vaardigheden.',
+            url: 'https://www.adamit.nl/vacatures',
+        },
+        twitter: {
+            title: 'Vacatures - Adam IT',
+            description:
+                'Bekijk de nieuwste IT-vacatures bij Adam IT. Vind de perfecte opdracht voor jouw IT-vaardigheden.',
+            url: 'https://www.adamit.nl/vacatures',
+        },
     },
     hero: {
         title: 'Vacatures',
@@ -21,6 +34,8 @@ export const jobs = {
         description:
             'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. ',
         image_url: 'pitching-group.jpg',
+        image_alt:
+            'Stap in je droombaan als IT Professional - Een visuele representatie van jouw weg naar een succesvolle carrière in de IT-wereld.',
     },
     extra_section: [
         {

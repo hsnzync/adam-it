@@ -1,8 +1,21 @@
 export const about = {
     seo_head: {
-        title: 'Over ons | Adam IT - Wij maken impact met IT',
-        meta_name: 'Adam IT - Wij maken impact met IT',
-        meta_content: 'Wij maken impact met IT',
+        title: 'Over ons - Adam IT',
+        name: 'Over ons - Adam IT',
+        description:
+            'Leer meer over Adam IT, uw betrouwbare partner in het vinden van IT-opdrachten en geschikte IT-kandidaten. Ontdek onze missie, visie en waarden.',
+        opengraph: {
+            title: 'Over ons - Adam IT',
+            description:
+                'Leer meer over Adam IT, uw betrouwbare partner in het vinden van IT-opdrachten en geschikte IT-kandidaten. Ontdek onze missie, visie en waarden.',
+            url: 'https://www.adamit.nl/over-ons',
+        },
+        twitter: {
+            title: 'Over ons - Adam IT',
+            description:
+                'Leer meer over Adam IT, uw betrouwbare partner in het vinden van IT-opdrachten en geschikte IT-kandidaten. Ontdek onze missie, visie en waarden.',
+            url: 'https://www.adamit.nl/over-ons',
+        },
     },
     hero: {
         title: 'Over ons',
@@ -14,6 +27,8 @@ export const about = {
         description:
             'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. ',
         image_url: 'mill.jpg',
+        image_alt:
+            'Adam IT, trots gevestigd in hartje Maassluis - Uw betrouwbare partner voor IT-oplossingen met passie en expertise.',
     },
     perks_section: {
         title: 'Waarom IT’er inhuren via Adam IT?',
@@ -26,6 +41,8 @@ export const about = {
         button_text: 'Meer over kandidaten',
         button_url: '/kandidaten',
         image_url: 'meeting.jpg',
+        image_alt:
+            'Ontdek de voordelen van werken via Adam IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
     },
     about_section: [
         {

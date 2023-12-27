@@ -10,6 +10,7 @@ import {
     KpiSection,
     FooterOrganism,
     NavigationOrganism,
+    HeadAtom,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
@@ -34,18 +35,13 @@ export default function HomePage(data: { jobs: Job[] }) {
 
     return (
         <>
-            <Head>
-                <title>{content.seo_head.title}</title>
-                <meta
-                    name={content.seo_head.meta_name}
-                    content={content.seo_head.meta_content}
-                />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <HeadAtom
+                title={content.seo_head.title}
+                name={content.seo_head.name}
+                description={content.seo_head.description}
+                opengraph={content.seo_head.opengraph}
+                twitter={content.seo_head.twitter}
+            />
             <NavigationOrganism />
             <main>
                 <motion.div
@@ -59,6 +55,7 @@ export default function HomePage(data: { jobs: Job[] }) {
                         title={content.hero.title}
                         subtitle={content.hero.subtitle}
                         imageUrl={content.hero.image_url}
+                        imageAlt={content.hero.image_alt}
                         buttons={content.hero.buttons}
                     />
                     <KpiSection
@@ -75,7 +72,7 @@ export default function HomePage(data: { jobs: Job[] }) {
                         buttonText={content.perks_section.button_text}
                         buttonUrl={content.perks_section.button_url}
                         imageUrl={content.perks_section.image_url}
-                        imageAlt={}
+                        imageAlt={content.perks_section.image_alt}
                         sx={{
                             display: {
                                 xs: 'none',
@@ -95,10 +92,11 @@ export default function HomePage(data: { jobs: Job[] }) {
                     <ImageTextSection
                         sectionTitle={content.cases_section.section_title}
                         bgColor={Colors.WHITE}
-                        logo={getAsset(
+                        logoUrl={getAsset(
                             content.cases_section.logo_url,
                             'company-logos'
                         )}
+                        logoAlt={content.cases_section.logo_alt}
                         title={content.cases_section.title}
                         description={content.cases_section.description}
                         perks={content.cases_section.perks}
@@ -106,6 +104,7 @@ export default function HomePage(data: { jobs: Job[] }) {
                         buttonText={content.cases_section.button_text}
                         buttonUrl={content.cases_section.button_url}
                         imageUrl={content.cases_section.image_url}
+                        imageAlt={content.cases_section.image_alt}
                     />
 
                     <LogoSliderOrganism divider />
@@ -119,6 +118,7 @@ export default function HomePage(data: { jobs: Job[] }) {
                         buttonText={content.perks_section.button_text}
                         buttonUrl={content.perks_section.button_url}
                         imageUrl={content.perks_section.image_url}
+                        imageAlt={content.perks_section.image_alt}
                         sx={{
                             display: {
                                 xs: 'flex',

@@ -9,7 +9,7 @@ interface Props {
 
 export const JobDetailSection = (props: Props) => {
     return (
-        <BoxAtom bgColor={Colors.WHITE} alignment="center" sx={{ py: 5 }}>
+        <BoxAtom bgColor={Colors.WHITE} alignment="start" sx={{ py: 5 }}>
             <BoxAtom
                 sx={{
                     maxWidth: screenMaxWidth,

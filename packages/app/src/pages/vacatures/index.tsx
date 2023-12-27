@@ -9,6 +9,7 @@ import {
     BoxAtom,
     JobsListSection,
     ContactImageMolecule,
+    HeadAtom,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
@@ -34,18 +35,13 @@ export default function JobsPage(data: { jobs: Job[]; filters: JobFilters[] }) {
 
     return (
         <>
-            <Head>
-                <title>{content.seo_head.title}</title>
-                <meta
-                    name={content.seo_head.meta_name}
-                    content={content.seo_head.meta_content}
-                />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <HeadAtom
+                title={content.seo_head.title}
+                name={content.seo_head.name}
+                description={content.seo_head.description}
+                opengraph={content.seo_head.opengraph}
+                twitter={content.seo_head.twitter}
+            />
             <NavigationOrganism />
             <main>
                 <motion.div
@@ -107,6 +103,7 @@ export default function JobsPage(data: { jobs: Job[]; filters: JobFilters[] }) {
                         subtitle={content.connect_section.subtitle}
                         description={content.connect_section.description}
                         imageUrl={content.connect_section.image_url}
+                        imageAlt={content.connect_section.image_alt}
                     />
                     <OneTextSection
                         bgColor={Colors.WHITE}

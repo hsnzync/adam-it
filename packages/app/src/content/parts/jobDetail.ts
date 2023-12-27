@@ -1,8 +1,21 @@
 export const jobDetail = {
     seo_head: {
-        title: 'Vacatures | Adam IT - Wij maken impact met IT',
-        meta_name: 'Adam IT - Wij maken impact met IT',
-        meta_content: 'Wij maken impact met IT',
+        title: 'Vacaturedetails - Adam IT',
+        name: 'Vacaturedetails - Adam IT',
+        description:
+            'Bekijk de details van de nieuwste IT-vacature bij Adam IT. Ontdek of dit de perfecte opdracht is voor jouw IT-vaardigheden.',
+        opengraph: {
+            title: 'Vacaturedetails - Adam IT',
+            description:
+                'Bekijk de details van de nieuwste IT-vacature bij Adam IT. Ontdek of dit de perfecte opdracht is voor jouw IT-vaardigheden.',
+            url: 'https://www.adamit.nl/vacatures',
+        },
+        twitter: {
+            title: 'Vacaturedetails - Adam IT',
+            description:
+                'Bekijk de details van de nieuwste IT-vacature bij Adam IT. Ontdek of dit de perfecte opdracht is voor jouw IT-vaardigheden.',
+            url: 'https://www.adamit.nl/vacatures',
+        },
     },
     hero: {
         subtitle: 'Vacatures',

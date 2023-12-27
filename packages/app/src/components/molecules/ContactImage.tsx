@@ -32,8 +32,8 @@ export const ContactImageMolecule = (props: Props) => {
             }}
         >
             <ImageAtom
-                src={getAsset(props.imageUrl)}
-                alt="Adam IT recruiter, vertegenwoordiger van het human resources team van het bedrijf in een professionele setting."
+                imageUrl={getAsset(props.imageUrl)}
+                imageAlt="Adam IT recruiter, vertegenwoordiger van het human resources team van het bedrijf in een professionele setting."
                 sx={{
                     img: {
                         height: {

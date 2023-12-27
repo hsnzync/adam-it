@@ -28,7 +28,8 @@ type Props = {
     subtitle?: string
     description: string
     perks?: string[]
-    logo?: string
+    logoUrl?: string
+    logoAlt?: string
     sx?: SxProps<Theme>
 } & Button &
     Image
@@ -80,8 +81,8 @@ export const ImageTextSection = (props: Props) => {
                     }}
                 >
                     <ImageAtom
-                        src={getAsset(props.imageUrl)}
-                        alt={props.imageAlt}
+                        imageUrl={getAsset(props.imageUrl)}
+                        imageAlt={props.imageAlt}
                         sx={{
                             width: '100%',
                         }}
@@ -92,10 +93,10 @@ export const ImageTextSection = (props: Props) => {
                             width: '100%',
                         }}
                     >
-                        {props.logo && (
+                        {props.logoUrl && (
                             <LogoImage
-                                src={props.logo}
-                                alt="Officieel logo van het UWV, de uitvoeringsorganisatie van de overheid voor werknemersverzekeringen. Representatief voor samenwerking en dienstverlening."
+                                src={props.logoUrl}
+                                alt={props.logoAlt ?? 'Officieel logo'}
                                 width={80}
                                 height={80}
                             />
