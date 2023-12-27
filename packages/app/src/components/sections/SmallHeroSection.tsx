@@ -57,15 +57,17 @@ export const SmallHeroSection = (props: Props) => {
                     color={Colors.BLUE}
                     textTransform="uppercase"
                     sx={{
-                        fontSize: {
-                            xs: 18,
-                            md: 16,
-                        },
+                        fontSize: 16,
                     }}
                 >
                     {props.subtitle}
                 </TextAtom>
-                <TextAtom variant="h3" color={Colors.WHITE} header>
+                <TextAtom
+                    variant="h3"
+                    color={Colors.WHITE}
+                    header
+                    sx={{ fontSize: 40 }}
+                >
                     {props.title}
                 </TextAtom>
             </BoxAtom>
