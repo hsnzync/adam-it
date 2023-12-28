@@ -61,4 +61,5 @@ export const jobs = {
         job_type: 'Functisoort',
         job_location: 'Locatie',
     },
+    pagination_button_text: 'Toon meer',
 }

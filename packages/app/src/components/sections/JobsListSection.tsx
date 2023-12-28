@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { SxProps, Theme } from '@mui/material'
 import {
     BoxAtom,
+    ButtonMolecule,
     CardMolecule,
     InputMolecule,
     LoaderAtom,
@@ -9,8 +11,8 @@ import {
 } from '@/components'
 import { Colors } from '@/constants'
 import { Job, JobFilters } from '@/types'
-import { SxProps, Theme } from '@mui/material'
 import { filterMapper, formatSalary } from '@/utils'
+import client from '../../../client'
 
 interface Filter {
     title: string
@@ -23,11 +25,14 @@ interface Props {
     labels: Filter
     jobs: Job[]
     filters: JobFilters[]
+    jobCount: number
+    buttonLabel: string
     plain?: boolean
     sx?: SxProps<Theme>
 }
 
 export const JobsListSection = (props: Props) => {
+    const [page, setPage] = useState(0)
     const [searchValue, setSearchValue] = useState('')
     const [selectedTitleValue, setSelectedTitleValue] = useState<string[]>([])
     const [selectedTypeValue, setSelectedTypeValue] = useState<string[]>([])
@@ -111,6 +116,21 @@ export const JobsListSection = (props: Props) => {
         }
     }
 
+    const fetchMoreJobs = async () => {
+        const nextPage = page + 1
+
+        await client
+            .fetch(
+                `*[_type == "job"] | order(_createdAt desc) [${
+                    nextPage * 10
+                }...${(nextPage + 1) * 10}]`
+            )
+            .then((jobs) => {
+                setPage(nextPage)
+                setFilteredJobs([...filteredJobs, ...jobs])
+            })
+    }
+
     // WILL DO LATER
 
     // const handleRemoveFilter = (value: string) => {
@@ -175,19 +195,22 @@ export const JobsListSection = (props: Props) => {
                     onChange={handleSearchChange}
                 />
                 <BoxAtom direction="horizontal" space={2}>
-                    {props.filters.map((filter, index) => (
-                        <SelectMolecule
-                            key={index}
-                            label={filter.title}
-                            options={filter.filterList}
-                            onChange={(value) =>
-                                handleSelectChange(
-                                    filterMapper(filter.title.toLowerCase()),
-                                    value
-                                )
-                            }
-                        />
-                    ))}
+                    {props.filters.length > 0 &&
+                        props.filters.map((filter, index) => (
+                            <SelectMolecule
+                                key={index}
+                                label={filter.title}
+                                options={filter.filterList}
+                                onChange={(value) =>
+                                    handleSelectChange(
+                                        filterMapper(
+                                            filter.title.toLowerCase()
+                                        ),
+                                        value
+                                    )
+                                }
+                            />
+                        ))}
                 </BoxAtom>
                 {/* <BoxAtom
                     direction="horizontal"
@@ -230,9 +253,24 @@ export const JobsListSection = (props: Props) => {
                             location={job.location}
                             hours={job.hours}
                             salary={formatSalary(job.minSalary, job.maxSalary)}
-                            href={`/vacatures/${job.slug.current}`}
+                            href={`/vacatures/${job.slug?.current}`}
                         />
                     ))}
+                {filteredJobs.length < props.jobCount && (
+                    <ButtonMolecule
+                        label={props.buttonLabel}
+                        onClick={fetchMoreJobs}
+                    />
+                )}
+                {filteredJobs?.length === 0 && (
+                    <TextAtom
+                        alignment="center"
+                        color={Colors.BLUE}
+                        sx={{ my: 5 }}
+                    >
+                        Geen resultaten gevonden
+                    </TextAtom>
+                )}
 
                 {props.jobs?.length === 0 && <LoaderAtom />}
             </BoxAtom>

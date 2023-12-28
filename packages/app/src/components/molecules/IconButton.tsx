@@ -35,7 +35,6 @@ const Button = (props: { link?: boolean }) => (
             sx={{
                 rotate: '-45deg',
                 position: 'relative',
-                bottom: 2,
             }}
         />
     </MuiButton>

@@ -23,31 +23,37 @@ export default {
             name: 'title',
             title: 'Functie',
             type: 'string',
+            validation: (Rule) => Rule.required().max(80),
         },
         {
             name: 'type',
             title: 'Type baan',
             type: 'string',
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'location',
             title: 'Locatie',
             type: 'string',
+            validation: (Rule) => Rule.required().max(80),
         },
         {
             name: 'hours',
             title: 'Uren',
             type: 'number',
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'minSalary',
             title: 'Salarisindicatie (minimum)',
             type: 'number',
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'maxSalary',
             title: 'Salarisindicatie (maximum)',
             type: 'number',
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'sections',

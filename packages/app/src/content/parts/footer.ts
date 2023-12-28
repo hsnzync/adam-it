@@ -4,23 +4,23 @@ export const footer = {
         links: [
             {
                 name: 'Werkgevers',
-                url: '',
+                href: '/werkgevers',
             },
             {
-                name: 'Werken bij',
-                url: '',
+                name: 'Kandidaten',
+                href: '/kandidaten',
             },
             {
                 name: 'Over Adam IT',
-                url: '',
-            },
-            {
-                name: 'Testnation',
-                url: '',
+                href: '/over-ons',
             },
             {
                 name: 'Vacatures',
-                url: '',
+                href: '/vacatures',
+            },
+            {
+                name: 'Testnation',
+                href: '#',
             },
         ],
     },
@@ -29,11 +29,11 @@ export const footer = {
         links: [
             {
                 name: 'Klantenservice',
-                url: '',
+                href: '/contact',
             },
             {
                 name: 'Contact',
-                url: '',
+                href: '/contact',
             },
         ],
     },
@@ -41,17 +41,28 @@ export const footer = {
         title: 'Contact',
         links: [
             {
-                name: '+ 31 20 123 45 78',
-                url: '',
+                name: '010 - 23 33 923',
+                href: 'tel:0102333923',
             },
             {
                 name: 'info@adamit.nl',
-                url: '',
+                href: 'mailto:info@adamit.nl',
             },
         ],
     },
-    copyright: 'Adam IT © 2024 - Alle rechten voorbehouden',
-    terms_and_conditions: 'Algemene voorwaarden',
-    privacy_policy: 'Privacy Policy',
-    cookies: 'Cookies',
+    copyright: {
+        name: 'Adam IT © 2024 - Alle rechten voorbehouden',
+    },
+    terms_and_conditions: {
+        name: 'Algemene voorwaarden',
+        href: '#',
+    },
+    privacy_policy: {
+        name: 'Privacy Policy',
+        href: '#',
+    },
+    cookies: {
+        name: 'Cookies',
+        href: '#',
+    },
 }

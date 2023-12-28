@@ -236,16 +236,6 @@ export const NavigationOrganism = () => {
                                         md: 20,
                                     },
                                 },
-                                '.icon-container': {
-                                    top: {
-                                        xs: 5,
-                                        md: 2,
-                                    },
-                                    left: {
-                                        xs: 5,
-                                        md: 2,
-                                    },
-                                },
                                 svg: {
                                     fontSize: {
                                         xs: 30,

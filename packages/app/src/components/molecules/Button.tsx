@@ -48,6 +48,9 @@ export const ButtonMolecule = (props: ButtonProps) => {
                 sx={{
                     m: 0,
                     p: '0 !important',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     border: !isClear ? '1px solid white' : undefined,
                     backgroundColor: isClear ? Colors.ORANGE : undefined,
                     borderRadius: 1,

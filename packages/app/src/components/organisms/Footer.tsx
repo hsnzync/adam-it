@@ -51,7 +51,7 @@ export const FooterOrganism = () => {
                             </TextAtom>
                             {content.navigation.links.map((link, index) => (
                                 <Link
-                                    href=""
+                                    href={link.href}
                                     key={index}
                                     style={{
                                         color: Colors.WHITE,
@@ -68,7 +68,7 @@ export const FooterOrganism = () => {
                             </TextAtom>
                             {content.support.links.map((link, index) => (
                                 <Link
-                                    href=""
+                                    href={link.href}
                                     key={index}
                                     style={{
                                         color: Colors.WHITE,
@@ -85,7 +85,7 @@ export const FooterOrganism = () => {
                             </TextAtom>
                             {content.contact.links.map((link, index) => (
                                 <Link
-                                    href=""
+                                    href={link.href}
                                     key={index}
                                     style={{
                                         color: Colors.WHITE,
@@ -149,7 +149,7 @@ export const FooterOrganism = () => {
                     }}
                 >
                     <TextAtom color={Colors.WHITE}>
-                        {content.copyright}
+                        {content.copyright.name}
                     </TextAtom>
                     <BoxAtom
                         direction="horizontal"
@@ -164,36 +164,39 @@ export const FooterOrganism = () => {
                         }}
                     >
                         <Link
-                            href=""
+                            href={content.terms_and_conditions.href}
                             style={{
                                 color: Colors.WHITE,
                                 textDecoration: 'none',
                                 whiteSpace: 'pre',
                             }}
                         >
-                            <TextAtom>{content.terms_and_conditions}</TextAtom>
+                            <TextAtom>
+                                {content.terms_and_conditions.name}
+                            </TextAtom>
+                        </Link>
+
+                        <TextAtom color={Colors.WHITE}>|</TextAtom>
+                        <Link
+                            href={content.privacy_policy.href}
+                            style={{
+                                color: Colors.WHITE,
+                                textDecoration: 'none',
+                                whiteSpace: 'pre',
+                            }}
+                        >
+                            <TextAtom>{content.privacy_policy.name}</TextAtom>
                         </Link>
                         <TextAtom color={Colors.WHITE}>|</TextAtom>
                         <Link
-                            href=""
+                            href={content.cookies.href}
                             style={{
                                 color: Colors.WHITE,
                                 textDecoration: 'none',
                                 whiteSpace: 'pre',
                             }}
                         >
-                            <TextAtom>{content.privacy_policy}</TextAtom>
-                        </Link>
-                        <TextAtom color={Colors.WHITE}>|</TextAtom>
-                        <Link
-                            href=""
-                            style={{
-                                color: Colors.WHITE,
-                                textDecoration: 'none',
-                                whiteSpace: 'pre',
-                            }}
-                        >
-                            <TextAtom>{content.cookies}</TextAtom>
+                            <TextAtom>{content.cookies.name}</TextAtom>
                         </Link>
                     </BoxAtom>
                 </BoxAtom>

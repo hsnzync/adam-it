@@ -66,7 +66,12 @@ export const SmallHeroSection = (props: Props) => {
                     variant="h3"
                     color={Colors.WHITE}
                     header
-                    sx={{ fontSize: 40 }}
+                    sx={{
+                        fontSize: {
+                            xs: 35,
+                            md: 45,
+                        },
+                    }}
                 >
                     {props.title}
                 </TextAtom>

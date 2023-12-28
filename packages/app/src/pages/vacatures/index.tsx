@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { motion } from 'framer-motion'
 import {
     FooterOrganism,
@@ -14,25 +13,31 @@ import {
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
 import { screenMaxWidth } from '@/style'
-import client from '@/../client'
-import { Job } from '@/types'
-import { JobFilters } from '@/types/Job'
+import client from '../../../client'
+import { Job, JobFilters } from '@/types'
 
 export const getStaticProps = async () => {
-    const jobData = await client.fetch(`*[_type == "job"]`)
+    const jobData = await client.fetch(
+        `*[_type == "job"] | order(_createdAt desc) [0...10]`
+    )
+    const jobCount = await client.fetch(`count(*[_type == "job"])`)
     const filterData = await client.fetch(`*[_type == "jobFilters"]`)
     return {
         props: {
             jobs: jobData,
+            count: jobCount,
             filters: filterData,
         },
     }
 }
 
-export default function JobsPage(data: { jobs: Job[]; filters: JobFilters[] }) {
+export default function JobsPage(data: {
+    jobs: Job[]
+    count: number
+    filters: JobFilters[]
+}) {
     const content = textContent.jobs
-    const { jobs, filters } = data
-
+    const { jobs, count, filters } = data
     return (
         <>
             <HeadAtom
@@ -70,6 +75,7 @@ export default function JobsPage(data: { jobs: Job[]; filters: JobFilters[] }) {
                                 plain
                                 labels={content.filter}
                                 jobs={jobs}
+                                jobCount={count}
                                 sx={{
                                     width: {
                                         xs: undefined,
@@ -78,6 +84,7 @@ export default function JobsPage(data: { jobs: Job[]; filters: JobFilters[] }) {
                                     justifyContent: 'start',
                                 }}
                                 filters={filters}
+                                buttonLabel={content.pagination_button_text}
                             />
                             <ContactImageMolecule
                                 contactName={content.contact.name}
