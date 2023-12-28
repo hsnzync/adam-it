@@ -48,13 +48,14 @@ export const ApplyFormSection = (props: Props) => {
         const formData = new FormData()
         formData.append('name', form.name)
         formData.append('email', form.email)
+        formData.append('phone', form.phone)
         formData.append('message', form.message)
         if (file) {
             formData.append('file', file)
         }
 
         try {
-            await fetch('/api/submitForm', {
+            await fetch('http://localhost:3000/api/submitForm', {
                 method: 'POST',
                 body: formData,
             }).catch((error) => console.error(error))

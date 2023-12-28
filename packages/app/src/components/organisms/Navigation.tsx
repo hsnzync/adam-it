@@ -119,62 +119,63 @@ export const NavigationOrganism = () => {
                         }}
                     >
                         {pages.map((page, index) => (
-                            <MenuItem
+                            <BoxAtom
                                 key={index}
                                 sx={{
-                                    px: 1,
-                                    justifyContent: 'end',
-                                    transition: '.3s',
+                                    position: 'relative',
 
-                                    ':hover': {
-                                        background: 'none',
+                                    '::after': {
+                                        content: '""',
+
+                                        borderBottom:
+                                            currentPage ===
+                                            page.label.toLowerCase()
+                                                ? `2px solid ${Colors.ORANGE} !important`
+                                                : '2px solid transparent',
+                                        position: 'absolute',
+                                        width: '100%',
+                                        bottom: -5,
+                                        transition: '.3s',
                                     },
 
-                                    a: {
-                                        '::after': {
-                                            content: '""',
-
-                                            borderBottom:
-                                                currentPage ===
-                                                page.label.toLowerCase()
-                                                    ? `2px solid ${Colors.ORANGE} !important`
-                                                    : undefined,
-                                            position: 'absolute',
-                                            width: '100%',
-                                            left: 0,
-                                            bottom: -10,
-                                        },
-                                        ':hover::after': {
-                                            content: '""',
-
-                                            borderBottom: `2px solid ${Colors.ORANGE}`,
-                                            position: 'absolute',
-                                            width: '100%',
-                                            left: 0,
-                                            bottom: -10,
-                                        },
+                                    ':hover::after': {
+                                        content: '""',
+                                        position: 'absolute',
+                                        borderBottom: `2px solid ${Colors.ORANGE}`,
+                                        width: '100%',
+                                        bottom: -5,
                                     },
                                 }}
                             >
                                 <Link
                                     href={page.href}
                                     style={{
-                                        paddingBottom: 0,
                                         textDecoration: 'none',
-                                        borderBottom: '2px solid transparent',
                                     }}
                                 >
-                                    <TextAtom
-                                        color={
-                                            navScrolled || menuOpen
-                                                ? Colors.DARK_BLUE
-                                                : Colors.WHITE
-                                        }
+                                    <MenuItem
+                                        sx={{
+                                            px: 1,
+                                            justifyContent: 'end',
+                                            transition: '.3s',
+
+                                            ':hover': {
+                                                background: 'none',
+                                            },
+                                        }}
                                     >
-                                        {page.label}
-                                    </TextAtom>
+                                        <TextAtom
+                                            color={
+                                                navScrolled || menuOpen
+                                                    ? Colors.DARK_BLUE
+                                                    : Colors.WHITE
+                                            }
+                                        >
+                                            {page.label}
+                                        </TextAtom>
+                                    </MenuItem>
                                 </Link>
-                            </MenuItem>
+                            </BoxAtom>
                         ))}
                         <LinkButtonAtom
                             label={buttons.jobs.label}

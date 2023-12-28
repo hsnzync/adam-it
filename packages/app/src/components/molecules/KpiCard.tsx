@@ -16,6 +16,7 @@ type Button =
 type Props = {
     icon: IconName
     children: ReactNode
+    extended?: boolean
     sx?: SxProps<Theme>
 } & Button
 
@@ -26,6 +27,14 @@ export const KpiCardMolecule = (props: Props) => {
             space={2}
             sx={{
                 width: '100%',
+                minHeight: {
+                    md: props.extended ? 230 : 130,
+                },
+
+                justifyContent: {
+                    md: 'space-between',
+                },
+
                 py: {
                     xs: 4,
                     md: 0,

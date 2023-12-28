@@ -59,6 +59,7 @@ export default function HomePage(data: { jobs: Job[] }) {
                     <KpiSection
                         tileTitle={content.kpi_section.tileTitle}
                         tiles={content.kpi_section.tiles}
+                        extended
                     />
                     <ImageTextSection
                         hasBgPattern

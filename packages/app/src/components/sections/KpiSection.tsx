@@ -4,9 +4,10 @@ import { BoxAtom, TextAtom, KpiCardMolecule } from '@/components'
 import { IconName } from '@/types'
 
 interface Props {
+    tiles: Tile[]
     title?: string
     tileTitle?: string
-    tiles: Tile[]
+    extended?: boolean
 }
 
 interface Tile {
@@ -85,6 +86,7 @@ export const KpiSection = (props: Props) => {
                             key={index}
                             icon={tile.icon}
                             buttonUrl={tile.button_url}
+                            extended={props.extended}
                             button
                         >
                             <BoxAtom direction="vertical" space={2}>
