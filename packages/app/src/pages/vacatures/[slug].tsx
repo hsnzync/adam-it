@@ -88,18 +88,17 @@ export default function JobDetailPage(data: { job: Job }) {
                         sx={{
                             alignItems: 'unset',
                             position: 'relative',
-                            pt: {
-                                xs: 0,
-                                md: 8,
-                            },
                         }}
                     >
-                        <BoxAtom alignment="center">
+                        <BoxAtom
+                            alignment="center"
+                            sx={{ px: { xs: 3, md: 10 }, py: { xs: 3, md: 5 } }}
+                        >
                             <BoxAtom
                                 direction="horizontal"
                                 sx={{
                                     maxWidth: screenMaxWidth,
-                                    p: { xs: 3, md: 0 },
+                                    width: '100%',
                                     gap: {
                                         xs: 0,
                                         md: 15,
@@ -136,36 +135,18 @@ export default function JobDetailPage(data: { job: Job }) {
                                 </BoxAtom>
                                 <BoxAtom
                                     sx={{
-                                        width: '25%',
-                                        zIndex: 1,
-                                        py: 3,
+                                        display: {
+                                            xs: 'none',
+                                            sm: 'block',
+                                        },
+                                        width: {
+                                            xs: undefined,
+                                            sm: '25%',
+                                        },
                                     }}
                                 >
                                     {/* Empty placeholder div */}
                                     <BoxAtom />
-                                    {/* <ContactImageMolecule
-                                        title={content.contact.title}
-                                        contactName={content.contact.name}
-                                        contactPhone={
-                                            content.contact.phone_number
-                                        }
-                                        contactEmail={content.contact.email}
-                                        imageUrl={content.contact.image_url}
-                                        sx={{
-                                            width: 'auto',
-                                            position: {
-                                                xs: 'relative',
-                                                md: scrolled
-                                                    ? 'sticky'
-                                                    : 'relative',
-                                            },
-                                            top: {
-                                                xs: undefined,
-                                                md: scrolled ? 120 : undefined,
-                                            },
-                                            backgroundColor: 'transparent',
-                                        }}
-                                    /> */}
                                 </BoxAtom>
                             </BoxAtom>
                         </BoxAtom>

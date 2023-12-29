@@ -18,16 +18,21 @@ export const JobDetailHeaderSection = (props: Props) => {
             space={2}
             sx={{
                 width: '100%',
-                py: { xs: 3 },
+                p: { xs: 3 },
                 justifyContent: 'space-between',
                 flexDirection: { xs: 'row' },
             }}
         >
             {props.job && (
                 <BoxAtom
-                    sx={{ justifyContent: 'space-between' }}
-                    direction="horizontal"
                     space={5}
+                    sx={{
+                        justifyContent: 'space-between',
+                        flexDirection: {
+                            xs: 'column',
+                            lg: 'row',
+                        },
+                    }}
                 >
                     <BoxAtom direction="vertical">
                         <TextAtom textTransform="uppercase" color={Colors.BLUE}>

@@ -25,7 +25,7 @@ export const ContactImageMolecule = (props: Props) => {
                     md: props.basic ? '20%' : '30%',
                 },
                 display: {
-                    sm: 'none',
+                    xs: 'none',
                     md: 'initial',
                 },
                 ...props.sx,
