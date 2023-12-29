@@ -86,21 +86,26 @@ export default function JobsPage(data: {
                                 filters={filters}
                                 buttonLabel={content.pagination_button_text}
                             />
-                            <ContactImageMolecule
-                                contactName={content.contact.name}
-                                contactPhone={content.contact.phone_number}
-                                contactEmail={content.contact.email}
-                                imageUrl={content.contact.image_url}
-                                sx={{
-                                    p: {
-                                        xs: 3,
-                                        md: 0,
-                                    },
-                                    py: {
-                                        md: 10,
-                                    },
-                                }}
-                            />
+                            <BoxAtom>
+                                <ContactImageMolecule
+                                    contactName={content.contact.name}
+                                    contactPhone={content.contact.phone_number}
+                                    contactEmail={content.contact.email}
+                                    imageUrl={content.contact.image_url}
+                                    sx={{
+                                        position: 'sticky',
+                                        top: 100,
+                                        width: '100%',
+                                        p: {
+                                            xs: 3,
+                                            md: 0,
+                                        },
+                                        py: {
+                                            md: 10,
+                                        },
+                                    }}
+                                />
+                            </BoxAtom>
                         </BoxAtom>
                     </BoxAtom>
                     <TextImageSection

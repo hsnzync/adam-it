@@ -8,7 +8,7 @@ interface ButtonProps {
     variant?: 'outlined' | 'clear'
     sx?: SxProps<Theme>
     disabled?: boolean
-    onClick?: (e?: any) => void
+    onClick?: (e: any) => void
 }
 
 type Button =

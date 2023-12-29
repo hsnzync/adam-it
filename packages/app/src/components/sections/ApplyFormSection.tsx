@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import { screenMaxWidth } from '@/style'
 import {
     BoxAtom,
@@ -31,8 +31,8 @@ export const ApplyFormSection = (props: Props) => {
     })
     const [file, setFile] = useState<File>()
 
-    const disableSubmit =
-        form.name === '' || form.email === '' || form.message === ''
+    // const disableSubmit =
+    //     form.name === '' || form.email === '' || form.message === ''
 
     // const isEmail = email.includes('@') && email.includes('.')
 
@@ -43,33 +43,37 @@ export const ApplyFormSection = (props: Props) => {
         })
     }
 
-    const handleSubmit = async (e: any) => {
-        e.preventDefault()
-        const formData = new FormData()
-        formData.append('name', form.name)
-        formData.append('email', form.email)
-        formData.append('phone', form.phone)
-        formData.append('message', form.message)
-        if (file) {
-            formData.append('file', file)
-        }
+    const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
 
-        try {
-            await fetch('http://localhost:3000/api/submitForm', {
-                method: 'POST',
-                body: formData,
-            }).catch((error) => console.error(error))
+        // const formData = new FormData()
+        // formData.append('name', form.name)
+        // formData.append('email', form.email)
+        // formData.append('phone', form.phone)
+        // formData.append('message', form.message)
+        // if (file) {
+        //     formData.append('file', file)
+        // }
 
-            // if (response.ok) {
-            //     // Form submitted successfully
-            //     console.log('Form submitted successfully')
-            // } else {
-            //     // Handle error
-            //     console.error('Form submission failed')
-            // }
-        } catch (error) {
-            console.error('Error submitting form:', error)
+        // try {
+        const response = await fetch('/api/submitForm', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: form.name,
+                email: form.email,
+                phone: form.phone,
+                message: form.message,
+            }),
+        })
+
+        if (!response.ok) {
+            throw new Error('Failed to submit the data. Please try again.')
         }
+        const data = await response.json()
+        console.log(data)
+        // } catch (error) {
+        //     console.error('Error submitting form:', error)
+        // }
     }
 
     return (
@@ -103,7 +107,7 @@ export const ApplyFormSection = (props: Props) => {
                     sx={{
                         width: {
                             xs: '100%',
-                            md: '50%',
+                            md: '70%',
                         },
                     }}
                 >
@@ -132,7 +136,7 @@ export const ApplyFormSection = (props: Props) => {
                             <InputMolecule
                                 name="phone"
                                 label="Telefoonnummer"
-                                type="email"
+                                type="number"
                                 onChange={handleChange}
                             />
                         </BoxAtom>
@@ -148,7 +152,7 @@ export const ApplyFormSection = (props: Props) => {
                             label="Voeg hier uw bestanden toe"
                         />
                         <ButtonMolecule
-                            onClick={(e: SubmitEvent) => handleSubmit(e)}
+                            onClick={onSubmit}
                             label={props.buttonText}
                         />
                     </BoxAtom>

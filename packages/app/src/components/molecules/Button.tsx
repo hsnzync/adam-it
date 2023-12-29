@@ -10,7 +10,7 @@ export const ButtonMolecule = (props: ButtonProps) => {
     return (
         <MuiButton
             type="button"
-            href={props.href}
+            href={props.href ?? undefined}
             aria-label={props.label}
             onClick={props.onClick}
             disabled={props.disabled}

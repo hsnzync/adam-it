@@ -9,7 +9,7 @@
     "scripts": {
         "start": "sanity start",
         "build": "sanity build",
-        "deploy-simple": "sanity deploy --no-minify --no-build"
+        "deploy": "sanity deploy --no-minify --no-build"
     },
     "keywords": [
         "sanity"

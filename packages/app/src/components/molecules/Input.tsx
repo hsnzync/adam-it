@@ -29,6 +29,7 @@ export const InputMolecule = (props: Props) => {
                 {props.label}
             </InputLabel>
             <TextField
+                required
                 type={props.type}
                 error={props.error}
                 multiline={props.textarea}
@@ -44,7 +45,7 @@ export const InputMolecule = (props: Props) => {
                         height: 35,
                     },
                     textarea: {
-                        minHeight: '50px !important',
+                        minHeight: '80px !important',
                     },
                     fontFamily: manrope.style.fontFamily,
                     fontSize: 14,

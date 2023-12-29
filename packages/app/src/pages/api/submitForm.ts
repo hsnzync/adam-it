@@ -1,34 +1,48 @@
-// pages/api/submitForm.js
+import { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer'
+import { z } from 'zod'
 
-export default async function handler(req: any, res: any) {
+export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse
+) {
     if (req.method !== 'POST') {
         return res.status(405).end() // Method Not Allowed
     }
 
-    const { name, email, message, file } = req.body
+    // const schema = z.object({
+    //     name: z.string(),
+    //     email: z.string(),
+    //     message: z.string(),
+    //     file: z.any(),
+    // })
+
+    // const { name, email, message, file } = req.body
+
+    // const parsed = schema.parse(req.body)
+
+    const body = JSON.parse(req.body)
+
+    console.log('data: ', body)
+    // console.log('parsed: ', parsed)
 
     const transporter = nodemailer.createTransport({
-        host: 'disco-yourhosting.prx.route25.eu', // Your SMTP server hostname
-        port: 465, // Your SMTP server port (Gebruik poort 465 om berichten beveiligd via SMTP te versturen.)
-        secure: true, // Set to true if your SMTP server uses SSL/TLS
+        host: 'disco-yourhosting.prx.route25.eu',
+        port: 465,
+        secure: true,
         logger: true,
         debug: true,
-        tls: {
-            rejectUnauthorized: true,
-        },
         auth: {
-            user: process.env.NEXT_MAIL_USER,
-            pass: process.env.NEXT_MAIL_PASS,
+            user: 'info@adamit.nl',
+            pass: '@0E4a5i2f',
         },
     })
 
     const mailOptions = {
-        from: email as string,
+        from: body.email as string,
         to: 'test@adamit.nl',
         subject: 'New Form Submission',
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-        file: file as File,
+        text: `Name: ${body.name}\nEmail: ${body.email}\nMessage: ${body.message}`,
     }
 
     try {
@@ -36,6 +50,6 @@ export default async function handler(req: any, res: any) {
         res.status(200).json({ success: true })
     } catch (error) {
         console.error(error)
-        res.status(500).json({ success: false, error: 'Internal Server Error' })
+        res.status(500).json({ success: false, error })
     }
 }

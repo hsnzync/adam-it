@@ -1,8 +1,10 @@
 import { LoaderMolecule } from '@/components'
 import { breakpoints } from '@/style'
 import { handleFirstVisitOrExpired } from '@/utils'
+import { ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 import { useState, useEffect } from 'react'
+import theme from '../theme/theme'
 
 export default function App({ Component, pageProps }: AppProps) {
     const [showLoader, setShowLoader] = useState(false)
@@ -23,5 +25,11 @@ export default function App({ Component, pageProps }: AppProps) {
         return () => clearTimeout(timeoutId)
     }, [])
 
-    return showLoader ? <LoaderMolecule /> : <Component {...pageProps} />
+    return showLoader ? (
+        <LoaderMolecule />
+    ) : (
+        <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+        </ThemeProvider>
+    )
 }
