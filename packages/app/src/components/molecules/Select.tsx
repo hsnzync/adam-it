@@ -20,16 +20,12 @@ interface Props {
     label: string
     defaultValue?: string
     options: JobFilterOption[]
+    value: string[]
     onChange: (value: string[]) => void
 }
 
 export const SelectMolecule = (props: Props) => {
     const [checkedValues, setCheckedValues] = useState<string[]>([])
-
-    // useEffect(() => {
-    //     console.log(props.values)
-    //     setCheckedValues(props.values)
-    // }, [props.values])
 
     const handleChange = (event: SelectChangeEvent<typeof checkedValues>) => {
         const value = event.target.value as string[]
@@ -45,8 +41,8 @@ export const SelectMolecule = (props: Props) => {
                 multiple
                 displayEmpty
                 labelId="filter-list"
-                label="Age"
-                value={checkedValues}
+                label={props.label}
+                value={props.value}
                 onChange={handleChange}
                 renderValue={(selected) => `${selected.length} Selectie`}
                 sx={{
@@ -72,9 +68,7 @@ export const SelectMolecule = (props: Props) => {
                 {props.options.map((option, index) => (
                     <MenuItem key={index} value={option.filterName}>
                         <Checkbox
-                            checked={
-                                checkedValues.indexOf(option.filterName) > -1
-                            }
+                            checked={props.value.includes(option.filterName)}
                         />
                         <ListItemText primary={option.filterName} />
                     </MenuItem>

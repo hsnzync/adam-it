@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { SxProps, Theme } from '@mui/material'
 import {
+    BadgeMolecule,
     BoxAtom,
     ButtonMolecule,
     CardMolecule,
@@ -35,30 +36,28 @@ export const JobsListSection = (props: Props) => {
     const itemsPerPage = 10
 
     const [searchValue, setSearchValue] = useState('')
-    const [selectedTitleValue, setSelectedTitleValue] = useState<string[]>([])
-    const [selectedTypeValue, setSelectedTypeValue] = useState<string[]>([])
-    const [selectedLocationValue, setSelectedLocationValue] = useState<
-        string[]
-    >([])
+    const [selectedFilters, setSelectedFilters] = useState({
+        title: [] as string[],
+        type: [] as string[],
+        location: [] as string[],
+    })
+
     const [filteredJobs, setFilteredJobs] = useState<Job[]>(
         props.jobs.slice(0, itemsPerPage * (page + 1))
     )
 
     const handleFilterChange = (
         search: string,
-        selectedTitles: string[],
-        selectedTypes: string[],
-        selectedLocations: string[]
+        filters: Record<string, string[]>
     ) => {
         return props.jobs.filter((job) => {
             const titleMatch =
-                selectedTitles.length === 0 ||
-                selectedTitles.includes(job.title)
+                filters.title.length === 0 || filters.title.includes(job.title)
             const typeMatch =
-                selectedTypes.length === 0 || selectedTypes.includes(job.type)
+                filters.type.length === 0 || filters.type.includes(job.type)
             const locationMatch =
-                selectedLocations.length === 0 ||
-                selectedLocations.includes(job.location)
+                filters.location.length === 0 ||
+                filters.location.includes(job.location)
 
             const searchMatch =
                 job.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -73,12 +72,7 @@ export const JobsListSection = (props: Props) => {
         const search = event.target.value
         setSearchValue(search)
 
-        const filteredJobs = handleFilterChange(
-            search,
-            selectedTitleValue,
-            selectedTypeValue,
-            selectedLocationValue
-        )
+        const filteredJobs = handleFilterChange(search, selectedFilters)
         setFilteredJobs(filteredJobs.slice(0, itemsPerPage * (page + 1)))
         setPage(page)
     }
@@ -87,45 +81,12 @@ export const JobsListSection = (props: Props) => {
         type: 'title' | 'type' | 'location',
         selectedValues: string[]
     ) => {
-        switch (type) {
-            case 'title':
-                const jobs = handleFilterChange(
-                    searchValue,
-                    selectedValues,
-                    selectedTypeValue,
-                    selectedLocationValue
-                )
-                setSelectedTitleValue(selectedValues)
+        const updatedFilters = { ...selectedFilters, [type]: selectedValues }
+        const jobs = handleFilterChange(searchValue, updatedFilters)
 
-                setPage(page)
-                return setFilteredJobs(jobs.slice(0, itemsPerPage * (page + 1)))
-            case 'type':
-                const type = handleFilterChange(
-                    searchValue,
-                    selectedTitleValue,
-                    selectedValues,
-                    selectedLocationValue
-                )
-                setSelectedTypeValue(selectedValues)
-
-                setPage(page)
-                return setFilteredJobs(type.slice(0, itemsPerPage * (page + 1)))
-            case 'location':
-                const location = handleFilterChange(
-                    searchValue,
-                    selectedTitleValue,
-                    selectedTypeValue,
-                    selectedValues
-                )
-                setSelectedLocationValue(selectedValues)
-
-                setPage(page)
-                return setFilteredJobs(
-                    location.slice(0, itemsPerPage * (page + 1))
-                )
-            default:
-                return
-        }
+        setSelectedFilters(updatedFilters)
+        setPage(page)
+        setFilteredJobs(jobs.slice(0, itemsPerPage * (page + 1)))
     }
 
     const fetchMoreJobs = async () => {
@@ -145,9 +106,9 @@ export const JobsListSection = (props: Props) => {
 
     const areFiltersSelected = () => {
         return (
-            selectedTitleValue.length > 0 ||
-            selectedTypeValue.length > 0 ||
-            selectedLocationValue.length > 0
+            selectedFilters.location.length > 0 ||
+            selectedFilters.title.length > 0 ||
+            selectedFilters.type.length > 0
         )
     }
 
@@ -156,44 +117,20 @@ export const JobsListSection = (props: Props) => {
         !searchValue &&
         !areFiltersSelected()
 
-    // WILL DO LATER
+    const handleRemoveFilter = (
+        type: 'title' | 'type' | 'location',
+        value: string
+    ) => {
+        const updatedFilters = {
+            ...selectedFilters,
+            [type]: selectedFilters[type].filter((filter) => filter !== value),
+        }
+        const jobs = handleFilterChange(searchValue, updatedFilters)
 
-    // const handleRemoveFilter = (value: string) => {
-    //     const updatedTitleFilter = selectedTitleValue.filter(
-    //         (filter) => filter !== value
-    //     )
-    //     const updatedLocationFilter = selectedLocationValue.filter(
-    //         (filter) => filter !== value
-    //     )
-    //     const updatedTypeFilter = selectedTypeValue.filter(
-    //         (filter) => filter !== value
-    //     )
-
-    //     const updatedFilteredJobs = handleFilterChange(
-    //         searchValue,
-    //         updatedTitleFilter,
-    //         updatedLocationFilter,
-    //         updatedTypeFilter
-    //     )
-
-    //     setFilteredJobs(updatedFilteredJobs)
-    //     setSelectedTitleValue(updatedTitleFilter)
-    //     setSelectedLocationValue(updatedLocationFilter)
-    //     setSelectedTypeValue(updatedTypeFilter)
-    // }
-
-    // const activeFilterListMapper = (value: string): string[] => {
-    //     switch (value) {
-    //         case 'functie':
-    //             return selectedTitleValue
-    //         case 'type':
-    //             return selectedTypeValue
-    //         case 'locatie':
-    //             return selectedLocationValue
-    //         default:
-    //             return []
-    //     }
-    // }
+        setSelectedFilters(updatedFilters)
+        setPage(page)
+        setFilteredJobs(jobs.slice(0, itemsPerPage * (page + 1)))
+    }
 
     return (
         <BoxAtom
@@ -218,6 +155,7 @@ export const JobsListSection = (props: Props) => {
                     label={props.labels.search}
                     type="text"
                     onChange={handleSearchChange}
+                    placeholder="Zoeken op termen..."
                 />
                 <BoxAtom direction="horizontal" space={2}>
                     {props.filters.length > 0 &&
@@ -226,6 +164,11 @@ export const JobsListSection = (props: Props) => {
                                 key={index}
                                 label={filter.title}
                                 options={filter.filterList}
+                                value={
+                                    selectedFilters[
+                                        filterMapper(filter.title.toLowerCase())
+                                    ]
+                                }
                                 onChange={(value) =>
                                     handleSelectChange(
                                         filterMapper(
@@ -237,7 +180,7 @@ export const JobsListSection = (props: Props) => {
                             />
                         ))}
                 </BoxAtom>
-                {/* <BoxAtom
+                <BoxAtom
                     direction="horizontal"
                     space={2}
                     sx={{
@@ -245,30 +188,24 @@ export const JobsListSection = (props: Props) => {
                         flexDirection: {
                             xs: 'row',
                         },
+                        display: areFiltersSelected() ? 'flex' : 'none',
                     }}
                 >
-                    {selectedLocationValue.map((filter, index) => (
-                        <BadgeMolecule
-                            key={index}
-                            label={filter}
-                            onClick={() => handleRemoveFilter(filter)}
-                        />
-                    ))}
-                    {selectedTypeValue.map((filter, index) => (
-                        <BadgeMolecule
-                            key={index}
-                            label={filter}
-                            onClick={() => handleRemoveFilter(filter)}
-                        />
-                    ))}
-                    {selectedTitleValue.map((filter, index) => (
-                        <BadgeMolecule
-                            key={index}
-                            label={filter}
-                            onClick={() => handleRemoveFilter(filter)}
-                        />
-                    ))}
-                </BoxAtom> */}
+                    {Object.entries(selectedFilters).map(([type, filters]) =>
+                        filters.map((filter, index) => (
+                            <BadgeMolecule
+                                key={index}
+                                label={filter}
+                                onClick={() =>
+                                    handleRemoveFilter(
+                                        type as 'title' | 'type' | 'location',
+                                        filter
+                                    )
+                                }
+                            />
+                        ))
+                    )}
+                </BoxAtom>
                 {filteredJobs?.length > 0 &&
                     filteredJobs.map((job, index) => (
                         <CardMolecule

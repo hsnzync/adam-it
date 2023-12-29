@@ -1,7 +1,6 @@
 import { FormControl, InputLabel, TextField } from '@mui/material'
 import { ChangeEvent } from 'react'
 import { Manrope } from 'next/font/google'
-import { TextareaAutosize } from '@mui/base'
 
 const manrope = Manrope({ subsets: ['latin'] })
 
@@ -11,6 +10,7 @@ interface Props {
     name?: string
     textarea?: boolean
     error?: boolean
+    placeholder?: string
     onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -35,6 +35,7 @@ export const InputMolecule = (props: Props) => {
                 multiline={props.textarea}
                 id={`${props.name}-input`}
                 name={props.name}
+                placeholder={props.placeholder}
                 onChange={(event: ChangeEvent<HTMLInputElement>) =>
                     props.onChange(event)
                 }
@@ -42,6 +43,7 @@ export const InputMolecule = (props: Props) => {
                     mt: 3,
                     input: {
                         p: 1,
+                        px: 2,
                         height: 35,
                     },
                     textarea: {
