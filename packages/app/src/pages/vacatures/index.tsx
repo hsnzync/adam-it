@@ -17,27 +17,21 @@ import client from '../../../client'
 import { Job, JobFilters } from '@/types'
 
 export const getStaticProps = async () => {
-    const jobData = await client.fetch(
-        `*[_type == "job"] | order(_createdAt desc) [0...10]`
+    const jobsData = await client.fetch(
+        `*[_type == "job"] | order(_createdAt desc)`
     )
-    const jobCount = await client.fetch(`count(*[_type == "job"])`)
     const filterData = await client.fetch(`*[_type == "jobFilters"]`)
     return {
         props: {
-            jobs: jobData,
-            count: jobCount,
+            jobs: jobsData,
             filters: filterData,
         },
     }
 }
 
-export default function JobsPage(data: {
-    jobs: Job[]
-    count: number
-    filters: JobFilters[]
-}) {
+export default function JobsPage(data: { jobs: Job[]; filters: JobFilters[] }) {
     const content = textContent.jobs
-    const { jobs, count, filters } = data
+    const { jobs, filters } = data
     return (
         <>
             <HeadAtom
@@ -75,7 +69,6 @@ export default function JobsPage(data: {
                                 plain
                                 labels={content.filter}
                                 jobs={jobs}
-                                jobCount={count}
                                 sx={{
                                     width: {
                                         xs: undefined,

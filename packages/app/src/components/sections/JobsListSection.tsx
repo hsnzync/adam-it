@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SxProps, Theme } from '@mui/material'
 import {
     BoxAtom,
@@ -25,7 +25,6 @@ interface Props {
     labels: Filter
     jobs: Job[]
     filters: JobFilters[]
-    jobCount: number
     buttonLabel: string
     plain?: boolean
     sx?: SxProps<Theme>
@@ -33,13 +32,17 @@ interface Props {
 
 export const JobsListSection = (props: Props) => {
     const [page, setPage] = useState(0)
+    const itemsPerPage = 10
+
     const [searchValue, setSearchValue] = useState('')
     const [selectedTitleValue, setSelectedTitleValue] = useState<string[]>([])
     const [selectedTypeValue, setSelectedTypeValue] = useState<string[]>([])
     const [selectedLocationValue, setSelectedLocationValue] = useState<
         string[]
     >([])
-    const [filteredJobs, setFilteredJobs] = useState<Job[]>(props.jobs)
+    const [filteredJobs, setFilteredJobs] = useState<Job[]>(
+        props.jobs.slice(0, itemsPerPage * (page + 1))
+    )
 
     const handleFilterChange = (
         search: string,
@@ -68,7 +71,7 @@ export const JobsListSection = (props: Props) => {
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const search = event.target.value
-        setSearchValue(searchValue)
+        setSearchValue(search)
 
         const filteredJobs = handleFilterChange(
             search,
@@ -76,7 +79,8 @@ export const JobsListSection = (props: Props) => {
             selectedTypeValue,
             selectedLocationValue
         )
-        setFilteredJobs(filteredJobs)
+        setFilteredJobs(filteredJobs.slice(0, itemsPerPage * (page + 1)))
+        setPage(page)
     }
 
     const handleSelectChange = (
@@ -85,14 +89,16 @@ export const JobsListSection = (props: Props) => {
     ) => {
         switch (type) {
             case 'title':
-                const title = handleFilterChange(
+                const jobs = handleFilterChange(
                     searchValue,
                     selectedValues,
                     selectedTypeValue,
                     selectedLocationValue
                 )
                 setSelectedTitleValue(selectedValues)
-                return setFilteredJobs(title)
+
+                setPage(page)
+                return setFilteredJobs(jobs.slice(0, itemsPerPage * (page + 1)))
             case 'type':
                 const type = handleFilterChange(
                     searchValue,
@@ -101,7 +107,9 @@ export const JobsListSection = (props: Props) => {
                     selectedLocationValue
                 )
                 setSelectedTypeValue(selectedValues)
-                return setFilteredJobs(type)
+
+                setPage(page)
+                return setFilteredJobs(type.slice(0, itemsPerPage * (page + 1)))
             case 'location':
                 const location = handleFilterChange(
                     searchValue,
@@ -110,7 +118,11 @@ export const JobsListSection = (props: Props) => {
                     selectedValues
                 )
                 setSelectedLocationValue(selectedValues)
-                return setFilteredJobs(location)
+
+                setPage(page)
+                return setFilteredJobs(
+                    location.slice(0, itemsPerPage * (page + 1))
+                )
             default:
                 return
         }
@@ -119,17 +131,30 @@ export const JobsListSection = (props: Props) => {
     const fetchMoreJobs = async () => {
         const nextPage = page + 1
 
-        await client
-            .fetch(
-                `*[_type == "job"] | order(_createdAt desc) [${
-                    nextPage * 10
-                }...${(nextPage + 1) * 10}]`
-            )
-            .then((jobs) => {
-                setPage(nextPage)
-                setFilteredJobs([...filteredJobs, ...jobs])
-            })
+        const startIndex = itemsPerPage * nextPage
+        const endIndex = itemsPerPage * (nextPage + 1)
+
+        const jobsSlice = props.jobs.slice(
+            startIndex,
+            Math.min(endIndex, props.jobs.length)
+        )
+
+        setPage(nextPage)
+        setFilteredJobs([...filteredJobs, ...jobsSlice])
     }
+
+    const areFiltersSelected = () => {
+        return (
+            selectedTitleValue.length > 0 ||
+            selectedTypeValue.length > 0 ||
+            selectedLocationValue.length > 0
+        )
+    }
+
+    const showLoadMoreButton =
+        filteredJobs.length < props.jobs.length &&
+        !searchValue &&
+        !areFiltersSelected()
 
     // WILL DO LATER
 
@@ -256,7 +281,7 @@ export const JobsListSection = (props: Props) => {
                             href={`/vacatures/${job.slug?.current}`}
                         />
                     ))}
-                {filteredJobs.length < props.jobCount && (
+                {showLoadMoreButton && (
                     <ButtonMolecule
                         label={props.buttonLabel}
                         onClick={fetchMoreJobs}
