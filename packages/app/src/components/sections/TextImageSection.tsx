@@ -65,10 +65,13 @@ export const TextImageSection = (props: Props) => {
                 <BoxAtom
                     direction="horizontal"
                     alignment="center"
-                    space={12}
                     sx={{
                         position: 'relative',
                         maxWidth: screenMaxWidth,
+                        gap: {
+                            xs: 3,
+                            md: 12,
+                        },
                     }}
                 >
                     <BoxAtom
