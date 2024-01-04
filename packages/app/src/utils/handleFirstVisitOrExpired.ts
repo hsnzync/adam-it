@@ -1,5 +1,5 @@
 export const handleFirstVisitOrExpired = (): boolean => {
-    const storedData = localStorage.getItem('visitData')
+    const storedData = localStorage.getItem('visited-user-session')
 
     if (!storedData) {
         // If no data is present, it's the first visit
@@ -7,7 +7,7 @@ export const handleFirstVisitOrExpired = (): boolean => {
             visitedAt: new Date().getTime(),
         }
 
-        localStorage.setItem('visitData', JSON.stringify(visitData))
+        localStorage.setItem('visited-user-session', JSON.stringify(visitData))
         return true
     } else {
         // If data is present, check if it's been one hour since the last visit
@@ -18,7 +18,10 @@ export const handleFirstVisitOrExpired = (): boolean => {
         if (timeSinceLastVisit >= oneHourInMilliseconds) {
             // If it's been one hour, update the timestamp to the current time
             parsedData.visitedAt = new Date().getTime()
-            localStorage.setItem('visitData', JSON.stringify(parsedData))
+            localStorage.setItem(
+                'visited-user-session',
+                JSON.stringify(parsedData)
+            )
             return true
         }
 

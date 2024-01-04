@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { Card, CardContent } from '@mui/material'
 import { IconButtonMolecule, IconAtom, TextAtom, BoxAtom } from '@/components'
 import { CARD_SHADOW, Colors } from '@/constants'
-import { JobSection } from '@/types'
 
 interface Props {
     title: string
@@ -18,14 +17,26 @@ export const CardMolecule = (props: Props) => {
         <Card
             sx={{
                 width: '100%',
-                border: `1px solid ${Colors.LIGHT_GREY}`,
+                border: `1px solid ${Colors.BORDER_COLOR}`,
+                boxShadow: 'none',
                 ':hover': {
                     boxShadow: CARD_SHADOW,
+                    h4: {
+                        color: Colors.RED,
+                        textDecoration: 'underline',
+                    },
                 },
             }}
         >
             <Link href={props.href} passHref style={{ textDecoration: 'none' }}>
-                <CardContent sx={{ p: 3 }}>
+                <CardContent
+                    sx={{
+                        p: {
+                            xs: 2,
+                            md: 3,
+                        },
+                    }}
+                >
                     <BoxAtom
                         direction="horizontal"
                         alignment="center"
@@ -38,13 +49,26 @@ export const CardMolecule = (props: Props) => {
                     >
                         <BoxAtom
                             direction="vertical"
-                            space={1}
-                            sx={{ width: '100%' }}
+                            sx={{
+                                width: '100%',
+                                gap: {
+                                    xs: 1,
+                                    md: 2,
+                                },
+                            }}
                         >
-                            <TextAtom variant="h6" color={Colors.ORANGE} header>
+                            <TextAtom variant="h4" color={Colors.ORANGE} header>
                                 {props.title}
                             </TextAtom>
-                            <BoxAtom direction="horizontal" space={2}>
+                            <BoxAtom
+                                direction="horizontal"
+                                sx={{
+                                    gap: {
+                                        xs: 1,
+                                        md: 2,
+                                    },
+                                }}
+                            >
                                 <BoxAtom
                                     direction="horizontal"
                                     alignment="start"

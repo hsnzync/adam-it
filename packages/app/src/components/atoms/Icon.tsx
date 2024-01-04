@@ -43,7 +43,6 @@ export const IconShapedAtom = (props: IconProps) => {
             sx={{
                 color: props.color,
                 backgroundColor: Colors.DARK_BLUE,
-                borderRadius: 1,
                 minWidth: 50,
                 width: 50,
                 height: 50,

@@ -39,6 +39,7 @@ export const home = {
                     'Een geautomatiseerd systeem inrichten om complexe software automatisch te testen',
                 icon: 'computer' as IconName,
                 button_url: '/kandidaten',
+                button_text: 'Meer over Test automation',
             },
             {
                 title: 'Software testing op afstand',
@@ -46,6 +47,7 @@ export const home = {
                     'Jouw software op afstand laten testen door middel van geautomatiseerde testsoftware door een van onze professionals',
                 icon: 'pin' as IconName,
                 button_url: '/kandidaten',
+                button_text: 'Meer over Testen op afstand',
             },
             {
                 title: 'Freelance of vaste inhuur',
@@ -53,6 +55,7 @@ export const home = {
                     'Het samenbrengen van werkgevers en opdrachtgevers met IT-professionals om samenwerkingen aan te gaan op Freelance en vaste dienst verband',
                 icon: 'person' as IconName,
                 button_url: '/kandidaten',
+                button_text: 'Meer over Interim',
             },
         ],
     },
@@ -87,7 +90,7 @@ export const home = {
                     title: 'IT Professionals voor elkaar',
                     subtitle: 'Wij verbinden IT’ers met opdrachtgevers',
                     description:
-                        'Heb je een openstaande IT-positie? Kom in contact met ADAM IT en plaats je vacature en bereik duizenden gekwalificeerde kandidaten. Beschrijf de func+e, vereisten en bedrijfscultuur. Wij zorgen ervoor dat je vacature wordt gezien door de juiste mensen.',
+                        'Heb je een openstaande IT-positie? Kom in contact met ADAM IT en plaats je vacature en bereik duizenden gekwalificeerde kandidaten. Beschrijf de functie, vereisten en bedrijfscultuur. Wij zorgen ervoor dat je vacature wordt gezien door de juiste mensen.',
                 },
                 {
                     title: 'Op zoek naar een Test engineer?',

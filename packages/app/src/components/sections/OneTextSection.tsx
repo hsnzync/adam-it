@@ -1,17 +1,18 @@
 import { SxProps, Theme } from '@mui/material'
-import { BoxAtom, Background, TextAtom } from '@/components'
+import { BoxAtom, Background, TextAtom, LinkButtonAtom } from '@/components'
 import { screenMaxWidth } from '@/style'
+import { Button } from '@/types'
 
 interface Content {
     title: string
     description: string
 }
 
-interface Props {
+type Props = {
     bgColor: string
     content: Content[]
     sx?: SxProps<Theme>
-}
+} & Button
 
 export const OneTextSection = (props: Props) => {
     return (
@@ -51,11 +52,17 @@ export const OneTextSection = (props: Props) => {
                     }}
                 >
                     {props.content.map((text, index) => (
-                        <BoxAtom key={index} space={2}>
-                            <TextAtom variant="h4" header>
+                        <BoxAtom key={index} space={3}>
+                            <TextAtom variant="h2" header>
                                 {text.title}
                             </TextAtom>
                             <TextAtom>{text.description}</TextAtom>
+                            {props.button && (
+                                <LinkButtonAtom
+                                    href={props.buttonUrl}
+                                    label={props.buttonText}
+                                />
+                            )}
                         </BoxAtom>
                     ))}
                 </BoxAtom>

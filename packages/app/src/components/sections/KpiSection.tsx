@@ -1,7 +1,13 @@
 import { Colors } from '@/constants'
 import { screenMaxWidth } from '@/style'
-import { BoxAtom, TextAtom, KpiCardMolecule } from '@/components'
+import {
+    BoxAtom,
+    TextAtom,
+    KpiCardMolecule,
+    LinkButtonAtom,
+} from '@/components'
 import { IconName } from '@/types'
+import Link from 'next/link'
 
 interface Props {
     tiles: Tile[]
@@ -15,6 +21,7 @@ interface Tile {
     description: string
     icon: IconName
     button_url: string
+    button_text: string
 }
 
 export const KpiSection = (props: Props) => {
@@ -26,24 +33,30 @@ export const KpiSection = (props: Props) => {
             bgColor={Colors.WHITE}
             sx={{
                 position: 'relative',
-                height: {
-                    xs: 'auto',
-                    md: 500,
-                },
                 p: {
                     xs: 3,
                     md: 0,
+                },
+                py: {
+                    md: 12,
+                    lg: 20,
                 },
             }}
         >
             <BoxAtom
                 alignment="start"
-                space={10}
-                sx={{ maxWidth: screenMaxWidth }}
+                sx={{
+                    maxWidth: screenMaxWidth,
+                    gap: {
+                        xs: 0,
+                        sm: 4,
+                        lg: 10,
+                    },
+                }}
             >
                 {props.title && (
                     <TextAtom
-                        variant="h4"
+                        variant="h2"
                         header
                         sx={{
                             maxWidth: {
@@ -56,25 +69,30 @@ export const KpiSection = (props: Props) => {
                     </TextAtom>
                 )}
                 <BoxAtom
-                    direction="horizontal"
                     alignment="start"
                     sx={{
                         width: '100%',
-                        gap: {
-                            xs: 0,
-                            sm: 4,
-                            lg: 10,
+                        flexDirection: {
+                            xs: 'column',
+                            lg: 'row',
                         },
                     }}
                 >
                     {props.tileTitle && (
                         <TextAtom
-                            variant="h4"
+                            variant="h2"
                             header
                             sx={{
-                                pr: {
-                                    xs: 0,
-                                    md: 3,
+                                py: {
+                                    xs: 4,
+                                    lg: 3,
+                                },
+                                px: {
+                                    lg: 3,
+                                },
+                                maxWidth: {
+                                    xs: 'none',
+                                    lg: 300,
                                 },
                             }}
                         >
@@ -85,17 +103,38 @@ export const KpiSection = (props: Props) => {
                         <KpiCardMolecule
                             key={index}
                             icon={tile.icon}
-                            buttonUrl={tile.button_url}
                             extended={props.extended}
-                            button
                         >
                             <BoxAtom direction="vertical" space={2}>
-                                <TextAtom variant="h6" header lineHeight={1.3}>
+                                <TextAtom variant="h4" header lineHeight={1.3}>
                                     {tile.title}
                                 </TextAtom>
                                 <TextAtom variant="body1">
                                     {tile.description}
                                 </TextAtom>
+                                <LinkButtonAtom
+                                    label={tile.button_text}
+                                    variant="clear"
+                                    href={tile.button_url}
+                                    sx={{
+                                        '.button-text': {
+                                            textAlign: 'left',
+                                            transition: '.3s',
+                                        },
+                                        '.button-icon-container': {
+                                            transition: '.3s',
+                                        },
+                                        ':hover': {
+                                            background: 'none',
+                                            '.button-text': {
+                                                color: Colors.RED,
+                                            },
+                                            '.button-icon-container': {
+                                                background: Colors.RED,
+                                            },
+                                        },
+                                    }}
+                                />
                             </BoxAtom>
                         </KpiCardMolecule>
                     ))}

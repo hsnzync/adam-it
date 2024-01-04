@@ -58,23 +58,26 @@ export const TextImageSection = (props: Props) => {
                 sx={{ maxWidth: screenMaxWidth, m: 'auto' }}
             >
                 {props.sectionTitle && (
-                    <TextAtom variant="h4" header>
+                    <TextAtom variant="h2" header>
                         {props.sectionTitle}
                     </TextAtom>
                 )}
                 <BoxAtom
                     direction="horizontal"
                     alignment="center"
-                    space={5}
+                    space={12}
                     sx={{
                         position: 'relative',
                         maxWidth: screenMaxWidth,
                     }}
                 >
                     <BoxAtom
-                        space={1}
+                        space={3}
                         sx={{
-                            width: '100%',
+                            width: {
+                                xs: '100%',
+                                md: '50%',
+                            },
                         }}
                     >
                         {props.logo && (
@@ -87,18 +90,19 @@ export const TextImageSection = (props: Props) => {
                         )}
                         {props.subtitle && (
                             <TextAtom
+                                variant="body2"
                                 textTransform="uppercase"
                                 color={Colors.BLUE}
                             >
                                 {props.subtitle}
                             </TextAtom>
                         )}
-                        <TextAtom variant="h4" header>
+                        <TextAtom variant="h2" header>
                             {props.title}
                         </TextAtom>
                         <TextAtom>{props.description}</TextAtom>
                         {props.perks && (
-                            <List dense sx={{ mt: 3 }}>
+                            <List dense>
                                 {props.perks.map((perk, index) => (
                                     <ListItem key={index} sx={{ p: 0, mb: 1 }}>
                                         <ListItemIcon sx={{ minWidth: 35 }}>
@@ -120,10 +124,14 @@ export const TextImageSection = (props: Props) => {
                         )}
                     </BoxAtom>
                     <ImageAtom
+                        large
                         imageUrl={getAsset(props.imageUrl)}
                         imageAlt={props.imageAlt}
                         sx={{
-                            width: '100%',
+                            width: {
+                                xs: '100%',
+                                md: '50%',
+                            },
                         }}
                     />
                 </BoxAtom>

@@ -67,30 +67,40 @@ export const ImageTextSection = (props: Props) => {
                 sx={{ maxWidth: screenMaxWidth, m: 'auto' }}
             >
                 {props.sectionTitle && (
-                    <TextAtom variant="h4" header>
+                    <TextAtom variant="h2" header>
                         {props.sectionTitle}
                     </TextAtom>
                 )}
                 <BoxAtom
                     direction="horizontal"
                     alignment="center"
-                    space={5}
                     sx={{
                         position: 'relative',
                         maxWidth: screenMaxWidth,
+                        gap: {
+                            xs: 3,
+                            md: 12,
+                        },
                     }}
                 >
                     <ImageAtom
+                        large
                         imageUrl={getAsset(props.imageUrl)}
                         imageAlt={props.imageAlt}
                         sx={{
-                            width: '100%',
+                            width: {
+                                xs: '100%',
+                                md: '50%',
+                            },
                         }}
                     />
                     <BoxAtom
-                        space={1}
+                        space={3}
                         sx={{
-                            width: '100%',
+                            width: {
+                                xs: '100%',
+                                md: '50%',
+                            },
                         }}
                     >
                         {props.logoUrl && (
@@ -103,17 +113,18 @@ export const ImageTextSection = (props: Props) => {
                         )}
                         {props.subtitle && (
                             <TextAtom
+                                variant="body2"
                                 textTransform="uppercase"
                                 color={Colors.BLUE}
                             >
                                 {props.subtitle}
                             </TextAtom>
                         )}
-                        <TextAtom variant="h4" header>
+                        <TextAtom variant="h2" header>
                             {props.title}
                         </TextAtom>
                         <TextAtom>{props.description}</TextAtom>
-                        <List dense sx={{ mt: 3 }}>
+                        <List dense>
                             {props.perks?.map((perk, index) => (
                                 <ListItem key={index} sx={{ p: 0, mb: 1 }}>
                                     <ListItemIcon sx={{ minWidth: 35 }}>
@@ -124,7 +135,9 @@ export const ImageTextSection = (props: Props) => {
                                     </ListItemIcon>
                                     <ListItemText
                                         primary={
-                                            <TextAtom header>{perk}</TextAtom>
+                                            <TextAtom variant="body1" header>
+                                                {perk}
+                                            </TextAtom>
                                         }
                                     />
                                 </ListItem>

@@ -150,7 +150,9 @@ export const JobsListSection = (props: Props) => {
             }}
         >
             <BoxAtom space={3} sx={{ width: '100%' }}>
-                <TextAtom variant="h5">{props.labels.title}</TextAtom>
+                <TextAtom variant="h4" header>
+                    {props.labels.title}
+                </TextAtom>
                 <InputMolecule
                     label={props.labels.search}
                     type="text"

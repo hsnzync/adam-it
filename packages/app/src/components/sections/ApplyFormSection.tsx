@@ -111,7 +111,7 @@ export const ApplyFormSection = (props: Props) => {
                         },
                     }}
                 >
-                    <TextAtom header variant="h4">
+                    <TextAtom header variant="h2">
                         {props.formTitle}
                     </TextAtom>
                     <BoxAtom

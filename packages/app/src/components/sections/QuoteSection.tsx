@@ -19,17 +19,30 @@ export const QuoteSection = (props: Props) => {
                     xs: 'auto',
                     md: 500,
                 },
+
                 overflow: 'hidden',
                 zIndex: 5,
                 p: {
                     xs: 3,
                     md: 0,
                 },
+                py: {
+                    xs: 5,
+                    md: 0,
+                },
             }}
         >
-            <BoxAtom sx={{ maxWidth: screenMaxWidth.md }}>
+            <BoxAtom
+                sx={{
+                    width: {
+                        xs: '100%',
+                        md: 'auto',
+                    },
+                    maxWidth: screenMaxWidth,
+                }}
+            >
                 <TextAtom
-                    variant="h5"
+                    variant="h3"
                     color={Colors.ORANGE}
                     lineHeight={1.8}
                     sx={{ mb: 3 }}

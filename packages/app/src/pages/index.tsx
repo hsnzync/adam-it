@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import {
     HeroSection,
-    JobsSection,
+    JobsTextSection,
     ImageTextSection,
     LogoSliderOrganism,
     QuoteSection,
@@ -83,7 +83,7 @@ export default function HomePage(data: { jobs: Job[] }) {
                         content={content.quote_section.content}
                         name={content.quote_section.name}
                     />
-                    <JobsSection
+                    <JobsTextSection
                         tiles={content.jobs_section.tiles}
                         information={content.jobs_section.information}
                         jobs={jobs}

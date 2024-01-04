@@ -19,7 +19,7 @@ interface Props {
     jobs: Job[]
 }
 
-export const JobsSection = (props: Props) => {
+export const JobsTextSection = (props: Props) => {
     const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
@@ -47,13 +47,12 @@ export const JobsSection = (props: Props) => {
                 space={8}
                 sx={{ maxWidth: screenMaxWidth, width: '100%' }}
             >
-                {/* Job cards */}
                 <BoxAtom
                     direction="vertical"
                     space={3}
                     sx={{ minWidth: '50%', width: '100%' }}
                 >
-                    <TextAtom variant="h4" header>
+                    <TextAtom variant="h2" header>
                         {props.tiles.title}
                     </TextAtom>
                     {props.jobs.length > 0 &&
@@ -72,7 +71,7 @@ export const JobsSection = (props: Props) => {
                             />
                         ))}
                     {props.jobs.length === 0 && <LoaderAtom />}
-                    <TextAtom>{props.tiles.caption}</TextAtom>
+                    <TextAtom variant="body1">{props.tiles.caption}</TextAtom>
                     {props.tiles.button_text && (
                         <LinkButtonAtom
                             label={props.tiles.button_text}
@@ -82,7 +81,7 @@ export const JobsSection = (props: Props) => {
                 </BoxAtom>
                 <BoxAtom
                     direction="vertical"
-                    space={2}
+                    space={3}
                     sx={{
                         display: {
                             xs: 'none',
@@ -91,19 +90,22 @@ export const JobsSection = (props: Props) => {
                     }}
                 >
                     {props.information.content.map((item, index) => (
-                        <BoxAtom key={index} space={2} sx={{ mb: 3 }}>
+                        <BoxAtom key={index} space={2}>
                             {item.subtitle && (
                                 <TextAtom
                                     textTransform="uppercase"
+                                    variant="body2"
                                     color={Colors.BLUE}
                                 >
                                     {item.subtitle}
                                 </TextAtom>
                             )}
-                            <TextAtom variant="h4" header>
+                            <TextAtom variant="h2" header>
                                 {item.title}
                             </TextAtom>
-                            <TextAtom>{item.description}</TextAtom>
+                            <TextAtom variant="body2">
+                                {item.description}
+                            </TextAtom>
                         </BoxAtom>
                     ))}
 

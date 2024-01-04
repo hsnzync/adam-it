@@ -86,18 +86,19 @@ export default function JobDetailPage(data: { job: Job }) {
                         as="section"
                         bgColor={Colors.WHITE}
                         sx={{
-                            alignItems: 'unset',
                             position: 'relative',
                         }}
                     >
                         <BoxAtom
-                            alignment="center"
-                            sx={{ px: { xs: 3, md: 10 }, py: { xs: 3, md: 5 } }}
+                            sx={{
+                                px: { xs: 3, md: 0 },
+                                py: { xs: 3, md: 5 },
+                                maxWidth: screenMaxWidth,
+                            }}
                         >
                             <BoxAtom
                                 direction="horizontal"
                                 sx={{
-                                    maxWidth: screenMaxWidth,
                                     width: '100%',
                                     gap: {
                                         xs: 0,
@@ -109,8 +110,10 @@ export default function JobDetailPage(data: { job: Job }) {
                                     sx={{
                                         width: {
                                             xs: 'auto',
-                                            md: '75%',
+                                            md: '70%',
                                         },
+                                        position: 'relative',
+                                        left: { md: 15 },
                                     }}
                                 >
                                     <BoxAtom
@@ -157,30 +160,33 @@ export default function JobDetailPage(data: { job: Job }) {
                             contactEmail={content.contact_section.email}
                             buttonText={content.contact_section.button_text}
                             alignment="start"
+                            sx={{
+                                width: {
+                                    md: '100%',
+                                },
+                            }}
                         />
                         <BoxAtom
                             sx={{
                                 position: 'absolute',
-                                top: 0,
                                 right: {
                                     md: 0,
-                                    xxl: '5%',
                                     xxxl: '10%',
                                 },
                                 height: '100%',
-                                width: {
-                                    sm: '25%',
-                                    xxl: '15%',
-                                },
+                                width: '18%',
                                 zIndex: 1,
-                                py: scrolled ? undefined : 3,
                                 pl: {
                                     sm: 3,
-                                    lg: 5,
+                                    lg: 0,
                                 },
                                 pr: {
                                     sm: 3,
-                                    lg: 10,
+                                    lg: 12,
+                                },
+                                display: {
+                                    xs: 'none',
+                                    md: 'initial',
                                 },
                             }}
                         >
@@ -190,17 +196,17 @@ export default function JobDetailPage(data: { job: Job }) {
                                 contactPhone={content.contact.phone_number}
                                 contactEmail={content.contact.email}
                                 imageUrl={content.contact.image_url}
+                                small
                                 sx={{
-                                    width: 'auto',
+                                    width: '100%',
                                     position: {
                                         xs: 'relative',
                                         md: scrolled ? 'sticky' : 'relative',
                                     },
                                     top: {
                                         xs: undefined,
-                                        md: scrolled ? 150 : undefined,
+                                        md: scrolled ? 150 : 50,
                                     },
-                                    pb: 5,
 
                                     backgroundColor: 'transparent',
                                 }}

@@ -45,7 +45,7 @@ export const FooterOrganism = () => {
                             },
                         }}
                     >
-                        <BoxAtom direction="vertical" space={2}>
+                        <BoxAtom direction="vertical" space={3}>
                             <TextAtom variant="h6" color={Colors.WHITE} header>
                                 {content.navigation.title}
                             </TextAtom>
@@ -58,11 +58,16 @@ export const FooterOrganism = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    <TextAtom>{link.name}</TextAtom>
+                                    <TextAtom
+                                        variant="body1"
+                                        color={Colors.WHITE}
+                                    >
+                                        {link.name}
+                                    </TextAtom>
                                 </Link>
                             ))}
                         </BoxAtom>
-                        <BoxAtom direction="vertical" space={2}>
+                        <BoxAtom direction="vertical" space={3}>
                             <TextAtom variant="h6" color={Colors.WHITE} header>
                                 {content.support.title}
                             </TextAtom>
@@ -75,11 +80,16 @@ export const FooterOrganism = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    <TextAtom>{link.name}</TextAtom>
+                                    <TextAtom
+                                        variant="body1"
+                                        color={Colors.WHITE}
+                                    >
+                                        {link.name}
+                                    </TextAtom>
                                 </Link>
                             ))}
                         </BoxAtom>
-                        <BoxAtom direction="vertical" space={2}>
+                        <BoxAtom direction="vertical" space={3}>
                             <TextAtom variant="h6" color={Colors.WHITE} header>
                                 {content.contact.title}
                             </TextAtom>
@@ -92,7 +102,12 @@ export const FooterOrganism = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    <TextAtom>{link.name}</TextAtom>
+                                    <TextAtom
+                                        variant="body1"
+                                        color={Colors.WHITE}
+                                    >
+                                        {link.name}
+                                    </TextAtom>
                                 </Link>
                             ))}
                             <BoxAtom
@@ -148,7 +163,7 @@ export const FooterOrganism = () => {
                         },
                     }}
                 >
-                    <TextAtom color={Colors.WHITE}>
+                    <TextAtom color={Colors.WHITE} variant="body1">
                         {content.copyright.name}
                     </TextAtom>
                     <BoxAtom
@@ -171,12 +186,14 @@ export const FooterOrganism = () => {
                                 whiteSpace: 'pre',
                             }}
                         >
-                            <TextAtom>
+                            <TextAtom variant="body1" color={Colors.WHITE}>
                                 {content.terms_and_conditions.name}
                             </TextAtom>
                         </Link>
 
-                        <TextAtom color={Colors.WHITE}>|</TextAtom>
+                        <TextAtom variant="body1" color={Colors.WHITE}>
+                            |
+                        </TextAtom>
                         <Link
                             href={content.privacy_policy.href}
                             style={{
@@ -185,9 +202,13 @@ export const FooterOrganism = () => {
                                 whiteSpace: 'pre',
                             }}
                         >
-                            <TextAtom>{content.privacy_policy.name}</TextAtom>
+                            <TextAtom variant="body1" color={Colors.WHITE}>
+                                {content.privacy_policy.name}
+                            </TextAtom>
                         </Link>
-                        <TextAtom color={Colors.WHITE}>|</TextAtom>
+                        <TextAtom variant="body1" color={Colors.WHITE}>
+                            |
+                        </TextAtom>
                         <Link
                             href={content.cookies.href}
                             style={{
@@ -196,7 +217,9 @@ export const FooterOrganism = () => {
                                 whiteSpace: 'pre',
                             }}
                         >
-                            <TextAtom>{content.cookies.name}</TextAtom>
+                            <TextAtom variant="body1" color={Colors.WHITE}>
+                                {content.cookies.name}
+                            </TextAtom>
                         </Link>
                     </BoxAtom>
                 </BoxAtom>

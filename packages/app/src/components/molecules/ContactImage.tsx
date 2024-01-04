@@ -11,6 +11,7 @@ interface Props {
     contactEmail: string
     imageUrl: string
     basic?: boolean
+    small?: boolean
     sx?: SxProps<Theme>
 }
 
@@ -22,7 +23,7 @@ export const ContactImageMolecule = (props: Props) => {
             space={2}
             sx={{
                 width: {
-                    md: props.basic ? '20%' : '30%',
+                    md: props.basic ? '20%' : '29%',
                 },
                 display: {
                     xs: 'none',
@@ -38,7 +39,7 @@ export const ContactImageMolecule = (props: Props) => {
                     img: {
                         height: {
                             xs: 400,
-                            md: props.basic ? 150 : 500,
+                            md: props.basic ? 150 : props.small ? 400 : 500,
                         },
                         width: {
                             xs: '100%',
@@ -48,13 +49,17 @@ export const ContactImageMolecule = (props: Props) => {
                     mb: 3,
                 }}
             />
-            <BoxAtom alignment="start" space={2}>
+            <BoxAtom
+                alignment="start"
+                space={4}
+                sx={{ pb: { md: props.small ? 5 : undefined } }}
+            >
                 {props.title && (
-                    <TextAtom variant="h5" header>
+                    <TextAtom variant="h3" header>
                         {props.title}
                     </TextAtom>
                 )}
-                <TextAtom variant="h6" header>
+                <TextAtom variant="h4" header>
                     {props.contactName}
                 </TextAtom>
                 <BoxAtom>
@@ -62,7 +67,11 @@ export const ContactImageMolecule = (props: Props) => {
                         href="tel:0102333923"
                         style={{ textDecoration: 'none' }}
                     >
-                        <TextAtom variant="body1" header color={Colors.ORANGE}>
+                        <TextAtom
+                            variant={props.small ? 'body2' : 'h4'}
+                            header
+                            color={Colors.ORANGE}
+                        >
                             {props.contactPhone}
                         </TextAtom>
                     </Link>
@@ -70,7 +79,11 @@ export const ContactImageMolecule = (props: Props) => {
                         href="mailto:info@adamit.nl"
                         style={{ textDecoration: 'none' }}
                     >
-                        <TextAtom variant="body1" header color={Colors.ORANGE}>
+                        <TextAtom
+                            variant={props.small ? 'body2' : 'h4'}
+                            header
+                            color={Colors.ORANGE}
+                        >
                             {props.contactEmail}
                         </TextAtom>
                     </Link>

@@ -18,7 +18,7 @@ export const JobDetailSection = (props: Props) => {
                 {props.job?.sections?.length > 0 &&
                     props.job?.sections?.map((section, index) => (
                         <BoxAtom key={index} sx={{ py: 2 }}>
-                            <TextAtom variant="h4" header>
+                            <TextAtom variant="h2" header>
                                 {section.title}
                             </TextAtom>
                             <RichContent richText={section.description} />

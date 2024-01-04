@@ -134,9 +134,6 @@ export const HeroSection = (props: Props) => {
                     variant="body2"
                     color={Colors.BLUE}
                     textTransform="uppercase"
-                    sx={{
-                        fontSize: 18,
-                    }}
                 >
                     {props.subtitle}
                 </TextAtom>
@@ -145,7 +142,13 @@ export const HeroSection = (props: Props) => {
                     color={Colors.WHITE}
                     header
                     textTransform="uppercase"
-                    sx={{ wordBreak: 'break-word' }}
+                    sx={{
+                        textAlign: {
+                            xs: 'left',
+                            md: 'center',
+                        },
+                        fontSize: { xs: 36, md: 72 },
+                    }}
                 >
                     {props.title}
                 </TextAtom>
@@ -180,6 +183,7 @@ export const HeroSection = (props: Props) => {
             </BoxAtom>
             <ImageAtom
                 sx={{
+                    width: '100%',
                     display: {
                         xs: 'flex',
                         md: 'none',

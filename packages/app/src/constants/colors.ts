@@ -14,6 +14,10 @@ export enum Colors {
 
     // Dark tones
     DARK_BLUE = '#06202D',
+    DARK_GREY = '#353531',
+
+    // Element colors
+    BORDER_COLOR = '#CECECA',
 }
 
-export const CARD_SHADOW = '0px 0px 15px 0px rgba(0,0,0,.2)'
+export const CARD_SHADOW = '0px 4px 12px 0px rgba(0, 0, 0, 0.10)'

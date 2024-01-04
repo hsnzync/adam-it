@@ -8,7 +8,7 @@ import {
     QuoteSection,
     SmallHeroSection,
     ContactFormSection,
-    JobsSection,
+    TextJobsSection,
     TextImageTextSection,
     HeadAtom,
 } from '@/components'
@@ -80,7 +80,7 @@ export default function CandidatesPage(data: { jobs: Job[] }) {
                         tiles={content.kpi_section.tiles}
                         title={content.kpi_section.title}
                     />
-                    <JobsSection
+                    <TextJobsSection
                         tiles={content.jobs_section.tiles}
                         information={content.jobs_section.information}
                         jobs={jobs}

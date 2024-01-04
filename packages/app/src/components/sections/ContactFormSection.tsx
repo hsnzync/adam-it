@@ -120,7 +120,7 @@ export const ContactFormSection = (props: Props) => {
                         },
                     }}
                 >
-                    <TextAtom header variant="h4">
+                    <TextAtom header variant="h3">
                         {props.formTitle}
                     </TextAtom>
                     <BoxAtom

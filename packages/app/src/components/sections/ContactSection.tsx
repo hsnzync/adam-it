@@ -57,7 +57,6 @@ export const ContactSection = (props: Props) => {
                     <KpiCardMolecule
                         key={index}
                         icon={item.icon}
-                        button={false}
                         sx={{
                             flexDirection: 'row',
                             justifyContent: {
@@ -66,8 +65,8 @@ export const ContactSection = (props: Props) => {
                             },
                         }}
                     >
-                        <BoxAtom direction="vertical" space={1}>
-                            <TextAtom variant="h6" header>
+                        <BoxAtom direction="vertical" space={2}>
+                            <TextAtom variant="h4" header>
                                 {item.title}
                             </TextAtom>
 
@@ -81,7 +80,7 @@ export const ContactSection = (props: Props) => {
                                             color: Colors.ORANGE,
                                         }}
                                     >
-                                        <TextAtom>
+                                        <TextAtom color={Colors.ORANGE}>
                                             {item.text_2.content}
                                         </TextAtom>
                                     </Link>
@@ -97,7 +96,7 @@ export const ContactSection = (props: Props) => {
                                         }}
                                         target={item.text_3.target}
                                     >
-                                        <TextAtom>
+                                        <TextAtom color={Colors.ORANGE}>
                                             {item.text_3.content}
                                         </TextAtom>
                                     </Link>

@@ -56,7 +56,7 @@ export const TwoTextSection = (props: Props) => {
                 }}
             >
                 <BoxAtom
-                    space={1}
+                    space={3}
                     sx={{
                         width: {
                             xs: '100%',
@@ -65,14 +65,14 @@ export const TwoTextSection = (props: Props) => {
                     }}
                 >
                     {props.firstContent.map((text, index) => (
-                        <BoxAtom key={index} space={1}>
+                        <BoxAtom key={index} space={3}>
                             <TextAtom
                                 textTransform="uppercase"
                                 color={Colors.BLUE}
                             >
                                 {text.subtitle}
                             </TextAtom>
-                            <TextAtom variant="h4" header>
+                            <TextAtom variant="h2" header>
                                 {text.title}
                             </TextAtom>
                             <TextAtom sx={{ py: 1 }}>
@@ -97,14 +97,15 @@ export const TwoTextSection = (props: Props) => {
                     }}
                 >
                     {props.secondContent.map((text, index) => (
-                        <BoxAtom key={index} space={1}>
+                        <BoxAtom key={index} space={3}>
                             <TextAtom
                                 textTransform="uppercase"
                                 color={Colors.BLUE}
+                                variant="body2"
                             >
                                 {text.subtitle}
                             </TextAtom>
-                            <TextAtom variant="h4" header>
+                            <TextAtom variant="h2" header>
                                 {text.title}
                             </TextAtom>
                             <TextAtom sx={{ py: 1 }}>

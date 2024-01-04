@@ -63,12 +63,13 @@ export const LoaderPattern = () => {
                 style={{
                     position: 'absolute',
                     padding: '0 !important',
-                    maxHeight: 'calc(100vh - 20px)',
                     overflow: 'hidden',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     right: setXPatternPosition(screenSize),
+                    bottom: 0,
+                    top: 0,
                 }}
             >
                 <Image src={RightShape} alt="" />
@@ -84,12 +85,13 @@ export const LoaderPattern = () => {
                     position: 'absolute',
                     padding: '0 !important',
                     width: 'fit-content',
-                    maxHeight: 'calc(100vh - 20px)',
                     overflow: 'hidden',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     left: setXPatternPosition(screenSize),
+                    bottom: 0,
+                    top: 0,
                 }}
             >
                 <Image src={LeftShape} alt="" />

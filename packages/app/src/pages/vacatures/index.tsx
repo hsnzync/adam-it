@@ -113,6 +113,7 @@ export default function JobsPage(data: { jobs: Job[]; filters: JobFilters[] }) {
                     <OneTextSection
                         bgColor={Colors.WHITE}
                         content={content.extra_section}
+                        button={false}
                     />
                 </motion.div>
             </main>

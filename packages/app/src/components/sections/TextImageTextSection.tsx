@@ -64,11 +64,12 @@ export const TextImageTextSection = (props: Props) => {
                             <TextAtom
                                 textTransform="uppercase"
                                 color={Colors.BLUE}
+                                variant="body2"
                             >
                                 {props.subtitle}
                             </TextAtom>
                         )}
-                        <TextAtom variant="h4" header>
+                        <TextAtom variant="h2" header>
                             {props.title}
                         </TextAtom>
                         <TextAtom>{props.description}</TextAtom>
@@ -97,7 +98,9 @@ export const TextImageTextSection = (props: Props) => {
                                     </ListItemIcon>
                                     <ListItemText
                                         primary={
-                                            <TextAtom header>{perk}</TextAtom>
+                                            <TextAtom header variant="body1">
+                                                {perk}
+                                            </TextAtom>
                                         }
                                     />
                                 </ListItem>

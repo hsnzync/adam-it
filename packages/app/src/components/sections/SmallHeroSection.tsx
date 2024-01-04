@@ -30,6 +30,7 @@ export const SmallHeroSection = (props: Props) => {
         >
             <BoxAtom
                 direction="vertical"
+                space={1.5}
                 sx={{
                     height: '100%',
                     width: {
@@ -63,7 +64,7 @@ export const SmallHeroSection = (props: Props) => {
                     {props.subtitle}
                 </TextAtom>
                 <TextAtom
-                    variant="h3"
+                    variant="h1"
                     color={Colors.WHITE}
                     header
                     sx={{

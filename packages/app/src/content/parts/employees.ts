@@ -38,16 +38,18 @@ export const employees = {
             {
                 title: 'Test Automation Engineering',
                 description:
-                    'Geautomatiseerde systeem opstellen om (complexe) software te laten testen.',
+                    'Een geautomatiseerd systeem inrichten om complexe software automatisch te testen',
                 icon: 'computer' as IconName,
                 button_url: '/kandidaten',
+                button_text: 'Meer over Test automation',
             },
             {
                 title: 'Software testing op afstand',
                 description:
-                    'The quick, brown fox jumps over a lazy dog, DJs flock by when MTV ax quiz prog.',
+                    'Jouw software op afstand laten testen door middel van geautomatiseerde testsoftware door een van onze professionals',
                 icon: 'pin' as IconName,
                 button_url: '/kandidaten',
+                button_text: 'Meer over Testen op afstand',
             },
             {
                 title: 'Interim een vaste tester inhuren',
@@ -55,6 +57,7 @@ export const employees = {
                     'Een eigen vaste IT Professional inhuren als test automation engineer.',
                 icon: 'person' as IconName,
                 button_url: '/kandidaten',
+                button_text: 'Meer over Interim',
             },
         ],
     },

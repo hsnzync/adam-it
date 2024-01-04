@@ -4,6 +4,7 @@ import { BoxAtom } from '@/components'
 import { Image } from '@/types'
 
 interface Props {
+    large?: boolean
     sx?: SxProps<Theme>
 }
 
@@ -12,12 +13,10 @@ export const ImageAtom = (props: Props & Image & { logo?: boolean }) => {
         <BoxAtom
             alignment="end"
             sx={{
-                width: '100%',
-
                 img: {
                     width: '100%',
                     height: {
-                        xs: props.logo ? 200 : 400,
+                        xs: props.logo ? 200 : 260,
                         sm: props.logo ? 250 : 450,
                         md: props.logo ? 300 : 500,
                     },
@@ -33,9 +32,10 @@ export const ImageAtom = (props: Props & Image & { logo?: boolean }) => {
                 width={500}
                 height={500}
                 style={{
-                    clipPath: 'polygon(0px 0px, 70% 0px, 200% 100%, 0px 100%)',
+                    clipPath: `polygon(0px 0px, ${
+                        props.large ? '80%' : '75%'
+                    } 0px, ${props.large ? '150%' : '160%'} 100%, 0px 100%)`,
                     objectFit: 'cover',
-                    borderRadius: 5,
                 }}
             />
         </BoxAtom>
@@ -52,7 +52,7 @@ export const HeaderImageAtom = (
             sx={{
                 width: '100%',
                 height: '100%',
-                background: `url(${props.imageUrl}) no-repeat`,
+                background: `linear-gradient(45deg, rgba(78, 163, 208, 0.30) 2.49%, rgba(1, 34, 52, 0.00) 18.31%), url(${props.imageUrl}), lightgray -4561.022px 2760.673px / 82.765% 62.054% no-repeat`,
                 backgroundPosition: 'right',
                 backgroundSize: 'cover',
                 clipPath:

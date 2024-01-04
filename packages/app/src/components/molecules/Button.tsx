@@ -37,8 +37,10 @@ export const ButtonMolecule = (props: ButtonProps) => {
             }}
         >
             <TextAtom
+                variant="button"
                 className="button-text"
                 color={isClear ? Colors.ORANGE : Colors.WHITE}
+                textTransform="unset"
             >
                 {props.label}
             </TextAtom>

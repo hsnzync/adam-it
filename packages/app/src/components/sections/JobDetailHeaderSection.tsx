@@ -15,17 +15,17 @@ interface Props {
 export const JobDetailHeaderSection = (props: Props) => {
     return (
         <BoxAtom
-            space={2}
+            space={3}
             sx={{
                 width: '100%',
-                p: { xs: 3 },
+                p: { xs: 2 },
                 justifyContent: 'space-between',
-                flexDirection: { xs: 'row' },
+                flexDirection: { xs: 'column', md: 'row' },
             }}
         >
             {props.job && (
                 <BoxAtom
-                    space={5}
+                    space={3}
                     sx={{
                         justifyContent: 'space-between',
                         flexDirection: {

@@ -46,7 +46,10 @@ export default function AboutPage() {
                     />
                     <OneTextSection
                         bgColor={Colors.WHITE}
-                        content={content.about_section}
+                        content={content.about_section.content}
+                        button
+                        buttonText={content.about_section.button_text}
+                        buttonUrl={content.about_section.button_url}
                     />
                     <TextImageSection
                         hasBgPattern

@@ -17,7 +17,9 @@ export const LinkButtonAtom = (
                 label={props.label}
                 variant={props.variant}
                 icon={props.icon}
-                sx={{ ...props.sx }}
+                sx={{
+                    ...props.sx,
+                }}
             />
         </Link>
     )
