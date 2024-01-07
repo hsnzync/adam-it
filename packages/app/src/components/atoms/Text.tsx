@@ -26,9 +26,10 @@ export function TextAtom(props: Props) {
     const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
+        handleResize()
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
-    })
+    }, [])
 
     const handleResize = () => {
         setIsMobile(window.innerWidth < breakpoints.sm)
