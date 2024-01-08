@@ -10,8 +10,9 @@ import {
     LinkButtonAtom,
 } from '@/components'
 import { getAsset } from '@/utils'
-import { screenMaxWidth } from '@/style'
+import { breakpoints, screenMaxWidth } from '@/style'
 import { Image } from '@/types'
+import { useEffect, useState } from 'react'
 
 interface Button {
     label: string
@@ -27,6 +28,12 @@ type Props = {
 } & Image
 
 export const HeroSection = (props: Props) => {
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < breakpoints.sm)
+    }, [])
+
     return (
         <Background
             as="header"
@@ -171,15 +178,7 @@ export const HeroSection = (props: Props) => {
                         right: { md: 5 },
                     }}
                 >
-                    <motion.div
-                        initial={{ x: -100, opacity: 0.5 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{
-                            duration: 1,
-                            easeIn: [0, 0.71, 0.2, 1.01],
-                        }}
-                        style={{ height: '100%', width: '100%' }}
-                    >
+                    {isMobile ? (
                         <LinkButtonAtom
                             label={props.buttons.employees.label}
                             href={props.buttons.employees.href}
@@ -188,16 +187,27 @@ export const HeroSection = (props: Props) => {
                                 width: '100%',
                             }}
                         />
-                    </motion.div>
-                    <motion.div
-                        initial={{ x: 60, opacity: 0.5 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{
-                            duration: 1,
-                            easeIn: [0, 0.71, 0.2, 1.01],
-                        }}
-                        style={{ height: '100%', width: '100%' }}
-                    >
+                    ) : (
+                        <motion.div
+                            initial={{ x: -100, opacity: 0.5 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{
+                                duration: 1,
+                                easeIn: [0, 0.71, 0.2, 1.01],
+                            }}
+                            style={{ height: '100%', width: '100%' }}
+                        >
+                            <LinkButtonAtom
+                                label={props.buttons.employees.label}
+                                href={props.buttons.employees.href}
+                                fullWidth
+                                sx={{
+                                    width: '100%',
+                                }}
+                            />
+                        </motion.div>
+                    )}
+                    {isMobile ? (
                         <LinkButtonAtom
                             label={props.buttons.candidates.label}
                             href={props.buttons.candidates.href}
@@ -206,7 +216,26 @@ export const HeroSection = (props: Props) => {
                                 width: '100%',
                             }}
                         />
-                    </motion.div>
+                    ) : (
+                        <motion.div
+                            initial={{ x: 60, opacity: 0.5 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{
+                                duration: 1,
+                                easeIn: [0, 0.71, 0.2, 1.01],
+                            }}
+                            style={{ height: '100%', width: '100%' }}
+                        >
+                            <LinkButtonAtom
+                                label={props.buttons.candidates.label}
+                                href={props.buttons.candidates.href}
+                                fullWidth
+                                sx={{
+                                    width: '100%',
+                                }}
+                            />
+                        </motion.div>
+                    )}
                 </BoxAtom>
             </BoxAtom>
             <ImageAtom

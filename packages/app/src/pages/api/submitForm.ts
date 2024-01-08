@@ -2,6 +2,9 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer'
 import multiparty from 'multiparty'
 import { applyTemplate } from '@/mail/template'
+import getConfig from 'next/config'
+
+const { publicRuntimeConfig } = getConfig()
 
 export const config = {
     api: {
@@ -42,8 +45,8 @@ export default async function handler(
             logger: true,
             debug: true,
             auth: {
-                user: process.env.NEXT_PUBLIC_MAIL_USER_MAIL_USER,
-                pass: process.env.NEXT_PUBLIC_MAIL_USER_MAIL_PWD,
+                user: publicRuntimeConfig.NEXT_PUBLIC_MAIL_USER_MAIL_USER,
+                pass: publicRuntimeConfig.NEXT_PUBLIC_MAIL_USER_MAIL_PWD,
             },
         })
 
@@ -51,7 +54,7 @@ export default async function handler(
             from: formFields.email,
             to: process.env.NEXT_PUBLIC_MAIL_USER_MAIL_USER,
             subject: formFields.subject,
-            text: `Naam: ${formFields.name}\nEmail: ${formFields.email}\Bericht: ${formFields.message}`,
+            text: `Naam: ${formFields.name}\nEmail: ${formFields.email}\nBericht: ${formFields.message}`,
             attachments: file ? (Array.isArray(file) ? [...file] : [file]) : [],
             html: applyTemplate(
                 formFields.subject,
