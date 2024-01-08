@@ -103,7 +103,9 @@ export const TextImageSection = (props: Props) => {
                         <TextAtom variant="h2" header>
                             {props.title}
                         </TextAtom>
-                        <TextAtom>{props.description}</TextAtom>
+                        <TextAtom sx={{ whiteSpace: 'pre-wrap' }}>
+                            {props.description}
+                        </TextAtom>
                         {props.perks && (
                             <List dense>
                                 {props.perks.map((perk, index) => (

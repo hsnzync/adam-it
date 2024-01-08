@@ -7,7 +7,7 @@ import {
     SmallHeroSection,
     BoxAtom,
     JobDetailHeaderSection,
-    ApplyFormSection,
+    FormSection,
     ContactImageMolecule,
     JobDetailSection,
     HeadAtom,
@@ -41,6 +41,7 @@ export const getStaticProps = async ({ params }: any) => {
         props: {
             job: data,
         },
+        revalidate: 10,
     }
 }
 
@@ -58,6 +59,8 @@ export default function JobDetailPage(data: { job: Job }) {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
+    const emailSubject = job ? `Sollicitatie - ${job.title}` : 'Sollicitatie'
 
     return (
         <>
@@ -91,6 +94,7 @@ export default function JobDetailPage(data: { job: Job }) {
                     >
                         <BoxAtom
                             sx={{
+                                width: { md: '100%' },
                                 px: { xs: 3, md: 0 },
                                 py: { xs: 3, md: 5 },
                                 maxWidth: screenMaxWidth,
@@ -153,18 +157,14 @@ export default function JobDetailPage(data: { job: Job }) {
                                 </BoxAtom>
                             </BoxAtom>
                         </BoxAtom>
-                        <ApplyFormSection
+                        <FormSection
                             formTitle={content.contact_section.title}
                             contactName={content.contact_section.name}
                             contactPhone={content.contact_section.phone_number}
                             contactEmail={content.contact_section.email}
                             buttonText={content.contact_section.button_text}
+                            emailSubject={emailSubject}
                             alignment="start"
-                            sx={{
-                                width: {
-                                    md: '100%',
-                                },
-                            }}
                         />
                         <BoxAtom
                             sx={{

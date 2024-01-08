@@ -16,7 +16,7 @@ import { screenMaxWidth } from '@/style'
 import client from '../../../client'
 import { Job, JobFilters } from '@/types'
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const jobsData = await client.fetch(
         `*[_type == "job"] | order(_createdAt desc)`
     )

@@ -64,7 +64,7 @@ export const ImageTextSection = (props: Props) => {
             <BoxAtom
                 alignment="start"
                 space={3}
-                sx={{ maxWidth: screenMaxWidth, m: 'auto' }}
+                sx={{ width: '100%', maxWidth: screenMaxWidth, m: 'auto' }}
             >
                 {props.sectionTitle && (
                     <TextAtom variant="h2" header>
@@ -75,8 +75,8 @@ export const ImageTextSection = (props: Props) => {
                     direction="horizontal"
                     alignment="center"
                     sx={{
+                        width: '100%',
                         position: 'relative',
-                        maxWidth: screenMaxWidth,
                         gap: {
                             xs: 3,
                             md: 12,
@@ -123,7 +123,9 @@ export const ImageTextSection = (props: Props) => {
                         <TextAtom variant="h2" header>
                             {props.title}
                         </TextAtom>
-                        <TextAtom>{props.description}</TextAtom>
+                        <TextAtom sx={{ whiteSpace: 'pre-wrap' }}>
+                            {props.description}
+                        </TextAtom>
                         <List dense>
                             {props.perks?.map((perk, index) => (
                                 <ListItem key={index} sx={{ p: 0, mb: 1 }}>
@@ -143,12 +145,38 @@ export const ImageTextSection = (props: Props) => {
                                 </ListItem>
                             ))}
                         </List>
-                        {props.button && (
-                            <LinkButtonAtom
-                                label={props.buttonText}
-                                href={props.buttonUrl}
-                            />
-                        )}
+
+                        {props.button &&
+                            (props.logoUrl ? (
+                                <LinkButtonAtom
+                                    label={props.buttonText}
+                                    href={props.buttonUrl}
+                                    variant="clear"
+                                    sx={{
+                                        '.button-text': {
+                                            textAlign: 'left',
+                                            transition: '.3s',
+                                        },
+                                        '.button-icon-container': {
+                                            transition: '.3s',
+                                        },
+                                        ':hover': {
+                                            background: 'none',
+                                            '.button-text': {
+                                                color: Colors.RED,
+                                            },
+                                            '.button-icon-container': {
+                                                background: Colors.RED,
+                                            },
+                                        },
+                                    }}
+                                />
+                            ) : (
+                                <LinkButtonAtom
+                                    label={props.buttonText}
+                                    href={props.buttonUrl}
+                                />
+                            ))}
                     </BoxAtom>
                 </BoxAtom>
             </BoxAtom>

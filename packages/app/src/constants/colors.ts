@@ -18,6 +18,10 @@ export enum Colors {
 
     // Element colors
     BORDER_COLOR = '#CECECA',
+
+    // Forms
+    ERROR_PINK = '#FCEAE8',
+    ERROR_RED = '#E84631',
 }
 
 export const CARD_SHADOW = '0px 4px 12px 0px rgba(0, 0, 0, 0.10)'

@@ -216,7 +216,7 @@ export const JobsListSection = (props: Props) => {
                             type={job.type}
                             location={job.location}
                             hours={job.hours}
-                            salary={formatSalary(job.minSalary, job.maxSalary)}
+                            salary={formatSalary(job.salary, job.maxSalary)}
                             href={`/vacatures/${job.slug?.current}`}
                         />
                     ))}

@@ -5,6 +5,7 @@ import { BoxAtom, TextAtom } from '@/components'
 interface Props {
     content: string
     name: string
+    width?: string
 }
 
 export const QuoteSection = (props: Props) => {
@@ -36,7 +37,7 @@ export const QuoteSection = (props: Props) => {
                 sx={{
                     width: {
                         xs: '100%',
-                        md: 'auto',
+                        md: props.width ?? 'auto',
                     },
                     maxWidth: screenMaxWidth,
                 }}

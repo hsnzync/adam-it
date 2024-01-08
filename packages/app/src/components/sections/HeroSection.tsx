@@ -20,7 +20,10 @@ interface Button {
 type Props = {
     title: string
     subtitle: string
-    buttons: Button[]
+    buttons: {
+        employees: Button
+        candidates: Button
+    }
 } & Image
 
 export const HeroSection = (props: Props) => {
@@ -70,7 +73,7 @@ export const HeroSection = (props: Props) => {
                     style={{ height: '100%', width: '50%' }}
                 >
                     <Background
-                        position="right"
+                        position="right -1000px"
                         hasPattern
                         sx={{
                             display: {
@@ -147,7 +150,7 @@ export const HeroSection = (props: Props) => {
                             xs: 'left',
                             md: 'center',
                         },
-                        fontSize: { xs: 36, md: 72 },
+                        fontSize: { xs: 36, md: 60 },
                     }}
                 >
                     {props.title}
@@ -158,27 +161,52 @@ export const HeroSection = (props: Props) => {
                     sx={{
                         gap: {
                             xs: 2,
-                            md: 4,
+                            md: 10,
                         },
                         width: {
                             xs: '100%',
                             md: 'auto',
                         },
+                        position: 'relative',
+                        right: { md: 5 },
                     }}
                 >
-                    {props.buttons.map((button, index) => (
+                    <motion.div
+                        initial={{ x: -100, opacity: 0.5 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{
+                            duration: 1,
+                            easeIn: [0, 0.71, 0.2, 1.01],
+                        }}
+                        style={{ height: '100%', width: '100%' }}
+                    >
                         <LinkButtonAtom
-                            key={index}
-                            label={button.label}
-                            href={button.href}
+                            label={props.buttons.employees.label}
+                            href={props.buttons.employees.href}
                             fullWidth
                             sx={{
-                                width: {
-                                    xs: '100%',
-                                },
+                                width: '100%',
                             }}
                         />
-                    ))}
+                    </motion.div>
+                    <motion.div
+                        initial={{ x: 60, opacity: 0.5 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{
+                            duration: 1,
+                            easeIn: [0, 0.71, 0.2, 1.01],
+                        }}
+                        style={{ height: '100%', width: '100%' }}
+                    >
+                        <LinkButtonAtom
+                            label={props.buttons.candidates.label}
+                            href={props.buttons.candidates.href}
+                            fullWidth
+                            sx={{
+                                width: '100%',
+                            }}
+                        />
+                    </motion.div>
                 </BoxAtom>
             </BoxAtom>
             <ImageAtom

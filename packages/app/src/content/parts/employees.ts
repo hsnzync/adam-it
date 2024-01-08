@@ -24,10 +24,10 @@ export const employees = {
         subtitle: 'Voor opdrachtgevers',
     },
     connect_section: {
-        title: 'IT professionals inhuren als detachering.',
+        title: "IT'ers inhuren of in vaste dienst aantrekken.",
         subtitle: 'Wij verbinden IT’ers met opdrachtgevers',
-        description:
-            'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. ',
+        description: ` Het aantrekken van IT-professionals is van cruciaal belang voor organisaties die streven naar technologische groei en innovatie. Het vinden en werven van getalenteerde IT-professionals is daarom een strategische investering voor elke organisatie die streeft naar vooruitgang in een steeds digitalere wereld. Het aantrekken van deze specialisten gaat verder dan het vervullen van vacatures, het is het bouwen aan een kern van expertise die de ruggengraat vormt van technologische ontwikkeling en innovatie.
+            \n Het proces van het aantrekken van IT'ers in vast dienstverband vereist een zorgvuldige balans tussen het begrijpen van technische vaardigheden en het evalueren van zachte vaardigheden zoals teamwerk, probleemoplossend vermogen en communicatie. Het gaat om het vinden van die perfecte match die niet alleen past bij de technische behoeften van je organisatie. Het is tenslotte een investering in de toekomst van je organisatie. Het legt de fundering voor technologische excellentie en innovatie.`,
         image_url: 'pitching-meeting.jpg',
         image_alt:
             'Dynamisch team van IT-professionals beschikbaar voor detachering - Ontsluit expertise en flexibiliteit door onze gespecialiseerde IT-professionals in te huren.',

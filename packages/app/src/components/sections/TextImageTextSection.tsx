@@ -55,7 +55,7 @@ export const TextImageTextSection = (props: Props) => {
                     }}
                 >
                     <BoxAtom
-                        space={1}
+                        space={3}
                         sx={{
                             width: '100%',
                         }}
@@ -72,7 +72,9 @@ export const TextImageTextSection = (props: Props) => {
                         <TextAtom variant="h2" header>
                             {props.title}
                         </TextAtom>
-                        <TextAtom>{props.description}</TextAtom>
+                        <TextAtom sx={{ whiteSpace: 'pre-wrap' }}>
+                            {props.description}
+                        </TextAtom>
                     </BoxAtom>
                     <ImageAtom
                         imageUrl={getAsset(props.imageUrl)}

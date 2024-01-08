@@ -18,7 +18,7 @@ interface Props {
 
 interface Tile {
     title: string
-    description: string
+    description?: string
     icon: IconName
     button_url: string
     button_text: string
@@ -46,6 +46,7 @@ export const KpiSection = (props: Props) => {
             <BoxAtom
                 alignment="start"
                 sx={{
+                    width: '100%',
                     maxWidth: screenMaxWidth,
                     gap: {
                         xs: 0,
@@ -105,13 +106,25 @@ export const KpiSection = (props: Props) => {
                             icon={tile.icon}
                             extended={props.extended}
                         >
-                            <BoxAtom direction="vertical" space={2}>
+                            <BoxAtom
+                                direction="vertical"
+                                sx={{ gap: tile.description ? 2 : 0 }}
+                            >
                                 <TextAtom variant="h4" header lineHeight={1.3}>
                                     {tile.title}
                                 </TextAtom>
-                                <TextAtom variant="body1">
-                                    {tile.description}
-                                </TextAtom>
+                                {tile.description && (
+                                    <TextAtom
+                                        variant="body1"
+                                        sx={{
+                                            minHeight: {
+                                                lg: props.extended ? 140 : 130,
+                                            },
+                                        }}
+                                    >
+                                        {tile.description}
+                                    </TextAtom>
+                                )}
                                 <LinkButtonAtom
                                     label={tile.button_text}
                                     variant="clear"

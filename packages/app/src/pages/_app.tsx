@@ -1,4 +1,4 @@
-import { LoaderMolecule } from '@/components'
+import { LoaderMolecule, ToastAtom } from '@/components'
 import { breakpoints } from '@/style'
 import { handleFirstVisitOrExpired } from '@/utils'
 import { ThemeProvider } from '@mui/material'
@@ -29,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <LoaderMolecule />
     ) : (
         <ThemeProvider theme={theme}>
+            <ToastAtom />
             <Component {...pageProps} />
         </ThemeProvider>
     )

@@ -3,15 +3,14 @@ import { screenMaxWidth } from '@/style'
 import {
     BoxAtom,
     ButtonMolecule,
-    ContactImageMolecule,
     InputMolecule,
     TextAtom,
     UploadMolecule,
 } from '@/components'
 import { Colors } from '@/constants'
 import { SxProps, Theme } from '@mui/material'
+import { validateEmail, validateName, validatePhoneNumber } from '@/utils'
 import toast from 'react-hot-toast'
-import { validateEmail, validateName } from '@/utils'
 
 type Props = {
     title?: string
@@ -20,16 +19,17 @@ type Props = {
     contactEmail: string
     formTitle: string
     buttonText: string
-    imageUrl: string
+    emailSubject: string
     basic?: boolean
     alignment?: 'start' | 'center' | 'end'
     sx?: SxProps<Theme>
 }
 
-export const ContactFormSection = (props: Props) => {
+export const FormSection = (props: Props) => {
     const [form, setForm] = useState({
         name: '',
         email: '',
+        phone: '',
         message: '',
     })
     const [file, setFile] = useState<File | null>(null)
@@ -42,23 +42,30 @@ export const ContactFormSection = (props: Props) => {
     useEffect(() => {
         if (status) {
             toast.success(
-                'Bedankt! We nemen zo spoedig mogelijk contact met je op.'
+                'Sollicitatie ontvangen! We nemen zo spoedig mogelijk contact met je op.'
             )
         }
     }, [status])
 
     useEffect(() => {
         setDisableSubmit(
-            form.name === '' || form.email === '' || form.message === ''
+            form.name === '' ||
+                form.phone === '' ||
+                form.email === '' ||
+                form.message === ''
         )
-    }, [form.name, form.email, form.message])
+    }, [form.name, form.phone, form.email, form.message])
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target
 
+        // Ensure the phone number starts with a '+'
+        const updatedValue =
+            name === 'phone' ? value.replace(/[^0-9+]/g, '') : value
+
         setForm({
             ...form,
-            [name]: value,
+            [name]: updatedValue,
         })
     }
 
@@ -66,22 +73,25 @@ export const ContactFormSection = (props: Props) => {
         event.preventDefault()
 
         const emailIsValid = validateEmail(form.email)
+        const phoneIsValid = validatePhoneNumber(form.phone)
         const nameIsValid = validateName(form.name)
 
         setIsValidEmail(emailIsValid)
+        setIsValidPhone(phoneIsValid)
         setIsValidName(nameIsValid)
 
-        if (!emailIsValid && !nameIsValid) return
+        if (!emailIsValid && !phoneIsValid && !nameIsValid) return
 
         setDisableSubmit(true)
 
-        if (emailIsValid && nameIsValid) {
+        if (emailIsValid && phoneIsValid && nameIsValid) {
             try {
                 const formData = new FormData()
                 formData.set('name', form.name)
                 formData.set('email', form.email)
+                formData.set('phone', form.phone)
                 formData.set('message', form.message)
-                formData.set('subject', 'Bericht ontvangen')
+                formData.set('subject', props.emailSubject)
                 if (file) {
                     formData.set('file', file)
                 }
@@ -103,6 +113,7 @@ export const ContactFormSection = (props: Props) => {
                     setForm({
                         name: '',
                         email: '',
+                        phone: '',
                         message: '',
                     })
                 }
@@ -114,17 +125,13 @@ export const ContactFormSection = (props: Props) => {
 
     return (
         <BoxAtom
-            as="section"
             alignment="center"
             bgColor={Colors.LIGHT_BLUE}
+            id="apply-form"
             sx={{
-                p: {
-                    xs: 3,
-                    md: 0,
-                },
-                py: {
-                    md: 10,
-                },
+                width: '100%',
+                py: 8,
+
                 ...props.sx,
             }}
         >
@@ -132,35 +139,30 @@ export const ContactFormSection = (props: Props) => {
                 sx={{
                     maxWidth: screenMaxWidth,
                     width: '100%',
-                    alignItems: 'start',
+                    alignItems: {
+                        xs: 'center',
+                        md: 'start',
+                    },
                 }}
                 direction="horizontal"
                 alignment={props.alignment ?? 'center'}
                 space={10}
             >
-                <ContactImageMolecule
-                    title={props.title}
-                    contactName={props.contactName}
-                    contactPhone={props.contactPhone}
-                    contactEmail={props.contactEmail}
-                    imageUrl={props.imageUrl}
-                    sx={{
-                        p: {
-                            xs: 3,
-                            md: 0,
-                        },
-                    }}
-                />
                 <BoxAtom
                     direction="vertical"
                     sx={{
                         width: {
-                            xs: '100%',
-                            md: '35%',
+                            xs: '90%',
+                            sm: '100%',
+                            md: '70%',
+                        },
+                        py: {
+                            xs: 3,
+                            md: 10,
                         },
                     }}
                 >
-                    <TextAtom header variant="h3">
+                    <TextAtom header variant="h2">
                         {props.formTitle}
                     </TextAtom>
                     <BoxAtom
@@ -177,17 +179,27 @@ export const ContactFormSection = (props: Props) => {
                             error={!isValidName}
                             onChange={handleChange}
                         />
-                        <InputMolecule
-                            name="email"
-                            error={!isValidEmail}
-                            label="E-mailadres"
-                            type="email"
-                            value={form.email}
-                            onChange={handleChange}
-                        />
+                        <BoxAtom direction="horizontal" space={2}>
+                            <InputMolecule
+                                name="email"
+                                error={!isValidEmail}
+                                label="E-mailadres"
+                                type="email"
+                                value={form.email}
+                                onChange={handleChange}
+                            />
+                            <InputMolecule
+                                name="phone"
+                                error={!isValidPhone}
+                                label="Telefoonnummer"
+                                type="text"
+                                value={form.phone}
+                                onChange={handleChange}
+                            />
+                        </BoxAtom>
                         <InputMolecule
                             name="message"
-                            label="Bericht"
+                            label="Motivatie"
                             type="text"
                             textarea
                             value={form.message}

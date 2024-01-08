@@ -52,11 +52,11 @@ export const HeaderImageAtom = (
             sx={{
                 width: '100%',
                 height: '100%',
-                background: `linear-gradient(45deg, rgba(78, 163, 208, 0.30) 2.49%, rgba(1, 34, 52, 0.00) 18.31%), url(${props.imageUrl}), lightgray -4561.022px 2760.673px / 82.765% 62.054% no-repeat`,
+                background: `linear-gradient(45deg, rgba(78, 163, 208, 0.30) 2.49%, rgba(1, 34, 52, 0.25) 18.31%), url(${props.imageUrl}), lightgray -4561.022px 2760.673px / 82.765% 62.054% no-repeat`,
                 backgroundPosition: 'right',
                 backgroundSize: 'cover',
                 clipPath:
-                    'polygon(360px 0%, 100% 0%, 100% 100%, 360px 100%, 0% 365px)',
+                    'polygon(414px 0%, 100% 0%, 100% 100%, 300px 100%, 0% 414px)',
                 ...props.sx,
             }}
         />

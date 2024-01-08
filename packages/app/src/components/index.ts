@@ -13,6 +13,7 @@ export {
     RichContent,
     LoaderAtom,
     HeadAtom,
+    ToastAtom,
 } from './atoms'
 
 // molecules
@@ -48,7 +49,7 @@ export {
     TextJobsSection,
     TextImageSection,
     ContactFormSection,
-    ApplyFormSection,
+    FormSection,
     OneTextSection,
     TwoTextSection,
     ContactSection,

@@ -44,8 +44,8 @@ export default {
             validation: (Rule) => Rule.required(),
         },
         {
-            name: 'minSalary',
-            title: 'Salarisindicatie (minimum)',
+            name: 'salary',
+            title: 'Salarisindicatie (minimum) OF tarief',
             type: 'number',
             validation: (Rule) => Rule.required(),
         },
@@ -53,7 +53,6 @@ export default {
             name: 'maxSalary',
             title: 'Salarisindicatie (maximum)',
             type: 'number',
-            validation: (Rule) => Rule.required(),
         },
         {
             name: 'sections',

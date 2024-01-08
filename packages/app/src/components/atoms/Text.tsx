@@ -37,22 +37,28 @@ export function TextAtom(props: Props) {
 
     const colorMapper = props.header ? Colors.DARK_BLUE : Colors.DARK_GREY
     const sizeMapper = () => {
-        const defaultValue = isMobile ? 14 : 18
+        const defaultValue = { xs: 14, md: 18 } //isMobile ? 14 : 18
         switch (props.variant) {
             case 'h1':
-                return isMobile ? 34 : 56
+                // return isMobile ? 34 : 56
+                return { xs: 34, md: 56 }
             case 'h2':
-                return isMobile ? 28 : 40
+                // return isMobile ? 28 : 40
+                return { xs: 28, md: 40 }
             case 'h3':
-                return isMobile ? 24 : 32
+                // return isMobile ? 24 : 32
+                return { xs: 24, md: 32 }
             case 'h4':
-                return isMobile ? 22 : 24
+                // return isMobile ? 22 : 24
+                return { xs: 22, md: 24 }
             case 'h5':
-                return isMobile ? 18 : 32
+                // return isMobile ? 18 : 32
+                return { xs: 18, md: 32 }
             case 'body1':
-                return isMobile ? 13 : 16
+                // return isMobile ? 13 : 16
+                return { xs: 13, md: 16 }
             case 'button':
-                return 16
+                return { xs: 16, md: 16 }
             case 'body2':
                 return defaultValue
             default:

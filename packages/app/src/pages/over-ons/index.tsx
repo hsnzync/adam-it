@@ -7,6 +7,7 @@ import {
     OneTextSection,
     TwoTextSection,
     HeadAtom,
+    QuoteSection,
 } from '@/components'
 import { Colors } from '@/constants'
 import { textContent } from '@/content'
@@ -43,6 +44,11 @@ export default function AboutPage() {
                         description={content.intro_section.description}
                         imageUrl={content.intro_section.image_url}
                         imageAlt={content.intro_section.image_alt}
+                    />
+                    <QuoteSection
+                        content={content.quote_section.content}
+                        name={content.quote_section.name}
+                        width="70%"
                     />
                     <OneTextSection
                         bgColor={Colors.WHITE}

@@ -58,7 +58,7 @@ export const JobDetailHeaderSection = (props: Props) => {
                         </TextAtom>
                         <TextAtom>
                             {formatSalary(
-                                props.job.minSalary,
+                                props.job.salary,
                                 props.job.maxSalary
                             )}
                         </TextAtom>

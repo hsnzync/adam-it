@@ -30,6 +30,11 @@ export const about = {
         image_alt:
             'Adam IT, trots gevestigd in hartje Maassluis - Uw betrouwbare partner voor IT-oplossingen met passie en expertise.',
     },
+    quote_section: {
+        content:
+            'Onze missie? Een brug slaan tussen IT-talent en geweldige organisaties. Wij brengen de vaardigheden en expertise van IT-professionals samen met de behoeften van opdrachtgevers. Met zorgvuldige matching zorgen we voor succesvolle verbindingen tussen IT-talent en de technologische.',
+        name: 'Adam El Hajjami',
+    },
     perks_section: {
         title: 'Waarom IT’er inhuren via Adam IT?',
         description: 'Krijg toegang tot een breed netwerk.',

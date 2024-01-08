@@ -18,25 +18,25 @@ export const footer = {
                 name: 'Vacatures',
                 href: '/vacatures',
             },
-            {
-                name: 'Testnation',
-                href: '#',
-            },
+            // {
+            //     name: 'Testnation',
+            //     href: '#',
+            // },
         ],
     },
-    support: {
-        title: 'Support',
-        links: [
-            {
-                name: 'Klantenservice',
-                href: '/contact',
-            },
-            {
-                name: 'Contact',
-                href: '/contact',
-            },
-        ],
-    },
+    // support: {
+    //     title: 'Support',
+    //     links: [
+    //         {
+    //             name: 'Klantenservice',
+    //             href: '/contact',
+    //         },
+    //         {
+    //             name: 'Contact',
+    //             href: '/contact',
+    //         },
+    //     ],
+    // },
     contact: {
         title: 'Contact',
         links: [

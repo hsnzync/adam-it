@@ -67,7 +67,7 @@ export const FooterOrganism = () => {
                                 </Link>
                             ))}
                         </BoxAtom>
-                        <BoxAtom direction="vertical" space={3}>
+                        {/* <BoxAtom direction="vertical" space={3}>
                             <TextAtom variant="h6" color={Colors.WHITE} header>
                                 {content.support.title}
                             </TextAtom>
@@ -88,7 +88,7 @@ export const FooterOrganism = () => {
                                     </TextAtom>
                                 </Link>
                             ))}
-                        </BoxAtom>
+                        </BoxAtom> */}
                         <BoxAtom direction="vertical" space={3}>
                             <TextAtom variant="h6" color={Colors.WHITE} header>
                                 {content.contact.title}
@@ -119,20 +119,23 @@ export const FooterOrganism = () => {
                                     },
                                 }}
                             >
-                                <Link href="">
+                                <Link
+                                    href="https://www.linkedin.com/company/adam-it/"
+                                    target="_blank"
+                                >
                                     <IconAtom
                                         iconName="linkedIn"
                                         color={Colors.WHITE}
                                         size={30}
                                     />
                                 </Link>
-                                <Link href="">
+                                {/* <Link href="">
                                     <IconAtom
                                         iconName="instagram"
                                         color={Colors.WHITE}
                                         size={30}
                                     />
-                                </Link>
+                                </Link> */}
                             </BoxAtom>
                         </BoxAtom>
                     </BoxAtom>

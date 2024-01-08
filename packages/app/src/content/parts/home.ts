@@ -20,15 +20,15 @@ export const home = {
         },
     },
     hero: {
-        title: "IT'ers en opdrachtgevers in verbinding",
+        title: "Verbind IT'ers en opdrachtgevers",
         subtitle: 'Maak impact met IT',
         image_url: 'onboarding.jpg',
         image_alt:
             "Samenwerkende collega's van Adam IT in overleg, te zien in de hero van de startpagina.",
-        buttons: [
-            { label: 'Werkgevers', href: '/werkgevers' },
-            { label: 'Kandidaten', href: '/kandidaten' },
-        ],
+        buttons: {
+            employees: { label: 'Werkgevers', href: '/werkgevers' },
+            candidates: { label: 'Kandidaten', href: '/kandidaten' },
+        },
     },
     kpi_section: {
         tileTitle: 'Als IT’er organisaties verder helpen',
@@ -80,7 +80,7 @@ export const home = {
     jobs_section: {
         tiles: {
             title: 'Vacatures',
-            caption: 'Bezoek onze vacaturepagina voor nog meer vacatures',
+            caption: 'Bezoek onze vacaturepagina voor nog meer vacatures.',
             button_text: 'Bekijk alle vacatures',
             button_url: '/vacatures',
         },
@@ -106,14 +106,14 @@ export const home = {
         section_title: 'Recente cases',
         title: 'Trainingen bij de UWV',
         description:
-            'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.',
+            'De training omvatte hands-on sessies waarin deelnemers praktische ervaring opdeden met Robot Framework. Hierdoor konden ze direct de kracht van automatisering ervaren en leerden ze deze tool toe te passen binnen hun eigen projecten.',
         perks: [
             'De juiste expertise in huis',
             'Vraagbaak voor test vraagstukken',
             'Begeleiding tot volwaardig professional',
         ],
-        button_text: 'Bekijk de cases',
-        button_url: '/kandidaten',
+        button_text: 'Ik wil dit ook',
+        button_url: '/contact',
         image_url: 'company-meeting.jpg',
         image_alt:
             'Een professioneel team in actie - Recent uitgevoerde cases illustreren onze expertise in het oplossen van testvraagstukken en het begeleiden van individuen naar volwaardige professionals.',

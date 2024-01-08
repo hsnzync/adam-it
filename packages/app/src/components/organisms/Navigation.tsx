@@ -30,7 +30,6 @@ export const NavigationOrganism = () => {
 
     useEffect(() => {
         if (window.innerWidth > breakpoints.sm) {
-            console.log('false!')
             setMenuOpen(false)
         }
 
@@ -169,7 +168,7 @@ export const NavigationOrganism = () => {
                 label={buttons.jobs.label}
                 href={buttons.jobs.href}
             />
-            <LinkButtonAtom
+            {/* <LinkButtonAtom
                 label={buttons.testnation.label}
                 href={buttons.testnation.href}
                 variant="outlined"
@@ -187,7 +186,7 @@ export const NavigationOrganism = () => {
                                 : Colors.WHITE,
                     },
                 }}
-            />
+            /> */}
         </BoxAtom>
     )
 

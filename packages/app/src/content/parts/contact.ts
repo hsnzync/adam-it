@@ -54,21 +54,21 @@ export const contact = {
             },
             icon: 'businessCenter' as IconName,
         },
-        {
-            title: 'Support',
-            text_1: 'U kunt ons bereiken op',
-            text_2: {
-                link: true,
-                content: '010 - 23 33 923',
-                href: 'tel:0102333923',
-            },
-            text_3: {
-                link: true,
-                content: 'info@adamit.nl',
-                href: 'mailto:info@adamit.nl',
-            },
-            icon: 'help' as IconName,
-        },
+        // {
+        //     title: 'Support',
+        //     text_1: 'U kunt ons bereiken op',
+        //     text_2: {
+        //         link: true,
+        //         content: '010 - 23 33 923',
+        //         href: 'tel:0102333923',
+        //     },
+        //     text_3: {
+        //         link: true,
+        //         content: 'info@adamit.nl',
+        //         href: 'mailto:info@adamit.nl',
+        //     },
+        //     icon: 'help' as IconName,
+        // },
     ],
     contact_form: {
         name: 'Adam El Hajjami',

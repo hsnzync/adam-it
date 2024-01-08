@@ -16,7 +16,7 @@ import { getAsset } from '@/utils'
 import client from '../../client'
 import { Job } from '@/types'
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const jobData = await client.fetch(
         '*[_type == "job"] | order(_createdAt desc)[0..2]'
     )
