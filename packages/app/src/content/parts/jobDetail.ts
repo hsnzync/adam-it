@@ -31,7 +31,7 @@ export const jobDetail = {
         type: 'Type baan',
         location: 'Locatie',
         hours: 'Uren',
-        salary: 'Salarisindicatie',
+        salary: 'Salarisindicatie/Tarief',
         button_text: 'Solliciteer direct',
     },
     contact_section: {

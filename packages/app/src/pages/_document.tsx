@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import { Analytics } from '@vercel/analytics/react'
 import { Colors } from '@/constants'
 
 export default function Document() {
@@ -14,6 +15,7 @@ export default function Document() {
             >
                 <Main />
                 <NextScript />
+                <Analytics />
             </body>
         </Html>
     )
