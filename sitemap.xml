@@ -1,58 +1,67 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-	<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-	<loc>https://adamit.vercel.app/</loc>
-	<lastmod>2023-12-27T15:52:55+01:00</lastmod>
-	<priority>0.4</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/werkgevers</loc>
-	<lastmod>2023-12-27T15:52:55+01:00</lastmod>
-	<priority>0.2</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/kandidaten</loc>
-	<lastmod>2023-12-27T15:52:55+01:00</lastmod>
-	<priority>0.2</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/over-ons</loc>
-	<lastmod>2023-12-27T15:52:55+01:00</lastmod>
-	<priority>0.2</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/contact</loc>
-	<lastmod>2023-12-27T15:52:55+01:00</lastmod>
-	<priority>0.2</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/vacatures</loc>
-	<lastmod>2023-12-27T15:52:55+01:00</lastmod>
-	<priority>0.2</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/vacatures/python-software-engineer</loc>
-	<lastmod>2023-12-27T15:52:55+01:00</lastmod>
-	<priority>0.1</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/vacatures/qa-engineer</loc>
-	<lastmod>2023-12-27T15:52:55+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/vacatures/test-automation-engineer</loc>
-	<lastmod>2023-12-27T15:52:55+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/vacatures/software-ontwikkelaar</loc>
-	<lastmod>2023-12-27T15:52:59+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://adamit.vercel.app/vacatures/[slug]</loc>
-	<lastmod>2023-12-27T15:53:00+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://www.adamit.nl/</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/werkgevers</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/kandidaten</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/over-ons</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/contact</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/vacatures</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/vacatures/machine-learning-expert</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/vacatures/sr-data-engineer</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/vacatures/python-software-engineer</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/vacatures/qa-engineer</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/vacatures/test-automation-engineer</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.adamit.nl/vacatures/software-engineer</loc>
+    <lastmod>2024-01-11T15:33:28+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
 </urlset>
