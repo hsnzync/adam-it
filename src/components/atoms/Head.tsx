@@ -18,10 +18,15 @@ export const HeadAtom = (props: Head) => {
                 property="og:description"
                 content={props.opengraph.description}
             />
+            <meta property="og:image" content="/assets/logo/logo-no-text.svg" />
             <meta property="og:url" content={props.opengraph.url} />
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="Adam IT" />
 
+            <meta
+                property="twitter:image"
+                content="/assets/logo/logo-no-text.svg"
+            />
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:title" content={props.twitter.title} />
             <meta
