@@ -34,9 +34,10 @@ export const ContactFormSection = (props: Props) => {
     })
     const [file, setFile] = useState<File | null>(null)
     const [status, setStatus] = useState(false)
+    const [isProcessing, setIsProcessing] = useState(false)
+
     const [disableSubmit, setDisableSubmit] = useState(false)
     const [isValidEmail, setIsValidEmail] = useState(true)
-    const [isValidPhone, setIsValidPhone] = useState(true)
     const [isValidName, setIsValidName] = useState(true)
 
     useEffect(() => {
@@ -86,28 +87,28 @@ export const ContactFormSection = (props: Props) => {
                     formData.set('file', file)
                 }
 
-                try {
-                    setDisableSubmit(true)
+                setDisableSubmit(true)
+                setIsProcessing(true)
 
-                    const response = await fetch('/api/submitForm', {
-                        method: 'POST',
-                        body: formData,
-                    })
+                const response = await fetch('/api/submitForm', {
+                    method: 'POST',
+                    body: formData,
+                })
 
-                    const data = await response.json()
-                    setStatus(data)
-                } catch (error) {
-                    console.error(error)
-                } finally {
-                    setDisableSubmit(false)
-                    setForm({
-                        name: '',
-                        email: '',
-                        message: '',
-                    })
-                }
-            } catch (err) {
-                console.error(err)
+                const data = await response.json()
+                setStatus(data)
+            } catch (error) {
+                console.error(error)
+            } finally {
+                setDisableSubmit(false)
+                setIsProcessing(false)
+
+                setForm({
+                    name: '',
+                    email: '',
+                    message: '',
+                })
+                setFile(null)
             }
         }
     }
@@ -198,7 +199,8 @@ export const ContactFormSection = (props: Props) => {
                             label="Voeg hier uw bestanden toe"
                         />
                         <ButtonMolecule
-                            disabled={disableSubmit}
+                            disabled={disableSubmit || isProcessing}
+                            isLoading={isProcessing}
                             onClick={onSubmit}
                             label={props.buttonText}
                         />

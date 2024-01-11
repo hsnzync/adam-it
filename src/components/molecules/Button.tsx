@@ -1,11 +1,19 @@
-import { Button as MuiButton, Container } from '@mui/material'
+import { Button as MuiButton, Container, CircularProgress } from '@mui/material'
 import { IconAtom, TextAtom } from '@/components'
 import { Colors } from '@/constants'
 import { ButtonProps } from '@/types'
 
-export const ButtonMolecule = (props: ButtonProps) => {
+export const ButtonMolecule = (props: ButtonProps & { isLoading: boolean }) => {
     const isOutlined = props.variant === 'outlined'
     const isClear = props.variant === 'clear'
+
+    const iconBorder = () => {
+        if (props.isLoading) return 'none'
+
+        if (!isClear) return `1px solid ${Colors.WHITE}`
+
+        return undefined
+    }
 
     return (
         <MuiButton
@@ -53,22 +61,33 @@ export const ButtonMolecule = (props: ButtonProps) => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: !isClear ? '1px solid white' : undefined,
+                    border: iconBorder(),
                     backgroundColor: isClear ? Colors.ORANGE : undefined,
                     borderRadius: 1,
-                    rotate: '45deg',
+                    rotate: !props.isLoading ? '45deg' : undefined,
                     width: 25,
                     height: 25,
                 }}
             >
-                <IconAtom
-                    iconName={props.icon ?? 'chevronRight'}
-                    color={Colors.WHITE}
-                    sx={{
-                        rotate: '-45deg',
-                        position: 'relative',
-                    }}
-                />
+                {props.isLoading && (
+                    <CircularProgress
+                        sx={{
+                            height: 'auto !important',
+                            width: '30px !important',
+                            color: `${Colors.WHITE}`,
+                        }}
+                    />
+                )}
+                {!props.isLoading && (
+                    <IconAtom
+                        iconName={props.icon ?? 'chevronRight'}
+                        color={Colors.WHITE}
+                        sx={{
+                            rotate: '-45deg',
+                            position: 'relative',
+                        }}
+                    />
+                )}
             </Container>
         </MuiButton>
     )
