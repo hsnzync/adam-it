@@ -168,7 +168,8 @@ export const NavigationOrganism = () => {
                 label={buttons.jobs.label}
                 href={buttons.jobs.href}
             />
-            {/* <LinkButtonAtom
+            {/* May be introduced later
+                <LinkButtonAtom
                 label={buttons.testnation.label}
                 href={buttons.testnation.href}
                 variant="outlined"
@@ -207,10 +208,7 @@ export const NavigationOrganism = () => {
                 sx={{
                     p: 2,
                     width: '96%',
-                    maxWidth: {
-                        xs: 'none',
-                        md: screenMaxWidth,
-                    },
+                    maxWidth: screenMaxWidth,
                     display: 'flex',
                     justifyContent: 'space-between',
                 }}
@@ -286,9 +284,10 @@ export const NavigationOrganism = () => {
                         label="Menu"
                         sx={{
                             '.button-text': {
-                                color: navScrolled
-                                    ? Colors.ORANGE
-                                    : Colors.WHITE,
+                                color:
+                                    navScrolled || menuOpen
+                                        ? Colors.ORANGE
+                                        : Colors.WHITE,
                             },
                             '.button-icon-container': {
                                 width: {

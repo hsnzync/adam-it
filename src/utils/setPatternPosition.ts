@@ -9,6 +9,6 @@ export const setXPatternPosition = (screenSize: number): number => {
         return -150
     else if (screenSize >= breakpoints.xl && screenSize < breakpoints.xxl)
         return 0
-    else if (screenSize >= breakpoints.xl) return 300
+    else if (screenSize >= breakpoints.xxl) return 0
     return 0
 }
