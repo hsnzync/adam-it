@@ -1,0 +1,9 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/vacatures/[slug]": "pages/vacatures/[slug].js",
+  "/api/submitForm": "pages/api/submitForm.js",
+  "/contact": "pages/contact.js",
+  "/vacatures": "pages/vacatures.js"
+}

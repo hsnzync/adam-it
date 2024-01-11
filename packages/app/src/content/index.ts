@@ -1,1 +1,0 @@
-export { textContent } from './textContent'

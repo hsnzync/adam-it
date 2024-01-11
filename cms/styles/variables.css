@@ -1,0 +1,8 @@
+:root {
+    /* Brand colors */
+    --brand-primary: #E84631;
+    --brand-primary--inverted: #ffffff;
+    --brand-secondary: #A12212;
+    --brand-secondary--inverted: #3c1609;
+    --card-bg-color: #e68073;
+  }
