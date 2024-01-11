@@ -3,7 +3,7 @@ import { IconAtom, TextAtom } from '@/components'
 import { Colors } from '@/constants'
 import { ButtonProps } from '@/types'
 
-export const ButtonMolecule = (props: ButtonProps & { isLoading: boolean }) => {
+export const ButtonMolecule = (props: ButtonProps) => {
     const isOutlined = props.variant === 'outlined'
     const isClear = props.variant === 'clear'
 

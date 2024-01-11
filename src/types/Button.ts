@@ -8,6 +8,7 @@ interface ButtonProps {
     variant?: 'outlined' | 'clear'
     sx?: SxProps<Theme>
     disabled?: boolean
+    isLoading?: boolean
     onClick?: (e: any) => void
 }
 
