@@ -55,7 +55,6 @@ export const ContactSection = (props: Props) => {
             >
                 {props.items.map((item, index) => (
                     <KpiCardMolecule
-                        plain
                         key={index}
                         icon={item.icon}
                         sx={{
