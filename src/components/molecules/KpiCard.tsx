@@ -8,7 +8,6 @@ type Props = {
     icon: IconName
     children: ReactNode
     extended?: boolean
-    plain?: boolean
     sx?: SxProps<Theme>
 }
 
@@ -36,12 +35,6 @@ export const KpiCardMolecule = (props: Props) => {
                         xs: `1px solid ${Colors.LIGHT_GREY}`,
                         lg: 'none',
                     },
-                },
-                ':hover': {
-                    cursor: !props.plain ? 'pointer' : undefined,
-                    backgroundColor: !props.plain
-                        ? { md: Colors.LIGHT_BLUE }
-                        : undefined,
                 },
             }}
         >
