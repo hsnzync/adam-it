@@ -4,8 +4,8 @@
         "name": "cms"
     },
     "api": {
-        "projectId": "wdzh4l4i",
-        "dataset": "production"
+        "projectId": "<project-id>",
+        "dataset": "<project-dataset>"
     },
     "plugins": [
         "@sanity/base",
