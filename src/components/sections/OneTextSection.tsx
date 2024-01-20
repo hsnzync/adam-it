@@ -56,7 +56,9 @@ export const OneTextSection = (props: Props) => {
                             <TextAtom variant="h2" header>
                                 {text.title}
                             </TextAtom>
-                            <TextAtom>{text.description}</TextAtom>
+                            <TextAtom sx={{ whiteSpace: 'pre-wrap' }}>
+                                {text.description}
+                            </TextAtom>
                             {props.button && (
                                 <LinkButtonAtom
                                     href={props.buttonUrl}

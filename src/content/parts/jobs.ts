@@ -28,30 +28,24 @@ export const jobs = {
         email: 'adam@adamit.nl',
         image_url: 'recruiter.jpg',
     },
-    connect_section: {
-        title: 'Je droombaan als IT Professional',
-        subtitle: 'Wij verbinden IT’ers met opdrachtgevers',
-        description:
-            'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. ',
+    perks_section: {
+        title: 'Waarom IT’er inhuren via Adam IT?',
+        description: 'Krijg toegang tot een breed netwerk.',
+        perks: [
+            'Kom gratis en geheel vrijblijvend in contact',
+            'Bespaar tijd met het vinden van jou IT-professional',
+            'Kom in contact met jouw kandidaat',
+        ],
+        button_text: 'Meer over kandidaten',
+        button_url: '/kandidaten',
         image_url: 'meeting.jpg',
         image_alt:
-            'Stap in je droombaan als IT Professional - Een visuele representatie van jouw weg naar een succesvolle carrière in de IT-wereld.',
+            'Ontdek de voordelen van werken via Adam IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
     },
     extra_section: [
         {
-            title: 'Seo teksten',
-            description:
-                'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.',
-        },
-        {
-            title: 'Seo teksten',
-            description:
-                'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.',
-        },
-        {
-            title: 'Seo teksten',
-            description:
-                'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.',
+            title: 'Sluit je aan',
+            description: `Gerenommeerde organisaties vertrouwen op ADAM IT als een betrouwbare partner die hen in staat stelt te floreren in een snel veranderende technologische omgeving. De transparantie, integriteit en professionaliteit die ADAM IT tentoonspreidt, dragen bij aan het opbouwen van een ecosysteem waarin zowel werkgevers als IT- professionals gedijen. Daarbij zijn wij niet alleen een matchmaker op de arbeidsmarkt, maar een katalysator voor groei en innovatie in de IT-sector. Door de juiste mensen op de juiste plekken te brengen, dragen ze bij aan het succes van individuen en organisaties, waardoor de IT-wereld een betere plek wordt voor iedereen.`,
         },
     ],
     filter: {

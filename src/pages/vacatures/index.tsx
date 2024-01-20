@@ -104,11 +104,11 @@ export default function JobsPage(data: { jobs: Job[]; filters: JobFilters[] }) {
                     <TextImageSection
                         hasBgPattern
                         bgColor={Colors.LIGHT_BLUE}
-                        title={content.connect_section.title}
-                        subtitle={content.connect_section.subtitle}
-                        description={content.connect_section.description}
-                        imageUrl={content.connect_section.image_url}
-                        imageAlt={content.connect_section.image_alt}
+                        title={content.perks_section.title}
+                        description={content.perks_section.description}
+                        perks={content.perks_section.perks}
+                        imageUrl={content.perks_section.image_url}
+                        imageAlt={content.perks_section.image_alt}
                     />
                     <OneTextSection
                         bgColor={Colors.WHITE}

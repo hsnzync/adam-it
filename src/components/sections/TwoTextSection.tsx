@@ -75,7 +75,7 @@ export const TwoTextSection = (props: Props) => {
                             <TextAtom variant="h2" header>
                                 {text.title}
                             </TextAtom>
-                            <TextAtom sx={{ py: 1 }}>
+                            <TextAtom sx={{ whiteSpace: 'pre-wrap' }}>
                                 {text.description}
                             </TextAtom>
                             {text.button_text && (
@@ -108,7 +108,7 @@ export const TwoTextSection = (props: Props) => {
                             <TextAtom variant="h2" header>
                                 {text.title}
                             </TextAtom>
-                            <TextAtom sx={{ py: 1 }}>
+                            <TextAtom sx={{ whiteSpace: 'pre-wrap' }}>
                                 {text.description}
                             </TextAtom>
                             {text.button_text && (

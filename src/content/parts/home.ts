@@ -104,7 +104,7 @@ export const home = {
     },
     cases_section: {
         section_title: 'Recente cases',
-        title: 'Trainingen bij de UWV',
+        title: 'Trainingen bij het UWV',
         description:
             'De training omvatte hands-on sessies waarin deelnemers praktische ervaring opdeden met Robot Framework. Hierdoor konden ze direct de kracht van automatisering ervaren en leerden ze deze tool toe te passen binnen hun eigen projecten.',
         perks: [

@@ -81,20 +81,18 @@ export const contact = {
     extra_section: {
         first_column: [
             {
-                title: 'IT professionals',
-                subtitle: 'Subtitel',
-                description:
-                    'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.',
+                title: 'Uniek',
+                subtitle: 'Een brug tussen werkgevers en IT-talent',
+                description: `Wat ADAM IT uniek maakt, is de toewijding aan het matchen van hooggekwalificeerde IT-kandidaten met bedrijven die op zoek zijn naar specifieke vaardigheden en ervaring. Door middel van een zorgvuldige screening en matchingprocedure zorgt ADAM IT ervoor dat de professionals die ze vertegenwoordigen niet alleen over de juiste technische expertise beschikken, maar ook perfect passen bij de bedrijfscultuur en doelstellingen van de organisatie.\n\nOnze focus gaat verder dan alleen het invullen van vacatures. Ze streven ernaar duurzame relaties te creëren die gebaseerd zijn op wederzijds begrip en groei. Door te luisteren naar de behoeften van zowel kandidaten als werkgevers, fungeert ADAM IT als een brug tussen talent en mogelijkheden, waarbij ze niet alleen vacatures vullen, maar ook carrières vormgeven.`,
                 button_text: 'Opdrachtgever',
                 button_url: '/werkgevers',
             },
         ],
         second_column: [
             {
-                title: 'ADAM IT, uit hartje Maassluis',
-                subtitle: 'Subtitel',
-                description:
-                    'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.',
+                title: 'Sluit je aan',
+                subtitle: 'Een brug tussen werkgevers en IT-talent',
+                description: `Gerenommeerde organisaties vertrouwen op ADAM IT als een betrouwbare partner die hen in staat stelt te floreren in een snel veranderende technologische omgeving. De transparantie, integriteit en professionaliteit die ADAM IT tentoonspreidt, dragen bij aan het opbouwen van een ecosysteem waarin zowel werkgevers als IT- professionals gedijen. Daarbij zijn wij niet alleen een matchmaker op de arbeidsmarkt, maar een katalysator voor groei en innovatie in de IT-sector. Door de juiste mensen op de juiste plekken te brengen, dragen ze bij aan het succes van individuen en organisaties, waardoor de IT-wereld een betere plek wordt voor iedereen.`,
             },
         ],
     },
