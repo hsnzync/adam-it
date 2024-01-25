@@ -10,7 +10,7 @@ export {
     ImageAtom,
     HeaderImageAtom,
     LinkButtonAtom,
-    RichContent,
+    RichContentText,
     LoaderAtom,
     HeadAtom,
     ToastAtom,
@@ -29,6 +29,7 @@ export {
     ContactImageMolecule,
     SelectMolecule,
     BadgeMolecule,
+    CookieBannerMolecule,
 } from './molecules'
 
 // organisms
@@ -56,5 +57,5 @@ export {
     TextImageTextSection,
     JobsListSection,
     JobDetailHeaderSection,
-    JobDetailSection,
+    RichContentSection,
 } from './sections'

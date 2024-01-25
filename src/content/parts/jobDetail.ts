@@ -1,19 +1,19 @@
 export const jobDetail = {
     seo_head: {
-        title: 'Vacaturedetails - Adam IT',
-        name: 'Vacaturedetails - Adam IT',
+        title: 'Vacaturedetails - ADAM IT',
+        name: 'Vacaturedetails - ADAM IT',
         description:
-            'Bekijk de details van de nieuwste IT-vacature bij Adam IT. Ontdek of dit de perfecte opdracht is voor jouw IT-vaardigheden.',
+            'Bekijk de details van de nieuwste IT-vacature bij ADAM IT. Ontdek of dit de perfecte opdracht is voor jouw IT-vaardigheden.',
         opengraph: {
-            title: 'Vacaturedetails - Adam IT',
+            title: 'Vacaturedetails - ADAM IT',
             description:
-                'Bekijk de details van de nieuwste IT-vacature bij Adam IT. Ontdek of dit de perfecte opdracht is voor jouw IT-vaardigheden.',
+                'Bekijk de details van de nieuwste IT-vacature bij ADAM IT. Ontdek of dit de perfecte opdracht is voor jouw IT-vaardigheden.',
             url: 'https://www.adamit.nl/vacatures',
         },
         twitter: {
-            title: 'Vacaturedetails - Adam IT',
+            title: 'Vacaturedetails - ADAM IT',
             description:
-                'Bekijk de details van de nieuwste IT-vacature bij Adam IT. Ontdek of dit de perfecte opdracht is voor jouw IT-vaardigheden.',
+                'Bekijk de details van de nieuwste IT-vacature bij ADAM IT. Ontdek of dit de perfecte opdracht is voor jouw IT-vaardigheden.',
             url: 'https://www.adamit.nl/vacatures',
         },
     },

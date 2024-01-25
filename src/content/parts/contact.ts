@@ -2,20 +2,20 @@ import { IconName } from '@/types'
 
 export const contact = {
     seo_head: {
-        title: 'Contacteer ons - Adam IT',
-        name: 'Contacteer ons - Adam IT',
+        title: 'Contacteer ons - ADAM IT',
+        name: 'Contacteer ons - ADAM IT',
         description:
-            'Neem contact op met Adam IT voor al je vragen over IT-opdrachten, kandidatenwerving en meer. Wij staan klaar om je te helpen!',
+            'Neem contact op met ADAM IT voor al je vragen over IT-opdrachten, kandidatenwerving en meer. Wij staan klaar om je te helpen!',
         opengraph: {
-            title: 'Contacteer ons - Adam IT',
+            title: 'Contacteer ons - ADAM IT',
             description:
-                'Neem contact op met Adam IT voor al je vragen over IT-opdrachten, kandidatenwerving en meer. Wij staan klaar om je te helpen!',
+                'Neem contact op met ADAM IT voor al je vragen over IT-opdrachten, kandidatenwerving en meer. Wij staan klaar om je te helpen!',
             url: 'https://www.adamit.nl/contact',
         },
         twitter: {
-            title: 'Contacteer ons - Adam IT',
+            title: 'Contacteer ons - ADAM IT',
             description:
-                'Neem contact op met Adam IT voor al je vragen over IT-opdrachten, kandidatenwerving en meer. Wij staan klaar om je te helpen!',
+                'Neem contact op met ADAM IT voor al je vragen over IT-opdrachten, kandidatenwerving en meer. Wij staan klaar om je te helpen!',
             url: 'https://www.adamit.nl/contact',
         },
     },

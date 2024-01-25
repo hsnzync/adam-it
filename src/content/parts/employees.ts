@@ -2,20 +2,20 @@ import { IconName } from '@/types'
 
 export const employees = {
     seo_head: {
-        title: 'Vind geschikte kandidaten - Adam IT',
-        name: 'Vind geschikte kandidaten - Adam IT',
+        title: 'Vind geschikte kandidaten - ADAM IT',
+        name: 'Vind geschikte kandidaten - ADAM IT',
         description:
-            'Ontdek getalenteerde IT-professionals voor uw organisatie. Adam IT helpt werkgevers bij het vinden van geschikte kandidaten voor IT-opdrachten.',
+            'Ontdek getalenteerde IT-professionals voor uw organisatie. ADAM IT helpt werkgevers bij het vinden van geschikte kandidaten voor IT-opdrachten.',
         opengraph: {
-            title: 'Vind geschikte kandidaten - Adam IT',
+            title: 'Vind geschikte kandidaten - ADAM IT',
             description:
-                'Ontdek getalenteerde IT-professionals voor uw organisatie. Adam IT helpt werkgevers bij het vinden van geschikte kandidaten voor IT-opdrachten.',
+                'Ontdek getalenteerde IT-professionals voor uw organisatie. ADAM IT helpt werkgevers bij het vinden van geschikte kandidaten voor IT-opdrachten.',
             url: 'https://www.adamit.nl/werkgevers',
         },
         twitter: {
-            title: 'Vind geschikte kandidaten - Adam IT',
+            title: 'Vind geschikte kandidaten - ADAM IT',
             description:
-                'Ontdek getalenteerde IT-professionals voor uw organisatie. Adam IT helpt werkgevers bij het vinden van geschikte kandidaten voor IT-opdrachten.',
+                'Ontdek getalenteerde IT-professionals voor uw organisatie. ADAM IT helpt werkgevers bij het vinden van geschikte kandidaten voor IT-opdrachten.',
             url: 'https://www.adamit.nl/werkgevers',
         },
     },
@@ -62,7 +62,7 @@ export const employees = {
         ],
     },
     perks_section: {
-        title: 'De voordelen van werken via Adam IT?',
+        title: 'De voordelen van werken via ADAM IT?',
         description: 'Krijg toegang tot een breed netwerk.',
         perks: [
             'Vind dè geschikte opdracht',
@@ -73,7 +73,7 @@ export const employees = {
         button_url: '/kandidaten',
         image_url: 'mentoring-meeting.jpg',
         image_alt:
-            'Ontdek de voordelen van werken via Adam IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
+            'Ontdek de voordelen van werken via ADAM IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
     },
     quote_section: {
         content: 'Wij van ADAM IT adviseren ADAM IT',

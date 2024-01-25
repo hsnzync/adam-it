@@ -1,25 +1,25 @@
 export const about = {
     seo_head: {
-        title: 'Over ons - Adam IT',
-        name: 'Over ons - Adam IT',
+        title: 'Over ons - ADAM IT',
+        name: 'Over ons - ADAM IT',
         description:
-            'Leer meer over Adam IT, uw betrouwbare partner in het vinden van IT-opdrachten en geschikte IT-kandidaten. Ontdek onze missie, visie en waarden.',
+            'Leer meer over ADAM IT, uw betrouwbare partner in het vinden van IT-opdrachten en geschikte IT-kandidaten. Ontdek onze missie, visie en waarden.',
         opengraph: {
-            title: 'Over ons - Adam IT',
+            title: 'Over ons - ADAM IT',
             description:
-                'Leer meer over Adam IT, uw betrouwbare partner in het vinden van IT-opdrachten en geschikte IT-kandidaten. Ontdek onze missie, visie en waarden.',
+                'Leer meer over ADAM IT, uw betrouwbare partner in het vinden van IT-opdrachten en geschikte IT-kandidaten. Ontdek onze missie, visie en waarden.',
             url: 'https://www.adamit.nl/over-ons',
         },
         twitter: {
-            title: 'Over ons - Adam IT',
+            title: 'Over ons - ADAM IT',
             description:
-                'Leer meer over Adam IT, uw betrouwbare partner in het vinden van IT-opdrachten en geschikte IT-kandidaten. Ontdek onze missie, visie en waarden.',
+                'Leer meer over ADAM IT, uw betrouwbare partner in het vinden van IT-opdrachten en geschikte IT-kandidaten. Ontdek onze missie, visie en waarden.',
             url: 'https://www.adamit.nl/over-ons',
         },
     },
     hero: {
         title: 'Over ons',
-        subtitle: 'Wie is Adam IT?',
+        subtitle: 'Wie is ADAM IT?',
     },
     intro_section: {
         title: 'Adam is ADAM IT.',
@@ -27,7 +27,7 @@ export const about = {
         description: `Adam, geboren en getogen in Maasluis, heeft altijd een fascinatie gehad voor technologie en de kracht ervan om levens te veranderen. Gedreven door zijn passie voor IT en het besef van potentieel van IT-talent, besloot hij een missie te omarmen die verder reikt dan zijn persoonlijke ambities. Met ADAM IT heeft hij tot doel talentvolle IT-professionals in contact te brengen met gerenommeerde organisaties, Adam gelooft sterk in de kracht van samenwerkingen en de impact die het kan hebben op zowel individuen als de bredere gemeenschap.\n\nIn de steeds evoluerende wereld van informatietechnologie is het vinden van de juiste talenten cruciaal voor het succes van organisaties. ADAM IT onderscheidt zich als een dynamisch platform dat bekwame IT-professionals verbindt met gerenommeerde organisaties, met als doel een synergetische samenwerking tot stand te brengen.`,
         image_url: 'mill.jpg',
         image_alt:
-            'Adam IT, trots gevestigd in hartje Maassluis - Uw betrouwbare partner voor IT-oplossingen met passie en expertise.',
+            'ADAM IT, trots gevestigd in hartje Maassluis - Uw betrouwbare partner voor IT-oplossingen met passie en expertise.',
     },
     quote_section: {
         content:
@@ -35,7 +35,7 @@ export const about = {
         name: 'Adam El Hajjami',
     },
     perks_section: {
-        title: 'Waarom IT’er inhuren via Adam IT?',
+        title: 'Waarom IT’er inhuren via ADAM IT?',
         description: 'Krijg toegang tot een breed netwerk.',
         perks: [
             'Kom gratis en geheel vrijblijvend in contact',
@@ -46,7 +46,7 @@ export const about = {
         button_url: '/kandidaten',
         image_url: 'meeting.jpg',
         image_alt:
-            'Ontdek de voordelen van werken via Adam IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
+            'Ontdek de voordelen van werken via ADAM IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
     },
     about_section: {
         content: [

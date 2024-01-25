@@ -2,20 +2,20 @@ import { IconName } from '@/types'
 
 export const candidates = {
     seo_head: {
-        title: 'Vind IT vacatures - Adam IT',
-        name: 'Vind IT vacatures - Adam IT',
+        title: 'Vind IT vacatures - ADAM IT',
+        name: 'Vind IT vacatures - ADAM IT',
         description:
-            'Ontdek de nieuwste IT-vacatures en vind de perfecte opdracht bij Adam IT. Start je IT-carrière hier!',
+            'Ontdek de nieuwste IT-vacatures en vind de perfecte opdracht bij ADAM IT. Start je IT-carrière hier!',
         opengraph: {
-            title: 'Vind IT vacatures - Adam IT',
+            title: 'Vind IT vacatures - ADAM IT',
             description:
-                'Ontdek de nieuwste IT-vacatures en vind de perfecte opdracht bij Adam IT. Start je IT-carrière hier!',
+                'Ontdek de nieuwste IT-vacatures en vind de perfecte opdracht bij ADAM IT. Start je IT-carrière hier!',
             url: 'https://www.adamit.nl/kandidaten',
         },
         twitter: {
-            title: 'Vind IT vacatures - Adam IT',
+            title: 'Vind IT vacatures - ADAM IT',
             description:
-                'Ontdek de nieuwste IT-vacatures en vind de perfecte opdracht bij Adam IT. Start je IT-carrière hier!',
+                'Ontdek de nieuwste IT-vacatures en vind de perfecte opdracht bij ADAM IT. Start je IT-carrière hier!',
             url: 'https://www.adamit.nl/kandidaten',
         },
     },

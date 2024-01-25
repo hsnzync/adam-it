@@ -2,20 +2,20 @@ import { IconName } from '@/types'
 
 export const home = {
     seo_head: {
-        title: 'Adam IT - Wij maken impact met IT',
-        name: 'Adam IT - Wij maken impact met IT',
+        title: 'ADAM IT - Wij maken impact met IT',
+        name: 'ADAM IT - Wij maken impact met IT',
         description:
-            'Adam IT helpt organisaties bij het vinden van de juiste IT-opdrachten en ondersteunt werkgevers bij het vinden van geschikte IT-kandidaten. Ontdek onze diensten en mogelijkheden.',
+            'ADAM IT helpt organisaties bij het vinden van de juiste IT-opdrachten en ondersteunt werkgevers bij het vinden van geschikte IT-kandidaten. Ontdek onze diensten en mogelijkheden.',
         opengraph: {
-            title: 'Adam IT - Wij maken impact met IT',
+            title: 'ADAM IT - Wij maken impact met IT',
             description:
-                'Adam IT helpt organisaties bij het vinden van de juiste IT-opdrachten en ondersteunt werkgevers bij het vinden van geschikte IT-kandidaten. Ontdek onze diensten en mogelijkheden.',
+                'ADAM IT helpt organisaties bij het vinden van de juiste IT-opdrachten en ondersteunt werkgevers bij het vinden van geschikte IT-kandidaten. Ontdek onze diensten en mogelijkheden.',
             url: 'https://www.adamit.nl',
         },
         twitter: {
-            title: 'Adam IT - Wij maken impact met IT',
+            title: 'ADAM IT - Wij maken impact met IT',
             description:
-                'Adam IT helpt organisaties bij het vinden van de juiste IT-opdrachten en ondersteunt werkgevers bij het vinden van geschikte IT-kandidaten. Ontdek onze diensten en mogelijkheden.',
+                'ADAM IT helpt organisaties bij het vinden van de juiste IT-opdrachten en ondersteunt werkgevers bij het vinden van geschikte IT-kandidaten. Ontdek onze diensten en mogelijkheden.',
             url: 'https://www.adamit.nl',
         },
     },
@@ -24,7 +24,7 @@ export const home = {
         subtitle: 'Maak impact met IT',
         image_url: 'onboarding.jpg',
         image_alt:
-            "Samenwerkende collega's van Adam IT in overleg, te zien in de hero van de startpagina.",
+            "Samenwerkende collega's van ADAM IT in overleg, te zien in de hero van de startpagina.",
         buttons: {
             employees: { label: 'Werkgevers', href: '/werkgevers' },
             candidates: { label: 'Kandidaten', href: '/kandidaten' },
@@ -60,7 +60,7 @@ export const home = {
         ],
     },
     perks_section: {
-        title: 'De voordelen van werken via Adam IT?',
+        title: 'De voordelen van werken via ADAM IT?',
         description: 'Krijg toegang tot een breed netwerk.',
         perks: [
             'Vind dè geschikte opdracht',
@@ -71,7 +71,7 @@ export const home = {
         button_url: '/kandidaten',
         image_url: 'offer.jpg',
         image_alt:
-            'Ontdek de voordelen van werken via Adam IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
+            'Ontdek de voordelen van werken via ADAM IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
     },
     quote_section: {
         content: 'Wij van ADAM IT adviseren ADAM IT',

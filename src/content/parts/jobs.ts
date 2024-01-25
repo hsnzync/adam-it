@@ -1,25 +1,25 @@
 export const jobs = {
     seo_head: {
-        title: 'Vacatures - Adam IT',
-        name: 'Vacatures - Adam IT',
+        title: 'Vacatures - ADAM IT',
+        name: 'Vacatures - ADAM IT',
         description:
-            'Bekijk de nieuwste IT-vacatures bij Adam IT. Vind de perfecte opdracht voor jouw IT-vaardigheden.',
+            'Bekijk de nieuwste IT-vacatures bij ADAM IT. Vind de perfecte opdracht voor jouw IT-vaardigheden.',
         opengraph: {
-            title: 'Vacatures - Adam IT',
+            title: 'Vacatures - ADAM IT',
             description:
-                'Bekijk de nieuwste IT-vacatures bij Adam IT. Vind de perfecte opdracht voor jouw IT-vaardigheden.',
+                'Bekijk de nieuwste IT-vacatures bij ADAM IT. Vind de perfecte opdracht voor jouw IT-vaardigheden.',
             url: 'https://www.adamit.nl/vacatures',
         },
         twitter: {
-            title: 'Vacatures - Adam IT',
+            title: 'Vacatures - ADAM IT',
             description:
-                'Bekijk de nieuwste IT-vacatures bij Adam IT. Vind de perfecte opdracht voor jouw IT-vaardigheden.',
+                'Bekijk de nieuwste IT-vacatures bij ADAM IT. Vind de perfecte opdracht voor jouw IT-vaardigheden.',
             url: 'https://www.adamit.nl/vacatures',
         },
     },
     hero: {
         title: 'Vacatures',
-        subtitle: 'Werken via adam it',
+        subtitle: 'Werken via ADAM IT',
     },
     contact: {
         title: 'Zit je droombaan er niet tussen? Bel met Adam.',
@@ -29,7 +29,7 @@ export const jobs = {
         image_url: 'recruiter.jpg',
     },
     perks_section: {
-        title: 'Waarom IT’er inhuren via Adam IT?',
+        title: 'Waarom IT’er inhuren via ADAM IT?',
         description: 'Krijg toegang tot een breed netwerk.',
         perks: [
             'Kom gratis en geheel vrijblijvend in contact',
@@ -40,7 +40,7 @@ export const jobs = {
         button_url: '/kandidaten',
         image_url: 'meeting.jpg',
         image_alt:
-            'Ontdek de voordelen van werken via Adam IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
+            'Ontdek de voordelen van werken via ADAM IT: vind de geschikte opdracht, profiteer van geheel vrijblijvende en gratis registratie, en kom in contact met jouw ideale kandidaat.',
     },
     extra_section: [
         {

@@ -151,7 +151,7 @@ export const FooterOrganism = () => {
                     >
                         <Image
                             src={getAsset('logo-text-white.svg', 'logo')}
-                            alt="logo adam it"
+                            alt="logo ADAM IT"
                             width={300}
                             height={80}
                         />
@@ -207,21 +207,6 @@ export const FooterOrganism = () => {
                         >
                             <TextAtom variant="body1" color={Colors.WHITE}>
                                 {content.privacy_policy.name}
-                            </TextAtom>
-                        </Link>
-                        <TextAtom variant="body1" color={Colors.WHITE}>
-                            |
-                        </TextAtom>
-                        <Link
-                            href={content.cookies.href}
-                            style={{
-                                color: Colors.WHITE,
-                                textDecoration: 'none',
-                                whiteSpace: 'pre',
-                            }}
-                        >
-                            <TextAtom variant="body1" color={Colors.WHITE}>
-                                {content.cookies.name}
                             </TextAtom>
                         </Link>
                     </BoxAtom>

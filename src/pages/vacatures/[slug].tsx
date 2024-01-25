@@ -9,8 +9,9 @@ import {
     JobDetailHeaderSection,
     FormSection,
     ContactImageMolecule,
-    JobDetailSection,
+    RichContentSection,
     HeadAtom,
+    TextAtom,
 } from '@/components'
 import { textContent } from '@/content'
 import { screenMaxWidth } from '@/style'
@@ -137,8 +138,16 @@ export default function JobDetailPage(data: { job: Job }) {
                                             job={job}
                                         />
                                     </BoxAtom>
-
-                                    <JobDetailSection job={job} />
+                                    {job && (
+                                        <RichContentSection
+                                            content={job.sections}
+                                        />
+                                    )}
+                                    {!job && (
+                                        <TextAtom color={Colors.ORANGE}>
+                                            Geen pagina elementen gevonden
+                                        </TextAtom>
+                                    )}
                                 </BoxAtom>
                                 <BoxAtom
                                     sx={{

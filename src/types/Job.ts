@@ -1,3 +1,5 @@
+import { RichContent } from './Content'
+
 interface Job {
     slug: {
         current: string
@@ -8,14 +10,8 @@ interface Job {
     hours: number
     salary: number
     maxSalary?: number
-    sections: JobSection[]
+    sections: RichContent[]
 }
-
-interface JobSection {
-    title: string
-    description: any
-}
-
 interface JobFilterOption {
     filterName: string
 }
@@ -43,4 +39,4 @@ interface Information {
     button_url?: string
 }
 
-export type { Information, Tile, Job, JobSection, JobFilters, JobFilterOption }
+export type { Information, Tile, Job, JobFilters, JobFilterOption }

@@ -11,7 +11,7 @@ export const footer = {
                 href: '/kandidaten',
             },
             {
-                name: 'Over Adam IT',
+                name: 'Over ADAM IT',
                 href: '/over-ons',
             },
             {
@@ -51,18 +51,14 @@ export const footer = {
         ],
     },
     copyright: {
-        name: 'Adam IT © 2024 - Alle rechten voorbehouden',
+        name: 'ADAM IT © 2024 - Alle rechten voorbehouden',
     },
     terms_and_conditions: {
         name: 'Algemene voorwaarden',
-        href: '#',
+        href: '/algemene-voorwaarden',
     },
     privacy_policy: {
-        name: 'Privacy Policy',
-        href: '#',
-    },
-    cookies: {
-        name: 'Cookies',
-        href: '#',
+        name: 'Privacy beleid',
+        href: '/privacy-beleid',
     },
 }

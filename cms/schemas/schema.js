@@ -7,6 +7,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import blockContent from './blockContent'
 import job from './job'
 import jobFilters from './jobFilters'
+import terms from './terms'
+import privacy from './privacy'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,5 +22,7 @@ export default createSchema({
         job,
         jobFilters,
         blockContent,
+        terms,
+        privacy,
     ]),
 })

@@ -9,6 +9,8 @@ import {
     jobsPage,
     jobDetailPage,
     logos,
+    termsAndConditionsPage,
+    privacyPolicyPage,
 } from './parts'
 
 export const textContent = {
@@ -21,5 +23,7 @@ export const textContent = {
     candidates: candidatesPage,
     jobs: jobsPage,
     jobDetail: jobDetailPage,
+    termsAndConditions: termsAndConditionsPage,
+    privacyPolicy: privacyPolicyPage,
     logos: logos,
 }

@@ -231,7 +231,7 @@ export const NavigationOrganism = () => {
                             src={logoHandler()}
                             width={130}
                             height={50}
-                            alt="Adam IT - Uw betrouwbare IT-dienstverlener voor naadloze samenwerking tussen kandidaten en opdrachtgevers, met expertise die uw bedrijf naar nieuwe hoogten brengt."
+                            alt="ADAM IT - Uw betrouwbare IT-dienstverlener voor naadloze samenwerking tussen kandidaten en opdrachtgevers, met expertise die uw bedrijf naar nieuwe hoogten brengt."
                         />
                     </Link>
                 </BoxAtom>

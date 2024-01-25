@@ -56,7 +56,7 @@ export default {
         },
         {
             name: 'sections',
-            title: 'Secties',
+            title: 'Tekstblokken',
             type: 'array',
             of: [
                 {

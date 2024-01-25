@@ -1,4 +1,4 @@
-import { LoaderMolecule, ToastAtom } from '@/components'
+import { CookieBannerMolecule, LoaderMolecule, ToastAtom } from '@/components'
 import { breakpoints } from '@/style'
 import { handleFirstVisitOrExpired } from '@/utils'
 import { ThemeProvider } from '@mui/material'
@@ -8,6 +8,8 @@ import theme from '../theme/theme'
 
 export default function App({ Component, pageProps }: AppProps) {
     const [showLoader, setShowLoader] = useState(false)
+    const [showCookieBanner, setShowCookieBanner] = useState(true)
+    const [showAfterDelay, setShowAfterDelay] = useState(false)
 
     useEffect(() => {
         const shouldShowLoadingScreen = handleFirstVisitOrExpired()
@@ -19,11 +21,26 @@ export default function App({ Component, pageProps }: AppProps) {
     }, [])
 
     useEffect(() => {
-        const timeoutId = setTimeout(() => {
+        const hasConsent = localStorage.getItem('cookie-consent')
+        setShowCookieBanner(!hasConsent)
+
+        const delayTimeoutId = setTimeout(() => {
+            setShowAfterDelay(true)
+        }, 100)
+
+        const loaderTimeoutId = setTimeout(() => {
             setShowLoader(false)
         }, 2500)
-        return () => clearTimeout(timeoutId)
+        return () => {
+            clearTimeout(delayTimeoutId)
+            clearTimeout(loaderTimeoutId)
+        }
     }, [])
+
+    const handleConsent = () => {
+        localStorage.setItem('cookie-consent', 'true')
+        setShowCookieBanner(false)
+    }
 
     return showLoader ? (
         <LoaderMolecule />
@@ -31,6 +48,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <ThemeProvider theme={theme}>
             <ToastAtom />
             <Component {...pageProps} />
+            {showCookieBanner && showAfterDelay && (
+                <CookieBannerMolecule
+                    onAccept={handleConsent}
+                    onDismiss={() => setShowCookieBanner(false)}
+                />
+            )}
         </ThemeProvider>
     )
 }

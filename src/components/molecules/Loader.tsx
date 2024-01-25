@@ -37,7 +37,7 @@ export const LoaderMolecule = () => {
             >
                 <ImageAtom
                     imageUrl={getAsset('logo-no-text.svg', 'logo')}
-                    imageAlt="Logo van Adam IT, verbindt IT'ers en opdrachtgevers met deskundige dienstverlening."
+                    imageAlt="Logo van ADAM IT, verbindt IT'ers en opdrachtgevers met deskundige dienstverlening."
                     logo
                 />
             </motion.div>

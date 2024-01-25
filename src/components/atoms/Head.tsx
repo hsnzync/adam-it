@@ -4,7 +4,7 @@ import NextHead from 'next/head'
 export const HeadAtom = (props: Head) => {
     return (
         <NextHead>
-            <title>{props.title || 'Adam IT - IT Dienstverlener'}</title>
+            <title>{props.title || 'ADAM IT - IT Dienstverlener'}</title>
             <meta name="description" content={props.description} />
             <meta
                 name="viewport"
@@ -20,15 +20,15 @@ export const HeadAtom = (props: Head) => {
             />
             <meta
                 property="og:image"
-                content="/assets/logo/seo/logo-no-text.png"
+                content="https://www.adamit.nl/assets/logo/seo/logo-no-text.png"
             />
             <meta property="og:url" content={props.opengraph.url} />
             <meta property="og:type" content="website" />
-            <meta property="og:site_name" content="Adam IT" />
+            <meta property="og:site_name" content="ADAM IT" />
 
             <meta
                 property="twitter:image"
-                content="/assets/logo/seo/logo-no-text.png"
+                content="https://www.adamit.nl/assets/logo/seo/logo-no-text.png"
             />
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:title" content={props.twitter.title} />

@@ -1,7 +1,7 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react'
 import { BoxAtom, TextAtom } from '.'
 import { PortableTextBlock } from '@portabletext/types'
-import { Manrope, Source_Code_Pro } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 
 const manrope = Manrope({ subsets: ['latin'] })
 
@@ -19,7 +19,7 @@ const components: PortableTextComponents = {
     },
 }
 
-export const RichContent = (props: Props) => {
+export const RichContentText = (props: Props) => {
     return (
         <BoxAtom sx={{ p: { fontFamily: manrope.style.fontFamily } }}>
             <PortableText value={props.richText} components={components} />
