@@ -51,17 +51,28 @@ export const CookieBannerMolecule = (props: Props) => {
                     </TextAtom>
                     <BoxAtom
                         alignment="center"
+                        direction="horizontal"
                         space={3}
-                        sx={{ flexDirection: 'row' }}
+                        sx={{ width: { xs: '100%', md: 'auto' } }}
                     >
                         <ButtonMolecule
                             onClick={props.onAccept}
-                            sx={{ minWidth: 220, height: 'fit-content' }}
+                            sx={{
+                                width: '100%',
+                                minWidth: {
+                                    md: 220,
+                                },
+                                height: 'fit-content',
+                            }}
                             label="Accepteer cookies"
                         />
                         <ButtonMolecule
                             onClick={props.onDismiss}
-                            sx={{ minWidth: 150, height: 'fit-content' }}
+                            sx={{
+                                width: '100%',
+                                minWidth: { md: 150 },
+                                height: 'fit-content',
+                            }}
                             label="Afwijzen"
                         />
                     </BoxAtom>
